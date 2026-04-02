@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Odszkodowania za wypadki przy pracy i choroby zawodowe. Bezpłatna analiza sprawy. Uzyskujemy nawet 8x więcej niż oferuje ZUS lub pracodawca.">
+    <title>Odszkodowania za wypadki przy pracy | Bezpłatna konsultacja</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { navy: '#1A1F36', 'navy-dark': '#121526', gold: '#D4A843', 'gold-light': '#E8C76A', cta: '#E8652D', 'cta-hover': '#D4561F', warm: '#F7F5F2', 'warm-dark': '#EDE9E4', txt: '#2D2D2D' },
+                    fontFamily: { heading: ['"Playfair Display"', 'serif'], body: ['"Inter"', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://example.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Wypadki przy pracy", "item": "https://example.pl/odszkodowania-wypadki-przy-pracy.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Odszkodowania za wypadki przy pracy",
+        "description": "Pomoc prawna w uzyskaniu odszkodowania za wypadek przy pracy lub chorobę zawodową.",
+        "provider": { "@type": "LegalService", "name": "Odszkodowania" },
+        "areaServed": { "@type": "Country", "name": "Polska" }
+    }
+    </script>
+</head>
+<body class="font-body text-txt bg-warm">
+
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="text-white font-heading text-xl lg:text-2xl font-bold"><span class="text-gold">Odszkodowania</span></a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html#uslugi" class="text-white/80 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="index.html#jak-dzialamy" class="text-white/80 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-white/80 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="index.html#case-studies" class="text-white/80 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="blog/" class="text-white/80 hover:text-gold transition-colors text-sm">Blog</a>
+                    <a href="kontakt.html" class="text-white/80 hover:text-gold transition-colors text-sm">Kontakt</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i> +48 XXX XXX XXX
+                    </a>
+                    <a href="index.html#quiz" class="bg-cta hover:bg-cta-hover text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Breadcrumb -->
+        <div class="bg-white border-b border-warm-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                <nav class="text-sm text-txt/50">
+                    <a href="/" class="hover:text-gold">Strona główna</a>
+                    <span class="mx-2">›</span>
+                    <span class="text-navy font-medium">Wypadki przy pracy</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="bg-gradient-to-b from-navy to-navy-dark py-16 lg:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mb-6">Odszkodowania za wypadki przy pracy</h1>
+                <p class="text-white/70 text-lg max-w-2xl mx-auto mb-8">Pracodawcy i ZUS wypłacają minimalne kwoty. Pomagamy uzyskać pełne odszkodowanie za urazy na budowie, w fabryce, biurze i podczas dojazdów do pracy.</p>
+                <a href="index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white px-8 py-3 rounded-lg font-semibold transition-colors">Bezpłatna analiza sprawy →</a>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="py-16 lg:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="prose max-w-none">
+                    <h2 class="font-heading text-2xl font-bold text-navy mb-4">Komu pomagamy?</h2>
+                    <p class="text-txt/70 mb-6">Specjalizujemy się w odszkodowaniach dla pracowników poszkodowanych w wypadkach przy pracy na terenie całej Polski. Pomagamy ofiarom urazów na budowach, w zakładach przemysłowych, magazynach i biurach, a także osobom dotkniętym chorobami zawodowymi oraz wypadkami w drodze do i z pracy.</p>
+
+                    <h2 class="font-heading text-2xl font-bold text-navy mb-4 mt-12">Co możesz uzyskać?</h2>
+                    <ul class="space-y-3 text-txt/70 mb-6">
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> Jednorazowe odszkodowanie z ZUS za trwały uszczerbek na zdrowiu</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> Zadośćuczynienie za ból i cierpienie od pracodawcy</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> Zwrot kosztów leczenia i rehabilitacji</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> Odszkodowanie za utracone zarobki</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> Renta wyrównawcza przy długotrwałej niezdolności do pracy</li>
+                    </ul>
+
+                    <!-- Mini case study -->
+                    <div class="bg-warm rounded-2xl p-6 my-8">
+                        <h3 class="font-heading text-lg font-bold text-navy mb-3">Przykładowa sprawa</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <div><span class="text-txt/40 text-sm">Wypłata ZUS:</span> <span class="font-bold text-txt/40 line-through">8 000 zł</span></div>
+                            <div><span class="text-txt/40 text-sm">Uzyskaliśmy:</span> <span class="font-bold text-navy text-xl">67 000 zł</span></div>
+                        </div>
+                        <p class="text-txt/60 text-sm">Pracownik budowlany z urazem kręgosłupa otrzymał z ZUS jedynie 8 tys. zł. Po dochodzeniu roszczeń od pracodawcy nasz zespół wywalczył łącznie 8,4-krotnie wyższe odszkodowanie.</p>
+                    </div>
+
+                    <!-- FAQ -->
+                    <h2 class="font-heading text-2xl font-bold text-navy mb-4 mt-12">Najczęstsze pytania</h2>
+                    <div class="space-y-3">
+                        <div class="bg-white rounded-xl border border-warm-dark overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-navy">
+                                <span>Czy pracodawca może mnie zwolnić za zgłoszenie roszczenia?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform"></i>
+                            </button>
+                            <div class="faq-answer"><p class="px-5 pb-5 text-txt/60 text-sm">Nie — prawo pracy zabrania rozwiązania umowy w odwecie za dochodzenie odszkodowania. Jeśli pracodawca Cię zwolni po zgłoszeniu roszczenia, możesz dochodzić dodatkowo odszkodowania za niezgodne z prawem rozwiązanie stosunku pracy.</p></div>
+                        </div>
+                        <div class="bg-white rounded-xl border border-warm-dark overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-navy">
+                                <span>Co jeśli pracodawca nie przestrzegał przepisów BHP?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gold transition-transform"></i>
+                            </button>
+                            <div class="faq-answer"><p class="px-5 pb-5 text-txt/60 text-sm">Naruszenie przepisów BHP przez pracodawcę znacząco wzmacnia Twoją pozycję. Możesz dochodzić odszkodowania uzupełniającego ponad świadczenia ZUS — w takich sprawach uzyskujemy najwyższe kwoty.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="mt-12 bg-navy rounded-2xl p-8 text-center">
+                    <h2 class="font-heading text-2xl font-bold text-white mb-4">Byłeś poszkodowany w wypadku przy pracy?</h2>
+                    <p class="text-white/60 mb-6">Bezpłatnie przeanalizujemy Twoją sprawę i powiemy ile możesz uzyskać.</p>
+                    <a href="index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white px-8 py-3 rounded-lg font-semibold transition-colors">Sprawdź ile Ci się należy →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-navy-dark py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-gold font-heading font-bold text-lg mb-4">Odszkodowania</h3>
+                    <p class="text-white/40 text-sm">Profesjonalna pomoc w uzyskaniu odszkodowań. Bezpłatna konsultacja, prowizja tylko od sukcesu.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Usługi</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li><a href="odszkodowania-komunikacyjne.html" class="hover:text-gold transition-colors">Wypadki komunikacyjne</a></li>
+                        <li><a href="odszkodowania-wypadki-przy-pracy.html" class="hover:text-gold transition-colors">Wypadki przy pracy</a></li>
+                        <li><a href="odszkodowania-bledy-medyczne.html" class="hover:text-gold transition-colors">Błędy medyczne</a></li>
+                        <li><a href="odszkodowania-smierc-bliskiej-osoby.html" class="hover:text-gold transition-colors">Śmierć bliskiej osoby</a></li>
+                        <li><a href="odszkodowania-wypadki-rolnicze.html" class="hover:text-gold transition-colors">Wypadki w rolnictwie</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Informacje</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li><a href="jak-dzialamy.html" class="hover:text-gold transition-colors">Jak działamy</a></li>
+                        <li><a href="kalkulator.html" class="hover:text-gold transition-colors">Kalkulator odszkodowań</a></li>
+                        <li><a href="blog/" class="hover:text-gold transition-colors">Blog</a></li>
+                        <li><a href="kontakt.html" class="hover:text-gold transition-colors">Kontakt</a></li>
+                        <li><a href="polityka-prywatnosci.html" class="hover:text-gold transition-colors">Polityka prywatności</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li><a href="tel:+48XXXXXXXXX" class="hover:text-gold transition-colors">+48 XXX XXX XXX</a></li>
+                        <li><a href="mailto:kontakt@example.pl" class="hover:text-gold transition-colors">kontakt@example.pl</a></li>
+                        <li>Poznań, Polska</li>
+                        <li>Pn–Pt 8:00–18:00</li>
+                        <li>Sb 9:00–14:00</li>
+                    </ul>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold/20 transition-colors" aria-label="Facebook">
+                            <i data-lucide="facebook" class="w-4 h-4 text-white/60"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold/20 transition-colors" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-white/60"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-white/30 text-xs">
+                <p>&copy; 2026 Odszkodowania. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/analytics.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
