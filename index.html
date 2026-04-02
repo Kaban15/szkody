@@ -112,10 +112,200 @@
 
     <!-- Placeholder for sections -->
     <main>
-        <section id="hero" class="pt-20"><!-- Task 2 --></section>
+        <!-- HERO + QUIZ -->
+        <section id="hero" class="relative bg-gradient-to-b from-navy to-navy-dark pt-28 pb-16 lg:pt-36 lg:pb-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <!-- Left: Text -->
+                    <div class="text-center lg:text-left mb-12 lg:mb-0">
+                        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white font-bold leading-tight mb-6">
+                            Miałeś wypadek? <br>
+                            <span class="text-gold">Sprawdź ile Ci się należy</span>
+                        </h1>
+                        <p class="text-white/70 text-lg lg:text-xl mb-8 max-w-xl mx-auto lg:mx-0">
+                            Ubezpieczyciele zaniżają wypłaty nawet o 80%. Nie pozwól na to — bezpłatnie przeanalizujemy Twoją sprawę.
+                        </p>
+                        <div class="flex flex-wrap gap-6 justify-center lg:justify-start text-white/60 text-sm">
+                            <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-gold"></i> Bezpłatna konsultacja</span>
+                            <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-gold"></i> Płacisz tylko za sukces</span>
+                            <span class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-gold"></i> Cała Polska</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Quiz -->
+                    <div id="quiz" class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg mx-auto lg:mx-0 lg:max-w-none">
+                        <!-- Progress bar -->
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs text-txt/50 mb-2">
+                                <span>Krok <span id="quiz-current-step">1</span> z 5</span>
+                                <span id="quiz-percent">20%</span>
+                            </div>
+                            <div class="h-2 bg-warm rounded-full overflow-hidden">
+                                <div id="quiz-progress" class="progress-bar h-full bg-cta rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Quiz Steps Container -->
+                        <div id="quiz-container">
+                            <!-- Step 1 -->
+                            <div class="quiz-step" data-step="1">
+                                <h2 class="font-heading text-xl sm:text-2xl font-bold text-navy mb-6">Co się wydarzyło?</h2>
+                                <div class="grid grid-cols-2 gap-3" id="quiz-step-1-options">
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="wypadek-samochodowy">
+                                        <i data-lucide="car" class="w-8 h-8 text-navy"></i>
+                                        Wypadek samochodowy
+                                    </button>
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="wypadek-motocyklowy">
+                                        <i data-lucide="bike" class="w-8 h-8 text-navy"></i>
+                                        Wypadek motocyklowy
+                                    </button>
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="potracenie">
+                                        <i data-lucide="footprints" class="w-8 h-8 text-navy"></i>
+                                        Potrącenie pieszego
+                                    </button>
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="wypadek-praca">
+                                        <i data-lucide="hard-hat" class="w-8 h-8 text-navy"></i>
+                                        Wypadek przy pracy
+                                    </button>
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="blad-medyczny">
+                                        <i data-lucide="stethoscope" class="w-8 h-8 text-navy"></i>
+                                        Błąd medyczny
+                                    </button>
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="smierc-bliskiej">
+                                        <i data-lucide="heart" class="w-8 h-8 text-navy"></i>
+                                        Śmierć bliskiej osoby
+                                    </button>
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="wypadek-rolnictwo">
+                                        <i data-lucide="wheat" class="w-8 h-8 text-navy"></i>
+                                        Wypadek w rolnictwie
+                                    </button>
+                                    <button class="quiz-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm text-center" data-value="inne">
+                                        <i data-lucide="help-circle" class="w-8 h-8 text-navy"></i>
+                                        Inne
+                                    </button>
+                                </div>
+                                <button id="quiz-next-1" class="w-full mt-6 bg-cta hover:bg-cta-hover text-white py-3 rounded-lg font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+                                    Dalej →
+                                </button>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="quiz-step hidden" data-step="2">
+                                <h2 class="font-heading text-xl sm:text-2xl font-bold text-navy mb-6">Kiedy to się stało?</h2>
+                                <div class="space-y-3" id="quiz-step-2-options">
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="30dni">W ciągu ostatnich 30 dni</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="1-6mies">1–6 miesięcy temu</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="6-12mies">6–12 miesięcy temu</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="1-3lata">1–3 lata temu</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-txt/60" data-value="3+lata">Ponad 3 lata temu <span class="text-xs text-cta">(sprawdzimy przedawnienie)</span></button>
+                                </div>
+                                <div class="flex gap-3 mt-6">
+                                    <button class="quiz-back flex-1 border-2 border-navy/20 text-navy py-3 rounded-lg font-semibold transition-colors hover:bg-navy/5">← Wróć</button>
+                                    <button class="quiz-next flex-1 bg-cta hover:bg-cta-hover text-white py-3 rounded-lg font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled>Dalej →</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="quiz-step hidden" data-step="3">
+                                <h2 class="font-heading text-xl sm:text-2xl font-bold text-navy mb-6">Jakie były skutki?</h2>
+                                <div class="space-y-3" id="quiz-step-3-options">
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="szpital">Pobyt w szpitalu</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="ambulatorium">Leczenie ambulatoryjne</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="uszczerbek">Trwały uszczerbek na zdrowiu</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="niezdolnosc">Niezdolność do pracy</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="smierc">Śmierć osoby bliskiej</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="szkoda-materialna">Szkoda materialna</button>
+                                </div>
+                                <div class="flex gap-3 mt-6">
+                                    <button class="quiz-back flex-1 border-2 border-navy/20 text-navy py-3 rounded-lg font-semibold transition-colors hover:bg-navy/5">← Wróć</button>
+                                    <button class="quiz-next flex-1 bg-cta hover:bg-cta-hover text-white py-3 rounded-lg font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled>Dalej →</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="quiz-step hidden" data-step="4">
+                                <h2 class="font-heading text-xl sm:text-2xl font-bold text-navy mb-6">Jaki jest obecny status?</h2>
+                                <div class="space-y-3" id="quiz-step-4-options">
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="nie-zgloszone">Jeszcze nic nie zgłaszałem/am</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="czekam">Zgłosiłem/am, czekam na decyzję</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="za-malo">Ubezpieczyciel wypłacił za mało</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="odmowa">Ubezpieczyciel odmówił wypłaty</button>
+                                    <button class="quiz-option w-full text-left p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all" data-value="nie-wiem">Nie wiem co robić</button>
+                                </div>
+                                <div class="flex gap-3 mt-6">
+                                    <button class="quiz-back flex-1 border-2 border-navy/20 text-navy py-3 rounded-lg font-semibold transition-colors hover:bg-navy/5">← Wróć</button>
+                                    <button class="quiz-next flex-1 bg-cta hover:bg-cta-hover text-white py-3 rounded-lg font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled>Dalej →</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 5: Contact form -->
+                            <div class="quiz-step hidden" data-step="5">
+                                <h2 class="font-heading text-xl sm:text-2xl font-bold text-navy mb-2">Ostatni krok!</h2>
+                                <p class="text-txt/60 text-sm mb-6">Zostaw dane — bezpłatnie przeanalizujemy Twoją sprawę.</p>
+
+                                <!-- Summary -->
+                                <div id="quiz-summary" class="bg-warm rounded-xl p-4 mb-6 text-sm text-txt/70 space-y-1"></div>
+
+                                <form id="quiz-form" novalidate>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <input type="text" id="quiz-name" name="name" placeholder="Imię *" required minlength="2"
+                                                class="w-full px-4 py-3 rounded-lg border-2 border-warm-dark focus:border-gold focus:outline-none transition-colors">
+                                            <p class="text-cta text-xs mt-1 hidden" id="quiz-name-error">Podaj swoje imię (min. 2 znaki)</p>
+                                        </div>
+                                        <div>
+                                            <input type="tel" id="quiz-phone" name="phone" placeholder="Numer telefonu *" required
+                                                class="w-full px-4 py-3 rounded-lg border-2 border-warm-dark focus:border-gold focus:outline-none transition-colors">
+                                            <p class="text-cta text-xs mt-1 hidden" id="quiz-phone-error">Podaj prawidłowy numer telefonu</p>
+                                        </div>
+                                        <div>
+                                            <input type="email" id="quiz-email" name="email" placeholder="Email (opcjonalnie)"
+                                                class="w-full px-4 py-3 rounded-lg border-2 border-warm-dark focus:border-gold focus:outline-none transition-colors">
+                                            <p class="text-cta text-xs mt-1 hidden" id="quiz-email-error">Podaj prawidłowy adres email</p>
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <input type="checkbox" id="quiz-consent" name="consent" required class="mt-1 w-4 h-4 accent-cta">
+                                            <label for="quiz-consent" class="text-xs text-txt/60">
+                                                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
+                                                <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a> *
+                                            </label>
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <input type="checkbox" id="quiz-marketing" name="marketing" class="mt-1 w-4 h-4 accent-cta">
+                                            <label for="quiz-marketing" class="text-xs text-txt/60">
+                                                Wyrażam zgodę na kontakt marketingowy (opcjonalne)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3 mt-6">
+                                        <button type="button" class="quiz-back flex-1 border-2 border-navy/20 text-navy py-3 rounded-lg font-semibold transition-colors hover:bg-navy/5">← Wróć</button>
+                                        <button type="submit" id="quiz-submit" class="flex-1 bg-cta hover:bg-cta-hover text-white py-3 rounded-lg font-semibold transition-colors disabled:opacity-40">
+                                            Otrzymaj bezpłatną wycenę →
+                                        </button>
+                                    </div>
+                                    <p class="text-center text-xs text-txt/40 mt-4" id="quiz-callback-info"></p>
+                                </form>
+                            </div>
+
+                            <!-- Success screen -->
+                            <div id="quiz-success" class="hidden text-center py-8">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
+                                </div>
+                                <h2 class="font-heading text-2xl font-bold text-navy mb-2">Dziękujemy!</h2>
+                                <p class="text-txt/60" id="quiz-success-msg">Nasz specjalista oddzwoni w ciągu 30 minut.</p>
+                                <div id="quiz-success-summary" class="bg-warm rounded-xl p-4 mt-6 text-sm text-txt/70 text-left space-y-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Scripts -->
+    <script src="js/form-validation.js"></script>
+    <script src="js/quiz.js"></script>
     <script src="js/navigation.js"></script>
     <script>lucide.createIcons();</script>
 </body>
