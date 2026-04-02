@@ -46,4 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Case studies filter
+    document.querySelectorAll('.case-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.case-filter').forEach(b => { b.classList.remove('bg-navy','text-white'); b.classList.add('bg-warm','text-txt/60'); });
+            btn.classList.remove('bg-warm','text-txt/60'); btn.classList.add('bg-navy','text-white');
+            document.querySelectorAll('.case-card').forEach(card => {
+                card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
+            });
+        });
+    });
 });
