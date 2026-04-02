@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nasze sukcesy — realne wyniki dla klientów. Case studies odszkodowań. Sprawdź ile uzyskaliśmy dla podobnych spraw.">
+    <meta property="og:title" content="Nasze sukcesy — Wyniki dla klientów">
+    <meta property="og:description" content="Realne przykłady spraw i uzyskanych odszkodowań. Wyniki mówią same za siebie.">
+    <meta property="og:type" content="website">
+    <title>Nasze sukcesy — Wyniki dla klientów | Odszkodowania</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0a0a0a',
+                        surface: '#111111',
+                        'surface-light': '#1a1a1a',
+                        gold: '#C8A45E',
+                        'gold-light': '#E0C878',
+                        muted: '#888888',
+                        error: '#E05252',
+                    },
+                    fontFamily: {
+                        heading: ['"Fraunces"', 'serif'],
+                        body: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Mobile menu transitions -->
+    <style>
+        #mobile-menu {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        #mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="font-body text-white bg-bg">
+
+    <!-- NAWIGACJA -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="/">
+                    <span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="sukcesy.html" class="text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="blog/" class="text-white/60 hover:text-gold transition-colors text-sm">Blog</a>
+                    <a href="kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                </div>
+
+                <!-- CTA + Phone -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +48 XXX XXX XXX
+                    </a>
+                    <a href="/#quiz" class="border border-gold text-gold hover:bg-gold hover:text-bg px-5 py-2 rounded text-sm font-semibold transition-colors">
+                        Bezpłatna konsultacja
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (fullscreen overlay) -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
+        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="text-center space-y-6">
+            <a href="uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
+            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
+            <a href="kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
+            <a href="sukcesy.html" class="block text-2xl font-heading text-gold transition-colors">Sukcesy</a>
+            <a href="blog/" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Blog</a>
+            <a href="kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <div class="pt-4">
+                <a href="/#quiz" class="inline-block border border-gold text-gold hover:bg-gold hover:text-bg px-8 py-3 rounded text-lg font-semibold transition-colors">
+                    Bezpłatna konsultacja
+                </a>
+            </div>
+            <a href="tel:+48XXXXXXXXX" class="block text-gold text-lg font-medium pt-2">
+                <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>+48 XXX XXX XXX
+            </a>
+        </div>
+    </div>
+
+    <!-- Mobile Sticky Bottom Bar -->
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
+        </a>
+        <a href="/#quiz" class="flex-1 border border-gold text-gold text-center py-3 rounded font-semibold text-sm">
+            Bezpłatna wycena
+        </a>
+    </div>
+
+    <main>
+        <!-- Breadcrumb -->
+        <nav class="pt-24 pb-4 text-sm text-muted">
+            <div class="max-w-7xl mx-auto px-4">
+                <a href="/" class="hover:text-gold">Strona główna</a>
+                <span class="mx-2 text-white/20">›</span>
+                <span class="text-white">Sukcesy</span>
+            </div>
+        </nav>
+
+        <!-- Page Hero -->
+        <section class="bg-bg py-16 lg:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Wyniki, które mówią same za siebie
+                </h1>
+                <p class="text-muted text-lg max-w-2xl mx-auto">
+                    Realne sprawy, realne kwoty. Przekonaj się, ile udało się uzyskać dla naszych klientów w porównaniu z ofertami ubezpieczycieli.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter + Case Studies -->
+        <section class="bg-bg pb-16 lg:pb-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-3 mb-10">
+                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-gold text-bg" data-filter="all">
+                        Wszystkie
+                    </button>
+                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-surface-light text-muted" data-filter="komunikacyjny">
+                        Wypadki komunikacyjne
+                    </button>
+                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-surface-light text-muted" data-filter="praca">
+                        Wypadki przy pracy
+                    </button>
+                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-surface-light text-muted" data-filter="smierc">
+                        Śmierć bliskiej osoby
+                    </button>
+                </div>
+
+                <!-- Case 1: Full width (featured) -->
+                <div class="case-card fade-in bg-surface border border-white/5 rounded-lg p-6 lg:p-8 card-hover mb-6" data-type="komunikacyjny">
+                    <div class="flex items-center gap-2 text-muted text-sm mb-6">
+                        <i data-lucide="car" class="w-4 h-4 text-gold"></i>
+                        Wypadek komunikacyjny
+                    </div>
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                        <div>
+                            <p class="text-muted text-sm mb-1">Ubezpieczyciel oferował</p>
+                            <p class="text-muted line-through text-2xl mb-4">15 000 zł</p>
+                            <p class="text-muted text-sm mb-1">Uzyskaliśmy</p>
+                            <p class="text-gold text-3xl font-heading font-bold mb-3">120 000 zł</p>
+                            <p class="text-gold font-bold text-sm mb-4">8x więcej</p>
+                        </div>
+                        <div>
+                            <p class="text-muted text-sm mb-4">Po wypadku na S7 ubezpieczyciel zaproponował zaledwie 15 tys. zł. Nasz zespół prawników i rzeczoznawców przeanalizował sprawę i uzyskał 8-krotnie wyższe odszkodowanie dla poszkodowanego.</p>
+                            <p class="text-muted/50 text-xs">Czas trwania sprawy: 4 miesiące</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cases 2+3: 2-column grid -->
+                <div class="grid lg:grid-cols-2 gap-6">
+
+                    <!-- Case 2 -->
+                    <div class="case-card fade-in bg-surface border border-white/5 rounded-lg p-6 card-hover" data-type="praca">
+                        <div class="flex items-center gap-2 text-muted text-sm mb-6">
+                            <i data-lucide="hard-hat" class="w-4 h-4 text-gold"></i>
+                            Wypadek przy pracy
+                        </div>
+                        <p class="text-muted text-sm mb-1">Ubezpieczyciel oferował</p>
+                        <p class="text-muted line-through text-xl mb-4">8 000 zł</p>
+                        <p class="text-muted text-sm mb-1">Uzyskaliśmy</p>
+                        <p class="text-gold text-3xl font-heading font-bold mb-3">67 000 zł</p>
+                        <p class="text-gold font-bold text-sm mb-4">8.4x więcej</p>
+                        <p class="text-muted text-sm">Uraz kręgosłupa na budowie. Pracodawca i ubezpieczyciel bagatelizowali sprawę, oferując symboliczną kwotę. Uzyskaliśmy odszkodowanie z tytułu trwałego uszczerbku na zdrowiu.</p>
+                        <p class="text-muted/50 text-xs mt-3">Czas trwania sprawy: 3 miesiące</p>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="case-card fade-in bg-surface border border-white/5 rounded-lg p-6 card-hover" data-type="smierc">
+                        <div class="flex items-center gap-2 text-muted text-sm mb-6">
+                            <i data-lucide="heart" class="w-4 h-4 text-gold"></i>
+                            Śmierć bliskiej osoby
+                        </div>
+                        <p class="text-muted text-sm mb-1">Ubezpieczyciel oferował</p>
+                        <p class="text-muted line-through text-xl mb-4">40 000 zł</p>
+                        <p class="text-muted text-sm mb-1">Uzyskaliśmy</p>
+                        <p class="text-gold text-3xl font-heading font-bold mb-3">310 000 zł</p>
+                        <p class="text-gold font-bold text-sm mb-4">7.8x więcej</p>
+                        <p class="text-muted text-sm">Rodzina straciła bliskiego w wypadku komunikacyjnym. Ubezpieczyciel zaproponował 40 tys. Uzyskaliśmy łączne zadośćuczynienie dla 3 członków rodziny.</p>
+                        <p class="text-muted/50 text-xs mt-3">Czas trwania sprawy: 6 miesięcy</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Block -->
+        <section class="bg-surface py-16 text-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white mb-4">
+                    Miałeś wypadek? Sprawdź ile Ci się należy.
+                </h2>
+                <p class="text-muted mb-8 max-w-xl mx-auto">Bezpłatna analiza sprawy. Nie ryzykujesz nic — prowizja tylko od wygranego odszkodowania.</p>
+                <a href="/#quiz" class="inline-block bg-gold hover:bg-gold-light text-bg text-lg px-8 py-4 rounded font-semibold transition-colors">
+                    Bezpłatna konsultacja
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="bg-bg py-20 lg:py-24 text-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8">Miałeś wypadek? Porozmawiajmy.</h2>
+                <a href="/#quiz" class="inline-block bg-gold hover:bg-gold-light text-bg text-lg px-8 py-4 rounded font-semibold transition-colors mb-6">
+                    Bezpłatna konsultacja
+                </a>
+                <p class="text-muted">
+                    lub zadzwoń: <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors font-medium">+48 XXX XXX XXX</a>
+                </p>
+
+                <!-- Footer links -->
+                <div class="border-t border-white/5 mt-16 pt-8">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-left mb-8">
+                        <div>
+                            <span class="text-gold font-heading text-lg font-bold">Odszkodowania</span>
+                            <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                            <div class="space-y-2">
+                                <a href="odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
+                                <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
+                                <a href="odszkodowania-bledy-medyczne.html" class="block text-muted text-sm hover:text-gold transition-colors">Błędy medyczne</a>
+                                <a href="odszkodowania-smierc-bliskiej-osoby.html" class="block text-muted text-sm hover:text-gold transition-colors">Śmierć bliskiej osoby</a>
+                                <a href="odszkodowania-wypadki-rolnicze.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki w rolnictwie</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                            <div class="space-y-2">
+                                <a href="jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
+                                <a href="sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
+                                <a href="kalkulator.html" class="block text-muted text-sm hover:text-gold transition-colors">Kalkulator odszkodowań</a>
+                                <a href="blog/" class="block text-muted text-sm hover:text-gold transition-colors">Blog</a>
+                                <a href="polityka-prywatnosci.html" class="block text-muted text-sm hover:text-gold transition-colors">Polityka prywatności</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                            <div class="space-y-2">
+                                <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
+                                <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
+                                <p class="text-muted text-sm">Poznań, Polska</p>
+                                <div class="flex gap-3 mt-2">
+                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
+            <div class="flex gap-3 shrink-0">
+                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-accept" class="bg-gold hover:bg-gold-light text-bg px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
