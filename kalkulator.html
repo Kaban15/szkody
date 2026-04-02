@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kalkulator odszkodowań online — sprawdź orientacyjną kwotę odszkodowania w 60 sekund. Bezpłatne narzędzie dla poszkodowanych.">
+    <title>Kalkulator odszkodowań online | Sprawdź ile Ci się należy</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { navy: '#1A1F36', 'navy-dark': '#121526', gold: '#D4A843', 'gold-light': '#E8C76A', cta: '#E8652D', 'cta-hover': '#D4561F', warm: '#F7F5F2', 'warm-dark': '#EDE9E4', txt: '#2D2D2D' },
+                    fontFamily: { heading: ['"Playfair Display"', 'serif'], body: ['"Inter"', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://example.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Kalkulator odszkodowań", "item": "https://example.pl/kalkulator.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Kalkulator odszkodowań online",
+        "description": "Bezpłatne narzędzie do orientacyjnej wyceny odszkodowania po wypadku.",
+        "url": "https://example.pl/kalkulator.html",
+        "applicationCategory": "FinanceApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" }
+    }
+    </script>
+</head>
+<body class="font-body text-txt bg-warm">
+
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="text-white font-heading text-xl lg:text-2xl font-bold"><span class="text-gold">Odszkodowania</span></a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html#uslugi" class="text-white/80 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="index.html#jak-dzialamy" class="text-white/80 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-gold transition-colors text-sm font-medium">Kalkulator</a>
+                    <a href="index.html#case-studies" class="text-white/80 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="blog/" class="text-white/80 hover:text-gold transition-colors text-sm">Blog</a>
+                    <a href="kontakt.html" class="text-white/80 hover:text-gold transition-colors text-sm">Kontakt</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i> +48 XXX XXX XXX
+                    </a>
+                    <a href="index.html#quiz" class="bg-cta hover:bg-cta-hover text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Breadcrumb -->
+        <div class="bg-white border-b border-warm-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                <nav class="text-sm text-txt/50">
+                    <a href="/" class="hover:text-gold">Strona główna</a>
+                    <span class="mx-2">›</span>
+                    <span class="text-navy font-medium">Kalkulator odszkodowań</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="bg-gradient-to-b from-navy to-navy-dark py-12 lg:py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="font-heading text-3xl lg:text-4xl font-bold text-white mb-4">Kalkulator odszkodowań online</h1>
+                <p class="text-white/70 max-w-2xl mx-auto">Sprawdź orientacyjną kwotę odszkodowania w 60 sekund. Bezpłatne narzędzie dla poszkodowanych w wypadkach.</p>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="py-16 lg:py-24 bg-warm">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+                    <div id="calc-container">
+                        <!-- Step 1: Event type -->
+                        <div id="calc-step-1">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-4">Typ zdarzenia</h3>
+                            <div class="grid grid-cols-2 gap-3" id="calc-event-options">
+                                <button class="calc-event-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm" data-value="komunikacyjny">
+                                    <i data-lucide="car" class="w-8 h-8 text-navy"></i>
+                                    Wypadek komunikacyjny
+                                </button>
+                                <button class="calc-event-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm" data-value="praca">
+                                    <i data-lucide="hard-hat" class="w-8 h-8 text-navy"></i>
+                                    Wypadek przy pracy
+                                </button>
+                                <button class="calc-event-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm" data-value="medyczny">
+                                    <i data-lucide="stethoscope" class="w-8 h-8 text-navy"></i>
+                                    Błąd medyczny
+                                </button>
+                                <button class="calc-event-option flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-warm hover:border-gold hover:bg-gold/5 transition-all text-sm" data-value="inne">
+                                    <i data-lucide="help-circle" class="w-8 h-8 text-navy"></i>
+                                    Inne
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Injuries (multi-select) -->
+                        <div id="calc-step-2" class="hidden mt-8">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-4">Rodzaj obrażeń <span class="text-sm font-normal text-txt/50">(możesz wybrać kilka)</span></h3>
+                            <div class="grid grid-cols-2 gap-3" id="calc-injury-options">
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="zlamania" data-min="8000" data-max="25000">Złamania kości</button>
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="kregoslup" data-min="15000" data-max="60000">Urazy kręgosłupa / szyi</button>
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="glowa" data-min="10000" data-max="50000">Uraz głowy / wstrząs</button>
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="wewnetrzne" data-min="20000" data-max="80000">Urazy wewnętrzne</button>
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="blizny" data-min="5000" data-max="30000">Rany, blizny</button>
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="amputacja" data-min="50000" data-max="300000">Amputacja</button>
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="ptsd" data-min="10000" data-max="40000">PTSD / uszczerbek psychiczny</button>
+                                <button class="calc-injury-option p-3 rounded-xl border-2 border-warm hover:border-gold transition-all text-sm text-left" data-value="smierc" data-min="30000" data-max="200000">Śmierć bliskiej osoby</button>
+                            </div>
+                            <p id="calc-injury-hint" class="text-cta text-xs mt-2 hidden">Wybierz co najmniej jedno obrażenie</p>
+                        </div>
+
+                        <!-- Step 3: Sliders -->
+                        <div id="calc-step-3" class="hidden mt-8">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-6">Szczegóły</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <label class="text-sm font-medium text-navy">Czas leczenia</label>
+                                        <span id="calc-treatment-value" class="text-sm font-bold text-cta">0 dni</span>
+                                    </div>
+                                    <input type="range" id="calc-treatment" min="0" max="365" value="0" class="w-full">
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <label class="text-sm font-medium text-navy">Niezdolność do pracy</label>
+                                        <span id="calc-work-value" class="text-sm font-bold text-cta">0 dni</span>
+                                    </div>
+                                    <input type="range" id="calc-work" min="0" max="365" value="0" class="w-full">
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <label class="text-sm font-medium text-navy">Trwały uszczerbek na zdrowiu</label>
+                                        <span id="calc-disability-value" class="text-sm font-bold text-cta">0%</span>
+                                    </div>
+                                    <input type="range" id="calc-disability" min="0" max="100" value="0" class="w-full">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div id="calc-result" class="hidden mt-8">
+                            <div class="bg-navy rounded-2xl p-6 sm:p-8 text-center">
+                                <p class="text-white/60 text-sm mb-2">Orientacyjna kwota odszkodowania:</p>
+                                <div class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-gold mb-2">
+                                    <span id="calc-result-min">0</span> — <span id="calc-result-max">0</span> zł
+                                </div>
+                                <p class="text-white/40 text-xs mb-6">To orientacyjny szacunek. Dokładna kwota zależy od indywidualnych okoliczności sprawy.</p>
+                                <div class="max-w-sm mx-auto">
+                                    <p class="text-white text-sm mb-4">Chcesz dokładną wycenę?</p>
+                                    <form id="calc-cta-form" class="space-y-3" novalidate>
+                                        <input type="text" id="calc-name" placeholder="Imię *" required minlength="2"
+                                            class="w-full px-4 py-3 rounded-lg text-txt focus:outline-none focus:ring-2 focus:ring-gold">
+                                        <input type="tel" id="calc-phone" placeholder="Numer telefonu *" required
+                                            class="w-full px-4 py-3 rounded-lg text-txt focus:outline-none focus:ring-2 focus:ring-gold">
+                                        <div class="flex items-start gap-2 text-left">
+                                            <input type="checkbox" id="calc-consent" required class="mt-1 w-4 h-4 accent-cta">
+                                            <label for="calc-consent" class="text-xs text-white/50">
+                                                Wyrażam zgodę na przetwarzanie danych. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a> *
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="w-full bg-cta hover:bg-cta-hover text-white py-3 rounded-lg font-semibold transition-colors">
+                                            Otrzymaj dokładną wycenę →
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Empty state message -->
+                        <div id="calc-empty" class="hidden mt-6 text-center text-txt/50 text-sm">
+                            Uzupełnij dane powyżej, aby zobaczyć szacunek
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info below calculator -->
+                <div class="mt-10 grid sm:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        <h3 class="font-semibold text-navy mb-1">Bezpłatne narzędzie</h3>
+                        <p class="text-txt/60 text-sm">Kalkulator jest w pełni bezpłatny. Nie pobieramy żadnych opłat za korzystanie.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="info" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        <h3 class="font-semibold text-navy mb-1">Orientacyjny szacunek</h3>
+                        <p class="text-txt/60 text-sm">Wynik to przybliżenie — dokładna kwota zależy od indywidualnych okoliczności.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="phone-call" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        <h3 class="font-semibold text-navy mb-1">Bezpłatna konsultacja</h3>
+                        <p class="text-txt/60 text-sm">Po wycenie nasz ekspert skontaktuje się z Tobą i oceni sprawę szczegółowo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-navy-dark py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-gold font-heading font-bold text-lg mb-4">Odszkodowania</h3>
+                    <p class="text-white/40 text-sm">Profesjonalna pomoc w uzyskaniu odszkodowań. Bezpłatna konsultacja, prowizja tylko od sukcesu.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Usługi</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li><a href="odszkodowania-komunikacyjne.html" class="hover:text-gold transition-colors">Wypadki komunikacyjne</a></li>
+                        <li><a href="odszkodowania-wypadki-przy-pracy.html" class="hover:text-gold transition-colors">Wypadki przy pracy</a></li>
+                        <li><a href="odszkodowania-bledy-medyczne.html" class="hover:text-gold transition-colors">Błędy medyczne</a></li>
+                        <li><a href="odszkodowania-smierc-bliskiej-osoby.html" class="hover:text-gold transition-colors">Śmierć bliskiej osoby</a></li>
+                        <li><a href="odszkodowania-wypadki-rolnicze.html" class="hover:text-gold transition-colors">Wypadki w rolnictwie</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Informacje</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li><a href="jak-dzialamy.html" class="hover:text-gold transition-colors">Jak działamy</a></li>
+                        <li><a href="kalkulator.html" class="hover:text-gold transition-colors">Kalkulator odszkodowań</a></li>
+                        <li><a href="blog/" class="hover:text-gold transition-colors">Blog</a></li>
+                        <li><a href="kontakt.html" class="hover:text-gold transition-colors">Kontakt</a></li>
+                        <li><a href="polityka-prywatnosci.html" class="hover:text-gold transition-colors">Polityka prywatności</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li><a href="tel:+48XXXXXXXXX" class="hover:text-gold transition-colors">+48 XXX XXX XXX</a></li>
+                        <li><a href="mailto:kontakt@example.pl" class="hover:text-gold transition-colors">kontakt@example.pl</a></li>
+                        <li>Poznań, Polska</li>
+                        <li>Pn–Pt 8:00–18:00</li>
+                        <li>Sb 9:00–14:00</li>
+                    </ul>
+                    <div class="flex gap-3 mt-4">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold/20 transition-colors" aria-label="Facebook">
+                            <i data-lucide="facebook" class="w-4 h-4 text-white/60"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gold/20 transition-colors" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-white/60"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-white/30 text-xs">
+                <p>&copy; 2026 Odszkodowania. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/analytics.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/form-validation.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
