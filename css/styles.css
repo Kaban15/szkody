@@ -1,60 +1,46 @@
-/* Smooth scroll */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
 }
 
-/* Quiz slide transitions */
-.quiz-step {
-    animation: slideIn 0.3s ease-out;
+body {
+    background: #0a0a0a;
+    color: #ffffff;
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideOut {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-}
-
-/* Scroll-triggered animations */
-.count-up,
-.reveal {
+/* Hero word-by-word reveal */
+.word-reveal .word {
+    display: inline-block;
     opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.count-up { transform: translateY(20px); }
-.reveal { transform: translateY(30px); }
-
-.count-up.visible,
-.reveal.visible {
+.word-reveal .word.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Card hover */
+/* Scroll fade (no translateY — anti AI-template) */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Card hover with gold glow */
 .card-hover {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(200, 164, 94, 0.12);
+    border-color: rgba(200, 164, 94, 0.3);
 }
 
 /* Progress bar */
@@ -62,37 +48,47 @@ html {
     transition: width 0.4s ease;
 }
 
-/* Range slider custom styling */
+/* Quiz step animation */
+.quiz-step {
+    animation: fadeSlide 0.3s ease-out;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Range slider — dark theme */
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 8px;
-    border-radius: 4px;
-    background: #E0DCD7;
+    height: 6px;
+    border-radius: 3px;
+    background: #1a1a1a;
     outline: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    background: #E8652D;
+    background: #C8A45E;
     cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border: 3px solid #0a0a0a;
+    box-shadow: 0 0 10px rgba(200, 164, 94, 0.3);
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    background: #E8652D;
+    background: #C8A45E;
     cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border: 3px solid #0a0a0a;
+    box-shadow: 0 0 10px rgba(200, 164, 94, 0.3);
 }
 
 /* Accordion */
@@ -106,7 +102,22 @@ input[type="range"]::-moz-range-thumb {
     max-height: 500px;
 }
 
-/* Sticky bar hide */
+/* Nav transitions */
+#main-nav {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#main-nav.nav-solid {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200, 164, 94, 0.1);
+}
+
+#main-nav.nav-hidden {
+    transform: translateY(-100%);
+}
+
+/* Sticky bar */
 #sticky-bar.hidden-bar {
     transform: translateY(100%);
 }
@@ -115,11 +126,25 @@ input[type="range"]::-moz-range-thumb {
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* Count-up */
+.count-up {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.count-up.visible {
+    opacity: 1;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+    .word-reveal .word {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
