@@ -17,11 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyEl = document.getElementById('calc-empty');
     const resultMinEl = document.getElementById('calc-result-min');
     const resultMaxEl = document.getElementById('calc-result-max');
+    const step2El = document.getElementById('calc-step-2');
+    const step3El = document.getElementById('calc-step-3');
+    const injuryHint = document.getElementById('calc-injury-hint');
     const formatNum = n => n.toLocaleString('pl-PL');
 
-    document.querySelectorAll('.calc-event-option').forEach(btn => {
+    const eventOptions = document.querySelectorAll('.calc-event-option');
+    eventOptions.forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.calc-event-option').forEach(o => {
+            eventOptions.forEach(o => {
                 o.classList.remove('border-gold', 'bg-gold/10');
                 o.classList.add('border-white/10');
             });
@@ -29,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('border-gold', 'bg-gold/10');
             state.eventType = btn.dataset.value;
 
-            document.getElementById('calc-step-2').classList.remove('hidden');
-            document.getElementById('calc-step-3').classList.remove('hidden');
+            if (step2El) step2El.classList.remove('hidden');
+            if (step3El) step3El.classList.remove('hidden');
             if (window.trackEvent) window.trackEvent('calculator_used', { type: btn.dataset.value });
             recalculate();
         });
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.remove('border-white/10');
                 btn.classList.add('border-gold', 'bg-gold/10');
             }
-            document.getElementById('calc-injury-hint').classList.toggle('hidden', state.injuries.size > 0);
+            if (injuryHint) injuryHint.classList.toggle('hidden', state.injuries.size > 0);
             recalculate();
         });
     });

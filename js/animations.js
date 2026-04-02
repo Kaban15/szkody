@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
 
-    // Scroll fade (opacity only, no translateY)
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -55,17 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-    // Case study filter
-    document.querySelectorAll('.case-filter').forEach(btn => {
+    const filterBtns = document.querySelectorAll('.case-filter');
+    const caseCards = document.querySelectorAll('.case-card');
+
+    filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.dataset.filter;
-            document.querySelectorAll('.case-filter').forEach(b => {
+            filterBtns.forEach(b => {
                 b.classList.remove('bg-gold', 'text-bg');
                 b.classList.add('bg-surface-light', 'text-muted');
             });
             btn.classList.remove('bg-surface-light', 'text-muted');
             btn.classList.add('bg-gold', 'text-bg');
-            document.querySelectorAll('.case-card').forEach(card => {
+            caseCards.forEach(card => {
                 card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
             });
         });
