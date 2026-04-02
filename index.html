@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bezpłatna konsultacja odszkodowawcza. Sprawdź ile Ci się należy po wypadku. Prowizja tylko od sukcesu.">
+    <meta property="og:title" content="Odszkodowania — Bezpłatna konsultacja">
+    <meta property="og:description" content="Sprawdź ile Ci się należy po wypadku. Kalkulator odszkodowań online.">
+    <meta property="og:type" content="website">
+    <title>Odszkodowania — Bezpłatna konsultacja | Cała Polska</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1A1F36',
+                        'navy-dark': '#121526',
+                        gold: '#D4A843',
+                        'gold-light': '#E8C76A',
+                        cta: '#E8652D',
+                        'cta-hover': '#D4561F',
+                        warm: '#F7F5F2',
+                        'warm-dark': '#EDE9E4',
+                        txt: '#2D2D2D',
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-body text-txt bg-warm">
+
+    <!-- NAWIGACJA STICKY -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="/" class="text-white font-heading text-xl lg:text-2xl font-bold">
+                    <span class="text-gold">Odszkodowania</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#uslugi" class="text-white/80 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="#jak-dzialamy" class="text-white/80 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="#kalkulator" class="text-white/80 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="#case-studies" class="text-white/80 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="blog/" class="text-white/80 hover:text-gold transition-colors text-sm">Blog</a>
+                    <a href="#kontakt" class="text-white/80 hover:text-gold transition-colors text-sm">Kontakt</a>
+                </div>
+
+                <!-- CTA + Phone -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +48 XXX XXX XXX
+                    </a>
+                    <a href="#quiz" class="bg-cta hover:bg-cta-hover text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+                        Bezpłatna konsultacja
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#uslugi" class="block text-white/80 hover:text-gold py-2">Usługi</a>
+                <a href="#jak-dzialamy" class="block text-white/80 hover:text-gold py-2">Jak działamy</a>
+                <a href="#kalkulator" class="block text-white/80 hover:text-gold py-2">Kalkulator</a>
+                <a href="#case-studies" class="block text-white/80 hover:text-gold py-2">Sukcesy</a>
+                <a href="blog/" class="block text-white/80 hover:text-gold py-2">Blog</a>
+                <a href="#kontakt" class="block text-white/80 hover:text-gold py-2">Kontakt</a>
+                <a href="tel:+48XXXXXXXXX" class="block text-gold font-medium py-2">+48 XXX XXX XXX</a>
+                <a href="#quiz" class="block bg-cta text-white text-center py-3 rounded-lg font-semibold">Bezpłatna konsultacja</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sticky Bottom Bar -->
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-navy p-3 flex gap-3 lg:hidden transition-transform duration-300">
+        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-navy text-center py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
+        </a>
+        <a href="#quiz" class="flex-1 bg-cta text-white text-center py-3 rounded-lg font-semibold text-sm">
+            Bezpłatna wycena
+        </a>
+    </div>
+
+    <!-- Placeholder for sections -->
+    <main>
+        <section id="hero" class="pt-20"><!-- Task 2 --></section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
