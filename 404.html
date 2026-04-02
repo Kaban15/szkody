@@ -4,36 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 — Strona nie znaleziona | Odszkodowania</title>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { navy: '#1A1F36', gold: '#D4A843', cta: '#E8652D', 'cta-hover': '#D4561F', warm: '#F7F5F2', txt: '#2D2D2D' }, fontFamily: { heading: ['"Playfair Display"','serif'], body: ['"Inter"','sans-serif'] } } } }</script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0a0a0a',
+                        surface: '#111111',
+                        'surface-light': '#1a1a1a',
+                        gold: '#C8A45E',
+                        'gold-light': '#E0C878',
+                        muted: '#888888',
+                        error: '#E05252',
+                    },
+                    fontFamily: {
+                        heading: ['"Fraunces"', 'serif'],
+                        body: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="font-body text-txt bg-warm min-h-screen flex flex-col">
+<body class="font-body text-white bg-bg min-h-screen flex flex-col">
 
-    <!-- Nav (simplified) -->
-    <nav class="bg-navy py-4">
-        <div class="max-w-7xl mx-auto px-4">
-            <a href="/" class="text-white font-heading text-xl font-bold"><span class="text-gold">Odszkodowania</span></a>
+    <!-- Simplified Nav -->
+    <nav class="py-5 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <a href="/">
+                <span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span>
+            </a>
         </div>
     </nav>
 
     <main class="flex-1 flex items-center justify-center py-16">
         <div class="text-center px-4">
-            <div class="text-8xl font-heading font-bold text-navy/10 mb-4">404</div>
-            <h1 class="font-heading text-3xl font-bold text-navy mb-4">Nie znaleźliśmy tej strony</h1>
-            <p class="text-txt/60 mb-8 max-w-md mx-auto">Strona, której szukasz, mogła zostać przeniesiona lub nie istnieje. Wróć na stronę główną lub skontaktuj się z nami.</p>
+            <div class="font-heading text-[10rem] font-bold text-gold/10 leading-none mb-2">404</div>
+            <h1 class="font-heading text-3xl font-bold text-white mb-4">Nie znaleźliśmy tej strony</h1>
+            <p class="text-muted mb-10 max-w-md mx-auto">Strona, której szukasz, mogła zostać przeniesiona lub nie istnieje. Wróć na stronę główną lub skontaktuj się z nami.</p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="/" class="bg-cta hover:bg-cta-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors">Wróć na stronę główną</a>
-                <a href="kontakt.html" class="border-2 border-navy/20 text-navy px-6 py-3 rounded-lg font-semibold hover:bg-navy/5 transition-colors">Skontaktuj się z nami</a>
+                <a href="/" class="bg-gold hover:bg-gold-light text-bg px-6 py-3 rounded font-semibold transition-colors">Wróć na stronę główną</a>
+                <a href="kontakt.html" class="border border-gold text-gold hover:bg-gold hover:text-bg px-6 py-3 rounded font-semibold transition-colors">Skontaktuj się</a>
             </div>
         </div>
     </main>
-
-    <footer class="py-6 text-center text-txt/30 text-xs bg-warm border-t border-warm-dark">
-        <p>&copy; 2026 Odszkodowania. Wszelkie prawa zastrzeżone.</p>
-    </footer>
 
     <script>lucide.createIcons();</script>
 </body>
