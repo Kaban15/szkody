@@ -1,9 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('main-nav');
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const stickyBar = document.getElementById('sticky-bar');
     const interactiveSections = ['quiz', 'kalkulator', 'kontakt'];
 
+    if (!nav) return;
+
+    // Scroll: transparent → solid, hide on scroll down, show on scroll up
+    let lastScrollY = 0;
+    let ticking = false;
+
+    function updateNav() {
+        const scrollY = window.scrollY;
+        const heroHeight = window.innerHeight * 0.5;
+
+        // Solid after scrolling past half the viewport
+        nav.classList.toggle('nav-solid', scrollY > heroHeight);
+
+        // Hide/show on scroll direction (only after hero)
+        if (scrollY > heroHeight) {
+            nav.classList.toggle('nav-hidden', scrollY > lastScrollY && scrollY - lastScrollY > 10);
+        } else {
+            nav.classList.remove('nav-hidden');
+        }
+
+        lastScrollY = scrollY;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateNav);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Mobile menu
     if (menuBtn && mobileMenu) {
         const menuIcon = menuBtn.querySelector('[data-lucide]');
 
@@ -15,19 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         menuBtn.addEventListener('click', () => {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
+            const isOpen = mobileMenu.classList.contains('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('overflow-hidden');
             setMenuIcon(isOpen ? 'menu' : 'x');
         });
 
         mobileMenu.addEventListener('click', (e) => {
             if (e.target.closest('a')) {
-                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('overflow-hidden');
                 setMenuIcon('menu');
             }
         });
     }
 
+    // Sticky bar: hide when interactive sections are in viewport
     if (stickyBar) {
         const observer = new IntersectionObserver((entries) => {
             const anyVisible = entries.some(e => e.isIntersecting);

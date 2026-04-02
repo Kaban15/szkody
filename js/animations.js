@@ -1,8 +1,18 @@
-/**
- * Scroll-triggered animations: count-up numbers and reveal-on-scroll elements.
- */
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Word-by-word hero reveal
+    document.querySelectorAll('.word-reveal').forEach(el => {
+        const text = el.textContent.trim();
+        const words = text.split(/\s+/);
+        el.innerHTML = words.map(w => `<span class="word">${w}</span>`).join(' ');
+
+        const wordEls = el.querySelectorAll('.word');
+        const delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
+
+        wordEls.forEach((word, i) => {
+            setTimeout(() => word.classList.add('visible'), delay + i * 100);
+        });
+    });
+
     // Count-up animation
     function animateCount(el) {
         const target = parseInt(el.dataset.count, 10);
@@ -13,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         function tick(now) {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease-out cubic
             const eased = 1 - Math.pow(1 - progress, 3);
             el.textContent = Math.round(target * eased);
             if (progress < 1) requestAnimationFrame(tick);
@@ -21,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(tick);
     }
 
-    // Intersection observer for count-up elements
     const countObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -35,24 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
 
-    // Scroll reveal
-    const revealObserver = new IntersectionObserver((entries) => {
+    // Scroll fade (opacity only, no translateY)
+    const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target);
+                fadeObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-    // Case studies filter
+    // Case study filter
     document.querySelectorAll('.case-filter').forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.dataset.filter;
-            document.querySelectorAll('.case-filter').forEach(b => { b.classList.remove('bg-navy','text-white'); b.classList.add('bg-warm','text-txt/60'); });
-            btn.classList.remove('bg-warm','text-txt/60'); btn.classList.add('bg-navy','text-white');
+            document.querySelectorAll('.case-filter').forEach(b => {
+                b.classList.remove('bg-gold', 'text-bg');
+                b.classList.add('bg-surface-light', 'text-muted');
+            });
+            btn.classList.remove('bg-surface-light', 'text-muted');
+            btn.classList.add('bg-gold', 'text-bg');
             document.querySelectorAll('.case-card').forEach(card => {
                 card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
             });
