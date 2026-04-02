@@ -45,6 +45,94 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JSON-LD Schema Markup -->
+    <!-- LocalBusiness + LegalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "LegalService"],
+        "name": "Odszkodowania",
+        "description": "Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach. Bezpłatna konsultacja, prowizja tylko od sukcesu.",
+        "url": "https://example.pl",
+        "telephone": "+48XXXXXXXXX",
+        "email": "kontakt@example.pl",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Poznań",
+            "addressCountry": "PL"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Polska"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "14:00"
+            }
+        ],
+        "priceRange": "Bezpłatna konsultacja"
+    }
+    </script>
+
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Ile kosztuje konsultacja?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Konsultacja jest całkowicie bezpłatna i niezobowiązująca. Przeanalizujemy Twoją sprawę i ocenimy szanse na uzyskanie odszkodowania bez żadnych opłat."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ile trwa cały proces?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Większość spraw rozwiązujemy w ciągu 2-6 miesięcy. Czas zależy od złożoności sprawy i postawy ubezpieczyciela."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Co jeśli ubezpieczyciel odmówił wypłaty?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Odmowa ubezpieczyciela to nie koniec drogi. Często odmawiają bezzasadnie licząc, że klient zrezygnuje. Podejmujemy takie sprawy i skutecznie je wygrywamy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ile to kosztuje?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nie pobieramy opłat wstępnych. Nasze wynagrodzenie to prowizja naliczana wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy — nie płacisz nic."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Czy sprawa może się przedawnić?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tak. Standardowy termin przedawnienia wynosi 3 lata od dnia zdarzenia, ale są wyjątki — np. sprawy karne lub roszczenia niepełnoletnich."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="font-body text-txt bg-warm">
 
