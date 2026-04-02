@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Deselect others in same step
             stepEl.querySelectorAll('.quiz-option').forEach(o => {
                 o.classList.remove('border-gold', 'bg-gold/10');
-                o.classList.add('border-warm');
+                o.classList.add('border-white/10');
             });
 
             // Select this one
-            btn.classList.remove('border-warm');
+            btn.classList.remove('border-white/10');
             btn.classList.add('border-gold', 'bg-gold/10');
             state.answers[`step${stepNum}`] = btn.dataset.value;
 

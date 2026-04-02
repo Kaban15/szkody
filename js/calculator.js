@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.calc-event-option').forEach(o => {
                 o.classList.remove('border-gold', 'bg-gold/10');
-                o.classList.add('border-warm');
+                o.classList.add('border-white/10');
             });
-            btn.classList.remove('border-warm');
+            btn.classList.remove('border-white/10');
             btn.classList.add('border-gold', 'bg-gold/10');
             state.eventType = btn.dataset.value;
 
@@ -42,14 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (state.injuries.has(val)) {
                 state.injuries.delete(val);
                 btn.classList.remove('border-gold', 'bg-gold/10');
-                btn.classList.add('border-warm');
+                btn.classList.add('border-white/10');
             } else {
                 // Store base amounts at click time to avoid DOM queries in recalculate
                 state.injuries.set(val, {
                     min: parseInt(btn.dataset.min),
                     max: parseInt(btn.dataset.max)
                 });
-                btn.classList.remove('border-warm');
+                btn.classList.remove('border-white/10');
                 btn.classList.add('border-gold', 'bg-gold/10');
             }
             document.getElementById('calc-injury-hint').classList.toggle('hidden', state.injuries.size > 0);
