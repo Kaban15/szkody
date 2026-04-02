@@ -172,3 +172,154 @@ Mix:
 - **Bojowy**: "Ubezpieczyciele zaniżają wypłaty — nie pozwolimy na to"
 - **Nowoczesny**: prosty język, transparentność, brak prawniczego żargonu
 - **Premium**: elegancki design, autorytet poprzez dane i wyniki
+
+## Walidacja formularzy i stany błędów
+
+### Quiz — walidacja:
+- Kroki 1-4: użytkownik musi wybrać co najmniej jedną opcję, aby przejść dalej (przycisk "Dalej" nieaktywny do momentu wyboru)
+- Krok 5 (formularz):
+  - **Imię**: wymagane, min. 2 znaki
+  - **Telefon**: wymagane, format polski (9 cyfr, opcjonalnie +48), walidacja inline
+  - **Email**: opcjonalne, walidacja formatu jeśli wypełnione
+- Komunikaty błędów inline pod polem, po polsku ("Podaj prawidłowy numer telefonu")
+
+### Kalkulator — walidacja:
+- Krok 1 (typ zdarzenia): wymagany wybór
+- Krok 2 (obrażenia): wymagany min. 1 wybór
+- Krok 3 (suwaki): domyślnie na 0, wynik aktualizuje się na żywo przy przesuwaniu
+- Jeśli wszystko na 0 i brak obrażeń: wyświetl komunikat "Uzupełnij dane, aby zobaczyć szacunek"
+- Skrajne przypadki (100% uszczerbek + amputacja): widełki sięgają górnego limitu z disclaimerem "Każda sprawa jest indywidualna"
+
+### Formularz kontaktowy (sekcja 12):
+- Pola: imię (wymagane), telefon (wymagane), email (opcjonalne), rodzaj sprawy (dropdown, opcjonalne), wiadomość (textarea, opcjonalne)
+- Walidacja jak w quizie
+
+### Stany UI:
+- **Ładowanie** (po wysłaniu formularza): przycisk zmienia tekst na "Wysyłanie..." + spinner, disabled
+- **Sukces**: ekran potwierdzenia "Dziękujemy! Oddzwonimy w ciągu 30 minut" z podsumowaniem danych + ikoną checkmark
+- **Błąd sieci**: komunikat "Coś poszło nie tak. Spróbuj ponownie lub zadzwoń: [numer telefonu]"
+
+### Obietnica "30 minut":
+- Wyświetlana tylko w godzinach pracy (Pn-Pt 8:00-18:00, Sb 9:00-14:00)
+- Poza godzinami: "Oddzwonimy w następnym dniu roboczym"
+
+## RODO / Ochrona danych
+
+Strona zbiera dane osobowe i informacje o stanie zdrowia — wymagane elementy:
+
+- **Checkbox zgody** przy każdym formularzu: "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy. [Polityka prywatności]"
+- **Drugi checkbox (opcjonalny)**: "Wyrażam zgodę na kontakt marketingowy"
+- Checkboxy niepre-zaznaczone (wymóg RODO)
+- **Polityka prywatności**: osobna podstrona `/polityka-prywatnosci` (treść do uzupełnienia przez klienta/prawnika)
+- **Cookie consent banner**: prosty baner na dole — "Ta strona używa plików cookie" + "Akceptuję" / "Ustawienia"
+- Cookie consent blokuje ładowanie skryptów analitycznych do momentu akceptacji
+- **Podstrona**: `/polityka-prywatnosci`
+
+## SEO — Schema markup
+
+Implementacja schema.org (JSON-LD):
+- **LocalBusiness** + **LegalService**: nazwa, adres Poznań, telefon, godziny, zasięg
+- **FAQPage**: sekcja FAQ na stronie głównej i podstronach
+- **BreadcrumbList**: nawigacja breadcrumb na podstronach
+- **Article**: artykuły blogowe
+- **Review**: opinie klientów (gdy dostępne)
+- **Service**: każda podstrona usługowa
+
+## Analityka i tracking
+
+**Narzędzie**: Google Analytics 4 (za cookie consent)
+
+**Eventy do śledzenia:**
+- `quiz_step_1` ... `quiz_step_5` — każdy krok quizu osobno (pomiar drop-off)
+- `quiz_submitted` — ukończenie quizu
+- `calculator_used` — użycie kalkulatora
+- `calculator_result_shown` — wyświetlenie wyniku
+- `calculator_cta_clicked` — klik CTA po wyniku kalkulatora
+- `form_submitted` — formularz kontaktowy
+- `phone_clicked` — klik w numer telefonu
+- `cta_sticky_bar_clicked` — klik w sticky bar (mobile)
+- `case_study_viewed` — otwarcie case study
+- `blog_article_read` — scroll >75% artykułu
+
+**Cele konwersji (GA4):**
+- Wysłanie quizu
+- Wysłanie formularza kontaktowego
+- Klik w numer telefonu
+
+## Kalkulator — algorytm (placeholder)
+
+Bazowe kwoty wg typu obrażenia (do kalibracji z prawdziwymi danymi):
+
+| Obrażenie | Kwota bazowa |
+|-----------|-------------|
+| Złamania kości | 8 000 - 25 000 zł |
+| Urazy kręgosłupa/szyi | 15 000 - 60 000 zł |
+| Uraz głowy/wstrząs | 10 000 - 50 000 zł |
+| Urazy wewnętrzne | 20 000 - 80 000 zł |
+| Rany, blizny | 5 000 - 30 000 zł |
+| Amputacja | 50 000 - 300 000 zł |
+| PTSD/uszczerbek psychiczny | 10 000 - 40 000 zł |
+| Śmierć bliskiej osoby | 30 000 - 200 000 zł |
+
+**Mnożniki:**
+- Czas leczenia: `1.0 + (dni / 365) * 0.5` (max 1.5x)
+- Niezdolność do pracy: `1.0 + (dni / 365) * 0.8` (max 1.8x)
+- % uszczerbku: `1.0 + (procent / 100) * 2.0` (max 3.0x)
+
+**Łączenie obrażeń:** sumowanie kwot bazowych poszczególnych obrażeń, mnożniki aplikowane na sumę.
+
+**Wynik:** `suma_bazowa * mnożnik_leczenie * mnożnik_praca * mnożnik_uszczerbek` → wyświetlane jako widełki (wynik * 0.7 — wynik * 1.3).
+
+Disclaimer: "To orientacyjny szacunek. Dokładna kwota zależy od indywidualnych okoliczności sprawy."
+
+## Case studies — struktura danych
+
+Każdy case study zawiera:
+
+```
+{
+  title: "Odszkodowanie po wypadku na S7",
+  event_type: "wypadek-komunikacyjny",
+  icon: "car",
+  initial_offer: 15000,        // kwota ubezpieczyciela
+  final_amount: 120000,         // kwota uzyskana
+  multiplier: 8,                // zaokrąglony mnożnik
+  duration: "4 miesiące",       // czas trwania sprawy
+  short_description: "Po wypadku na S7 ubezpieczyciel zaproponował 15 tys...",
+  full_story: "...",            // pełna historia na podstronie
+  timeline: [                   // kroki na podstronie
+    { date: "Styczeń 2025", label: "Zgłoszenie sprawy" },
+    { date: "Luty 2025", label: "Analiza dokumentacji" },
+    { date: "Marzec 2025", label: "Negocjacje z ubezpieczycielem" },
+    { date: "Kwiecień 2025", label: "Wypłata 120 000 zł" }
+  ]
+}
+```
+
+## Zasoby graficzne
+
+- **Ikony**: Lucide Icons (open source, MIT) — spójne, minimalistyczne
+- **Ilustracje**: proste custom SVG w palecie kolorów strony (granat + złoto) — geometryczne, abstrakcyjne
+- **Hero background**: gradient granat → ciemniejszy granat, bez zdjęć
+- **Case study karty**: ikony Lucide + kolorowy pasek postępu
+- **Brak zdjęć stockowych** — jeśli w przyszłości potrzebne zdjęcia zespołu, sesja fotograficzna
+
+## Strona 404
+
+Prosta strona: nagłówek "Nie znaleźliśmy tej strony", krótki tekst, CTA "Wróć na stronę główną" + "Skontaktuj się z nami". Utrzymana w stylu wizualnym strony.
+
+## Mobile — sticky bar vs quiz
+
+Sticky bottom bar ("Zadzwoń" + "Bezpłatna wycena") ukrywa się automatycznie gdy:
+- Użytkownik jest w trakcie quizu (krok 1-5)
+- Użytkownik korzysta z kalkulatora
+- Jakikolwiek formularz jest w viewport
+
+Wraca gdy użytkownik przewinie poza te sekcje.
+
+## Blog — implementacja
+
+Faza 1 (MVP): statyczne pliki HTML — każdy artykuł to osobny plik, lista artykułów hardcoded.
+Faza 2 (przyszłość): migracja na headless CMS (np. Strapi, Contentful) lub WordPress jako backend API.
+
+Faza 1 wystarcza na start z 5-10 artykułami. Struktura plików: `/blog/nazwa-artykulu.html`.
