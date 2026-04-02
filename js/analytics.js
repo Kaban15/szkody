@@ -8,31 +8,32 @@ window.trackEvent = function(eventName, params) {
     }
 };
 
-// Auto-track phone clicks
+// Delegated click tracking — early-exit on first match
 document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="tel:"]');
-    if (link) window.trackEvent('phone_clicked', { number: link.href });
+    if (link) { window.trackEvent('phone_clicked', { number: link.href }); return; }
 
-    // Sticky bar clicks
     const stickyLink = e.target.closest('#sticky-bar a');
-    if (stickyLink) window.trackEvent('cta_sticky_bar_clicked');
+    if (stickyLink) { window.trackEvent('cta_sticky_bar_clicked'); return; }
 
-    // Case study views
     const caseCard = e.target.closest('.case-card');
-    if (caseCard) window.trackEvent('case_study_viewed', { type: caseCard.dataset.type });
+    if (caseCard) { window.trackEvent('case_study_viewed', { type: caseCard.dataset.type }); }
 });
 
-// FAQ toggle
+// FAQ toggle + Contact form
 document.addEventListener('DOMContentLoaded', () => {
+    // Cache FAQ elements once
+    const allAnswers = document.querySelectorAll('.faq-answer');
+    const allIcons = document.querySelectorAll('.faq-toggle [data-lucide]');
+
     document.querySelectorAll('.faq-toggle').forEach(btn => {
         btn.addEventListener('click', () => {
             const answer = btn.nextElementSibling;
             const icon = btn.querySelector('[data-lucide]');
             const isOpen = answer.classList.contains('open');
 
-            // Close all others
-            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-            document.querySelectorAll('.faq-toggle [data-lucide]').forEach(i => i.style.transform = '');
+            allAnswers.forEach(a => a.classList.remove('open'));
+            allIcons.forEach(i => i.style.transform = '');
 
             if (!isOpen) {
                 answer.classList.add('open');
@@ -41,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact form submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

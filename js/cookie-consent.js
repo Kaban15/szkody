@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const acceptBtn = document.getElementById('cookie-accept');
     const rejectBtn = document.getElementById('cookie-reject');
 
+    if (!banner) return;
+
     const consent = localStorage.getItem('cookie-consent');
 
     if (!consent) {
@@ -32,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadAnalytics() {
-        // Load GA4 script dynamically
         if (document.getElementById('ga4-script')) return;
         const GA_ID = 'G-XXXXXXXXXX'; // Replace with real GA4 ID
         const script = document.createElement('script');

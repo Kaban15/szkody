@@ -31,25 +31,17 @@ html {
     }
 }
 
-/* Count-up animation trigger */
-.count-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.count-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Scroll reveal */
+/* Scroll-triggered animations */
+.count-up,
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.count-up { transform: translateY(20px); }
+.reveal { transform: translateY(30px); }
+
+.count-up.visible,
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);

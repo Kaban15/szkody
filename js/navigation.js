@@ -4,32 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const stickyBar = document.getElementById('sticky-bar');
     const interactiveSections = ['quiz', 'kalkulator', 'kontakt'];
 
-    // Mobile menu toggle
     if (menuBtn && mobileMenu) {
+        const menuIcon = menuBtn.querySelector('[data-lucide]');
+
+        function setMenuIcon(name) {
+            if (menuIcon) {
+                menuIcon.setAttribute('data-lucide', name);
+                lucide.createIcons();
+            }
+        }
+
         menuBtn.addEventListener('click', () => {
             const isOpen = !mobileMenu.classList.contains('hidden');
             mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('[data-lucide]');
-            if (icon) {
-                icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
-                lucide.createIcons();
-            }
+            setMenuIcon(isOpen ? 'menu' : 'x');
         });
 
-        // Close mobile menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.closest('a')) {
                 mobileMenu.classList.add('hidden');
-                const icon = menuBtn.querySelector('[data-lucide]');
-                if (icon) {
-                    icon.setAttribute('data-lucide', 'menu');
-                    lucide.createIcons();
-                }
-            });
+                setMenuIcon('menu');
+            }
         });
     }
 
-    // Sticky bar: hide when interactive sections are in viewport
     if (stickyBar) {
         const observer = new IntersectionObserver((entries) => {
             const anyVisible = entries.some(e => e.isIntersecting);

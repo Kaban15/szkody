@@ -1,12 +1,24 @@
 /**
  * Kalkulator odszkodowań — interactive calculator with base amounts and multipliers.
- * Algorithm from spec: sum base amounts, apply treatment/work/disability multipliers, show as range.
+ * Algorithm: sum base amounts, apply treatment/work/disability multipliers, show as range.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const state = { eventType: null, injuries: new Set() };
+    const state = { eventType: null, injuries: new Map() };
 
-    // Event type selection
+    // Cache all DOM elements used in hot path
+    const treatmentSlider = document.getElementById('calc-treatment');
+    const workSlider = document.getElementById('calc-work');
+    const disabilitySlider = document.getElementById('calc-disability');
+    const treatmentLabel = document.getElementById('calc-treatment-value');
+    const workLabel = document.getElementById('calc-work-value');
+    const disabilityLabel = document.getElementById('calc-disability-value');
+    const resultEl = document.getElementById('calc-result');
+    const emptyEl = document.getElementById('calc-empty');
+    const resultMinEl = document.getElementById('calc-result-min');
+    const resultMaxEl = document.getElementById('calc-result-max');
+    const formatNum = n => n.toLocaleString('pl-PL');
+
     document.querySelectorAll('.calc-event-option').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.calc-event-option').forEach(o => {
@@ -24,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Injury multi-select (toggle)
     document.querySelectorAll('.calc-injury-option').forEach(btn => {
         btn.addEventListener('click', () => {
             const val = btn.dataset.value;
@@ -33,7 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.remove('border-gold', 'bg-gold/10');
                 btn.classList.add('border-warm');
             } else {
-                state.injuries.add(val);
+                // Store base amounts at click time to avoid DOM queries in recalculate
+                state.injuries.set(val, {
+                    min: parseInt(btn.dataset.min),
+                    max: parseInt(btn.dataset.max)
+                });
                 btn.classList.remove('border-warm');
                 btn.classList.add('border-gold', 'bg-gold/10');
             }
@@ -41,11 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             recalculate();
         });
     });
-
-    // Slider listeners
-    const treatmentSlider = document.getElementById('calc-treatment');
-    const workSlider = document.getElementById('calc-work');
-    const disabilitySlider = document.getElementById('calc-disability');
 
     [treatmentSlider, workSlider, disabilitySlider].forEach(slider => {
         if (slider) slider.addEventListener('input', recalculate);
@@ -56,16 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const work = parseInt(workSlider?.value || 0);
         const disability = parseInt(disabilitySlider?.value || 0);
 
-        // Update labels
-        const treatmentLabel = document.getElementById('calc-treatment-value');
-        const workLabel = document.getElementById('calc-work-value');
-        const disabilityLabel = document.getElementById('calc-disability-value');
         if (treatmentLabel) treatmentLabel.textContent = `${treatment} dni`;
         if (workLabel) workLabel.textContent = `${work} dni`;
         if (disabilityLabel) disabilityLabel.textContent = `${disability}%`;
-
-        const resultEl = document.getElementById('calc-result');
-        const emptyEl = document.getElementById('calc-empty');
 
         if (state.injuries.size === 0) {
             resultEl.classList.add('hidden');
@@ -75,39 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         emptyEl.classList.add('hidden');
 
-        // Sum base amounts
         let baseMin = 0;
         let baseMax = 0;
-        state.injuries.forEach(injury => {
-            const btn = document.querySelector(`.calc-injury-option[data-value="${injury}"]`);
-            if (btn) {
-                baseMin += parseInt(btn.dataset.min);
-                baseMax += parseInt(btn.dataset.max);
-            }
+        state.injuries.forEach(({ min, max }) => {
+            baseMin += min;
+            baseMax += max;
         });
 
-        // Multipliers (capped)
         const treatmentMult = Math.min(1.0 + (treatment / 365) * 0.5, 1.5);
         const workMult = Math.min(1.0 + (work / 365) * 0.8, 1.8);
         const disabilityMult = Math.min(1.0 + (disability / 100) * 2.0, 3.0);
-
         const totalMult = treatmentMult * workMult * disabilityMult;
 
-        // Apply multipliers and create range (0.7x - 1.3x)
         const calcMin = Math.round((baseMin * totalMult * 0.7) / 1000) * 1000;
         const calcMax = Math.round((baseMax * totalMult * 1.3) / 1000) * 1000;
 
-        // Format with spaces (Polish number formatting)
-        const formatNum = n => n.toLocaleString('pl-PL');
-
-        document.getElementById('calc-result-min').textContent = formatNum(calcMin);
-        document.getElementById('calc-result-max').textContent = formatNum(calcMax);
+        resultMinEl.textContent = formatNum(calcMin);
+        resultMaxEl.textContent = formatNum(calcMax);
         resultEl.classList.remove('hidden');
 
         if (window.trackEvent) window.trackEvent('calculator_result_shown', { min: calcMin, max: calcMax });
     }
 
-    // CTA form
     const ctaForm = document.getElementById('calc-cta-form');
     if (ctaForm) {
         ctaForm.addEventListener('submit', (e) => {
@@ -120,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simulate submission
             const btn = ctaForm.querySelector('button[type="submit"]');
             btn.disabled = true;
             btn.textContent = 'Wysyłanie...';
