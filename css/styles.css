@@ -21,7 +21,7 @@ body {
     transform: translateY(0);
 }
 
-/* Scroll fade (no translateY — anti AI-template) */
+/* Scroll fade */
 .fade-in {
     opacity: 0;
     transition: opacity 0.8s ease;
