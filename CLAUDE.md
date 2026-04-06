@@ -6,6 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static lead-generation website for a Polish compensation claims firm (branża odszkodowawcza). Polish language throughout. No build step, no framework — plain HTML/CSS/JS served as static files.
 
+## Deployment
+
+Hosted on **Vercel** at https://szkody.vercel.app/. Repo: `Kaban15/szkody` on GitHub, branch `master`.
+
+```bash
+# Deploy to production
+git push origin master        # Vercel auto-deploys from master
+npx vercel --prod --yes       # or manual deploy via CLI
+```
+
 ## Running Locally
 
 ```bash
@@ -21,17 +31,20 @@ No build, lint, or test commands — this is a static site with CDN dependencies
 - **Tailwind CSS via CDN** (`cdn.tailwindcss.com`) with inline config in each HTML file's `<head>`
 - **Vanilla JS** (no framework, no bundler, no modules — plain `<script>` tags)
 - **Lucide Icons** via CDN (`unpkg.com/lucide@latest`) — call `lucide.createIcons()` after DOM load
-- **Google Fonts**: Playfair Display (headings) + Inter (body)
+- **Google Fonts**: Fraunces (headings) + Space Grotesk (body)
 
 ### Color Palette (defined in Tailwind config)
-- `navy` (#1A1F36), `navy-dark` (#121526) — primary/dark backgrounds
-- `gold` (#D4A843), `gold-light` (#E8C76A) — accent, success
-- `cta` (#E8652D), `cta-hover` (#D4561F) — call-to-action buttons
-- `warm` (#F7F5F2), `warm-dark` (#EDE9E4) — light backgrounds
-- `txt` (#2D2D2D) — text color
+- `bg` (#0a0a0a) — page background (near-black)
+- `surface` (#111111), `surface-light` (#1a1a1a) — card/section backgrounds
+- `gold` (#C8A45E), `gold-light` (#E0C878) — accent, success, trust elements
+- `muted` (#888888) — secondary text
+- `error` (#E05252) — form validation errors
 
 ### Page Structure
-- **`index.html`** — one-page main site (~83KB) containing: hero+quiz, social proof, timeline, calculator, services, case studies, testimonials, blog preview, FAQ, contact, footer
+- **`index.html`** — one-page main site containing: ticker, hero, trust bar, quiz, "jak działamy" process, social proof + case studies (with timeline & quotes), testimonials carousel, "dlaczego my", team/experts, insurance logos bar, FAQ accordion, CTA footer, floating WhatsApp/phone buttons
+- **`uslugi.html`** — services overview page
+- **`sukcesy.html`** — case studies / success stories
+- **`opinie.html`** — client testimonials
 - **5 service subpages** (`odszkodowania-*.html`) — each follows same template: nav, breadcrumb, hero, content, mini case study, FAQ, CTA, footer
 - **Utility pages**: `kalkulator.html`, `kontakt.html`, `jak-dzialamy.html`, `404.html`, `polityka-prywatnosci.html`, `blog/index.html`
 
@@ -44,14 +57,31 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 | `quiz.js` | — | 5-step diagnostic quiz (selection, navigation, submission, business hours) |
 | `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result) |
 | `animations.js` | — | IntersectionObserver: count-up numbers, scroll reveal, case study filter |
-| `navigation.js` | — | Mobile hamburger menu, sticky bottom bar hide via IntersectionObserver |
+| `navigation.js` | — | Mobile hamburger menu, sticky bottom bar hide, testimonial carousel scroll |
 | `cookie-consent.js` | — | Cookie banner, localStorage consent, dynamic GA4 script injection |
 | `analytics.js` | `window.trackEvent` | GA4 event wrapper, phone click tracking, FAQ accordion, contact form |
+
+### CSS (`css/styles.css`)
+Custom animations and transitions beyond Tailwind utilities:
+- **`.word-reveal`** — hero word-by-word fade-in
+- **`.fade-in`** — scroll-triggered opacity reveal (IntersectionObserver)
+- **`.count-up`** — counter animation (separate observer from fade-in)
+- **`.card-hover`** — gold glow on hover
+- **`.animate-ticker`** — infinite horizontal scroll for top success ticker
+- **`.testimonial-track` / `.testimonial-card`** — scroll-snap for carousel
+- **`.pulse-ring`** — pulsing ring on floating WhatsApp button
+- **`.faq-answer`** — max-height accordion transition
 
 ### Shared Elements Across Subpages
 Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky bottom bar, cookie consent banner, and Tailwind config in `<head>`. When modifying shared elements, update ALL HTML files.
 
 ### Key Design Patterns
+- **Dark premium theme**: near-black backgrounds with gold accents — deliberately different from competitor blue/white sites
+- **Trust bar**: social proof strip between hero and quiz (Google rating, badge, stats)
+- **Ticker**: auto-scrolling marquee at top with recent successes (content duplicated for seamless CSS loop — update both copies when changing text)
+- **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`
+- **FAQ accordion**: `aria-controls` + `role="region"` for accessibility, toggle logic in `analytics.js`
+- **Floating contact buttons**: WhatsApp + phone, desktop only (mobile uses sticky bottom bar)
 - **Quiz/Calculator forms**: simulated submission with `setTimeout` — backend integration placeholder. Replace the `setTimeout` blocks with real fetch calls.
 - **Business hours logic** in `quiz.js`: Mon-Fri 8-18, Sat 9-14 — affects "oddzwonimy w 30 minut" vs "następny dzień roboczy" messaging.
 - **Calculator algorithm**: injury base amounts stored in a `Map` at click time (not re-queried from DOM). Multipliers applied to the sum, result shown as 0.7x–1.3x range.
@@ -73,12 +103,17 @@ form-validation.js → cookie-consent.js → animations.js → analytics.js → 
 - `form-validation.js` MUST be first — exports `window.formValidation` used by quiz, calculator, and analytics
 - `cookie-consent.js` MUST be before `analytics.js` — gates GA4 loading
 - `analytics.js` contains FAQ accordion toggle and contact form handler (not just tracking)
+- `navigation.js` contains testimonial carousel logic (needs DOM ready)
 
 ## Placeholders to Replace
 - Phone: `+48XXXXXXXXX` and `+48 XXX XXX XXX`
+- WhatsApp link: `48XXXXXXXXX` in `wa.me` URL
 - Email: `kontakt@example.pl`
 - GA4 ID: `G-XXXXXXXXXX` in `cookie-consent.js`
 - Google Maps embed URL in contact sections
 - Company name/branding (currently "Odszkodowania")
+- Team member names/bios (currently placeholder experts)
+- Testimonial data (currently placeholder reviews)
 - Case study data (currently placeholder examples)
+- Insurance company logos (currently text placeholders — replace with SVG/PNG)
 - Schema.org URLs (`https://example.pl`)
