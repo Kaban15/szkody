@@ -567,19 +567,19 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Counters -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-16 lg:mb-20">
-                    <div class="count-up fade-in">
+                    <div class="count-up">
                         <div class="font-heading text-4xl lg:text-5xl font-bold text-gold"><span data-count="500">0</span></div>
                         <div class="text-white text-sm mt-2">Wygranych spraw</div>
                     </div>
-                    <div class="count-up fade-in">
+                    <div class="count-up">
                         <div class="font-heading text-4xl lg:text-5xl font-bold text-gold"><span data-count="15">0</span> mln zł</div>
                         <div class="text-white text-sm mt-2">Uzyskanych odszkodowań</div>
                     </div>
-                    <div class="count-up fade-in">
+                    <div class="count-up">
                         <div class="font-heading text-4xl lg:text-5xl font-bold text-gold"><span data-count="98">0</span>%</div>
                         <div class="text-white text-sm mt-2">Skuteczności</div>
                     </div>
-                    <div class="count-up fade-in">
+                    <div class="count-up">
                         <div class="font-heading text-4xl lg:text-5xl font-bold text-gold"><span data-count="10">0</span>+</div>
                         <div class="text-white text-sm mt-2">Lat doświadczenia</div>
                     </div>
@@ -1134,23 +1134,6 @@
     <script src="js/navigation.js"></script>
     <script src="js/quiz.js"></script>
     <script src="js/calculator.js"></script>
-    <script>
-        lucide.createIcons();
-        // Testimonial carousel navigation
-        (function() {
-            var carousel = document.getElementById('testimonial-carousel');
-            var prev = document.getElementById('testimonial-prev');
-            var next = document.getElementById('testimonial-next');
-            if (!carousel || !prev || !next) return;
-            var firstCard = carousel.querySelector('.testimonial-card');
-            var cardWidth = firstCard ? firstCard.offsetWidth + 24 : 364;
-            prev.addEventListener('click', function() {
-                carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-            });
-            next.addEventListener('click', function() {
-                carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
-            });
-        })();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

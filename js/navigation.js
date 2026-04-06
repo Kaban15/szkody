@@ -63,6 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Testimonial carousel navigation
+    const carousel = document.getElementById('testimonial-carousel');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    if (carousel && prevBtn && nextBtn) {
+        function getScrollDistance() {
+            var firstCard = carousel.querySelector('.testimonial-card');
+            return firstCard ? firstCard.offsetWidth + 24 : 364;
+        }
+        prevBtn.addEventListener('click', function() {
+            carousel.scrollBy({ left: -getScrollDistance(), behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', function() {
+            carousel.scrollBy({ left: getScrollDistance(), behavior: 'smooth' });
+        });
+    }
+
     // Sticky bar: hide when interactive sections are in viewport
     if (stickyBar) {
         const observer = new IntersectionObserver((entries) => {
