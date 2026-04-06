@@ -13,13 +13,16 @@
             theme: {
                 extend: {
                     colors: {
-                        bg: '#0a0a0a',
-                        surface: '#111111',
-                        'surface-light': '#1a1a1a',
-                        gold: '#C8A45E',
-                        'gold-light': '#E0C878',
-                        muted: '#888888',
-                        error: '#E05252',
+                        bg: '#08080F',
+                        surface: '#12121E',
+                        'surface-light': '#1C1C2E',
+                        gold: '#D4AF37',
+                        'gold-light': '#E8C867',
+                        muted: '#9A9590',
+                        error: '#EF4444',
+                        cta: '#E8652D',
+                        'cta-hover': '#D4561F',
+                        text: '#E8E2D6',
                     },
                     fontFamily: {
                         heading: ['"Fraunces"', 'serif'],
@@ -65,7 +68,7 @@
     }
     </script>
 </head>
-<body class="font-body text-white bg-bg">
+<body class="font-body text-text bg-bg">
 
     <!-- NAWIGACJA -->
     <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -264,7 +267,7 @@
             <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
                 <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
-                <button id="cookie-accept" class="bg-gold hover:bg-gold-light text-bg px-4 py-2 rounded text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
+                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
     </div>

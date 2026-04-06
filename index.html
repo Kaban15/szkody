@@ -16,13 +16,16 @@
             theme: {
                 extend: {
                     colors: {
-                        bg: '#0a0a0a',
-                        surface: '#111111',
-                        'surface-light': '#1a1a1a',
-                        gold: '#C8A45E',
-                        'gold-light': '#E0C878',
-                        muted: '#888888',
-                        error: '#E05252',
+                        bg: '#08080F',
+                        surface: '#12121E',
+                        'surface-light': '#1C1C2E',
+                        gold: '#D4AF37',
+                        'gold-light': '#E8C867',
+                        muted: '#9A9590',
+                        error: '#EF4444',
+                        cta: '#E8652D',
+                        'cta-hover': '#D4561F',
+                        text: '#E8E2D6',
                     },
                     fontFamily: {
                         heading: ['"Fraunces"', 'serif'],
@@ -161,7 +164,7 @@
     }
     </script>
 </head>
-<body class="font-body text-white bg-bg">
+<body class="font-body text-text bg-bg">
 
     <!-- TOP TICKER -->
     <div id="top-ticker" class="fixed top-0 left-0 right-0 z-[55] bg-bg/95 backdrop-blur-sm border-b border-gold/20 text-center py-2 px-4 text-sm overflow-hidden" role="marquee" aria-label="Ostatnie sukcesy" data-i18n-aria="ticker.aria">
@@ -271,13 +274,13 @@
         <section id="hero" class="min-h-screen flex items-center bg-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                 <div class="max-w-4xl">
-                    <h1 class="word-reveal font-heading text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-white leading-tight mb-8" data-i18n="hero.title">
+                    <h1 class="word-reveal font-heading text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-text leading-tight mb-8" data-i18n="hero.title">
                         Miałeś wypadek? Sprawdź ile Ci się należy
                     </h1>
                     <p class="text-muted text-lg lg:text-xl max-w-2xl mb-10" data-i18n="hero.subtitle">
                         Ubezpieczyciele zaniżają wypłaty nawet o 80%. Bezpłatnie przeanalizujemy Twoją sprawę.
                     </p>
-                    <a href="#quiz" class="inline-block border-2 border-gold text-gold hover:bg-gold hover:text-bg text-lg px-8 py-4 rounded font-semibold transition-colors mb-12" data-i18n="hero.cta">
+                    <a href="#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white text-lg px-8 py-4 rounded font-semibold transition-colors cta-glow mb-12" data-i18n="hero.cta">
                         Sprawdź swoją sprawę
                     </a>
                     <div class="flex flex-wrap gap-6 text-muted text-sm">
@@ -1040,7 +1043,7 @@
         <section class="bg-bg py-20 lg:py-32 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
-                <a href="#quiz" class="inline-block bg-gold hover:bg-gold-light text-bg text-lg px-8 py-4 rounded font-semibold transition-colors mb-6" data-i18n="cta.button">
+                <a href="#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white text-lg px-8 py-4 rounded font-semibold transition-colors cta-glow mb-6" data-i18n="cta.button">
                     Bezpłatna konsultacja
                 </a>
                 <p class="text-muted" data-i18n="cta.phone_prefix">

@@ -4,8 +4,8 @@ html {
 }
 
 body {
-    background: #0a0a0a;
-    color: #ffffff;
+    background: #08080F;
+    color: #E8E2D6;
 }
 
 /* Hero word-by-word reveal */
@@ -39,8 +39,8 @@ body {
 
 .card-hover:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(200, 164, 94, 0.12);
-    border-color: rgba(200, 164, 94, 0.3);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.3);
 }
 
 /* Progress bar */
@@ -65,7 +65,7 @@ input[type="range"] {
     width: 100%;
     height: 6px;
     border-radius: 3px;
-    background: #1a1a1a;
+    background: #1C1C2E;
     outline: none;
 }
 
@@ -75,20 +75,20 @@ input[type="range"]::-webkit-slider-thumb {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #C8A45E;
+    background: #D4AF37;
     cursor: pointer;
-    border: 3px solid #0a0a0a;
-    box-shadow: 0 0 10px rgba(200, 164, 94, 0.3);
+    border: 3px solid #08080F;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 input[type="range"]::-moz-range-thumb {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #C8A45E;
+    background: #D4AF37;
     cursor: pointer;
-    border: 3px solid #0a0a0a;
-    box-shadow: 0 0 10px rgba(200, 164, 94, 0.3);
+    border: 3px solid #08080F;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* Accordion */
@@ -108,9 +108,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 #main-nav.nav-solid {
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: rgba(8, 8, 15, 0.95);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(200, 164, 94, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 #main-nav.nav-hidden {
@@ -170,8 +170,13 @@ input[type="range"]::-moz-range-thumb {
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    background: rgba(200, 164, 94, 0.4);
+    background: rgba(232, 101, 45, 0.4);
     animation: pulse-ring 2s ease-out infinite;
+}
+
+/* CTA glow */
+.cta-glow {
+    box-shadow: 0 4px 20px rgba(232, 101, 45, 0.3);
 }
 
 /* Reduced motion */
