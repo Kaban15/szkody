@@ -90,84 +90,50 @@
         saveLang(lang);
         loadTranslations(lang, function(translations) {
             applyTranslations(translations);
-            updateDropdown();
+            updateFlags();
         });
     }
 
-    function updateDropdown() {
-        var btn = document.getElementById('lang-current');
-        if (btn) {
-            btn.innerHTML = FLAGS[currentLang] + ' <span class="text-xs">' + currentLang.toUpperCase() + '</span>';
-        }
-        // Update active state in dropdown items
-        var items = document.querySelectorAll('.lang-option');
-        for (var i = 0; i < items.length; i++) {
-            var isActive = items[i].getAttribute('data-lang') === currentLang;
-            items[i].classList.toggle('text-gold', isActive);
-            items[i].classList.toggle('text-white', !isActive);
-        }
+    function updateFlags() {
+        document.querySelectorAll('.lang-flag-btn').forEach(function(btn) {
+            var lang = btn.getAttribute('data-lang');
+            var isActive = lang === currentLang;
+            btn.classList.toggle('opacity-100', isActive);
+            btn.classList.toggle('ring-1', isActive);
+            btn.classList.toggle('ring-gold', isActive);
+            btn.classList.toggle('opacity-50', !isActive);
+            btn.classList.toggle('hover:opacity-90', !isActive);
+        });
     }
 
-    function createDropdown() {
-        // Desktop dropdown
+    function createFlags() {
         var containers = document.querySelectorAll('.lang-switcher-mount');
         containers.forEach(function(mount) {
             var wrapper = document.createElement('div');
-            wrapper.className = 'relative';
-            wrapper.id = 'lang-switcher';
-
-            var btn = document.createElement('button');
-            btn.id = mount.classList.contains('mobile') ? 'lang-current-mobile' : 'lang-current';
-            btn.className = 'flex items-center gap-1.5 text-white/60 hover:text-gold transition-colors text-sm px-2 py-1 rounded border border-white/10 hover:border-gold/30';
-            btn.innerHTML = FLAGS[currentLang] + ' <span class="text-xs">' + currentLang.toUpperCase() + '</span>';
-            btn.setAttribute('aria-label', 'Wybierz język');
-
-            var dropdown = document.createElement('div');
-            dropdown.className = 'absolute right-0 top-full mt-1 bg-surface border border-white/10 rounded-lg shadow-xl py-1 min-w-[140px] hidden z-50';
+            wrapper.className = 'flex items-center gap-1.5';
 
             SUPPORTED.forEach(function(lang) {
-                var item = document.createElement('button');
-                item.className = 'lang-option w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-surface-light transition-colors ' + (lang === currentLang ? 'text-gold' : 'text-white');
-                item.setAttribute('data-lang', lang);
-                item.innerHTML = FLAGS[lang] + ' ' + LABELS[lang];
-                item.addEventListener('click', function() {
+                var btn = document.createElement('button');
+                var isActive = lang === currentLang;
+                btn.className = 'lang-flag-btn text-base leading-none px-1 py-0.5 rounded transition-all cursor-pointer '
+                    + (isActive ? 'opacity-100 ring-1 ring-gold' : 'opacity-50 hover:opacity-90');
+                btn.setAttribute('data-lang', lang);
+                btn.setAttribute('aria-label', LABELS[lang]);
+                btn.textContent = FLAGS[lang];
+                btn.addEventListener('click', function() {
                     switchLang(lang);
-                    dropdown.classList.add('hidden');
-                    // Update all dropdowns on page
-                    document.querySelectorAll('#lang-switcher .lang-option, #lang-switcher-mobile .lang-option').forEach(function(opt) {
-                        var isActive = opt.getAttribute('data-lang') === lang;
-                        opt.classList.toggle('text-gold', isActive);
-                        opt.classList.toggle('text-white', !isActive);
-                    });
-                    document.querySelectorAll('#lang-current, #lang-current-mobile').forEach(function(b) {
-                        b.innerHTML = FLAGS[lang] + ' <span class="text-xs">' + lang.toUpperCase() + '</span>';
-                    });
                 });
-                dropdown.appendChild(item);
+                wrapper.appendChild(btn);
             });
 
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                dropdown.classList.toggle('hidden');
-            });
-
-            wrapper.appendChild(btn);
-            wrapper.appendChild(dropdown);
             mount.appendChild(wrapper);
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function() {
-            document.querySelectorAll('#lang-switcher > div:last-child').forEach(function(d) {
-                d.classList.add('hidden');
-            });
         });
     }
 
     // Init on DOM ready
     document.addEventListener('DOMContentLoaded', function() {
         currentLang = getSavedLang();
-        createDropdown();
+        createFlags();
         if (currentLang !== DEFAULT_LANG) {
             switchLang(currentLang);
         }
