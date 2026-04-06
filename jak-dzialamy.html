@@ -77,32 +77,33 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <!-- Logo -->
                 <a href="/">
-                    <span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span>
+                    <span class="text-gold font-heading text-xl lg:text-2xl font-bold" data-i18n="nav.logo">Odszkodowania</span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="jak-dzialamy.html" class="text-gold transition-colors text-sm font-medium">Jak działamy</a>
-                    <a href="kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
-                    <a href="blog/" class="text-white/60 hover:text-gold transition-colors text-sm">Blog</a>
-                    <a href="kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
+                    <a href="jak-dzialamy.html" class="text-gold transition-colors text-sm font-medium" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
+                    <a href="sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
+                    <a href="blog/" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
+                    <a href="kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
                 </div>
 
                 <!-- CTA + Phone -->
                 <div class="hidden lg:flex items-center gap-4">
-                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
+                    <div class="lang-switcher-mount"></div>
+                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2" data-i18n="nav.phone">
                         <i data-lucide="phone" class="w-4 h-4"></i>
                         +48 XXX XXX XXX
                     </a>
-                    <a href="kontakt.html" class="border border-gold text-gold hover:bg-gold hover:text-bg px-5 py-2 rounded text-sm font-semibold transition-colors">
+                    <a href="kontakt.html" class="border border-gold text-gold hover:bg-gold hover:text-bg px-5 py-2 rounded text-sm font-semibold transition-colors" data-i18n="nav.cta">
                         Bezpłatna konsultacja
                     </a>
                 </div>
 
                 <!-- Mobile Hamburger -->
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu">
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -111,33 +112,34 @@
 
     <!-- Mobile Menu (fullscreen overlay) -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-gold transition-colors">Jak działamy</a>
-            <a href="kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
-            <a href="blog/" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Blog</a>
-            <a href="kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
+            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+            <a href="kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
+            <a href="sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
+            <a href="blog/" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
+            <a href="kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
             <div class="pt-4">
-                <a href="kontakt.html" class="inline-block border border-gold text-gold hover:bg-gold hover:text-bg px-8 py-3 rounded text-lg font-semibold transition-colors">
+                <a href="kontakt.html" class="inline-block border border-gold text-gold hover:bg-gold hover:text-bg px-8 py-3 rounded text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
                     Bezpłatna konsultacja
                 </a>
             </div>
-            <a href="tel:+48XXXXXXXXX" class="block text-gold text-lg font-medium pt-2">
+            <a href="tel:+48XXXXXXXXX" class="block text-gold text-lg font-medium pt-2" data-i18n="nav.phone_mobile">
                 <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>+48 XXX XXX XXX
             </a>
+            <div class="lang-switcher-mount mobile pt-4 flex justify-center"></div>
         </div>
     </div>
 
     <!-- Mobile Sticky Bottom Bar -->
     <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
-        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
+        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
-        <a href="kontakt.html" class="flex-1 border border-gold text-gold text-center py-3 rounded font-semibold text-sm">
+        <a href="kontakt.html" class="flex-1 border border-gold text-gold text-center py-3 rounded font-semibold text-sm" data-i18n="sticky.quote">
             Bezpłatna wycena
         </a>
     </div>
@@ -147,9 +149,9 @@
         <div class="bg-surface border-b border-white/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
-                    <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
+                    <a href="/" class="hover:text-gold transition-colors" data-i18n="jak_dzialamy.breadcrumb_home">Strona główna</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Jak działamy</span>
+                    <span class="text-white" data-i18n="nav.jak_dzialamy">Jak działamy</span>
                 </nav>
             </div>
         </div>
@@ -157,8 +159,8 @@
         <!-- Hero -->
         <section class="bg-bg py-16 lg:py-24 border-b border-white/5">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mb-6">Jak działamy?</h1>
-                <p class="text-muted text-lg max-w-2xl mx-auto">Przejrzysty proces w 4 krokach. Od pierwszego kontaktu do wypłaty odszkodowania. Bez ukrytych kosztów — prowizja tylko od sukcesu.</p>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mb-6" data-i18n="jak_dzialamy.hero_title">Jak działamy?</h1>
+                <p class="text-muted text-lg max-w-2xl mx-auto" data-i18n="jak_dzialamy.hero_subtitle">Przejrzysty proces w 4 krokach. Od pierwszego kontaktu do wypłaty odszkodowania. Bez ukrytych kosztów — prowizja tylko od sukcesu.</p>
             </div>
         </section>
 
@@ -171,13 +173,13 @@
                     <div class="relative pl-16 pb-12">
                         <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">01</span>
                         <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-white font-bold">Bezpłatna konsultacja</h2>
-                        <p class="text-muted/50 text-sm mt-1">około 15 minut</p>
-                        <p class="text-muted mt-2">Zadzwoń, napisz lub wypełnij formularz na stronie — nasz ekspert skontaktuje się z Tobą w ciągu 30 minut w godzinach pracy. Opowiedz nam o swojej sytuacji. Przeanalizujemy ją w czasie rozmowy i powiemy szczerze, czy mamy podstawy do działania.</p>
+                        <h2 class="font-heading text-xl text-white font-bold" data-i18n="jak_dzialamy.step1_title">Bezpłatna konsultacja</h2>
+                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step1_time">około 15 minut</p>
+                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step1_desc">Zadzwoń, napisz lub wypełnij formularz na stronie — nasz ekspert skontaktuje się z Tobą w ciągu 30 minut w godzinach pracy. Opowiedz nam o swojej sytuacji. Przeanalizujemy ją w czasie rozmowy i powiemy szczerze, czy mamy podstawy do działania.</p>
                         <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Nie musisz przygotowywać żadnych dokumentów na start</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Ocenimy szanse jeszcze w trakcie pierwszej rozmowy</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Konsultacja jest w 100% bezpłatna i bez zobowiązań</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step1_check1">Nie musisz przygotowywać żadnych dokumentów na start</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step1_check2">Ocenimy szanse jeszcze w trakcie pierwszej rozmowy</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step1_check3">Konsultacja jest w 100% bezpłatna i bez zobowiązań</span></li>
                         </ul>
                     </div>
 
@@ -185,13 +187,13 @@
                     <div class="relative pl-16 pb-12">
                         <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">02</span>
                         <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-white font-bold">Analiza dokumentacji</h2>
-                        <p class="text-muted/50 text-sm mt-1">1–3 dni roboczych</p>
-                        <p class="text-muted mt-2">Zbieramy od Ciebie niezbędną dokumentację (dokumentacja medyczna, protokół wypadku, orzeczenia, faktury). Nasz zespół prawny analizuje podstawy prawne roszczenia, szacuje realną wartość szkody i przygotowuje strategię.</p>
+                        <h2 class="font-heading text-xl text-white font-bold" data-i18n="jak_dzialamy.step2_title">Analiza dokumentacji</h2>
+                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step2_time">1–3 dni roboczych</p>
+                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step2_desc">Zbieramy od Ciebie niezbędną dokumentację (dokumentacja medyczna, protokół wypadku, orzeczenia, faktury). Nasz zespół prawny analizuje podstawy prawne roszczenia, szacuje realną wartość szkody i przygotowuje strategię.</p>
                         <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Informujemy Cię, jakich dokumentów potrzebujesz — pomagamy je zdobyć</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Szacujemy wartość roszczenia — transparentnie, bez obietnic bez pokrycia</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Podpisujemy umowę o reprezentacji — jasne warunki, prowizja tylko od sukcesu</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step2_check1">Informujemy Cię, jakich dokumentów potrzebujesz — pomagamy je zdobyć</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step2_check2">Szacujemy wartość roszczenia — transparentnie, bez obietnic bez pokrycia</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step2_check3">Podpisujemy umowę o reprezentacji — jasne warunki, prowizja tylko od sukcesu</span></li>
                         </ul>
                     </div>
 
@@ -199,13 +201,13 @@
                     <div class="relative pl-16 pb-12">
                         <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">03</span>
                         <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-white font-bold">Negocjacje z ubezpieczycielem</h2>
-                        <p class="text-muted/50 text-sm mt-1">2–8 tygodni</p>
-                        <p class="text-muted mt-2">Prowadzimy twarde, merytoryczne negocjacje z ubezpieczycielem w Twoim imieniu. Korzystamy z orzecznictwa sądowego, opinii biegłych i ugruntowanej praktyki. Znamy metody, których używają ubezpieczyciele do zaniżania kwot — i wiemy, jak im skutecznie przeciwdziałać.</p>
+                        <h2 class="font-heading text-xl text-white font-bold" data-i18n="jak_dzialamy.step3_title">Negocjacje z ubezpieczycielem</h2>
+                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step3_time">2–8 tygodni</p>
+                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step3_desc">Prowadzimy twarde, merytoryczne negocjacje z ubezpieczycielem w Twoim imieniu. Korzystamy z orzecznictwa sądowego, opinii biegłych i ugruntowanej praktyki. Znamy metody, których używają ubezpieczyciele do zaniżania kwot — i wiemy, jak im skutecznie przeciwdziałać.</p>
                         <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Regularnie informujemy Cię o stanie sprawy</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> W razie potrzeby zlecamy niezależne opinie biegłych</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Jeśli negocjacje zawiodą — kierujemy sprawę do sądu</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step3_check1">Regularnie informujemy Cię o stanie sprawy</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step3_check2">W razie potrzeby zlecamy niezależne opinie biegłych</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step3_check3">Jeśli negocjacje zawiodą — kierujemy sprawę do sądu</span></li>
                         </ul>
                     </div>
 
@@ -213,13 +215,13 @@
                     <div class="relative pl-16 pb-12">
                         <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">04</span>
                         <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-white font-bold">Wypłata odszkodowania</h2>
-                        <p class="text-muted/50 text-sm mt-1">przelew w 7 dni roboczych</p>
-                        <p class="text-muted mt-2">Po uzyskaniu akceptowalnej kwoty odszkodowania, środki trafiają bezpośrednio na Twoje konto. Dopiero wtedy naliczamy naszą prowizję — wyłącznie od kwoty, którą faktycznie uzyskaliśmy. Jeśli nie wygramy — nie płacisz nic.</p>
+                        <h2 class="font-heading text-xl text-white font-bold" data-i18n="jak_dzialamy.step4_title">Wypłata odszkodowania</h2>
+                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step4_time">przelew w 7 dni roboczych</p>
+                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step4_desc">Po uzyskaniu akceptowalnej kwoty odszkodowania, środki trafiają bezpośrednio na Twoje konto. Dopiero wtedy naliczamy naszą prowizję — wyłącznie od kwoty, którą faktycznie uzyskaliśmy. Jeśli nie wygramy — nie płacisz nic.</p>
                         <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Prowizja tylko od sukcesu — zero opłat wstępnych</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Transparentne rozliczenie — każda złotówka udokumentowana</li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> Pełne wsparcie nawet po zakończeniu sprawy</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step4_check1">Prowizja tylko od sukcesu — zero opłat wstępnych</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step4_check2">Transparentne rozliczenie — każda złotówka udokumentowana</span></li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step4_check3">Pełne wsparcie nawet po zakończeniu sprawy</span></li>
                         </ul>
                     </div>
 
@@ -231,39 +233,39 @@
         <section class="py-16 lg:py-24 bg-surface">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Dlaczego warto nam zaufać?</h2>
-                    <p class="text-muted max-w-2xl mx-auto">Działamy w modelu success fee — zarabiamy tylko wtedy, gdy Ty zarabiasz.</p>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4" data-i18n="jak_dzialamy.why_title">Dlaczego warto nam zaufać?</h2>
+                    <p class="text-muted max-w-2xl mx-auto" data-i18n="jak_dzialamy.why_subtitle">Działamy w modelu success fee — zarabiamy tylko wtedy, gdy Ty zarabiasz.</p>
                 </div>
 
                 <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
                     <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">01</span>
                     <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2">Bezpłatna konsultacja</h3>
-                        <p class="text-muted">Nie pobieramy żadnych opłat wstępnych. Przeanalizujemy Twoją sprawę i ocenimy szanse bez ryzyka finansowego.</p>
+                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r1_title">Bezpłatna konsultacja</h3>
+                        <p class="text-muted" data-i18n="why.r1_desc">Nie pobieramy żadnych opłat wstępnych. Przeanalizujemy Twoją sprawę i ocenimy szanse bez ryzyka finansowego.</p>
                     </div>
                 </div>
 
                 <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
                     <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">02</span>
                     <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2">Płacisz za sukces</h3>
-                        <p class="text-muted">Prowizja naliczana wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy — nie płacisz nic.</p>
+                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r2_title">Płacisz za sukces</h3>
+                        <p class="text-muted" data-i18n="why.r2_desc">Prowizja naliczana wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy — nie płacisz nic.</p>
                     </div>
                 </div>
 
                 <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
                     <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">03</span>
                     <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2">Doświadczony zespół</h3>
-                        <p class="text-muted">Prawnicy, rzeczoznawcy i mediatorzy z wieloletnim stażem. Ponad 500 wygranych spraw i 10+ lat doświadczenia.</p>
+                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r3_title">Doświadczony zespół</h3>
+                        <p class="text-muted" data-i18n="why.r3_desc">Prawnicy, rzeczoznawcy i mediatorzy z wieloletnim stażem. Ponad 500 wygranych spraw i 10+ lat doświadczenia.</p>
                     </div>
                 </div>
 
                 <div class="fade-in flex gap-6 lg:gap-8 items-start py-8">
                     <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">04</span>
                     <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2">Cała Polska</h3>
-                        <p class="text-muted">Siedziba w Poznaniu, obsługujemy klientów w całym kraju. Wszystko załatwimy zdalnie lub na miejscu.</p>
+                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r4_title">Cała Polska</h3>
+                        <p class="text-muted" data-i18n="why.r4_desc">Siedziba w Poznaniu, obsługujemy klientów w całym kraju. Wszystko załatwimy zdalnie lub na miejscu.</p>
                     </div>
                 </div>
             </div>
@@ -272,11 +274,11 @@
         <!-- CTA Block -->
         <section class="bg-bg py-20 lg:py-28 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8">Miałeś wypadek? Porozmawiajmy.</h2>
-                <a href="kontakt.html" class="inline-block bg-gold hover:bg-gold-light text-bg text-lg px-8 py-4 rounded font-semibold transition-colors mb-6">
+                <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
+                <a href="kontakt.html" class="inline-block bg-gold hover:bg-gold-light text-bg text-lg px-8 py-4 rounded font-semibold transition-colors mb-6" data-i18n="cta.button">
                     Bezpłatna konsultacja
                 </a>
-                <p class="text-muted">
+                <p class="text-muted" data-i18n="cta.phone_prefix">
                     lub zadzwoń: <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors font-medium">+48 XXX XXX XXX</a>
                 </p>
 
@@ -284,43 +286,43 @@
                 <div class="border-t border-white/5 mt-16 pt-8">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-left mb-8">
                         <div>
-                            <span class="text-gold font-heading text-lg font-bold">Odszkodowania</span>
-                            <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
+                            <span class="text-gold font-heading text-lg font-bold" data-i18n="nav.logo">Odszkodowania</span>
+                            <p class="text-muted text-sm mt-3" data-i18n="footer.desc">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
                             <div class="space-y-2">
-                                <a href="odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
-                                <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
-                                <a href="odszkodowania-bledy-medyczne.html" class="block text-muted text-sm hover:text-gold transition-colors">Błędy medyczne</a>
-                                <a href="odszkodowania-smierc-bliskiej-osoby.html" class="block text-muted text-sm hover:text-gold transition-colors">Śmierć bliskiej osoby</a>
-                                <a href="odszkodowania-wypadki-rolnicze.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki w rolnictwie</a>
+                                <a href="odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service1">Wypadki komunikacyjne</a>
+                                <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service2">Wypadki przy pracy</a>
+                                <a href="odszkodowania-bledy-medyczne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service3">Błędy medyczne</a>
+                                <a href="odszkodowania-smierc-bliskiej-osoby.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service4">Śmierć bliskiej osoby</a>
+                                <a href="odszkodowania-wypadki-rolnicze.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service5">Wypadki w rolnictwie</a>
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
                             <div class="space-y-2">
-                                <a href="jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
-                                <a href="sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
-                                <a href="kalkulator.html" class="block text-muted text-sm hover:text-gold transition-colors">Kalkulator odszkodowań</a>
-                                <a href="blog/" class="block text-muted text-sm hover:text-gold transition-colors">Blog</a>
-                                <a href="polityka-prywatnosci.html" class="block text-muted text-sm hover:text-gold transition-colors">Polityka prywatności</a>
+                                <a href="jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info1">Jak działamy</a>
+                                <a href="sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info2">Nasze sukcesy</a>
+                                <a href="kalkulator.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info3">Kalkulator odszkodowań</a>
+                                <a href="blog/" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info4">Blog</a>
+                                <a href="polityka-prywatnosci.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info5">Polityka prywatności</a>
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
                             <div class="space-y-2">
                                 <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                                 <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
-                                <p class="text-muted text-sm">Poznań, Polska</p>
+                                <p class="text-muted text-sm" data-i18n="footer.address">Poznań, Polska</p>
                                 <div class="flex gap-3 mt-2">
-                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="Facebook" data-i18n-aria="footer.facebook_aria"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="LinkedIn" data-i18n-aria="footer.linkedin_aria"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
+                    <p class="text-muted/50 text-xs" data-i18n="footer.copyright">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
                 </div>
             </div>
         </section>
@@ -329,10 +331,10 @@
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
+            <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
-                <button id="cookie-accept" class="bg-gold hover:bg-gold-light text-bg px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
+                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
+                <button id="cookie-accept" class="bg-gold hover:bg-gold-light text-bg px-4 py-2 rounded text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
     </div>
@@ -341,6 +343,7 @@
     <script src="js/cookie-consent.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/analytics.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/navigation.js"></script>
     <script>lucide.createIcons();</script>
 </body>

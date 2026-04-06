@@ -44,25 +44,27 @@
 
     <!-- Simplified Nav -->
     <nav class="py-5 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="/">
-                <span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span>
+                <span class="text-gold font-heading text-xl lg:text-2xl font-bold" data-i18n="nav.logo">Odszkodowania</span>
             </a>
+            <div class="lang-switcher-mount"></div>
         </div>
     </nav>
 
     <main class="flex-1 flex items-center justify-center py-16">
         <div class="text-center px-4">
             <div class="font-heading text-[10rem] font-bold text-gold/10 leading-none mb-2">404</div>
-            <h1 class="font-heading text-3xl font-bold text-white mb-4">Nie znaleźliśmy tej strony</h1>
-            <p class="text-muted mb-10 max-w-md mx-auto">Strona, której szukasz, mogła zostać przeniesiona lub nie istnieje. Wróć na stronę główną lub skontaktuj się z nami.</p>
+            <h1 class="font-heading text-3xl font-bold text-white mb-4" data-i18n="p404.title">Nie znaleźliśmy tej strony</h1>
+            <p class="text-muted mb-10 max-w-md mx-auto" data-i18n="p404.desc">Strona, której szukasz, mogła zostać przeniesiona lub nie istnieje. Wróć na stronę główną lub skontaktuj się z nami.</p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="/" class="bg-gold hover:bg-gold-light text-bg px-6 py-3 rounded font-semibold transition-colors">Wróć na stronę główną</a>
-                <a href="kontakt.html" class="border border-gold text-gold hover:bg-gold hover:text-bg px-6 py-3 rounded font-semibold transition-colors">Skontaktuj się</a>
+                <a href="/" class="bg-gold hover:bg-gold-light text-bg px-6 py-3 rounded font-semibold transition-colors" data-i18n="p404.home_btn">Wróć na stronę główną</a>
+                <a href="kontakt.html" class="border border-gold text-gold hover:bg-gold hover:text-bg px-6 py-3 rounded font-semibold transition-colors" data-i18n="p404.contact_btn">Skontaktuj się</a>
             </div>
         </div>
     </main>
 
+    <script src="js/i18n.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 </html>
