@@ -1,7 +1,11 @@
 (function() {
     var DEFAULT_LANG = 'pl';
     var SUPPORTED = ['pl', 'en', 'ua'];
-    var FLAGS = { pl: '🇵🇱', en: '🇬🇧', ua: '🇺🇦' };
+    var FLAG_SVG = {
+        pl: '<svg class="w-6 h-4 rounded-sm" viewBox="0 0 640 480"><rect width="640" height="240" fill="#fff"/><rect y="240" width="640" height="240" fill="#dc143c"/></svg>',
+        en: '<svg class="w-6 h-4 rounded-sm" viewBox="0 0 640 480"><rect width="640" height="480" fill="#012169"/><path d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" fill="#fff"/><path d="M424 281l216 159v40L369 281h55zm-184 20l6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z" fill="#C8102E"/><path d="M241 0v480h160V0H241zM0 160v160h640V160H0z" fill="#fff"/><path d="M273 0v480h96V0h-96zM0 192v96h640v-96H0z" fill="#C8102E"/></svg>',
+        ua: '<svg class="w-6 h-4 rounded-sm" viewBox="0 0 640 480"><rect width="640" height="240" fill="#005BBB"/><rect y="240" width="640" height="240" fill="#FFD500"/></svg>'
+    };
     var LABELS = { pl: 'Polski', en: 'English', ua: 'Українська' };
     var cache = {};
     var currentLang = DEFAULT_LANG;
@@ -110,16 +114,16 @@
         var containers = document.querySelectorAll('.lang-switcher-mount');
         containers.forEach(function(mount) {
             var wrapper = document.createElement('div');
-            wrapper.className = 'flex items-center gap-1.5';
+            wrapper.className = 'flex items-center gap-1';
 
             SUPPORTED.forEach(function(lang) {
                 var btn = document.createElement('button');
                 var isActive = lang === currentLang;
-                btn.className = 'lang-flag-btn text-base leading-none px-1 py-0.5 rounded transition-all cursor-pointer '
-                    + (isActive ? 'opacity-100 ring-1 ring-gold' : 'opacity-50 hover:opacity-90');
+                btn.className = 'lang-flag-btn p-1 rounded transition-all cursor-pointer '
+                    + (isActive ? 'opacity-100 ring-1 ring-gold' : 'opacity-40 hover:opacity-80');
                 btn.setAttribute('data-lang', lang);
                 btn.setAttribute('aria-label', LABELS[lang]);
-                btn.textContent = FLAGS[lang];
+                btn.innerHTML = FLAG_SVG[lang];
                 btn.addEventListener('click', function() {
                     switchLang(lang);
                 });
