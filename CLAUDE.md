@@ -28,17 +28,19 @@ No build, lint, or test commands — this is a static site with CDN dependencies
 ## Architecture
 
 ### Tech Stack
-- **Tailwind CSS via CDN** (`cdn.tailwindcss.com`) with inline config in each HTML file's `<head>`
+- **Tailwind CSS via CDN** (`cdn.tailwindcss.com`) with shared config in `js/tailwind-config.js` (loaded via script tag in all pages)
 - **Vanilla JS** (no framework, no bundler, no modules — plain `<script>` tags)
 - **Lucide Icons** via CDN (`unpkg.com/lucide@latest`) — call `lucide.createIcons()` after DOM load
 - **Google Fonts**: Fraunces (headings) + Space Grotesk (body)
 
-### Color Palette (defined in Tailwind config)
-- `bg` (#0a0a0a) — page background (near-black)
-- `surface` (#111111), `surface-light` (#1a1a1a) — card/section backgrounds
-- `gold` (#C8A45E), `gold-light` (#E0C878) — accent, success, trust elements
-- `muted` (#888888) — secondary text
-- `error` (#E05252) — form validation errors
+### Color Palette (defined in `js/tailwind-config.js` — single source of truth)
+- `bg` (#08080F) — page background (dark navy tint)
+- `surface` (#12121E), `surface-light` (#1C1C2E) — card/section backgrounds
+- `gold` (#D4AF37), `gold-light` (#E8C867) — accent, trust elements, secondary buttons
+- `cta` (#E8652D), `cta-hover` (#D4561F) — primary call-to-action buttons (orange)
+- `text` (#E8E2D6) — warm white body text
+- `muted` (#9A9590) — secondary text (warm gray)
+- `error` (#EF4444) — form validation errors
 
 ### Page Structure
 - **`index.html`** — one-page main site containing: ticker, hero, trust bar, quiz, "jak działamy" process, social proof + case studies (with timeline & quotes), testimonials carousel, "dlaczego my", team/experts, insurance logos bar, FAQ accordion, CTA footer, floating WhatsApp/phone buttons
