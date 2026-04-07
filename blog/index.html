@@ -44,6 +44,16 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Baza wiedzy",
+        "description": "Porady prawne, poradniki dla poszkodowanych i case studies odszkodowawcze.",
+        "url": "https://example.pl/blog/",
+        "isPartOf": { "@type": "WebSite", "name": "Odszkodowania", "url": "https://example.pl/" }
+    }
+    </script>
 </head>
 <body class="font-body text-text bg-bg">
 
@@ -143,67 +153,112 @@
         <!-- Articles listing -->
         <section class="py-16 lg:py-24 bg-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Category filter -->
+                <div class="flex flex-wrap gap-3 mb-8" id="blog-filters">
+                    <button class="blog-filter-btn active px-4 py-2 rounded-full text-sm font-medium border border-gold text-gold transition-colors" data-filter="all">Wszystko</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="poradnik">Poradniki</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="prawo">Prawo</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="case-study">Case studies</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="krus">KRUS</button>
+                </div>
+
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <!-- Article 1 -->
-                    <div class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in">
+                    <a href="co-robic-po-wypadku.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
-                            <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
-                            <h2 class="font-heading text-lg font-bold text-white mt-2 mb-2" data-i18n="blog.a1_title">Co robić po wypadku samochodowym?</h2>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
+                                <span class="text-muted text-xs">5 min</span>
+                            </div>
+                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a1_title">Co robić po wypadku samochodowym?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a1_desc">Krok po kroku: od zabezpieczenia miejsca zdarzenia po zgłoszenie roszczenia. Dowiedz się, jakie czynności są kluczowe w pierwszych godzinach po wypadku.</p>
-                            <span class="text-gold text-sm font-semibold" data-i18n="blog.read_more">Czytaj dalej →</span>
+                            <div class="flex items-center justify-between">
+                                <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
+                                <span class="text-gold text-sm font-semibold" data-i18n="blog.read_more">Czytaj dalej →</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Article 2 -->
-                    <div class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in">
+                    <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="prawo">
                         <div class="p-6">
-                            <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_law">Prawo</span>
-                            <h2 class="font-heading text-lg font-bold text-white mt-2 mb-2" data-i18n="blog.a2_title">Przedawnienie roszczeń — ile masz czasu?</h2>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_law">Prawo</span>
+                                <span class="text-muted text-xs">4 min</span>
+                            </div>
+                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a2_title">Przedawnienie roszczeń — ile masz czasu?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a2_desc">Terminy przedawnienia i wyjątki, o których musisz wiedzieć. Standardowo 3 lata, ale w sprawach karnych nawet 20 lat — poznaj szczegóły.</p>
-                            <span class="text-gold text-sm font-semibold" data-i18n="blog.read_more">Czytaj dalej →</span>
+                            <div class="flex items-center justify-between">
+                                <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
+                                <span class="text-gold text-sm font-semibold" data-i18n="blog.read_more">Czytaj dalej →</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Article 3 -->
-                    <div class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in">
+                    <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
-                            <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
-                            <h2 class="font-heading text-lg font-bold text-white mt-2 mb-2" data-i18n="blog.a3_title">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h2>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
+                                <span class="text-muted text-xs">6 min</span>
+                            </div>
+                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a3_title">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a3_desc">Jak odwołać się od decyzji i uzyskać sprawiedliwą kwotę. Poznaj sposoby na skuteczne zakwestionowanie zaniżonej propozycji ubezpieczyciela.</p>
-                            <span class="text-gold text-sm font-semibold" data-i18n="blog.read_more">Czytaj dalej →</span>
+                            <div class="flex items-center justify-between">
+                                <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
+                                <span class="text-gold text-sm font-semibold" data-i18n="blog.read_more">Czytaj dalej →</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Article 4 -->
-                    <div class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in">
+                    <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="prawo">
                         <div class="p-6">
-                            <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_law">Prawo</span>
-                            <h2 class="font-heading text-lg font-bold text-white mt-2 mb-2" data-i18n="blog.a4_title">Zadośćuczynienie vs. odszkodowanie — jaka różnica?</h2>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_law">Prawo</span>
+                                <span class="text-muted text-xs">5 min</span>
+                            </div>
+                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a4_title">Zadośćuczynienie vs. odszkodowanie — jaka różnica?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a4_desc">Wyjaśniamy różnice między poszczególnymi rodzajami świadczeń i kiedy możesz ubiegać się o każde z nich.</p>
-                            <span class="text-gold/50 text-sm font-semibold" data-i18n="blog.coming_soon">Wkrótce →</span>
+                            <div class="flex items-center justify-between">
+                                <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
+                                <span class="text-gold/50 text-sm font-semibold" data-i18n="blog.coming_soon">Wkrótce →</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Article 5 -->
-                    <div class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in">
+                    <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
-                            <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
-                            <h2 class="font-heading text-lg font-bold text-white mt-2 mb-2" data-i18n="blog.a5_title">Jak dokumentować obrażenia po wypadku?</h2>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
+                                <span class="text-muted text-xs">7 min</span>
+                            </div>
+                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a5_title">Jak dokumentować obrażenia po wypadku?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a5_desc">Checklist dokumentów i badań, które znacząco zwiększają szanse na wyższe odszkodowanie. Nie popełnij tych błędów.</p>
-                            <span class="text-gold/50 text-sm font-semibold" data-i18n="blog.coming_soon">Wkrótce →</span>
+                            <div class="flex items-center justify-between">
+                                <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
+                                <span class="text-gold/50 text-sm font-semibold" data-i18n="blog.coming_soon">Wkrótce →</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Article 6 -->
-                    <div class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in">
+                    <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="krus">
                         <div class="p-6">
-                            <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_krus">KRUS</span>
-                            <h2 class="font-heading text-lg font-bold text-white mt-2 mb-2" data-i18n="blog.a6_title">Wypadek w rolnictwie — przewodnik krok po kroku</h2>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_krus">KRUS</span>
+                                <span class="text-muted text-xs">6 min</span>
+                            </div>
+                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a6_title">Wypadek w rolnictwie — przewodnik krok po kroku</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a6_desc">Jak zgłosić wypadek do KRUS, jakie dokumenty zebrać i jak uzyskać maksymalne świadczenia z ubezpieczenia rolniczego.</p>
-                            <span class="text-gold/50 text-sm font-semibold" data-i18n="blog.coming_soon">Wkrótce →</span>
+                            <div class="flex items-center justify-between">
+                                <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
+                                <span class="text-gold/50 text-sm font-semibold" data-i18n="blog.coming_soon">Wkrótce →</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                 </div>
 
@@ -283,8 +338,39 @@
         </div>
     </div>
 
+    <script>
+    // Blog category filter
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.blog-filter-btn');
+        const cards = document.querySelectorAll('[data-category]');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                // Update active button
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'border-gold', 'text-gold');
+                    b.classList.add('border-white/20', 'text-muted');
+                });
+                btn.classList.add('active', 'border-gold', 'text-gold');
+                btn.classList.remove('border-white/20', 'text-muted');
+
+                // Show/hide cards
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+    </script>
     <script src="../js/cookie-consent.js"></script>
     <script src="../js/i18n.js"></script>
+    <script src="../js/animations.js"></script>
     <script src="../js/analytics.js"></script>
     <script src="../js/navigation.js"></script>
     <script>lucide.createIcons();</script>
