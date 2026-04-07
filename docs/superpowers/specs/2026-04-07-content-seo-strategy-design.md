@@ -1,7 +1,7 @@
 # Content SEO Strategy — Design Spec
 
 **Date:** 2026-04-07
-**Status:** Draft
+**Status:** Approved
 **Scope:** Content strategy for a Polish compensation claims blog — topic clusters, article list, publication priority, internal linking map
 
 ## Context
@@ -68,8 +68,8 @@ One additional cluster ("Prawo ogólne") covers cross-cutting legal topics that 
 
 | # | Type | Title | Slug | Target keyword |
 |---|------|-------|------|----------------|
-| 14 | Poradnik | Wypadek w rolnictwie — jak zgłosić do KRUS? | `wypadek-rolnictwo-krus` | wypadek w rolnictwie KRUS |
-| 15 | Poradnik | Odszkodowanie z KRUS za wypadek — ile można uzyskać? | `odszkodowanie-krus-ile` | odszkodowanie z KRUS |
+| 14 | KRUS | Wypadek w rolnictwie — jak zgłosić do KRUS? | `wypadek-rolnictwo-krus` | wypadek w rolnictwie KRUS |
+| 15 | KRUS | Odszkodowanie z KRUS za wypadek — ile można uzyskać? | `odszkodowanie-krus-ile` | odszkodowanie z KRUS |
 
 ### Cluster 6: Prawo ogólne
 **Pillar:** none — articles link to the closest service page
@@ -82,7 +82,7 @@ One additional cluster ("Prawo ogólne") covers cross-cutting legal topics that 
 | 19 | Poradnik | Jak dokumentować obrażenia po wypadku? | `jak-dokumentowac-obrazenia` | dokumentowanie obrażeń po wypadku |
 | 20 | Poradnik | Ile kosztuje prawnik od odszkodowań? | `ile-kosztuje-prawnik-odszkodowania` | ile kosztuje prawnik od odszkodowań |
 
-**Total: 20 articles** (16 guides/law + 4 case studies)
+**Total: 20 articles** (17 guides/law + 3 case studies)
 
 ---
 
@@ -91,7 +91,7 @@ One additional cluster ("Prawo ogólne") covers cross-cutting legal topics that 
 Articles ordered by impact. Logic: existing blog placeholders first, then highest search volume clusters, then gap-fill, then case studies (need real data).
 
 ### Wave 1 — Existing placeholders (5 articles)
-These already appear as placeholder cards on `blog/index.html`. Publishing them first replaces "Wkrótce" with real content.
+These match the 5 placeholder cards currently on `blog/index.html` (cards 1-3 have "Czytaj dalej", cards 4-6 show "Wkrótce"). Verify slugs match before publishing. Article #1 (`co-robic-po-wypadku`) already has an `href` on the listing page.
 
 1. `co-robic-po-wypadku` — strongest keyword, placeholder exists
 2. `przedawnienie-roszczen` — placeholder exists
@@ -120,7 +120,7 @@ Fill remaining clusters to build topical authority across all service areas.
 17. `odszkodowanie-krus-ile`
 
 ### Wave 4 — Case studies (3 articles)
-Require real or realistic case data. Publish when data is available.
+Require real or realistic case data. Publish when data is available. Case study slugs are finalized when data is provided (slug should include the amount, e.g., `85000-za-wypadek-w-pracy`). Amount format in titles/badges: "85 000 zł" (space-separated thousands). Until data is provided, case study cards should NOT appear on `blog/index.html`.
 
 18. `wypadek-droga-krajowa`
 19. `wypadek-zaklad-produkcyjny`
@@ -157,7 +157,7 @@ Every article includes a natural in-text link to its pillar page (service subpag
 | zadoscuczynienie-vs-odszkodowanie | odszkodowania-komunikacyjne.html |
 | ubezpieczyciel-zanizyl-odszkodowanie | odszkodowania-komunikacyjne.html |
 | jak-dokumentowac-obrazenia | odszkodowania-komunikacyjne.html |
-| ile-kosztuje-prawnik-odszkodowania | jak-dzialamy.html |
+| ile-kosztuje-prawnik-odszkodowania | jak-dzialamy.html (intentional exception — cost/process topic fits "how we work" better than any service page) |
 
 ### 3b. Article → Related articles
 
@@ -217,3 +217,7 @@ When a cluster has 2+ published articles, add a "Przeczytaj też" section on the
 - Video content
 - Competitor keyword analysis tools (Ahrefs, SEMrush)
 - Automated content generation
+
+## Technical Note
+
+Blog pages load `analytics.js` without `form-validation.js`. This is safe because `analytics.js` only calls `window.formValidation` inside `if (contactForm)` guard — blog pages have no `#contact-form` element, so that code path is never reached.
