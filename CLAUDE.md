@@ -92,10 +92,43 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Delegated event handling**: `navigation.js` uses delegated click on mobile menu; `analytics.js` uses delegated click with early-exit for phone/sticky/case tracking.
 - **DOM caching**: `calculator.js` caches all label/result elements at init — `recalculate()` runs on every slider input event and must avoid DOM queries in the hot path.
 
+## Blog System
+
+### Structure
+- **Templates** (not published, `_` prefix): `blog/_szablon-artykul.html`, `blog/_szablon-case-study.html`
+- **20 articles** in `blog/` — 17 guides/law + 3 case studies
+- **Listing page**: `blog/index.html` with JS category filter (Wszystko/Poradniki/Prawo/Case studies/KRUS)
+- **SEO files**: `robots.txt`, `sitemap.xml` (manually updated when adding articles)
+- **Publication plan**: `docs/blog-publication-plan.md` — tracks which articles are published and when
+
+### Blog Script Load Order (no form-validation or quiz needed)
+```
+cookie-consent.js → i18n.js → animations.js → analytics.js → navigation.js
+```
+Note: `analytics.js` calls `window.formValidation` only inside `if (contactForm)` guard — blog pages have no `#contact-form`, so this code path is never reached. Safe without `form-validation.js`.
+
+### Adding a New Blog Article
+1. Copy `blog/_szablon-artykul.html` (or `_szablon-case-study.html`)
+2. Replace all `{placeholders}` with real content
+3. Add entry to `sitemap.xml`
+4. Add card to `blog/index.html` (with `data-category` attribute)
+5. Update `docs/blog-publication-plan.md`
+6. Commit — do NOT push without user approval
+
+### SEO Per Article
+- Schema.org: Article + BreadcrumbList + FAQPage (guides) or Article + BreadcrumbList (case studies)
+- Each article links to its pillar page (service subpage) in-text
+- "Powiązane artykuły" section at bottom links to 2-3 related articles
+- Content strategy spec: `docs/superpowers/specs/2026-04-07-content-seo-strategy-design.md`
+
 ## Specs and Plans
 
 - Design spec: `docs/superpowers/specs/2026-04-02-strona-odszkodowania-design.md`
 - Implementation plan: `docs/superpowers/plans/2026-04-02-strona-odszkodowania-plan.md`
+- Blog system spec: `docs/superpowers/specs/2026-04-07-blog-system-seo-design.md`
+- Blog implementation plan: `docs/superpowers/plans/2026-04-07-blog-system-seo-plan.md`
+- Content SEO strategy: `docs/superpowers/specs/2026-04-07-content-seo-strategy-design.md`
+- Blog publication plan: `docs/blog-publication-plan.md`
 
 ## Script Load Order (critical)
 
