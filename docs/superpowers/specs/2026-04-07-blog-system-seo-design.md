@@ -1,7 +1,7 @@
 # Blog System SEO — Design Spec
 
 **Date:** 2026-04-07
-**Status:** Approved
+**Status:** Draft
 **Scope:** Technical blog system with SEO optimization for a Polish compensation claims site
 
 ## Context
@@ -52,7 +52,7 @@ For guides (Poradnik), legal explainers (Prawo), and KRUS-related content.
 <meta property="og:description" content="{same as meta description}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://example.pl/blog/{slug}.html">
-<meta property="og:image" content="https://example.pl/img/blog/{slug}.jpg">  <!-- placeholder -->
+<meta property="og:image" content="https://example.pl/img/blog/{slug}.jpg">  <!-- 1200x630px, fallback: img/og-default.jpg -->
 ```
 
 **Schema.org JSON-LD blocks (3):**
@@ -81,6 +81,7 @@ For guides (Poradnik), legal explainers (Prawo), and KRUS-related content.
   "publisher": { "@type": "Organization", "name": "Odszkodowania" },
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
+  "image": "https://example.pl/img/blog/{slug}.jpg",
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://example.pl/blog/{slug}.html" }
 }
 ```
@@ -120,6 +121,7 @@ For guides (Poradnik), legal explainers (Prawo), and KRUS-related content.
 ```
 ../js/cookie-consent.js
 ../js/i18n.js
+../js/animations.js       <!-- fade-in, scroll reveal -->
 ../js/analytics.js        <!-- contains FAQ accordion toggle -->
 ../js/navigation.js
 lucide.createIcons()
@@ -168,6 +170,8 @@ Visually prominent box with gold border/accent:
 
 Client testimonial quote, styled consistently with testimonials elsewhere on the site.
 
+Note: case study template has no FAQ section. The `analytics.js` FAQ accordion binding (`.faq-toggle`) is safe but inactive on these pages — add an HTML comment in the template: `<!-- No FAQ section on case studies -->`.
+
 ---
 
 ## 4. Listing Page Updates (`blog/index.html`)
@@ -199,7 +203,7 @@ Replace current BreadcrumbList-only schema with:
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Baza wiedzy",
-  "description": "Porady prawne, poradniki dla poszkodowanych i case studies odszkodownicze.",
+  "description": "Porady prawne, poradniki dla poszkodowanych i case studies odszkodowawcze.",
   "url": "https://example.pl/blog/",
   "isPartOf": { "@type": "WebSite", "name": "Odszkodowania", "url": "https://example.pl/" }
 }
@@ -211,33 +215,37 @@ Keep BreadcrumbList schema as well.
 
 ## 5. sitemap.xml
 
-New file in project root. Manually updated when adding/removing pages.
+New file in project root. Manually updated when adding/removing pages. Update `example.pl` domain when domain is purchased.
+
+`<lastmod>` is the one field Google actually uses from sitemaps — update it when a page is significantly changed.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main pages -->
-  <url><loc>https://example.pl/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://example.pl/uslugi.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://example.pl/jak-dzialamy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://example.pl/kalkulator.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://example.pl/sukcesy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://example.pl/kontakt.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://example.pl/opinie.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://example.pl/</loc><lastmod>2026-04-07</lastmod><priority>1.0</priority></url>
+  <url><loc>https://example.pl/uslugi.html</loc><lastmod>2026-04-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://example.pl/jak-dzialamy.html</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://example.pl/kalkulator.html</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://example.pl/sukcesy.html</loc><lastmod>2026-04-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://example.pl/kontakt.html</loc><lastmod>2026-04-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://example.pl/opinie.html</loc><lastmod>2026-04-07</lastmod><priority>0.6</priority></url>
 
   <!-- Service subpages -->
-  <url><loc>https://example.pl/odszkodowania-komunikacyjne.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://example.pl/odszkodowania-wypadki-przy-pracy.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://example.pl/odszkodowania-bledy-medyczne.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://example.pl/odszkodowania-smierc-bliskiej-osoby.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://example.pl/odszkodowania-wypadki-rolnicze.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://example.pl/odszkodowania-komunikacyjne.html</loc><lastmod>2026-04-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://example.pl/odszkodowania-wypadki-przy-pracy.html</loc><lastmod>2026-04-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://example.pl/odszkodowania-bledy-medyczne.html</loc><lastmod>2026-04-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://example.pl/odszkodowania-smierc-bliskiej-osoby.html</loc><lastmod>2026-04-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://example.pl/odszkodowania-wypadki-rolnicze.html</loc><lastmod>2026-04-07</lastmod><priority>0.9</priority></url>
 
   <!-- Blog -->
-  <url><loc>https://example.pl/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://example.pl/blog/</loc><lastmod>2026-04-07</lastmod><priority>0.8</priority></url>
   <!-- Add blog articles here as they are published -->
 
   <!-- Utility -->
-  <url><loc>https://example.pl/polityka-prywatnosci.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://example.pl/polityka-prywatnosci.html</loc><lastmod>2026-04-07</lastmod><priority>0.3</priority></url>
+
+  <!-- Do not add 404.html — error pages must not be indexed -->
 </urlset>
 ```
 
@@ -265,7 +273,7 @@ URL updated when domain is purchased.
 | Blog article | Blog articles | "Powiazane artykuly" section at bottom (2-3 links, same topic cluster) |
 | Service subpage | Blog articles | New "Przeczytaj tez" section with 2-3 related blog article links |
 | Blog listing | Blog articles | Card links (currently missing — to be added) |
-| Index.html | Blog | Nav link (exists) + optional future "Z naszego bloga" section with 3 latest articles |
+| Index.html | Blog | Nav link (exists). Future: "Z naszego bloga" section with 3 manually curated article cards (same card format as `blog/index.html`), updated when new articles are published. Out of scope for this spec — implement when blog has 3+ articles. |
 | Case study | Case studies/articles | "Powiazane" section at bottom |
 
 ---
