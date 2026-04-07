@@ -48,7 +48,8 @@ No build, lint, or test commands — this is a static site with CDN dependencies
 - **`sukcesy.html`** — case studies / success stories
 - **`opinie.html`** — client testimonials
 - **5 service subpages** (`odszkodowania-*.html`) — each follows same template: nav, breadcrumb, hero, content, mini case study, FAQ, CTA, footer
-- **Utility pages**: `kalkulator.html`, `kontakt.html`, `jak-dzialamy.html`, `404.html`, `polityka-prywatnosci.html`, `blog/index.html`
+- **Blog**: `blog/index.html` (listing with category filter), `blog/_szablon-artykul.html` (article template, not published), `blog/_szablon-case-study.html` (case study template, not published)
+- **Utility pages**: `kalkulator.html`, `kontakt.html`, `jak-dzialamy.html`, `404.html`, `polityka-prywatnosci.html`, `robots.txt`, `sitemap.xml`
 
 ### JavaScript Files (all in `js/`)
 Scripts must load in dependency order. `form-validation.js` must load before any file that calls `window.formValidation`. `cookie-consent.js` must load before `analytics.js`.
