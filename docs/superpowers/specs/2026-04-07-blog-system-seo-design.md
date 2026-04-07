@@ -1,7 +1,7 @@
 # Blog System SEO — Design Spec
 
 **Date:** 2026-04-07
-**Status:** Draft
+**Status:** Approved
 **Scope:** Technical blog system with SEO optimization for a Polish compensation claims site
 
 ## Context
