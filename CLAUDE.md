@@ -63,7 +63,7 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 | `quiz.js` | — | 5-step diagnostic quiz (selection, navigation, submission, business hours) |
 | `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result) |
 | `animations.js` | — | IntersectionObserver: count-up numbers, scroll reveal, case study filter |
-| `navigation.js` | — | Mobile hamburger menu, sticky bottom bar hide, testimonial carousel scroll |
+| `navigation.js` | — | Mobile hamburger menu, sticky bottom bar hide, testimonial carousel scroll, scroll-to-top button |
 | `cookie-consent.js` | — | Cookie banner, localStorage consent, dynamic GA4 script injection |
 | `analytics.js` | `window.trackEvent` | GA4 event wrapper, phone click tracking, FAQ accordion, contact form |
 
@@ -76,6 +76,7 @@ Custom animations and transitions beyond Tailwind utilities:
 - **`.animate-ticker`** — infinite horizontal scroll for top success ticker
 - **`.testimonial-track` / `.testimonial-card`** — scroll-snap for carousel
 - **`.pulse-ring`** — pulsing ring on floating WhatsApp button
+- **`#scroll-to-top`** — fade-in/out scroll-to-top button (created dynamically by `navigation.js`, appears after 400px scroll)
 - **`.faq-answer`** — max-height accordion transition
 
 ### Shared Elements Across Subpages
