@@ -1,7 +1,23 @@
+'use strict';
+
 /**
  * Kalkulator odszkodowań — interactive calculator with base amounts and multipliers.
  * Algorithm: sum base amounts, apply treatment/work/disability multipliers, show as range.
  */
+
+const CALC_CONSTANTS = {
+    DAYS_IN_YEAR: 365,
+    PERCENT_MAX: 100,
+    TREATMENT_RATE: 0.5,
+    TREATMENT_CAP: 1.5,
+    WORK_RATE: 0.8,
+    WORK_CAP: 1.8,
+    DISABILITY_RATE: 2.0,
+    DISABILITY_CAP: 3.0,
+    RANGE_LOW: 0.7,
+    RANGE_HIGH: 1.3,
+    ROUNDING: 1000,
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     const state = { eventType: null, injuries: new Map() };
@@ -89,13 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
             baseMax += max;
         });
 
-        const treatmentMult = Math.min(1.0 + (treatment / 365) * 0.5, 1.5);
-        const workMult = Math.min(1.0 + (work / 365) * 0.8, 1.8);
-        const disabilityMult = Math.min(1.0 + (disability / 100) * 2.0, 3.0);
+        const { DAYS_IN_YEAR, PERCENT_MAX, TREATMENT_RATE, TREATMENT_CAP, WORK_RATE, WORK_CAP, DISABILITY_RATE, DISABILITY_CAP, RANGE_LOW, RANGE_HIGH, ROUNDING } = CALC_CONSTANTS;
+        const treatmentMult = Math.min(1.0 + (treatment / DAYS_IN_YEAR) * TREATMENT_RATE, TREATMENT_CAP);
+        const workMult = Math.min(1.0 + (work / DAYS_IN_YEAR) * WORK_RATE, WORK_CAP);
+        const disabilityMult = Math.min(1.0 + (disability / PERCENT_MAX) * DISABILITY_RATE, DISABILITY_CAP);
         const totalMult = treatmentMult * workMult * disabilityMult;
 
-        const calcMin = Math.round((baseMin * totalMult * 0.7) / 1000) * 1000;
-        const calcMax = Math.round((baseMax * totalMult * 1.3) / 1000) * 1000;
+        const calcMin = Math.round((baseMin * totalMult * RANGE_LOW) / ROUNDING) * ROUNDING;
+        const calcMax = Math.round((baseMax * totalMult * RANGE_HIGH) / ROUNDING) * ROUNDING;
 
         resultMinEl.textContent = formatNum(calcMin);
         resultMaxEl.textContent = formatNum(calcMax);
@@ -108,22 +125,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ctaForm) {
         ctaForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('calc-name').value;
-            const phone = document.getElementById('calc-phone').value;
-            const consent = document.getElementById('calc-consent').checked;
-
-            if (!window.formValidation.validateName(name) || !window.formValidation.validatePhone(phone) || !consent) {
-                return;
-            }
-
-            const btn = ctaForm.querySelector('button[type="submit"]');
-            btn.disabled = true;
-            btn.textContent = 'Wysyłanie...';
-
-            setTimeout(() => {
-                ctaForm.innerHTML = '<div class="text-center"><div class="text-green-400 text-lg font-bold mb-2">Dziękujemy!</div><p class="text-white/60 text-sm">Oddzwonimy wkrótce z dokładną wyceną.</p></div>';
-                if (window.trackEvent) window.trackEvent('calculator_cta_clicked');
-            }, 1000);
+            window.formValidation.submitForm({
+                form: ctaForm,
+                fields: [
+                    { id: 'calc-name', validate: window.formValidation.validateName },
+                    { id: 'calc-phone', validate: window.formValidation.validatePhone },
+                ],
+                consentId: 'calc-consent',
+                templateId: 'calc-success-template',
+                onSuccess: () => { if (window.trackEvent) window.trackEvent('calculator_cta_clicked'); },
+            });
         });
     }
 });

@@ -1,3 +1,26 @@
 .vercel
 .claude/
 .superpowers/
+
+# Environment
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

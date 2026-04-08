@@ -23,14 +23,17 @@ python3 -m http.server 1111
 # Open http://localhost:1111
 ```
 
-No build, lint, or test commands — this is a static site with CDN dependencies (Tailwind, Google Fonts, Lucide Icons).
+```bash
+npm test                      # run vitest unit tests
+npm run test:watch            # run vitest in watch mode
+```
 
 ## Architecture
 
 ### Tech Stack
 - **Tailwind CSS via CDN** (`cdn.tailwindcss.com`) with shared config in `js/tailwind-config.js` (loaded via script tag in all pages)
 - **Vanilla JS** (no framework, no bundler, no modules — plain `<script>` tags)
-- **Lucide Icons** via CDN (`unpkg.com/lucide@latest`) — call `lucide.createIcons()` after DOM load
+- **Lucide Icons** via CDN (`unpkg.com/lucide@0.460.0`) — pinned version, call `lucide.createIcons()` after DOM load
 - **Google Fonts**: Fraunces (headings) + Space Grotesk (body)
 
 ### Color Palette (defined in `js/tailwind-config.js` — single source of truth)
@@ -56,7 +59,7 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 
 | File | Exports/Globals | Purpose |
 |------|----------------|---------|
-| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide |
+| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, generic `submitForm()` handler |
 | `quiz.js` | — | 5-step diagnostic quiz (selection, navigation, submission, business hours) |
 | `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result) |
 | `animations.js` | — | IntersectionObserver: count-up numbers, scroll reveal, case study filter |
@@ -85,9 +88,9 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`
 - **FAQ accordion**: `aria-controls` + `role="region"` for accessibility, toggle logic in `analytics.js`
 - **Floating contact buttons**: WhatsApp + phone, desktop only (mobile uses sticky bottom bar)
-- **Quiz/Calculator forms**: simulated submission with `setTimeout` — backend integration placeholder. Replace the `setTimeout` blocks with real fetch calls.
-- **Business hours logic** in `quiz.js`: Mon-Fri 8-18, Sat 9-14 — affects "oddzwonimy w 30 minut" vs "następny dzień roboczy" messaging.
-- **Calculator algorithm**: injury base amounts stored in a `Map` at click time (not re-queried from DOM). Multipliers applied to the sum, result shown as 0.7x–1.3x range.
+- **Quiz/Calculator forms**: simulated submission via shared `window.formValidation.submitForm()` with `<template>` elements for success messages — backend integration placeholder. Replace the `setTimeout` blocks with real fetch calls.
+- **Business hours logic** in `quiz.js`: constants in `BUSINESS_HOURS` (Mon-Fri 8-18, Sat 9-14) — affects "oddzwonimy w 30 minut" vs "następny dzień roboczy" messaging.
+- **Calculator algorithm**: injury base amounts stored in a `Map` at click time (not re-queried from DOM). Multipliers defined in `CALC_CONSTANTS` at top of file. Result shown as RANGE_LOW–RANGE_HIGH range.
 - **Cookie consent gates GA4**: analytics scripts only load after user accepts cookies via localStorage check. `cookie-consent.js` guards against missing `#cookie-banner` element.
 - **Delegated event handling**: `navigation.js` uses delegated click on mobile menu; `analytics.js` uses delegated click with early-exit for phone/sticky/case tracking.
 - **DOM caching**: `calculator.js` caches all label/result elements at init — `recalculate()` runs on every slider input event and must avoid DOM queries in the hot path.
@@ -140,6 +143,23 @@ form-validation.js → cookie-consent.js → animations.js → analytics.js → 
 - `cookie-consent.js` MUST be before `analytics.js` — gates GA4 loading
 - `analytics.js` contains FAQ accordion toggle and contact form handler (not just tracking)
 - `navigation.js` contains testimonial carousel logic (needs DOM ready)
+
+## Security
+
+- **Security headers** configured in `vercel.json`: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+- **CDN versions pinned**: Lucide at `0.460.0` (never use `@latest` in production)
+- **No innerHTML with user input**: form success messages use `<template>` elements cloned via DOM API. i18n uses innerHTML intentionally for first-party static JSON translations (documented in code).
+- **All JS files use `'use strict'`**
+- **`node_modules/` in `.gitignore`** — never commit dependencies
+
+## Testing
+
+Unit tests with **vitest** + **jsdom** (`npm test`):
+- `tests/form-validation.test.js` — validateName, validatePhone, validateEmail (12 tests)
+- `tests/calculator.test.js` — multiplier logic, range calculation, rounding (9 tests)
+- `tests/business-hours.test.js` — isBusinessHours weekday/Saturday/Sunday (5 tests)
+
+When modifying calculator multipliers or validation logic, update corresponding tests.
 
 ## Placeholders to Replace
 - Phone: `+48XXXXXXXXX` and `+48 XXX XXX XXX`

@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('main-nav');
     const menuBtn = document.getElementById('mobile-menu-btn');
@@ -43,7 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         function setMenuIcon(name) {
             if (menuIcon) {
                 menuIcon.setAttribute('data-lucide', name);
-                lucide.createIcons();
+                // Scope icon re-render to menu button only (avoids full DOM scan)
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons({ attrs: { 'data-lucide': name }, nameAttr: 'data-lucide' });
+                }
             }
         }
 
@@ -69,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('testimonial-next');
     if (carousel && prevBtn && nextBtn) {
         function getScrollDistance() {
-            var firstCard = carousel.querySelector('.testimonial-card');
+            const firstCard = carousel.querySelector('.testimonial-card');
             return firstCard ? firstCard.offsetWidth + 24 : 364;
         }
         prevBtn.addEventListener('click', function() {

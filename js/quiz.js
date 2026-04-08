@@ -1,19 +1,37 @@
+'use strict';
+
 /**
  * Quiz diagnostyczny — 5-step interactive quiz with lead capture.
  * Handles step navigation, option selection, form submission, and business hours logic.
  */
 
+const TOTAL_STEPS = 5;
+
+const STEP_LABELS = {
+    step1: { 'wypadek-samochodowy': 'Wypadek samochodowy', 'wypadek-motocyklowy': 'Wypadek motocyklowy', 'potracenie': 'Potrącenie pieszego', 'wypadek-praca': 'Wypadek przy pracy', 'blad-medyczny': 'Błąd medyczny', 'smierc-bliskiej': 'Śmierć bliskiej osoby', 'wypadek-rolnictwo': 'Wypadek w rolnictwie', 'inne': 'Inne' },
+    step2: { '30dni': 'W ciągu 30 dni', '1-6mies': '1–6 miesięcy temu', '6-12mies': '6–12 miesięcy temu', '1-3lata': '1–3 lata temu', '3+lata': 'Ponad 3 lata temu' },
+    step3: { 'szpital': 'Pobyt w szpitalu', 'ambulatorium': 'Leczenie ambulatoryjne', 'uszczerbek': 'Trwały uszczerbek', 'niezdolnosc': 'Niezdolność do pracy', 'smierc': 'Śmierć osoby bliskiej', 'szkoda-materialna': 'Szkoda materialna' },
+    step4: { 'nie-zgloszone': 'Jeszcze nie zgłoszone', 'czekam': 'Czekam na decyzję', 'za-malo': 'Wypłacono za mało', 'odmowa': 'Odmowa wypłaty', 'nie-wiem': 'Nie wiem co robić' },
+};
+
+const BUSINESS_HOURS = {
+    WEEKDAY_START: 8,
+    WEEKDAY_END: 18,
+    SATURDAY_START: 9,
+    SATURDAY_END: 14,
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const state = { step: 1, answers: {} };
-    const totalSteps = 5;
 
     // Business hours check
     function isBusinessHours() {
         const now = new Date();
         const day = now.getDay(); // 0=Sun
         const hour = now.getHours();
-        if (day >= 1 && day <= 5) return hour >= 8 && hour < 18; // Mon-Fri 8-18
-        if (day === 6) return hour >= 9 && hour < 14; // Sat 9-14
+        const { WEEKDAY_START, WEEKDAY_END, SATURDAY_START, SATURDAY_END } = BUSINESS_HOURS;
+        if (day >= 1 && day <= 5) return hour >= WEEKDAY_START && hour < WEEKDAY_END;
+        if (day === 6) return hour >= SATURDAY_START && hour < SATURDAY_END;
         return false;
     }
 
@@ -27,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update progress bar
     function updateProgress() {
-        const percent = (state.step / totalSteps) * 100;
+        const percent = (state.step / TOTAL_STEPS) * 100;
         document.getElementById('quiz-progress').style.width = `${percent}%`;
         document.getElementById('quiz-current-step').textContent = state.step;
         document.getElementById('quiz-percent').textContent = `${Math.round(percent)}%`;
@@ -73,20 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Build summary for step 5
     function buildSummary() {
-        const labels = {
-            step1: { 'wypadek-samochodowy': 'Wypadek samochodowy', 'wypadek-motocyklowy': 'Wypadek motocyklowy', 'potracenie': 'Potrącenie pieszego', 'wypadek-praca': 'Wypadek przy pracy', 'blad-medyczny': 'Błąd medyczny', 'smierc-bliskiej': 'Śmierć bliskiej osoby', 'wypadek-rolnictwo': 'Wypadek w rolnictwie', 'inne': 'Inne' },
-            step2: { '30dni': 'W ciągu 30 dni', '1-6mies': '1–6 miesięcy temu', '6-12mies': '6–12 miesięcy temu', '1-3lata': '1–3 lata temu', '3+lata': 'Ponad 3 lata temu' },
-            step3: { 'szpital': 'Pobyt w szpitalu', 'ambulatorium': 'Leczenie ambulatoryjne', 'uszczerbek': 'Trwały uszczerbek', 'niezdolnosc': 'Niezdolność do pracy', 'smierc': 'Śmierć osoby bliskiej', 'szkoda-materialna': 'Szkoda materialna' },
-            step4: { 'nie-zgloszone': 'Jeszcze nie zgłoszone', 'czekam': 'Czekam na decyzję', 'za-malo': 'Wypłacono za mało', 'odmowa': 'Odmowa wypłaty', 'nie-wiem': 'Nie wiem co robić' },
-        };
         const summaryEl = document.getElementById('quiz-summary');
         if (!summaryEl) return;
-        summaryEl.innerHTML = '';
+        summaryEl.replaceChildren();
         for (let i = 1; i <= 4; i++) {
             const val = state.answers[`step${i}`];
-            if (val && labels[`step${i}`]) {
+            const stepLabels = STEP_LABELS[`step${i}`];
+            if (val && stepLabels) {
                 const div = document.createElement('div');
-                div.textContent = `✓ ${labels[`step${i}`][val] || val}`;
+                div.textContent = `\u2713 ${stepLabels[val] || val}`;
                 summaryEl.appendChild(div);
             }
         }
@@ -95,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Next buttons
     document.querySelectorAll('.quiz-next, [id^="quiz-next-"]').forEach(btn => {
         btn.addEventListener('click', () => {
-            if (state.step < totalSteps) {
+            if (state.step < TOTAL_STEPS) {
                 const nextStep = state.step + 1;
                 showStep(nextStep);
                 if (window.trackEvent) window.trackEvent(`quiz_step_${nextStep}`, { step: nextStep });
@@ -139,7 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const summarySource = document.getElementById('quiz-summary');
                 const summaryTarget = document.getElementById('quiz-success-summary');
                 if (summarySource && summaryTarget) {
-                    summaryTarget.innerHTML = summarySource.innerHTML;
+                    summaryTarget.replaceChildren();
+                    Array.from(summarySource.childNodes).forEach(node => {
+                        summaryTarget.appendChild(node.cloneNode(true));
+                    });
                 }
 
                 // Track event

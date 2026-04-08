@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Word-by-word hero reveal
     document.querySelectorAll('.word-reveal').forEach(el => {

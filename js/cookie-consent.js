@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Cookie consent banner. Blocks GA4 until user accepts.
  * Stores preference in localStorage.
