@@ -121,6 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.trackEvent) window.trackEvent('calculator_result_shown', { min: calcMin, max: calcMax });
     }
 
+    // Live validation on calculator CTA fields
+    window.formValidation.attachLiveValidation('calc-name', window.formValidation.validateName);
+    window.formValidation.attachLiveValidation('calc-phone', window.formValidation.validatePhone);
+
     const ctaForm = document.getElementById('calc-cta-form');
     if (ctaForm) {
         ctaForm.addEventListener('submit', (e) => {

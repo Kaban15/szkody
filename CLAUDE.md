@@ -59,10 +59,10 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 
 | File | Exports/Globals | Purpose |
 |------|----------------|---------|
-| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, generic `submitForm()` handler |
+| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, `submitForm()` handler, `attachLiveValidation()` for blur/input events |
 | `quiz.js` | — | 5-step diagnostic quiz (selection, navigation, submission, business hours) |
 | `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result) |
-| `animations.js` | — | IntersectionObserver: count-up numbers, scroll reveal, case study filter |
+| `animations.js` | — | IntersectionObserver: count-up numbers, scroll reveal, case study filter, comparison bars, staggered reveal |
 | `navigation.js` | — | Mobile hamburger menu, sticky bottom bar hide, testimonial carousel scroll, scroll-to-top button |
 | `cookie-consent.js` | — | Cookie banner, localStorage consent, dynamic GA4 script injection |
 | `analytics.js` | `window.trackEvent` | GA4 event wrapper, phone click tracking, FAQ accordion, contact form |
@@ -71,6 +71,8 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 Custom animations and transitions beyond Tailwind utilities:
 - **`.word-reveal`** — hero word-by-word fade-in
 - **`.fade-in`** — scroll-triggered opacity reveal (IntersectionObserver)
+- **`.fade-in-up`** — scroll-triggered opacity + translateY reveal, used with `data-stagger` for cascading delays
+- **`.comparison-bar`** — animated width bar for case study before/after comparisons (`.comparison-bars` container triggers observer)
 - **`.count-up`** — counter animation (separate observer from fade-in)
 - **`.card-hover`** — gold glow on hover
 - **`.animate-ticker`** — infinite horizontal scroll for top success ticker
@@ -89,7 +91,10 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`
 - **FAQ accordion**: `aria-controls` + `role="region"` for accessibility, toggle logic in `analytics.js`
 - **Floating contact buttons**: WhatsApp + phone, desktop only (mobile uses sticky bottom bar)
+- **Live form validation**: `attachLiveValidation()` adds blur (validate + show error/success border) and input (clear error on correction) events. Green border (`border-green-500`) on valid fields. Applied to quiz, contact, and calculator forms.
 - **Quiz/Calculator forms**: simulated submission via shared `window.formValidation.submitForm()` with `<template>` elements for success messages — backend integration placeholder. Replace the `setTimeout` blocks with real fetch calls.
+- **Comparison bars**: animated width bars in case study cards showing insurer offer vs final result. Container `.comparison-bars` triggers IntersectionObserver, bars grow from 0 to `data-width`.
+- **Staggered scroll reveal**: containers with `data-stagger="150"` attribute animate `.fade-in-up` children with cascading delay. Applied to "dlaczego my", team experts, FAQ items.
 - **Business hours logic** in `quiz.js`: constants in `BUSINESS_HOURS` (Mon-Fri 8-18, Sat 9-14) — affects "oddzwonimy w 30 minut" vs "następny dzień roboczy" messaging.
 - **Calculator algorithm**: injury base amounts stored in a `Map` at click time (not re-queried from DOM). Multipliers defined in `CALC_CONSTANTS` at top of file. Result shown as RANGE_LOW–RANGE_HIGH range.
 - **Cookie consent gates GA4**: analytics scripts only load after user accepts cookies via localStorage check. `cookie-consent.js` guards against missing `#cookie-banner` element.

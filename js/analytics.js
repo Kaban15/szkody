@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Live validation on contact form fields
+    window.formValidation.attachLiveValidation('contact-name', window.formValidation.validateName);
+    window.formValidation.attachLiveValidation('contact-phone', window.formValidation.validatePhone);
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

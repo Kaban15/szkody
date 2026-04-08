@@ -124,6 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Live validation on quiz contact fields
+    window.formValidation.attachLiveValidation('quiz-name', window.formValidation.validateName);
+    window.formValidation.attachLiveValidation('quiz-phone', window.formValidation.validatePhone);
+    window.formValidation.attachLiveValidation('quiz-email', window.formValidation.validateEmail);
+
     // Form submission
     const form = document.getElementById('quiz-form');
     if (form) {

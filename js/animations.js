@@ -55,6 +55,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+    document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
+
+    // Comparison bars — animate width when visible
+    const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bars = entry.target.querySelectorAll('.comparison-bar');
+                bars.forEach(bar => {
+                    bar.classList.add('visible');
+                    bar.style.width = bar.dataset.width;
+                });
+                barObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.comparison-bars').forEach(el => barObserver.observe(el));
+
+    // Staggered reveal — children of [data-stagger] containers animate with delay
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.stagger) || 150;
+                const children = entry.target.querySelectorAll('.fade-in-up');
+                children.forEach((child, i) => {
+                    child.style.transitionDelay = `${i * delay}ms`;
+                    child.classList.add('visible');
+                });
+                staggerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-stagger]').forEach(el => staggerObserver.observe(el));
 
     const filterBtns = document.querySelectorAll('.case-filter');
     const caseCards = document.querySelectorAll('.case-card');

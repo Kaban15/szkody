@@ -26,7 +26,10 @@ function showError(inputId) {
     const errorEl = document.getElementById(`${inputId}-error`);
     const inputEl = document.getElementById(inputId);
     if (errorEl) errorEl.classList.remove('hidden');
-    if (inputEl) inputEl.classList.add('border-cta');
+    if (inputEl) {
+        inputEl.classList.add('border-cta');
+        inputEl.classList.remove('border-green-500');
+    }
 }
 
 function hideError(inputId) {
@@ -34,6 +37,46 @@ function hideError(inputId) {
     const inputEl = document.getElementById(inputId);
     if (errorEl) errorEl.classList.add('hidden');
     if (inputEl) inputEl.classList.remove('border-cta');
+}
+
+function showSuccess(inputId) {
+    const inputEl = document.getElementById(inputId);
+    if (inputEl) {
+        inputEl.classList.remove('border-cta');
+        inputEl.classList.add('border-green-500');
+    }
+    hideError(inputId);
+}
+
+/**
+ * Attach live validation to a field.
+ * - blur: validate and show error or success border
+ * - input: clear error as user corrects (don't show new errors mid-typing)
+ */
+function attachLiveValidation(fieldId, validateFn) {
+    const el = document.getElementById(fieldId);
+    if (!el) return;
+
+    el.addEventListener('blur', () => {
+        const value = el.value;
+        if (!value.trim()) {
+            // Empty on blur — remove success, don't show error yet
+            el.classList.remove('border-green-500');
+            return;
+        }
+        if (validateFn(value)) {
+            showSuccess(fieldId);
+        } else {
+            showError(fieldId);
+        }
+    });
+
+    el.addEventListener('input', () => {
+        // Clear error while typing if value becomes valid
+        if (el.classList.contains('border-cta') && validateFn(el.value)) {
+            showSuccess(fieldId);
+        }
+    });
 }
 
 function validateQuizForm() {
@@ -114,4 +157,4 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, delay = 10
 }
 
 // Export for use in other modules
-window.formValidation = { validateName, validatePhone, validateEmail, validateQuizForm, showError, hideError, submitForm };
+window.formValidation = { validateName, validatePhone, validateEmail, validateQuizForm, showError, hideError, showSuccess, attachLiveValidation, submitForm };

@@ -591,6 +591,16 @@
                                 <p class="text-muted text-sm mb-1" data-i18n="cases.obtained">Uzyskaliśmy</p>
                                 <p class="text-gold text-2xl lg:text-3xl font-bold font-heading mb-3" data-i18n="cases.case1_obtained">120 000 zł</p>
                                 <p class="text-gold font-bold text-sm mb-4" data-i18n="cases.case1_multiplier">8x więcej</p>
+                                <div class="comparison-bars space-y-2 mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-muted text-xs w-16 shrink-0">15 000 zł</span>
+                                        <div class="comparison-bar bg-white/10" data-width="12.5%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-gold text-xs font-semibold w-16 shrink-0">120 000 zł</span>
+                                        <div class="comparison-bar bg-gold" data-width="100%"></div>
+                                    </div>
+                                </div>
                                 <p class="text-muted text-sm" data-i18n="cases.case1_desc">Po wypadku na S7 ubezpieczyciel zaproponował 15 tys. Nasz zespół uzyskał 8-krotnie wyższe odszkodowanie.</p>
                             </div>
                             <div class="lg:flex-1 mt-6 lg:mt-0 lg:border-l lg:border-white/5 lg:pl-8">
@@ -640,6 +650,16 @@
                                 <p class="text-gold text-2xl font-bold font-heading" data-i18n="cases.case2_obtained">67 000 zł</p>
                             </div>
                             <p class="text-gold font-bold text-sm mb-3" data-i18n="cases.case2_multiplier">8.4x więcej</p>
+                            <div class="comparison-bars space-y-1.5 mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-muted text-xs w-14 shrink-0">8 000</span>
+                                    <div class="comparison-bar bg-white/10" data-width="12%"></div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gold text-xs font-semibold w-14 shrink-0">67 000</span>
+                                    <div class="comparison-bar bg-gold" data-width="100%"></div>
+                                </div>
+                            </div>
                             <p class="text-muted text-sm" data-i18n="cases.case2_desc">Uraz kręgosłupa na budowie. Pracodawca i ubezpieczyciel bagatelizowali sprawę.</p>
                             <blockquote class="border-l-2 border-gold/30 pl-3 mt-3">
                                 <p class="text-muted text-xs italic" data-i18n="cases.case2_quote">"Nie wierzyłem, że warto walczyć. Teraz mam pieniądze na rehabilitację."</p>
@@ -658,6 +678,16 @@
                                 <p class="text-gold text-2xl font-bold font-heading" data-i18n="cases.case3_obtained">310 000 zł</p>
                             </div>
                             <p class="text-gold font-bold text-sm mb-3" data-i18n="cases.case3_multiplier">7.8x więcej</p>
+                            <div class="comparison-bars space-y-1.5 mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-muted text-xs w-14 shrink-0">40 000</span>
+                                    <div class="comparison-bar bg-white/10" data-width="13%"></div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gold text-xs font-semibold w-14 shrink-0">310 000</span>
+                                    <div class="comparison-bar bg-gold" data-width="100%"></div>
+                                </div>
+                            </div>
                             <p class="text-muted text-sm" data-i18n="cases.case3_desc">Rodzina straciła bliskiego w wypadku. Uzyskaliśmy zadośćuczynienie dla 3 członków rodziny.</p>
                             <blockquote class="border-l-2 border-gold/30 pl-3 mt-3">
                                 <p class="text-muted text-xs italic" data-i18n="cases.case3_quote">"Żadne pieniądze nie zwrócą taty, ale dzięki nim mogliśmy się pozbierać."</p>
@@ -820,35 +850,37 @@
                     <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white" data-i18n="why.title">Dlaczego my?</h2>
                 </div>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">01</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r1_title">Bezpłatna konsultacja</h3>
-                        <p class="text-muted" data-i18n="why.r1_desc">Nie pobieramy żadnych opłat wstępnych. Przeanalizujemy Twoją sprawę i ocenimy szanse bez ryzyka finansowego.</p>
+                <div data-stagger="150">
+                    <div class="fade-in-up flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
+                        <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">01</span>
+                        <div>
+                            <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r1_title">Bezpłatna konsultacja</h3>
+                            <p class="text-muted" data-i18n="why.r1_desc">Nie pobieramy żadnych opłat wstępnych. Przeanalizujemy Twoją sprawę i ocenimy szanse bez ryzyka finansowego.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">02</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r2_title">Płacisz za sukces</h3>
-                        <p class="text-muted" data-i18n="why.r2_desc">Prowizja naliczana wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy — nie płacisz nic.</p>
+                    <div class="fade-in-up flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
+                        <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">02</span>
+                        <div>
+                            <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r2_title">Płacisz za sukces</h3>
+                            <p class="text-muted" data-i18n="why.r2_desc">Prowizja naliczana wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy — nie płacisz nic.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">03</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r3_title">Doświadczony zespół</h3>
-                        <p class="text-muted" data-i18n="why.r3_desc">Prawnicy, rzeczoznawcy i mediatorzy z wieloletnim stażem. Ponad 500 wygranych spraw i 10+ lat doświadczenia.</p>
+                    <div class="fade-in-up flex gap-6 lg:gap-8 items-start py-8 border-b border-white/5">
+                        <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">03</span>
+                        <div>
+                            <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r3_title">Doświadczony zespół</h3>
+                            <p class="text-muted" data-i18n="why.r3_desc">Prawnicy, rzeczoznawcy i mediatorzy z wieloletnim stażem. Ponad 500 wygranych spraw i 10+ lat doświadczenia.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">04</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r4_title">Cała Polska</h3>
-                        <p class="text-muted" data-i18n="why.r4_desc">Siedziba w Poznaniu, obsługujemy klientów w całym kraju. Wszystko załatwimy zdalnie lub na miejscu.</p>
+                    <div class="fade-in-up flex gap-6 lg:gap-8 items-start py-8">
+                        <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">04</span>
+                        <div>
+                            <h3 class="font-heading text-xl text-white font-bold mb-2" data-i18n="why.r4_title">Cała Polska</h3>
+                            <p class="text-muted" data-i18n="why.r4_desc">Siedziba w Poznaniu, obsługujemy klientów w całym kraju. Wszystko załatwimy zdalnie lub na miejscu.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -862,9 +894,9 @@
                     <p class="text-muted mt-3 max-w-xl mx-auto" data-i18n="team.subtitle">Zespół doświadczonych prawników i specjalistów, którzy walczą o Twoje odszkodowanie.</p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger="150">
                     <!-- Expert 1 -->
-                    <div class="fade-in bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
+                    <div class="fade-in-up bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
                         <div class="w-20 h-20 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center mx-auto mb-4 group-hover:border-gold transition-colors">
                             <span class="text-gold font-heading text-2xl font-bold">MK</span>
                         </div>
@@ -877,7 +909,7 @@
                     </div>
 
                     <!-- Expert 2 -->
-                    <div class="fade-in bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
+                    <div class="fade-in-up bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
                         <div class="w-20 h-20 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center mx-auto mb-4 group-hover:border-gold transition-colors">
                             <span class="text-gold font-heading text-2xl font-bold">AN</span>
                         </div>
@@ -890,7 +922,7 @@
                     </div>
 
                     <!-- Expert 3 -->
-                    <div class="fade-in bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
+                    <div class="fade-in-up bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
                         <div class="w-20 h-20 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center mx-auto mb-4 group-hover:border-gold transition-colors">
                             <span class="text-gold font-heading text-2xl font-bold">PZ</span>
                         </div>
@@ -903,7 +935,7 @@
                     </div>
 
                     <!-- Expert 4 -->
-                    <div class="fade-in bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
+                    <div class="fade-in-up bg-surface border border-white/5 rounded-xl p-6 text-center card-hover group">
                         <div class="w-20 h-20 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center mx-auto mb-4 group-hover:border-gold transition-colors">
                             <span class="text-gold font-heading text-2xl font-bold">KW</span>
                         </div>
@@ -942,8 +974,8 @@
                     <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white" data-i18n="faq.title">Często zadawane pytania</h2>
                 </div>
 
-                <div class="space-y-3">
-                    <div class="faq-item bg-surface border border-white/5 rounded-lg overflow-hidden">
+                <div class="space-y-3" data-stagger="100">
+                    <div class="faq-item fade-in-up bg-surface border border-white/5 rounded-lg overflow-hidden">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false" aria-controls="faq-a1">
                             <span class="text-text font-medium pr-4" data-i18n="faq.q1">Ile kosztuje konsultacja?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-muted shrink-0 transition-transform"></i>
@@ -953,7 +985,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item bg-surface border border-white/5 rounded-lg overflow-hidden">
+                    <div class="faq-item fade-in-up bg-surface border border-white/5 rounded-lg overflow-hidden">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false" aria-controls="faq-a2">
                             <span class="text-text font-medium pr-4" data-i18n="faq.q2">Ile trwa cały proces?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-muted shrink-0 transition-transform"></i>
@@ -963,7 +995,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item bg-surface border border-white/5 rounded-lg overflow-hidden">
+                    <div class="faq-item fade-in-up bg-surface border border-white/5 rounded-lg overflow-hidden">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false" aria-controls="faq-a3">
                             <span class="text-text font-medium pr-4" data-i18n="faq.q3">Co jeśli ubezpieczyciel odmówił wypłaty?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-muted shrink-0 transition-transform"></i>
@@ -973,7 +1005,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item bg-surface border border-white/5 rounded-lg overflow-hidden">
+                    <div class="faq-item fade-in-up bg-surface border border-white/5 rounded-lg overflow-hidden">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false" aria-controls="faq-a4">
                             <span class="text-text font-medium pr-4" data-i18n="faq.q4">Ile to kosztuje?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-muted shrink-0 transition-transform"></i>
@@ -983,7 +1015,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item bg-surface border border-white/5 rounded-lg overflow-hidden">
+                    <div class="faq-item fade-in-up bg-surface border border-white/5 rounded-lg overflow-hidden">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false" aria-controls="faq-a5">
                             <span class="text-text font-medium pr-4" data-i18n="faq.q5">Czy sprawa może się przedawnić?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-muted shrink-0 transition-transform"></i>
@@ -993,7 +1025,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item bg-surface border border-white/5 rounded-lg overflow-hidden">
+                    <div class="faq-item fade-in-up bg-surface border border-white/5 rounded-lg overflow-hidden">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false" aria-controls="faq-a6">
                             <span class="text-text font-medium pr-4" data-i18n="faq.q6">Czy muszę osobiście się stawiać w kancelarii?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-muted shrink-0 transition-transform"></i>
@@ -1003,7 +1035,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item bg-surface border border-white/5 rounded-lg overflow-hidden">
+                    <div class="faq-item fade-in-up bg-surface border border-white/5 rounded-lg overflow-hidden">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false" aria-controls="faq-a7">
                             <span class="text-text font-medium pr-4" data-i18n="faq.q7">Jakie dokumenty będą potrzebne?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-muted shrink-0 transition-transform"></i>
