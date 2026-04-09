@@ -35,6 +35,7 @@ npm run test:watch            # run vitest in watch mode
 - **Vanilla JS** (no framework, no bundler, no modules — plain `<script>` tags)
 - **Lucide Icons** via CDN (`unpkg.com/lucide@0.460.0`) — pinned version, call `lucide.createIcons()` after DOM load
 - **Google Fonts**: Plus Jakarta Sans (headings + body, weights 400–800)
+- **Lenis Smooth Scroll** via CDN (`unpkg.com/lenis@1.1.18`) — only loaded on `index.html`, guarded in `animations.js` with `typeof Lenis !== 'undefined'`
 
 ### Color Palette (defined in `js/tailwind-config.js` — single source of truth)
 - `bg` (#FDFBF7) — warm cream page background
@@ -48,7 +49,7 @@ npm run test:watch            # run vitest in watch mode
 - `error` (#EF4444) — form validation errors
 
 ### Page Structure
-- **`index.html`** — one-page main site containing: ticker, hero, trust bar, quiz, "jak działamy" process, social proof + case studies (with timeline & quotes), testimonials carousel, "dlaczego my", team/experts, insurance logos bar, FAQ accordion, CTA footer, floating WhatsApp/phone buttons
+- **`index.html`** — one-page main site containing: ticker, hero, trust bar, quiz, icon divider, "jak działamy" process, social proof + case studies (with timeline & quotes), icon divider, testimonials carousel, "dlaczego my", team/experts, insurance logos bar, FAQ accordion, CTA footer, floating WhatsApp/phone buttons. Loads Lenis smooth scroll CDN.
 - **`uslugi.html`** — services overview page
 - **`sukcesy.html`** — case studies / success stories
 - **`opinie.html`** — client testimonials
@@ -64,7 +65,7 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 | `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, `submitForm()` handler, `attachLiveValidation()` for blur/input events |
 | `quiz.js` | — | 5-step diagnostic quiz (selection, navigation, submission, business hours) |
 | `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result) |
-| `animations.js` | — | IntersectionObserver: count-up numbers, scroll reveal, case study filter, comparison bars, staggered reveal |
+| `animations.js` | — | Lenis smooth scroll init (guarded), parallax on scroll, IntersectionObserver: count-up numbers, scroll reveal, clip-path reveals, case study filter, comparison bars, staggered reveal |
 | `navigation.js` | — | Mobile hamburger menu, sticky bottom bar hide, testimonial carousel scroll, scroll-to-top button |
 | `cookie-consent.js` | — | Cookie banner, localStorage consent, dynamic GA4 script injection |
 | `analytics.js` | `window.trackEvent` | GA4 event wrapper, phone click tracking, FAQ accordion, contact form |
@@ -73,7 +74,7 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 Custom animations and transitions beyond Tailwind utilities:
 - **`.word-reveal`** — hero word-by-word fade-in
 - **`.fade-in`** — scroll-triggered opacity reveal (IntersectionObserver)
-- **`.fade-in-up`** — scroll-triggered opacity + translateY reveal, used with `data-stagger` for cascading delays
+- **`.fade-in-up`** — scroll-triggered opacity + translateY(40px) + scale(0.97) reveal with spring easing (`cubic-bezier(0.16, 1, 0.3, 1)`), used with `data-stagger` for cascading delays
 - **`.comparison-bar`** — animated width bar for case study before/after comparisons (`.comparison-bars` container triggers observer)
 - **`.count-up`** — counter animation (separate observer from fade-in)
 - **`.card-hover`** — gold glow on hover
@@ -81,6 +82,8 @@ Custom animations and transitions beyond Tailwind utilities:
 - **`.testimonial-track` / `.testimonial-card`** — scroll-snap for carousel
 - **`.pulse-ring`** — pulsing ring on floating WhatsApp button
 - **`#scroll-to-top`** — fade-in/out scroll-to-top button (created dynamically by `navigation.js`, appears after 400px scroll)
+- **`.reveal-clip`** — clip-path inset reveal from left (`inset(0 100% 0 0)` → `inset(0 0 0 0)`), used on hero checkmarks
+- **`[data-parallax]`** — scroll-driven translateY parallax via Lenis `onScroll`, factor set per element (hero 0.3, process icons 0.1, team avatars 0.15, CTA 0.2). Mobile: factor halved. Disabled on `prefers-reduced-motion`.
 - **`.faq-answer`** — max-height accordion transition
 
 ### Shared Elements Across Subpages
@@ -140,6 +143,8 @@ Note: `analytics.js` calls `window.formValidation` only inside `if (contactForm)
 - Blog implementation plan: `docs/superpowers/plans/2026-04-07-blog-system-seo-plan.md`
 - Content SEO strategy: `docs/superpowers/specs/2026-04-07-content-seo-strategy-design.md`
 - Blog publication plan: `docs/blog-publication-plan.md`
+- Animations spec: `docs/superpowers/specs/2026-04-09-aramco-animations-design.md`
+- Animations plan: `docs/superpowers/plans/2026-04-09-aramco-animations-plan.md`
 
 ## Script Load Order (critical)
 
@@ -155,7 +160,7 @@ form-validation.js → cookie-consent.js → animations.js → analytics.js → 
 ## Security
 
 - **Security headers** configured in `vercel.json`: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
-- **CDN versions pinned**: Lucide at `0.460.0` (never use `@latest` in production)
+- **CDN versions pinned**: Lucide at `0.460.0`, Lenis at `1.1.18` (never use `@latest` in production)
 - **No innerHTML with user input**: form success messages use `<template>` elements cloned via DOM API. i18n uses innerHTML intentionally for first-party static JSON translations (documented in code).
 - **All JS files use `'use strict'`**
 - **`node_modules/` in `.gitignore`** — never commit dependencies
