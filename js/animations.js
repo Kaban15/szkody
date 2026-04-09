@@ -92,6 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
     document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
 
+    // Clip-path reveal observer
+    const clipObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                clipObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal-clip').forEach(el => clipObserver.observe(el));
+
     // Comparison bars — animate width when visible
     const barObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
