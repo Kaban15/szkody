@@ -17,6 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     requestAnimationFrame(raf);
 
+    // Parallax on scroll
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    const isMobile = window.innerWidth < 768;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReduced && parallaxEls.length) {
+        lenis.on('scroll', ({ scroll }) => {
+            parallaxEls.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const inView = rect.top < window.innerHeight && rect.bottom > 0;
+                if (!inView) return;
+
+                const factor = parseFloat(el.dataset.parallax) * (isMobile ? 0.5 : 1);
+                const offset = (rect.top - window.innerHeight / 2) * factor;
+                el.style.transform = `translateY(${offset}px)`;
+            });
+        });
+    }
+
     // Word-by-word hero reveal
     document.querySelectorAll('.word-reveal').forEach(el => {
         const text = el.textContent.trim();
