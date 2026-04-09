@@ -230,6 +230,29 @@ input[type="range"]::-moz-range-thumb {
     clip-path: inset(0 0 0 0);
 }
 
+/* Horizontal scroll text divider */
+.scroll-text-divider {
+    overflow: hidden;
+    padding: 3rem 0;
+}
+
+.scroll-text-divider .scroll-text-inner {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.scroll-text-divider .scroll-text-inner span {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 8rem);
+    color: rgba(138, 125, 111, 0.15);
+    padding: 0 2rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
 /* Parallax elements */
 [data-parallax] {
     will-change: transform;
@@ -248,5 +271,9 @@ input[type="range"]::-moz-range-thumb {
     }
     .reveal-clip {
         clip-path: none !important;
+    }
+    .scroll-text-divider .scroll-text-inner {
+        transform: none !important;
+        justify-content: center;
     }
 }
