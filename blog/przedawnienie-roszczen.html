@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -96,12 +96,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -109,23 +109,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -146,23 +146,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Przedawnienie roszczeń odszkodowawczych</span>
+                    <span class="text-text">Przedawnienie roszczeń odszkodowawczych</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Prawo</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Przedawnienie roszczeń odszkodowawczych — ile masz czasu?</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Przedawnienie roszczeń odszkodowawczych — ile masz czasu?</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -176,8 +176,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#podstawowe-terminy" class="text-gold hover:text-gold-light transition-colors text-sm">1. Podstawowe terminy przedawnienia</a></li>
                         <li><a href="#sprawy-karne" class="text-gold hover:text-gold-light transition-colors text-sm">2. Przedawnienie w sprawach karnych — 20 lat</a></li>
@@ -192,115 +192,115 @@
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">Jednym z najczęstszych powodów utraty prawa do odszkodowania jest zbyt długie zwlekanie. Poszkodowani często nie wiedzą, że zegar zaczął już tykać — albo błędnie zakładają, że mają na wszystko wieczność. Przepisy Kodeksu cywilnego (art. 442¹ KC) wyznaczają konkretne terminy, po których ubezpieczyciel może skutecznie odmówić wypłaty, powołując się na przedawnienie. Dowiedz się, ile czasu masz naprawdę i jak go nie stracić.</p>
 
-                    <h2 id="podstawowe-terminy" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">1. Podstawowe terminy przedawnienia</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Podstawowa zasada wynika z <strong class="text-white">art. 442¹ §1 Kodeksu cywilnego</strong>: roszczenie o naprawienie szkody wyrządzonej czynem niedozwolonym przedawnia się z upływem <strong class="text-white">3 lat od dnia, w którym poszkodowany dowiedział się albo przy zachowaniu należytej staranności mógł się dowiedzieć o szkodzie i osobie zobowiązanej do jej naprawienia</strong>. W praktyce, przy wypadkach komunikacyjnych, jest to najczęściej dzień samego zdarzenia — wtedy wiesz, kto jest sprawcą i widzisz uszkodzenia pojazdu.</p>
+                    <h2 id="podstawowe-terminy" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">1. Podstawowe terminy przedawnienia</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Podstawowa zasada wynika z <strong class="text-text">art. 442¹ §1 Kodeksu cywilnego</strong>: roszczenie o naprawienie szkody wyrządzonej czynem niedozwolonym przedawnia się z upływem <strong class="text-text">3 lat od dnia, w którym poszkodowany dowiedział się albo przy zachowaniu należytej staranności mógł się dowiedzieć o szkodzie i osobie zobowiązanej do jej naprawienia</strong>. W praktyce, przy wypadkach komunikacyjnych, jest to najczęściej dzień samego zdarzenia — wtedy wiesz, kto jest sprawcą i widzisz uszkodzenia pojazdu.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Jednak termin ten może się liczyć inaczej, gdy szkoda ujawniła się z opóźnieniem. Przykład: po wypadku czułeś niewielki ból karku, który po kilku tygodniach okazał się przepukliną kręgosłupa stwierdzoną przez lekarza. W takim przypadku 3-letni termin zacznie biec od dnia postawienia diagnozy — nie od dnia wypadku.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Niezależnie od tego, kiedy dowiedziałeś się o szkodzie, obowiązuje bezwzględny limit: <strong class="text-white">10 lat od dnia, w którym nastąpiło zdarzenie wywołujące szkodę</strong>. Po tym czasie roszczenie wygasa, nawet jeśli nie wiedziałeś o szkodzie wcześniej. Ten limit nie dotyczy jednak spraw, w których szkoda wynikła z przestępstwa — o czym piszemy w kolejnej sekcji.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Niezależnie od tego, kiedy dowiedziałeś się o szkodzie, obowiązuje bezwzględny limit: <strong class="text-text">10 lat od dnia, w którym nastąpiło zdarzenie wywołujące szkodę</strong>. Po tym czasie roszczenie wygasa, nawet jeśli nie wiedziałeś o szkodzie wcześniej. Ten limit nie dotyczy jednak spraw, w których szkoda wynikła z przestępstwa — o czym piszemy w kolejnej sekcji.</p>
 
-                    <div class="bg-surface border border-white/5 rounded-lg p-6 mb-10">
-                        <h3 class="font-heading text-lg font-bold text-white mb-4">Podstawowe terminy — podsumowanie</h3>
+                    <div class="bg-surface border border-line/50 rounded-lg p-6 mb-10">
+                        <h3 class="font-heading text-lg font-bold text-text mb-4">Podstawowe terminy — podsumowanie</h3>
                         <ul class="space-y-3">
                             <li class="flex items-start gap-3">
                                 <span class="text-gold mt-1 shrink-0"><i data-lucide="clock" class="w-4 h-4"></i></span>
-                                <span class="text-muted text-sm"><strong class="text-white">3 lata</strong> od dowiedzenia się o szkodzie i osobie odpowiedzialnej (art. 442¹ §1 KC) — reguła ogólna</span>
+                                <span class="text-muted text-sm"><strong class="text-text">3 lata</strong> od dowiedzenia się o szkodzie i osobie odpowiedzialnej (art. 442¹ §1 KC) — reguła ogólna</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-gold mt-1 shrink-0"><i data-lucide="clock" class="w-4 h-4"></i></span>
-                                <span class="text-muted text-sm"><strong class="text-white">10 lat</strong> od zdarzenia — absolutny limit niezależnie od wiedzy poszkodowanego (z wyjątkiem przestępstw)</span>
+                                <span class="text-muted text-sm"><strong class="text-text">10 lat</strong> od zdarzenia — absolutny limit niezależnie od wiedzy poszkodowanego (z wyjątkiem przestępstw)</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-gold mt-1 shrink-0"><i data-lucide="clock" class="w-4 h-4"></i></span>
-                                <span class="text-muted text-sm"><strong class="text-white">20 lat</strong> od popełnienia przestępstwa — gdy szkoda jest skutkiem czynu zabronionego (art. 442¹ §2 KC)</span>
+                                <span class="text-muted text-sm"><strong class="text-text">20 lat</strong> od popełnienia przestępstwa — gdy szkoda jest skutkiem czynu zabronionego (art. 442¹ §2 KC)</span>
                             </li>
                         </ul>
                     </div>
 
-                    <h2 id="sprawy-karne" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">2. Przedawnienie w sprawach karnych — 20 lat</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">To jeden z najważniejszych wyjątków w polskim prawie cywilnym. Zgodnie z <strong class="text-white">art. 442¹ §2 Kodeksu cywilnego</strong>, jeżeli szkoda wynikła ze zbrodni lub występku (czyli z przestępstwa), roszczenie o naprawienie szkody przedawnia się dopiero po upływie <strong class="text-white">20 lat od dnia popełnienia przestępstwa</strong> — bez względu na to, kiedy poszkodowany dowiedział się o szkodzie i osobie zobowiązanej.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Ten przepis ma ogromne znaczenie praktyczne. Spowodowanie wypadku drogowego, w wyniku którego ktoś odniósł obrażenia ciała, jest w Polsce przestępstwem (art. 177 Kodeksu karnego). Oznacza to, że <strong class="text-white">praktycznie każdy wypadek samochodowy z obrażeniami podlega 20-letniemu terminowi przedawnienia</strong> — nie 3-letniemu.</p>
+                    <h2 id="sprawy-karne" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">2. Przedawnienie w sprawach karnych — 20 lat</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">To jeden z najważniejszych wyjątków w polskim prawie cywilnym. Zgodnie z <strong class="text-text">art. 442¹ §2 Kodeksu cywilnego</strong>, jeżeli szkoda wynikła ze zbrodni lub występku (czyli z przestępstwa), roszczenie o naprawienie szkody przedawnia się dopiero po upływie <strong class="text-text">20 lat od dnia popełnienia przestępstwa</strong> — bez względu na to, kiedy poszkodowany dowiedział się o szkodzie i osobie zobowiązanej.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Ten przepis ma ogromne znaczenie praktyczne. Spowodowanie wypadku drogowego, w wyniku którego ktoś odniósł obrażenia ciała, jest w Polsce przestępstwem (art. 177 Kodeksu karnego). Oznacza to, że <strong class="text-text">praktycznie każdy wypadek samochodowy z obrażeniami podlega 20-letniemu terminowi przedawnienia</strong> — nie 3-letniemu.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Nie trzeba przy tym, żeby sprawca został skazany wyrokiem karnym. Wystarczy, że czyn wypełniał znamiona przestępstwa — taką ocenę może przeprowadzić sąd cywilny samodzielnie, na potrzeby ustalenia terminu przedawnienia. Nawet umorzenie postępowania karnego nie wyklucza zastosowania 20-letniego terminu w postępowaniu cywilnym.</p>
-                    <p class="text-muted text-lg mb-10 leading-relaxed">W praktyce: jeśli miałeś wypadek samochodowy w 2015 roku i doznałeś złamania, masz czas na dochodzenie roszczeń do 2035 roku. Jednak <strong class="text-white">czekanie do ostatniej chwili jest ryzykowne</strong> — dowody znikają, świadkowie zapominają, dokumentacja medyczna może być trudna do odtworzenia. Działaj tak szybko, jak to możliwe.</p>
+                    <p class="text-muted text-lg mb-10 leading-relaxed">W praktyce: jeśli miałeś wypadek samochodowy w 2015 roku i doznałeś złamania, masz czas na dochodzenie roszczeń do 2035 roku. Jednak <strong class="text-text">czekanie do ostatniej chwili jest ryzykowne</strong> — dowody znikają, świadkowie zapominają, dokumentacja medyczna może być trudna do odtworzenia. Działaj tak szybko, jak to możliwe.</p>
 
-                    <h2 id="nieletni" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">3. Szczególna ochrona nieletnich poszkodowanych</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Polskie prawo przyznaje dodatkową ochronę osobom, które w chwili wyrządzenia szkody były niepełnoletnie. Zgodnie z <strong class="text-white">art. 442¹ §4 Kodeksu cywilnego</strong>, przedawnienie roszczeń osoby małoletniej o naprawienie szkody wyrządzonej jej na osobie nie może skończyć się wcześniej niż z upływem <strong class="text-white">2 lat od uzyskania przez nią pełnoletności</strong>.</p>
+                    <h2 id="nieletni" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">3. Szczególna ochrona nieletnich poszkodowanych</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Polskie prawo przyznaje dodatkową ochronę osobom, które w chwili wyrządzenia szkody były niepełnoletnie. Zgodnie z <strong class="text-text">art. 442¹ §4 Kodeksu cywilnego</strong>, przedawnienie roszczeń osoby małoletniej o naprawienie szkody wyrządzonej jej na osobie nie może skończyć się wcześniej niż z upływem <strong class="text-text">2 lat od uzyskania przez nią pełnoletności</strong>.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">W praktyce oznacza to, że bieg przedawnienia albo w ogóle nie rozpoczyna się przed ukończeniem 18. roku życia, albo — jeśli się rozpoczął — termin i tak nie może upłynąć przed 20. urodzinami poszkodowanego. Jest to istotne np. w sprawach wypadków drogowych, w których ucierpiały dzieci jako pasażerowie lub piesi.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Przykład: dziecko zostało potrącone przez samochód w wieku 10 lat i doznało trwałego uszczerbku na zdrowiu. Nawet jeśli rodzice nie podjęli żadnych działań, dorosłe dziecko będzie mogło samodzielnie dochodzić roszczeń co najmniej do ukończenia 20 lat. W sprawie karnej (a wypadek z obrażeniami jest przestępstwem) do 10 lat po ukończeniu 18. roku życia, czyli do 28. urodzin — w oparciu o 20-letni termin z art. 442¹ §2 KC.</p>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Jeśli Twoje dziecko ucierpiało w wypadku, zachowaj całą dokumentację — rachunki medyczne, orzeczenia lekarskie, notatki policyjne. Im więcej dowodów zachowasz teraz, tym łatwiej będzie dochodzić roszczeń w przyszłości, gdy dziecko osiągnie pełnoletność i będzie mogło samo zdecydować o podjęciu kroków prawnych.</p>
 
-                    <h2 id="przerwanie" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">4. Co przerywa bieg przedawnienia?</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Przerwanie biegu przedawnienia jest kluczowym narzędziem dla poszkodowanych, którzy chcą zachować swoje prawa, a sprawa jest jeszcze w toku. Po przerwaniu termin <strong class="text-white">biegnie na nowo</strong> — jakby zegarek resetował się do zera. Przepisy Kodeksu cywilnego (art. 123 i 124 KC) przewidują kilka sposobów na przerwanie biegu przedawnienia:</p>
+                    <h2 id="przerwanie" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">4. Co przerywa bieg przedawnienia?</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Przerwanie biegu przedawnienia jest kluczowym narzędziem dla poszkodowanych, którzy chcą zachować swoje prawa, a sprawa jest jeszcze w toku. Po przerwaniu termin <strong class="text-text">biegnie na nowo</strong> — jakby zegarek resetował się do zera. Przepisy Kodeksu cywilnego (art. 123 i 124 KC) przewidują kilka sposobów na przerwanie biegu przedawnienia:</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Skuteczne sposoby przerwania przedawnienia</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Skuteczne sposoby przerwania przedawnienia</h3>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Wytoczenie powództwa</strong> — złożenie pozwu do sądu cywilnego jest najbardziej pewnym sposobem. Od momentu doręczenia pozwu pozwanemu termin biegnie od nowa.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Zawezwanie do próby ugodowej</strong> — złożenie wniosku do sądu o przeprowadzenie posiedzenia pojednawczego. Tańsze i szybsze niż pełny pozew, a równie skutecznie przerywa przedawnienie.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Mediacja</strong> — wszczęcie postępowania mediacyjnego przed mediatorem wpisanym na listę stałych mediatorów przerywa bieg przedawnienia na czas trwania mediacji.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Uznanie roszczenia przez dłużnika</strong> — jeśli ubezpieczyciel wypłacił choćby część odszkodowania albo pisemnie potwierdził swoją odpowiedzialność, termin biegnie od nowa. Dotyczy to zarówno wyrażonego wprost uznania, jak i zachowań, które je jednoznacznie sugerują.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Wytoczenie powództwa</strong> — złożenie pozwu do sądu cywilnego jest najbardziej pewnym sposobem. Od momentu doręczenia pozwu pozwanemu termin biegnie od nowa.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Zawezwanie do próby ugodowej</strong> — złożenie wniosku do sądu o przeprowadzenie posiedzenia pojednawczego. Tańsze i szybsze niż pełny pozew, a równie skutecznie przerywa przedawnienie.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Mediacja</strong> — wszczęcie postępowania mediacyjnego przed mediatorem wpisanym na listę stałych mediatorów przerywa bieg przedawnienia na czas trwania mediacji.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Uznanie roszczenia przez dłużnika</strong> — jeśli ubezpieczyciel wypłacił choćby część odszkodowania albo pisemnie potwierdził swoją odpowiedzialność, termin biegnie od nowa. Dotyczy to zarówno wyrażonego wprost uznania, jak i zachowań, które je jednoznacznie sugerują.</span></li>
                     </ul>
 
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">Uwaga: samo zgłoszenie szkody do ubezpieczyciela nie przerywa przedawnienia.</strong> To błąd, który popełnia wielu poszkodowanych — wysyłają druk zgłoszenia i sądzą, że sprawa jest „w toku". Tymczasem jeśli ubezpieczyciel przeciąga postępowanie i nie uznaje roszczenia, 3-letni termin może upłynąć bez żadnego przerwania.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">Uwaga: samo zgłoszenie szkody do ubezpieczyciela nie przerywa przedawnienia.</strong> To błąd, który popełnia wielu poszkodowanych — wysyłają druk zgłoszenia i sądzą, że sprawa jest „w toku". Tymczasem jeśli ubezpieczyciel przeciąga postępowanie i nie uznaje roszczenia, 3-letni termin może upłynąć bez żadnego przerwania.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">W sprawach <a href="../odszkodowania-komunikacyjne.html" class="text-gold hover:text-gold-light underline transition-colors">odszkodowań po wypadkach komunikacyjnych</a> najczęściej stosowanym zabezpieczeniem jest zawezwanie do próby ugodowej — niski koszt sądowy (kilkadziesiąt złotych), szybkie działanie i pełna skuteczność prawna. Jeśli zbliża Ci się termin przedawnienia, nie czekaj — działaj.</p>
 
                 </article>
 
                 <!-- FAQ section -->
                 <section id="faq" class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy zgłoszenie szkody do ubezpieczyciela przerywa przedawnienie?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Nie — <strong class="text-white">samo zgłoszenie szkody nie przerywa biegu przedawnienia</strong>. Jest to bardzo częsty i kosztowny błąd. Ubezpieczyciel może prowadzić postępowanie likwidacyjne przez miesiące, a tymczasem termin przedawnienia nieprzerwanie biegnie. Przedawnienie przerywa dopiero <strong class="text-white">uznanie roszczenia</strong> przez ubezpieczyciela (np. wypłata jakiejkolwiek kwoty lub pisemne potwierdzenie odpowiedzialności) albo działania przed sądem: pozew, wniosek o mediację lub zawezwanie do próby ugodowej. Jeśli zbliża Ci się termin, nie polegaj wyłącznie na zgłoszeniu — podejmij jedno z wymienionych działań.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Nie — <strong class="text-text">samo zgłoszenie szkody nie przerywa biegu przedawnienia</strong>. Jest to bardzo częsty i kosztowny błąd. Ubezpieczyciel może prowadzić postępowanie likwidacyjne przez miesiące, a tymczasem termin przedawnienia nieprzerwanie biegnie. Przedawnienie przerywa dopiero <strong class="text-text">uznanie roszczenia</strong> przez ubezpieczyciela (np. wypłata jakiejkolwiek kwoty lub pisemne potwierdzenie odpowiedzialności) albo działania przed sądem: pozew, wniosek o mediację lub zawezwanie do próby ugodowej. Jeśli zbliża Ci się termin, nie polegaj wyłącznie na zgłoszeniu — podejmij jedno z wymienionych działań.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Od kiedy liczy się termin przedawnienia przy wypadku samochodowym?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Termin biegnie od dnia, w którym <strong class="text-white">dowiedziałeś się zarówno o szkodzie, jak i o osobie zobowiązanej do jej naprawienia</strong> (art. 442¹ §1 KC). Przy typowym wypadku to dzień zdarzenia — sprawca jest znany, uszkodzenia widoczne. Gdy jednak część szkody ujawniła się późnie (np. trwały uszczerbek na zdrowiu stwierdzony przez biegłego rok po wypadku), termin liczy się od momentu powzięcia tej wiedzy. W każdym przypadku obowiązuje limit 10 lat od daty zdarzenia — chyba że wypadek był przestępstwem (a przy obrażeniach ciała zwykle jest), wtedy termin wynosi <strong class="text-white">20 lat od daty wypadku</strong>.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Termin biegnie od dnia, w którym <strong class="text-text">dowiedziałeś się zarówno o szkodzie, jak i o osobie zobowiązanej do jej naprawienia</strong> (art. 442¹ §1 KC). Przy typowym wypadku to dzień zdarzenia — sprawca jest znany, uszkodzenia widoczne. Gdy jednak część szkody ujawniła się późnie (np. trwały uszczerbek na zdrowiu stwierdzony przez biegłego rok po wypadku), termin liczy się od momentu powzięcia tej wiedzy. W każdym przypadku obowiązuje limit 10 lat od daty zdarzenia — chyba że wypadek był przestępstwem (a przy obrażeniach ciała zwykle jest), wtedy termin wynosi <strong class="text-text">20 lat od daty wypadku</strong>.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy mogę dochodzić odszkodowania po upływie terminu przedawnienia?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Co do zasady nie — po upływie terminu ubezpieczyciel lub sprawca może podnieść zarzut przedawnienia i odmówić zapłaty. Istnieją jednak wyjątki: gdy <strong class="text-white">sprawca był przez długi czas nieznany</strong> (np. wypadek z udziałem nieustalonego pojazdu), termin zaczyna biec od jego ustalenia. W sprawach karnych obowiązuje termin 20-letni, który często jeszcze nie upłynął. W szczególnych sytuacjach sąd może uznać, że podniesienie zarzutu przedawnienia stanowi <strong class="text-white">nadużycie prawa</strong> (art. 5 KC) — dotyczy to zwłaszcza spraw z ciężkimi obrażeniami ciała, gdy poszkodowany przez lata nie był w stanie działać z powodu stanu zdrowia. Zawsze warto skonsultować taką sytuację ze specjalistą przed rezygnacją z dochodzenia roszczeń.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Co do zasady nie — po upływie terminu ubezpieczyciel lub sprawca może podnieść zarzut przedawnienia i odmówić zapłaty. Istnieją jednak wyjątki: gdy <strong class="text-text">sprawca był przez długi czas nieznany</strong> (np. wypadek z udziałem nieustalonego pojazdu), termin zaczyna biec od jego ustalenia. W sprawach karnych obowiązuje termin 20-letni, który często jeszcze nie upłynął. W szczególnych sytuacjach sąd może uznać, że podniesienie zarzutu przedawnienia stanowi <strong class="text-text">nadużycie prawa</strong> (art. 5 KC) — dotyczy to zwłaszcza spraw z ciężkimi obrażeniami ciała, gdy poszkodowany przez lata nie był w stanie działać z powodu stanu zdrowia. Zawsze warto skonsultować taką sytuację ze specjalistą przed rezygnacją z dochodzenia roszczeń.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Nie wiesz, czy Twoje roszczenie się jeszcze nie przedawniło?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Nie wiesz, czy Twoje roszczenie się jeszcze nie przedawniło?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Bezpłatnie sprawdzimy, czy Twoja sprawa jest jeszcze możliwa do prowadzenia i jakie masz szanse. Nie czekaj — im szybciej działasz, tym łatwiej udowodnić szkodę.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
                         <!-- Related article card 1 -->
-                        <a href="co-robic-po-wypadku.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="co-robic-po-wypadku.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Co robić po wypadku samochodowym?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Co robić po wypadku samochodowym?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
                         <!-- Related article card 2 -->
-                        <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block opacity-60 cursor-not-allowed">
+                        <a href="#" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block opacity-60 cursor-not-allowed">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h3>
                                 <span class="text-muted text-sm">Wkrótce →</span>
                             </div>
                         </a>
@@ -313,7 +313,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -321,7 +321,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -331,7 +331,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -341,7 +341,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -353,18 +353,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>

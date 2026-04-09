@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -96,12 +96,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -109,23 +109,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -146,23 +146,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Jak zgłosić wypadek przy pracy — krok po kroku</span>
+                    <span class="text-text">Jak zgłosić wypadek przy pracy — krok po kroku</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Jak zgłosić wypadek przy pracy — krok po kroku</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Jak zgłosić wypadek przy pracy — krok po kroku</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -176,8 +176,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#czym-jest-wypadek" class="text-gold hover:text-gold-light transition-colors text-sm">Czym jest wypadek przy pracy?</a></li>
                         <li><a href="#krok-1-zabezpiecz" class="text-gold hover:text-gold-light transition-colors text-sm">Krok 1: Zabezpiecz miejsce i zgłoś zdarzenie</a></li>
@@ -190,28 +190,28 @@
                 <!-- Article body -->
                 <article>
 
-                    <h2 id="czym-jest-wypadek" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Czym jest wypadek przy pracy?</h2>
+                    <h2 id="czym-jest-wypadek" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Czym jest wypadek przy pracy?</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Zgodnie z art. 3 ustawy z dnia 30 października 2002 r. o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych, wypadek przy pracy to <strong class="text-text">nagłe zdarzenie wywołane przyczyną zewnętrzną</strong>, powodujące uraz lub śmierć, które nastąpiło w związku z pracą. Każdy z tych czterech elementów musi wystąpić łącznie — brak jednego wyklucza kwalifikację zdarzenia jako wypadku przy pracy.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Przykłady wypadków przy pracy to m.in. upadek na mokrej lub nierównej podłodze w zakładzie, skaleczenie lub zmiażdżenie dłoni przez maszynę, uraz kręgosłupa przy przemieszczaniu ciężkich przedmiotów, a także wypadek komunikacyjny, do którego doszło podczas jazdy służbowym samochodem w godzinach pracy. Warto wiedzieć, że <strong class="text-text">wypadek w drodze do lub z pracy jest odrębną kategorią prawną</strong> — nie jest wypadkiem przy pracy w rozumieniu ustawy, choć również uprawnia do określonych świadczeń.</p>
 
-                    <h2 id="krok-1-zabezpiecz" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4 mt-12">Krok 1: Zabezpiecz miejsce i zgłoś zdarzenie</h2>
+                    <h2 id="krok-1-zabezpiecz" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4 mt-12">Krok 1: Zabezpiecz miejsce i zgłoś zdarzenie</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Jeśli doznałeś urazu lub byłeś świadkiem wypadku — działaj natychmiast. W pierwszej kolejności zadbaj o bezpieczeństwo: jeśli istnieje ryzyko kolejnego urazu (np. maszyna nadal pracuje, ciecz nadal wycieka), odsuń się i zapobiegaj dostępowi innych osób do strefy zagrożenia. Udziel poszkodowanemu pierwszej pomocy i jeśli stan zdrowia tego wymaga — wezwij pogotowie (112 lub 999).</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed"><strong class="text-text">Niezwłocznie powiadom bezpośredniego przełożonego</strong> lub pracodawcę o zaistniałym zdarzeniu. Obowiązek ten spoczywa zarówno na poszkodowanym (o ile jego stan zdrowia na to pozwala), jak i na każdym pracowniku, który był świadkiem wypadku. Nie czekaj — zgłoszenie jak najszybciej po zdarzeniu pozwala pracodawcy zabezpieczyć miejsce wypadku w nienaruszonym stanie, co jest warunkiem rzetelnego ustalenia jego przyczyn i okoliczności.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Pamiętaj, by nie przenosić ani nie przestawiać elementów wyposażenia miejsca pracy przed przybyciem zespołu powypadkowego — chyba że jest to niezbędne dla ratowania życia lub zapobieżenia katastrofie. Zachowaj wszelkie dowody: uszkodzony sprzęt, odzież z chwili wypadku, zdjęcia miejsca zdarzenia wykonane telefonem. Zapisz też dane świadków — ich zeznania mogą być kluczowe.</p>
 
-                    <h2 id="krok-2-protokol" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4 mt-12">Krok 2: Dokumentacja i protokół powypadkowy</h2>
+                    <h2 id="krok-2-protokol" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4 mt-12">Krok 2: Dokumentacja i protokół powypadkowy</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Po otrzymaniu zgłoszenia pracodawca ma obowiązek powołać <strong class="text-text">zespół powypadkowy</strong> — zazwyczaj składający się z pracownika służby BHP i społecznego inspektora pracy. Zadaniem zespołu jest ustalenie okoliczności i przyczyn wypadku oraz sporządzenie protokołu powypadkowego. Pracodawca ma na to <strong class="text-text">14 dni od dnia uzyskania zawiadomienia</strong> o wypadku.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Co powinien zawierać protokół powypadkowy?</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Co powinien zawierać protokół powypadkowy?</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Protokół musi obejmować m.in.: datę, miejsce i opis przebiegu wypadku, wskazanie przyczyn (technicznych, organizacyjnych i ludzkich), opis urazu poszkodowanego, dane świadków, wnioski dotyczące środków profilaktycznych oraz — co najważniejsze — stwierdzenie, czy zdarzenie zostaje uznane za wypadek przy pracy, czy też nie. Jeśli zespół ma wątpliwości, termin sporządzenia protokołu może zostać wydłużony, o czym pracodawca musi poinformować poszkodowanego.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Jako poszkodowany masz prawo zapoznać się z treścią protokołu przed jego zatwierdzeniem i <strong class="text-text">wnieść zastrzeżenia do jego ustaleń</strong>. Jeśli nie zgadzasz się z treścią — np. pracodawca niesłusznie odmawia uznania zdarzenia za wypadek przy pracy — masz prawo zgłosić swoje uwagi na piśmie. Podpisanie protokołu nie jest obowiązkowe; możesz podpisać go z adnotacją o zastrzeżeniach.</p>
 
-                    <h2 id="krok-3-zus" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4 mt-12">Krok 3: Zgłoszenie do ZUS i orzeczenie lekarskie</h2>
+                    <h2 id="krok-3-zus" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4 mt-12">Krok 3: Zgłoszenie do ZUS i orzeczenie lekarskie</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Po zatwierdzeniu protokołu powypadkowego możesz ubiegać się o świadczenia z ZUS. Podstawowym dokumentem jest <strong class="text-text">formularz ZUS Z-7</strong> (wniosek o jednorazowe odszkodowanie z tytułu wypadku przy pracy lub choroby zawodowej). Wniosek składa pracodawca, ale to w Twoim interesie leży pilnowanie, by zrobił to bez zbędnej zwłoki — najlepiej niezwłocznie po zakończeniu leczenia i rehabilitacji.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">ZUS kieruje Cię na badanie do <strong class="text-text">lekarza orzecznika ZUS</strong>, który ocenia stopień stałego lub długotrwałego uszczerbku na zdrowiu. Wynik podawany jest w procentach — każdy procent uszczerbku odpowiada określonej kwocie jednorazowego odszkodowania, aktualizowanej przez Ministra Rodziny i Polityki Społecznej. Jeśli nie zgadzasz się z orzeczeniem lekarza orzecznika, możesz odwołać się do komisji lekarskiej ZUS w terminie 14 dni od doręczenia orzeczenia.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Poza jednorazowym odszkodowaniem ZUS wypłaca również zasiłek chorobowy w wysokości 100% podstawy wymiaru przez cały okres niezdolności do pracy spowodowanej wypadkiem przy pracy — od pierwszego dnia zwolnienia lekarskiego, bez okresu wyczekiwania.</p>
 
-                    <h2 id="dodatkowe-roszczenia" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4 mt-12">Dodatkowe roszczenia poza ZUS</h2>
+                    <h2 id="dodatkowe-roszczenia" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4 mt-12">Dodatkowe roszczenia poza ZUS</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Świadczenia z ZUS to nie wszystko. Jeśli do wypadku doszło z winy pracodawcy — np. wskutek zaniedbania przepisów BHP, braku właściwych zabezpieczeń maszyn lub zaniechania szkolenia pracowników — masz prawo dochodzić <strong class="text-text">dodatkowego odszkodowania od pracodawcy na drodze cywilnej</strong>. Podstawą prawną jest art. 415 Kodeksu cywilnego (odpowiedzialność na zasadzie winy) lub art. 435 KC (odpowiedzialność na zasadzie ryzyka dla przedsiębiorstw wprawianych w ruch siłami przyrody, jak zakłady przemysłowe).</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">W ramach roszczenia cywilnego możesz ubiegać się o: odszkodowanie za szkodę majątkową (koszty leczenia, rehabilitacji, opieki, utracone zarobki), zadośćuczynienie za doznaną krzywdę i cierpienie fizyczne oraz rentę wyrównawczą — jeśli wypadek trwale obniżył Twoją zdolność do pracy i zarobkowania. Kwoty uzyskiwane od pracodawcy mogą wielokrotnie przewyższać wypłatę z ZUS.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Postępowanie cywilne bywa skomplikowane — wymaga zebrania dokumentacji medycznej, wyceny szkody i niejednokrotnie opinii biegłego sądowego. Specjaliści z <a href="../odszkodowania-wypadki-przy-pracy.html" class="text-gold hover:text-gold-light transition-colors underline">działu odszkodowań za wypadki przy pracy</a> mogą przeprowadzić Cię przez cały ten proces — od analizy protokołu powypadkowego aż po finalne rozliczenie z pracodawcą lub jego ubezpieczycielem.</p>
@@ -220,11 +220,11 @@
 
                 <!-- FAQ section -->
                 <section class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
 
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white" aria-expanded="false" aria-controls="faq-1">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text" aria-expanded="false" aria-controls="faq-1">
                                 <span>Ile czasu mam na zgłoszenie wypadku przy pracy?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
@@ -233,8 +233,8 @@
                             </div>
                         </div>
 
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white" aria-expanded="false" aria-controls="faq-2">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text" aria-expanded="false" aria-controls="faq-2">
                                 <span>Czy wypadek w drodze do pracy to wypadek przy pracy?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
@@ -243,8 +243,8 @@
                             </div>
                         </div>
 
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white" aria-expanded="false" aria-controls="faq-3">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text" aria-expanded="false" aria-controls="faq-3">
                                 <span>Co jeśli pracodawca odmawia sporządzenia protokołu powypadkowego?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
@@ -257,29 +257,29 @@
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Doznałeś wypadku przy pracy?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Doznałeś wypadku przy pracy?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Nie musisz samodzielnie przebijać się przez procedury ZUS i prawa pracy. Bezpłatnie ocenimy Twoją sprawę i powiemy wprost, jakie świadczenia Ci przysługują.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
 
-                        <a href="co-robic-po-wypadku.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="co-robic-po-wypadku.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Co robić po wypadku samochodowym?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Co robić po wypadku samochodowym?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
 
-                        <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Jak dokumentować obrażenia po wypadku?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Jak dokumentować obrażenia po wypadku?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
@@ -293,7 +293,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -301,7 +301,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -311,7 +311,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -321,7 +321,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -333,18 +333,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>

@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -68,12 +68,12 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium" data-i18n="nav.blog">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
                 </div>
 
                 <!-- CTA + Phone -->
@@ -89,7 +89,7 @@
                 </div>
 
                 <!-- Mobile Hamburger -->
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -98,16 +98,16 @@
 
     <!-- Mobile Menu (fullscreen overlay) -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors" data-i18n="nav.blog">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
                     Bezpłatna konsultacja
@@ -121,7 +121,7 @@
     </div>
 
     <!-- Mobile Sticky Bottom Bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -132,46 +132,46 @@
 
     <main class="pt-20">
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors" data-i18n="blog.breadcrumb_home">Strona główna</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white" data-i18n="blog.breadcrumb_current">Baza wiedzy</span>
+                    <span class="text-text" data-i18n="blog.breadcrumb_current">Baza wiedzy</span>
                 </nav>
             </div>
         </div>
 
         <!-- Hero -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mb-4" data-i18n="blog.hero_title">Baza wiedzy</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mb-4" data-i18n="blog.hero_title">Baza wiedzy</h1>
                 <p class="text-muted max-w-2xl mx-auto text-lg" data-i18n="blog.hero_subtitle">Porady prawne, poradniki dla poszkodowanych i wszystko, co powinieneś wiedzieć o odszkodowaniach.</p>
             </div>
         </section>
 
         <!-- Articles listing -->
-        <section class="py-16 lg:py-24 bg-bg">
+        <section class="py-12 lg:py-16 bg-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Category filter -->
                 <div class="flex flex-wrap gap-3 mb-8" id="blog-filters">
                     <button class="blog-filter-btn active px-4 py-2 rounded-full text-sm font-medium border border-gold text-gold transition-colors" data-filter="all">Wszystko</button>
-                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="poradnik">Poradniki</button>
-                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="prawo">Prawo</button>
-                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="case-study">Case studies</button>
-                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-white/20 text-muted hover:border-gold hover:text-gold transition-colors" data-filter="krus">KRUS</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-line text-muted hover:border-gold hover:text-gold transition-colors" data-filter="poradnik">Poradniki</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-line text-muted hover:border-gold hover:text-gold transition-colors" data-filter="prawo">Prawo</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-line text-muted hover:border-gold hover:text-gold transition-colors" data-filter="case-study">Case studies</button>
+                    <button class="blog-filter-btn px-4 py-2 rounded-full text-sm font-medium border border-line text-muted hover:border-gold hover:text-gold transition-colors" data-filter="krus">KRUS</button>
                 </div>
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <!-- Article 1 -->
-                    <a href="co-robic-po-wypadku.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="co-robic-po-wypadku.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a1_title">Co robić po wypadku samochodowym?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2" data-i18n="blog.a1_title">Co robić po wypadku samochodowym?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a1_desc">Krok po kroku: od zabezpieczenia miejsca zdarzenia po zgłoszenie roszczenia. Dowiedz się, jakie czynności są kluczowe w pierwszych godzinach po wypadku.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -181,13 +181,13 @@
                     </a>
 
                     <!-- Article 2 -->
-                    <a href="przedawnienie-roszczen.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="prawo">
+                    <a href="przedawnienie-roszczen.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="prawo">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_law">Prawo</span>
                                 <span class="text-muted text-xs">4 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a2_title">Przedawnienie roszczeń — ile masz czasu?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2" data-i18n="blog.a2_title">Przedawnienie roszczeń — ile masz czasu?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a2_desc">Terminy przedawnienia i wyjątki, o których musisz wiedzieć. Standardowo 3 lata, ale w sprawach karnych nawet 20 lat — poznaj szczegóły.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -197,13 +197,13 @@
                     </a>
 
                     <!-- Article 3 -->
-                    <a href="ubezpieczyciel-zanizyl-odszkodowanie.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="ubezpieczyciel-zanizyl-odszkodowanie.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
                                 <span class="text-muted text-xs">6 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a3_title">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2" data-i18n="blog.a3_title">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a3_desc">Jak odwołać się od decyzji i uzyskać sprawiedliwą kwotę. Poznaj sposoby na skuteczne zakwestionowanie zaniżonej propozycji ubezpieczyciela.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -213,13 +213,13 @@
                     </a>
 
                     <!-- Article 4 -->
-                    <a href="zadoscuczynienie-vs-odszkodowanie.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="prawo">
+                    <a href="zadoscuczynienie-vs-odszkodowanie.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="prawo">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_law">Prawo</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a4_title">Zadośćuczynienie vs. odszkodowanie — jaka różnica?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2" data-i18n="blog.a4_title">Zadośćuczynienie vs. odszkodowanie — jaka różnica?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a4_desc">Wyjaśniamy różnice między poszczególnymi rodzajami świadczeń i kiedy możesz ubiegać się o każde z nich.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -229,13 +229,13 @@
                     </a>
 
                     <!-- Article 5 -->
-                    <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_guide">Poradnik</span>
                                 <span class="text-muted text-xs">7 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a5_title">Jak dokumentować obrażenia po wypadku?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2" data-i18n="blog.a5_title">Jak dokumentować obrażenia po wypadku?</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a5_desc">Checklist dokumentów i badań, które znacząco zwiększają szanse na wyższe odszkodowanie. Nie popełnij tych błędów.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -245,13 +245,13 @@
                     </a>
 
                     <!-- Article 6 -->
-                    <a href="wypadek-rolnictwo-krus.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="krus">
+                    <a href="wypadek-rolnictwo-krus.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="krus">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider" data-i18n="blog.tag_krus">KRUS</span>
                                 <span class="text-muted text-xs">6 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2" data-i18n="blog.a6_title">Wypadek w rolnictwie — przewodnik krok po kroku</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2" data-i18n="blog.a6_title">Wypadek w rolnictwie — przewodnik krok po kroku</h2>
                             <p class="text-muted text-sm mb-4" data-i18n="blog.a6_desc">Jak zgłosić wypadek do KRUS, jakie dokumenty zebrać i jak uzyskać maksymalne świadczenia z ubezpieczenia rolniczego.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -261,13 +261,13 @@
                     </a>
 
                     <!-- Article 7 -->
-                    <a href="ile-odszkodowania-za-uszczerbek.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="ile-odszkodowania-za-uszczerbek.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">6 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Ile odszkodowania za uszczerbek na zdrowiu po wypadku?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Ile odszkodowania za uszczerbek na zdrowiu po wypadku?</h2>
                             <p class="text-muted text-sm mb-4">Ile wynosi odszkodowanie za 1% uszczerbku na zdrowiu? Poznaj orientacyjne stawki, przykładowe kwoty dla typowych urazów i dowiedz się, jak uzyskać wyższe odszkodowanie niż to, co proponuje ubezpieczyciel.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -277,13 +277,13 @@
                     </a>
 
                     <!-- Article 8 -->
-                    <a href="jak-zglosic-wypadek-przy-pracy.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="jak-zglosic-wypadek-przy-pracy.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Jak zgłosić wypadek przy pracy — krok po kroku</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Jak zgłosić wypadek przy pracy — krok po kroku</h2>
                             <p class="text-muted text-sm mb-4">Dowiedz się, jak prawidłowo zgłosić wypadek przy pracy: od powiadomienia przełożonego, przez protokół powypadkowy, aż po wniosek do ZUS i roszczenia cywilne wobec pracodawcy.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -293,13 +293,13 @@
                     </a>
 
                     <!-- Article 10 -->
-                    <a href="odszkodowanie-od-pracodawcy.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="odszkodowanie-od-pracodawcy.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">6 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Odszkodowanie za wypadek przy pracy od pracodawcy</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Odszkodowanie za wypadek przy pracy od pracodawcy</h2>
                             <p class="text-muted text-sm mb-4">Kiedy pracodawca odpowiada za wypadek przy pracy i jakie roszczenia Ci przysługują? Zadośćuczynienie, renta wyrównawcza i zwrot kosztów leczenia — niezależnie od świadczeń z ZUS.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -309,13 +309,13 @@
                     </a>
 
                     <!-- Article 9 -->
-                    <a href="jednorazowe-odszkodowanie-zus.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="jednorazowe-odszkodowanie-zus.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Jednorazowe odszkodowanie z ZUS — ile wynosi?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Jednorazowe odszkodowanie z ZUS — ile wynosi?</h2>
                             <p class="text-muted text-sm mb-4">Stawki za 1% uszczerbku na zdrowiu w 2026 r., przykładowe kwoty, kto może złożyć wniosek i jak to zrobić krok po kroku — od formularza ZUS Z-7 po odwołanie od decyzji.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -325,13 +325,13 @@
                     </a>
 
                     <!-- Article 12 -->
-                    <a href="jak-udowodnic-blad-medyczny.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="jak-udowodnic-blad-medyczny.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">7 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Jak udowodnić błąd medyczny?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Jak udowodnić błąd medyczny?</h2>
                             <p class="text-muted text-sm mb-4">Jakie dowody zebrać, jak zdobyć dokumentację medyczną i którą drogą dochodzić roszczeń — komisja czy sąd? Praktyczny przewodnik krok po kroku.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -341,13 +341,13 @@
                     </a>
 
                     <!-- Article 11 -->
-                    <a href="odszkodowanie-za-potracenie.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="odszkodowanie-za-potracenie.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">6 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Jak uzyskać odszkodowanie za potrącenie pieszego?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Jak uzyskać odszkodowanie za potrącenie pieszego?</h2>
                             <p class="text-muted text-sm mb-4">Kierowca odpowiada na zasadzie ryzyka — nie musisz udowadniać jego winy. Sprawdź, jakie świadczenia Ci przysługują, co zrobić zaraz po wypadku i jak przyczynienie wpływa na kwotę odszkodowania.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -357,13 +357,13 @@
                     </a>
 
                     <!-- Article 14 -->
-                    <a href="zadoscuczynienie-smierc-bliskiej-osoby.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="zadoscuczynienie-smierc-bliskiej-osoby.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">6 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Zadośćuczynienie po śmierci bliskiej osoby — ile i dla kogo?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Zadośćuczynienie po śmierci bliskiej osoby — ile i dla kogo?</h2>
                             <p class="text-muted text-sm mb-4">Kto może ubiegać się o zadośćuczynienie po śmierci bliskiego, ile wynoszą kwoty z orzecznictwa i jak krok po kroku dochodzić roszczeń od ubezpieczyciela.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -373,13 +373,13 @@
                     </a>
 
                     <!-- Article 15 -->
-                    <a href="odszkodowanie-smierc-rodzica.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="odszkodowanie-smierc-rodzica.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Kto może ubiegać się o odszkodowanie po śmierci rodzica?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Kto może ubiegać się o odszkodowanie po śmierci rodzica?</h2>
                             <p class="text-muted text-sm mb-4">Zadośćuczynienie, renta alimentacyjna i odszkodowanie za pogorszenie sytuacji życiowej — jakie świadczenia przysługują dzieciom i jak je uzyskać.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -389,13 +389,13 @@
                     </a>
 
                     <!-- Article 13 -->
-                    <a href="ile-kosztuje-prawnik-odszkodowania.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="ile-kosztuje-prawnik-odszkodowania.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Ile kosztuje prawnik od odszkodowań?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Ile kosztuje prawnik od odszkodowań?</h2>
                             <p class="text-muted text-sm mb-4">Prowizja od sukcesu, stawki 15–25%, ukryte koszty — transparentne wyjaśnienie modeli rozliczeń, zanim podpiszesz umowę z firmą odszkodowawczą.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -405,13 +405,13 @@
                     </a>
 
                     <!-- Article 16 -->
-                    <a href="odszkodowanie-blad-przy-porodzie.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
+                    <a href="odszkodowanie-blad-przy-porodzie.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="poradnik">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
                                 <span class="text-muted text-xs">7 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Odszkodowanie za błąd przy porodzie</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Odszkodowanie za błąd przy porodzie</h2>
                             <p class="text-muted text-sm mb-4">Kiedy szpital odpowiada za błąd przy porodzie? Jakie odszkodowanie przysługuje dziecku i matce, jak udowodnić zaniedbanie i ile czasu masz na roszczenie.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -421,13 +421,13 @@
                     </a>
 
                     <!-- Article 17 -->
-                    <a href="odszkodowanie-krus-ile.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="krus">
+                    <a href="odszkodowanie-krus-ile.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="krus">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">KRUS</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">Odszkodowanie z KRUS za wypadek — ile można uzyskać?</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">Odszkodowanie z KRUS za wypadek — ile można uzyskać?</h2>
                             <p class="text-muted text-sm mb-4">Aktualne stawki za 1% uszczerbku, zasiłek chorobowy, renta rolnicza i kiedy warto sięgnąć po dodatkowe odszkodowanie cywilne — znacznie wyższe niż to, co wypłaca KRUS.</p>
                             <div class="flex items-center justify-between">
                                 <time datetime="2026-04-07" class="text-muted text-xs">7 kwietnia 2026</time>
@@ -436,13 +436,13 @@
                         </div>
                     </a>
 
-                    <a href="120000-za-wypadek-na-drodze-krajowej.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="case-study">
+                    <a href="120000-za-wypadek-na-drodze-krajowej.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="case-study">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Case study</span>
                                 <span class="text-muted text-xs">4 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">120 000 zł za wypadek na drodze krajowej</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">120 000 zł za wypadek na drodze krajowej</h2>
                             <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-3 py-1 rounded mb-3">120 000 zł</span>
                             <p class="text-muted text-sm mb-4">Ubezpieczyciel oferował 15 000 zł. Uzyskaliśmy 8x więcej dla naszego klienta po wypadku komunikacyjnym.</p>
                             <div class="flex items-center justify-between">
@@ -452,13 +452,13 @@
                         </div>
                     </a>
 
-                    <a href="85000-za-wypadek-w-zakladzie-produkcyjnym.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="case-study">
+                    <a href="85000-za-wypadek-w-zakladzie-produkcyjnym.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="case-study">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Case study</span>
                                 <span class="text-muted text-xs">4 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">85 000 zł za wypadek w zakładzie produkcyjnym</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">85 000 zł za wypadek w zakładzie produkcyjnym</h2>
                             <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-3 py-1 rounded mb-3">85 000 zł</span>
                             <p class="text-muted text-sm mb-4">Warta zaproponowała 12 000 zł. Zakwestionowaliśmy protokół powypadkowy i uzyskaliśmy 7x więcej dla pracownicy z wypadku przy pracy.</p>
                             <div class="flex items-center justify-between">
@@ -468,13 +468,13 @@
                         </div>
                     </a>
 
-                    <a href="200000-za-bledna-diagnoze.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover fade-in block" data-category="case-study">
+                    <a href="200000-za-bledna-diagnoze.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover fade-in block" data-category="case-study">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Case study</span>
                                 <span class="text-muted text-xs">5 min</span>
                             </div>
-                            <h2 class="font-heading text-lg font-bold text-white mb-2">200 000 zł za błędną diagnozę</h2>
+                            <h2 class="font-heading text-lg font-bold text-text mb-2">200 000 zł za błędną diagnozę</h2>
                             <span class="inline-block bg-gold/10 text-gold text-sm font-bold px-3 py-1 rounded mb-3">200 000 zł</span>
                             <p class="text-muted text-sm mb-4">Ubezpieczyciel OC szpitala oferował 35 000 zł. Opinia biegłego chirurga pozwoliła uzyskać 5,5x więcej dla klienta po błędnej diagnozie zapalenia wyrostka.</p>
                             <div class="flex items-center justify-between">
@@ -487,8 +487,8 @@
                 </div>
 
                 <!-- CTA -->
-                <div class="mt-16 bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4" data-i18n="blog.cta_title">Masz pytanie dotyczące swojej sprawy?</h2>
+                <div class="mt-16 bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4" data-i18n="blog.cta_title">Masz pytanie dotyczące swojej sprawy?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto" data-i18n="blog.cta_desc">Nie musisz szukać odpowiedzi samodzielnie. Bezpłatnie przeanalizujemy Twoją sytuację i odpowiemy na wszystkie pytania.</p>
                     <a href="../kontakt.html" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors" data-i18n="blog.cta_button">Skontaktuj się z nami →</a>
                 </div>
@@ -497,7 +497,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <!-- Col 1: Logo -->
@@ -508,7 +508,7 @@
 
                 <!-- Col 2: Usługi -->
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service1">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service2">Wypadki przy pracy</a>
@@ -520,7 +520,7 @@
 
                 <!-- Col 3: Informacje -->
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info1">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info2">Nasze sukcesy</a>
@@ -532,7 +532,7 @@
 
                 <!-- Col 4: Kontakt -->
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -545,18 +545,18 @@
                 </div>
             </div>
 
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs" data-i18n="footer.copyright">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
@@ -575,10 +575,10 @@
                 // Update active button
                 filterBtns.forEach(b => {
                     b.classList.remove('active', 'border-gold', 'text-gold');
-                    b.classList.add('border-white/20', 'text-muted');
+                    b.classList.add('border-line', 'text-muted');
                 });
                 btn.classList.add('active', 'border-gold', 'text-gold');
-                btn.classList.remove('border-white/20', 'text-muted');
+                btn.classList.remove('border-line', 'text-muted');
 
                 // Show/hide cards
                 cards.forEach(card => {

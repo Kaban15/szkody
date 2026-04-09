@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -101,12 +101,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -114,23 +114,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -141,7 +141,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -151,23 +151,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Co robić po wypadku samochodowym?</span>
+                    <span class="text-text">Co robić po wypadku samochodowym?</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Co robić po wypadku samochodowym?</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Co robić po wypadku samochodowym?</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -181,8 +181,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#bezpieczenstwo" class="text-gold hover:text-gold-light transition-colors text-sm">1. Bezpieczeństwo i pierwsza pomoc</a></li>
                         <li><a href="#dokumentowanie" class="text-gold hover:text-gold-light transition-colors text-sm">2. Dokumentowanie zdarzenia</a></li>
@@ -198,15 +198,15 @@
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">Wypadek samochodowy to zdarzenie, na które nikt nie jest w pełni przygotowany. Stres, chaos, często ból — w pierwszych minutach trudno myśleć racjonalnie. Tymczasem to, co zrobisz bezpośrednio po wypadku, może zdecydować o tym, czy uzyskasz należne Ci odszkodowanie — i w jakiej wysokości. Poniżej znajdziesz konkretny plan działania krok po kroku.</p>
 
-                    <h2 id="bezpieczenstwo" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">1. Bezpieczeństwo i pierwsza pomoc</h2>
+                    <h2 id="bezpieczenstwo" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">1. Bezpieczeństwo i pierwsza pomoc</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Pierwsza zasada: zanim zaczniesz dokumentować cokolwiek, zadbaj o bezpieczeństwo. Jeśli sytuacja na to pozwala, ustaw trójkąt ostrzegawczy co najmniej 30–50 metrów za pojazdem (na autostradzie — 100 metrów), włącz awaryjne światła i wyjdź z samochodu na chodnik lub pobocze z dala od jezdni.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Zadzwoń na numer alarmowy 112. Dyspozytor skieruje policję, pogotowie lub straż pożarną zależnie od potrzeby. Jeśli w zdarzeniu są ranni — nie próbuj samodzielnie ich przenosić, chyba że grozi im bezpośrednie niebezpieczeństwo (np. pożar auta). Nieprawidłowe przemieszczenie osoby z urazem kręgosłupa może pogłębić obrażenia.</p>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Pamiętaj: udzielenie pomocy osobie poszkodowanej jest w Polsce obowiązkowe — za zaniechanie grozi odpowiedzialność karna. Nawet jeśli nie znasz pierwszej pomocy medycznej, możesz zapewnić bezpieczeństwo miejsca zdarzenia i pozostać przy poszkodowanym do przyjazdu służb.</p>
 
-                    <h2 id="dokumentowanie" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">2. Dokumentowanie zdarzenia</h2>
+                    <h2 id="dokumentowanie" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">2. Dokumentowanie zdarzenia</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Solidna dokumentacja to fundament skutecznego roszczenia. Zrób zdjęcia i nagrania zanim cokolwiek zostanie przestawione — sfotografuj pozycję pojazdów, uszkodzenia, drogi hamowania, oznakowanie, warunki atmosferyczne i widoczność. Pamiętaj o zdjęciach tablic rejestracyjnych obu pojazdów.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Co zebrać na miejscu?</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Co zebrać na miejscu?</h3>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
                         <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Dane osobowe i kontaktowe sprawcy (imię, nazwisko, adres, numer telefonu)</span></li>
                         <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Numer polisy OC sprawcy oraz nazwa jego towarzystwa ubezpieczeniowego</span></li>
@@ -216,28 +216,28 @@
                     </ul>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Jeśli Twój samochód jest wyposażony w wideorejestrator, zabezpiecz nagranie od razu — w wielu sprawach zapis z kamery samochodowej był decydującym dowodem przy ustalaniu winy. Sprawdź też, czy w pobliżu nie ma kamer miejskiego monitoringu — możesz wnioskować o zabezpieczenie takiego nagrania przez policję.</p>
 
-                    <h2 id="wizyta-lekarska" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">3. Wizyta lekarska i dokumentacja medyczna</h2>
+                    <h2 id="wizyta-lekarska" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">3. Wizyta lekarska i dokumentacja medyczna</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Nawet jeśli po wypadku czujesz się stosunkowo dobrze — idź do lekarza tego samego dnia. Objawy urazów, zwłaszcza kręgosłupa szyjnego (popularny „smagnięcie biczem" — whiplash), mogą pojawić się z opóźnieniem nawet kilku dni. Brak wizyty lekarskiej bezpośrednio po wypadku to jeden z najczęstszych argumentów ubezpieczycieli używanych do obniżenia lub odmowy wypłaty odszkodowania.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">W szpitalnym oddziale ratunkowym lub u lekarza pierwszego kontaktu poproś o szczegółowe opisanie wszystkich dolegliwości — bólu, zawrotów głowy, drętwienia kończyn, trudności z koncentracją. Nie bagatelizuj żadnego symptomu. Im dokładniejszy jest opis stanu zdrowia w dokumentacji medycznej, tym łatwiej wykazać zakres obrażeń.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Zbieraj i przechowuj wszystkie rachunki i faktury związane z leczeniem: wizyty lekarskie, badania diagnostyczne (RTG, MRI, TK), leki, orteza, rehabilitacja, transport do placówek medycznych. Każdy udokumentowany wydatek powiększa Twoje roszczenie o szkodę majątkową.</p>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Jeśli w wyniku wypadku nie możesz pracować, poproś pracodawcę lub biuro rachunkowe o zaświadczenie o utraconych zarobkach. Utrata dochodu jest osobnym składnikiem odszkodowania, który ubezpieczyciele często pomijają lub zaniżają.</p>
 
-                    <h2 id="zgloszenie-szkody" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">4. Zgłoszenie szkody do ubezpieczyciela</h2>
+                    <h2 id="zgloszenie-szkody" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">4. Zgłoszenie szkody do ubezpieczyciela</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Szkodę zgłaszasz do towarzystwa ubezpieczeniowego sprawcy — to jego OC pokrywa Twoje straty. Możesz to zrobić telefonicznie, przez internet lub osobiście w oddziale. Termin: jak najszybciej, choć przepisy nie nakładają ściśle określonego terminu na poszkodowanego (inaczej niż na sprawcę, który ma 7 dni). Ubezpieczyciel jest jednak zobowiązany wydać decyzję w ciągu 30 dni od zgłoszenia — lub 90 dni, jeśli sprawa wymaga dodatkowych wyjaśnień.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Co mówić, a czego unikać?</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Co mówić, a czego unikać?</h3>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Podaj fakty: datę, godzinę, miejsce zdarzenia, opis przebiegu wypadku, dane sprawcy i numer polisy. Dołącz kopie dokumentów zebranych na miejscu oraz dokumentacji medycznej.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Unikaj natomiast składania szczegółowych zeznań co do swojego stanu zdrowia zanim zakończysz diagnostykę — rozmowy telefoniczne z likwidatorem są nagrywane i mogą być użyte przeciwko Tobie. Nie mów „czuję się dobrze", „to nic poważnego" ani nie zgadzaj się pochopnie na zaproponowaną kwotę ugody bez konsultacji ze specjalistą. Ubezpieczyciele zaniżają odszkodowania nawet o 80% — szczególnie przy szkodach osobowych.</p>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Zawsze żądaj decyzji na piśmie wraz z uzasadnieniem. Masz prawo odwołać się od każdej decyzji ubezpieczyciela — termin na odwołanie to 30 dni od jej doręczenia.</p>
 
-                    <h2 id="pomoc-specjalisty" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">5. Kiedy warto skorzystać z pomocy specjalisty?</h2>
+                    <h2 id="pomoc-specjalisty" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">5. Kiedy warto skorzystać z pomocy specjalisty?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Samodzielne dochodzenie roszczeń od ubezpieczyciela jest prawem każdego poszkodowanego — i w prostych sprawach może być wystarczające. Jednak w kilku sytuacjach pomoc doświadczonego specjalisty od <a href="../odszkodowania-komunikacyjne.html" class="text-gold hover:text-gold-light underline transition-colors">odszkodowań po wypadkach komunikacyjnych</a> znacząco zwiększa szansę na uzyskanie pełnej kwoty:</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Ubezpieczyciel zaproponował kwotę, która wydaje Ci się za niska</strong> — specjalista zna realne stawki i wie, jak negocjować lub skierować sprawę do sądu.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Wypadek spowodował poważne obrażenia</strong> — złamania, urazy kręgosłupa, długotrwała niezdolność do pracy, operacje. Im poważniejsza szkoda, tym wyższe stawki i tym częściej ubezpieczyciele próbują je kwestionować.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Ubezpieczyciel kwestionuje winę sprawcy</strong> lub twierdzi, że wypadek nastąpił z Twojej winy.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Sprawa trafiła do sądu</strong> — postępowanie cywilne z towarzystwem ubezpieczeniowym bez prawnika jest bardzo trudne.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Wypadek spowodował śmierć bliskiej osoby</strong> — roszczenia związane z zadośćuczynieniem dla rodziny są szczególnie złożone i często dramatycznie zaniżane.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Ubezpieczyciel zaproponował kwotę, która wydaje Ci się za niska</strong> — specjalista zna realne stawki i wie, jak negocjować lub skierować sprawę do sądu.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Wypadek spowodował poważne obrażenia</strong> — złamania, urazy kręgosłupa, długotrwała niezdolność do pracy, operacje. Im poważniejsza szkoda, tym wyższe stawki i tym częściej ubezpieczyciele próbują je kwestionować.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Ubezpieczyciel kwestionuje winę sprawcy</strong> lub twierdzi, że wypadek nastąpił z Twojej winy.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Sprawa trafiła do sądu</strong> — postępowanie cywilne z towarzystwem ubezpieczeniowym bez prawnika jest bardzo trudne.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Wypadek spowodował śmierć bliskiej osoby</strong> — roszczenia związane z zadośćuczynieniem dla rodziny są szczególnie złożone i często dramatycznie zaniżane.</span></li>
                     </ul>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Działamy w modelu success fee: nasz honorarium pobieramy wyłącznie od uzyskanego odszkodowania, dopiero po wypłacie środków na Twoje konto. Pierwsza konsultacja jest całkowicie bezpłatna — bez zobowiązań.</p>
 
@@ -245,71 +245,71 @@
 
                 <!-- FAQ section -->
                 <section id="faq" class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Ile czasu mam na zgłoszenie roszczenia po wypadku?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Standardowy termin przedawnienia roszczenia z OC sprawcy wynosi <strong class="text-white">3 lata</strong> od dnia, w którym poszkodowany dowiedział się o szkodzie i osobie zobowiązanej do jej naprawienia. Jeżeli jednak wypadek był skutkiem przestępstwa (np. spowodowanie wypadku ze skutkiem śmiertelnym lub ciężkim uszczerbkiem na zdrowiu), termin przedawnienia wynosi aż <strong class="text-white">20 lat</strong> od dnia popełnienia przestępstwa — niezależnie od tego, kiedy dowiedziałeś się o szkodzie. Mimo długich terminów warto działać szybko: im świeższe są dowody i dokumentacja medyczna, tym łatwiej wykazać związek przyczynowo-skutkowy między wypadkiem a Twoimi obrażeniami.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Standardowy termin przedawnienia roszczenia z OC sprawcy wynosi <strong class="text-text">3 lata</strong> od dnia, w którym poszkodowany dowiedział się o szkodzie i osobie zobowiązanej do jej naprawienia. Jeżeli jednak wypadek był skutkiem przestępstwa (np. spowodowanie wypadku ze skutkiem śmiertelnym lub ciężkim uszczerbkiem na zdrowiu), termin przedawnienia wynosi aż <strong class="text-text">20 lat</strong> od dnia popełnienia przestępstwa — niezależnie od tego, kiedy dowiedziałeś się o szkodzie. Mimo długich terminów warto działać szybko: im świeższe są dowody i dokumentacja medyczna, tym łatwiej wykazać związek przyczynowo-skutkowy między wypadkiem a Twoimi obrażeniami.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy muszę wezwać policję na miejsce wypadku?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Wezwanie policji jest obowiązkowe, gdy w wypadku ucierpiały osoby lub gdy zachodzi podejrzenie, że sprawca jest pod wpływem alkoholu lub środków odurzających. Przy kolizji z wyłącznie szkodami materialnymi możesz ograniczyć się do podpisania przez obie strony <strong class="text-white">oświadczenia o zdarzeniu drogowym</strong> z danymi kierowców, numerami rejestracyjnymi i polisami ubezpieczeniowymi. Pamiętaj jednak, że bez notatki policyjnej trudniej jest później kwestionować wersję wydarzeń sprawcy — w razie jakichkolwiek wątpliwości lepiej zadzwonić pod numer <strong class="text-white">997</strong>.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Wezwanie policji jest obowiązkowe, gdy w wypadku ucierpiały osoby lub gdy zachodzi podejrzenie, że sprawca jest pod wpływem alkoholu lub środków odurzających. Przy kolizji z wyłącznie szkodami materialnymi możesz ograniczyć się do podpisania przez obie strony <strong class="text-text">oświadczenia o zdarzeniu drogowym</strong> z danymi kierowców, numerami rejestracyjnymi i polisami ubezpieczeniowymi. Pamiętaj jednak, że bez notatki policyjnej trudniej jest później kwestionować wersję wydarzeń sprawcy — w razie jakichkolwiek wątpliwości lepiej zadzwonić pod numer <strong class="text-text">997</strong>.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy mogę dochodzić odszkodowania jeśli byłem pasażerem?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Tak — pasażer jest poszkodowanym <strong class="text-white">niezależnie od tego, kto spowodował wypadek</strong>. Roszczenie kierujesz do ubezpieczyciela OC pojazdu, którego kierowca ponosi winę za zdarzenie. Jeżeli wina jest po stronie kierowcy, w którego samochodzie jechałeś, roszczenie kierujesz do jego ubezpieczyciela. Przysługuje Ci odszkodowanie za szkodę majątkową (koszty leczenia, utracone zarobki, koszty rehabilitacji) oraz zadośćuczynienie za doznaną krzywdę — ból i cierpienie.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Tak — pasażer jest poszkodowanym <strong class="text-text">niezależnie od tego, kto spowodował wypadek</strong>. Roszczenie kierujesz do ubezpieczyciela OC pojazdu, którego kierowca ponosi winę za zdarzenie. Jeżeli wina jest po stronie kierowcy, w którego samochodzie jechałeś, roszczenie kierujesz do jego ubezpieczyciela. Przysługuje Ci odszkodowanie za szkodę majątkową (koszty leczenia, utracone zarobki, koszty rehabilitacji) oraz zadośćuczynienie za doznaną krzywdę — ból i cierpienie.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Ile kosztuje pomoc w uzyskaniu odszkodowania?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Pracujemy w modelu <strong class="text-white">success fee</strong> — honorarium pobieramy wyłącznie od uzyskanego odszkodowania, dopiero po wypłacie środków na Twoje konto. Jeśli nie wygramy, nie płacisz nic. <strong class="text-white">Pierwsza konsultacja i ocena sprawy są zawsze bezpłatne</strong> — bez zobowiązań. Dzięki temu nie ponosisz żadnego ryzyka finansowego, a koszty obsługi prawnej i postępowania pokrywamy z własnych środków przez cały czas trwania sprawy.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Pracujemy w modelu <strong class="text-text">success fee</strong> — honorarium pobieramy wyłącznie od uzyskanego odszkodowania, dopiero po wypłacie środków na Twoje konto. Jeśli nie wygramy, nie płacisz nic. <strong class="text-text">Pierwsza konsultacja i ocena sprawy są zawsze bezpłatne</strong> — bez zobowiązań. Dzięki temu nie ponosisz żadnego ryzyka finansowego, a koszty obsługi prawnej i postępowania pokrywamy z własnych środków przez cały czas trwania sprawy.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Miałeś wypadek i nie wiesz, co dalej?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Miałeś wypadek i nie wiesz, co dalej?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Bezpłatnie przeanalizujemy Twoją sprawę i odpowiemy na wszystkie pytania. Żadnych zobowiązań — tylko konkretna ocena Twoich szans.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
                         <!-- Related article card 1 -->
-                        <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block opacity-60 cursor-not-allowed">
+                        <a href="#" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block opacity-60 cursor-not-allowed">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Prawo</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Przedawnienie roszczeń — ile masz czasu?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Przedawnienie roszczeń — ile masz czasu?</h3>
                                 <span class="text-muted text-sm">Wkrótce →</span>
                             </div>
                         </a>
                         <!-- Related article card 2 -->
-                        <a href="#" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block opacity-60 cursor-not-allowed">
+                        <a href="#" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block opacity-60 cursor-not-allowed">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Ubezpieczyciel zaniżył odszkodowanie — co dalej?</h3>
                                 <span class="text-muted text-sm">Wkrótce →</span>
                             </div>
                         </a>
@@ -322,7 +322,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -330,7 +330,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -340,7 +340,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -350,7 +350,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -362,18 +362,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>
