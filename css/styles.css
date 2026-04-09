@@ -4,8 +4,8 @@ html {
 }
 
 body {
-    background: #08080F;
-    color: #E8E2D6;
+    background: #FDFBF7;
+    color: #1A1008;
 }
 
 /* Hero word-by-word reveal */
@@ -38,7 +38,7 @@ body {
 }
 
 .card-hover:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
     border-color: rgba(212, 175, 55, 0.3);
 }
@@ -65,7 +65,7 @@ input[type="range"] {
     width: 100%;
     height: 6px;
     border-radius: 3px;
-    background: #1C1C2E;
+    background: #F5F0E8;
     outline: none;
 }
 
@@ -77,7 +77,7 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 50%;
     background: #D4AF37;
     cursor: pointer;
-    border: 3px solid #08080F;
+    border: 3px solid #FDFBF7;
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
@@ -87,7 +87,7 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
     background: #D4AF37;
     cursor: pointer;
-    border: 3px solid #08080F;
+    border: 3px solid #FDFBF7;
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
@@ -108,9 +108,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 #main-nav.nav-solid {
-    background-color: rgba(8, 8, 15, 0.95);
+    background-color: rgba(253, 251, 247, 0.95);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(237, 231, 218, 0.5);
 }
 
 #main-nav.nav-hidden {
