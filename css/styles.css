@@ -203,16 +203,17 @@ input[type="range"]::-moz-range-thumb {
     /* width set via inline style */
 }
 
-/* Fade-in with upward movement */
+/* Fade-in with upward movement — enhanced */
 .fade-in-up {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(40px) scale(0.97);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in-up.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 /* CTA glow */
