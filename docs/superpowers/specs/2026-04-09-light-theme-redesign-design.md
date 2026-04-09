@@ -35,7 +35,7 @@ colors: {
   cta: '#E8652D',            // unchanged — primary CTA orange
   'cta-hover': '#D4561F',    // unchanged
   text: '#1A1008',           // dark brown body text (was: #E8E2D6)
-  border: '#EDE7DA',         // NEW — warm border color
+  line: '#EDE7DA',            // NEW — warm border/divider color
 }
 ```
 
@@ -112,7 +112,7 @@ Both aliases point to the same font — avoids changing `font-heading`/`font-bod
 - Background: `bg-surface-light` (#FFFFFF)
 - Border: remove `border border-white/10`
 - Shadow: add `shadow-sm`
-- Hover: `shadow-md` + `translateY(-1px)` (update `.card-hover` in CSS)
+- Hover: `shadow-md` + `translateY(-1px)` (update `.card-hover` in CSS). The existing gold glow `box-shadow` in `.card-hover` CSS stays — it's brand identity. Tailwind `shadow-sm` is for cards without `.card-hover`.
 
 ### Buttons
 
@@ -129,7 +129,7 @@ Both aliases point to the same font — avoids changing `font-heading`/`font-bod
 ### Form inputs
 
 - `rounded-lg` → `rounded-xl`
-- `bg-surface border border-white/10 text-white placeholder-muted` → `bg-surface-light border border-border text-text placeholder-muted`
+- `bg-surface border border-white/10 text-white placeholder-muted` → `bg-surface-light border border-line text-text placeholder-muted`
 - Focus: `focus:border-gold focus:ring-2 focus:ring-gold/20`
 
 ### Navigation
@@ -142,11 +142,11 @@ Both aliases point to the same font — avoids changing `font-heading`/`font-bod
 
 ### Sticky bottom bar
 
-- `bg-bg border-white/10` → `bg-bg border-border`
+- `bg-bg border-white/10` → `bg-bg border-line`
 
 ### FAQ accordion
 
-- Borders: `white/10` → `border` token
+- Borders: `white/10` → `line` token
 - Text: `text-white` → `text-text`
 
 ### Ticker
@@ -164,9 +164,12 @@ Both aliases point to the same font — avoids changing `font-heading`/`font-bod
 background: #08080F → #FDFBF7
 color: #E8E2D6 → #1A1008
 
-/* range slider */
+/* range slider track */
 input[type="range"] background: #1C1C2E → #F5F0E8
-thumb border: #08080F → #FDFBF7
+
+/* range slider thumb — BOTH selectors */
+::-webkit-slider-thumb border: #08080F → #FDFBF7
+::-moz-range-thumb border: #08080F → #FDFBF7
 
 /* nav solid */
 background-color: rgba(8,8,15,0.95) → rgba(253,251,247,0.95)
@@ -214,9 +217,9 @@ These are the repeating Tailwind class substitutions across all HTML files:
 |------|---------|
 | `text-white` (on headings, labels) | `text-text` |
 | `text-white/60` | `text-text/60` |
-| `border-white/10` | `border-border` |
-| `border-white/5` | `border-border/50` |
-| `border-white/20` | `border-border` |
+| `border-white/10` | `border-line` |
+| `border-white/5` | `border-line/50` |
+| `border-white/20` | `border-line` |
 | `bg-surface` (on cards/options) | `bg-surface-light shadow-sm` |
 | `hover:bg-white/5` | `hover:bg-surface` |
 | `rounded` (on buttons) | `rounded-lg` |
