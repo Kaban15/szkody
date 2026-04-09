@@ -20,16 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(raf);
     }
 
-    // Parallax + horizontal scroll text (requires Lenis)
+    // Parallax (requires Lenis)
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (lenis && !prefersReduced) {
         const parallaxEls = document.querySelectorAll('[data-parallax]');
-        const scrollTextDividers = document.querySelectorAll('[data-scroll-text]');
         const isMobile = window.innerWidth < 768;
 
-        lenis.on('scroll', ({ scroll }) => {
-            // Parallax
+        lenis.on('scroll', () => {
             parallaxEls.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const inView = rect.top < window.innerHeight && rect.bottom > 0;
@@ -38,16 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const factor = parseFloat(el.dataset.parallax) * (isMobile ? 0.5 : 1);
                 const offset = (rect.top - window.innerHeight / 2) * factor;
                 el.style.transform = `translateY(${offset}px)`;
-            });
-
-            // Horizontal scroll text
-            scrollTextDividers.forEach(el => {
-                const inner = el.querySelector('.scroll-text-inner');
-                if (!inner) return;
-                const rect = el.getBoundingClientRect();
-                const inView = rect.top < window.innerHeight && rect.bottom > 0;
-                if (!inView) return;
-                inner.style.transform = `translateX(${scroll * -0.15}px)`;
             });
         });
     }
