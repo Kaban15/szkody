@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -50,12 +50,12 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
-                    <a href="jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-                    <a href="kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
-                    <a href="sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
-                    <a href="blog/" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
-                    <a href="kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
+                    <a href="uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
+                    <a href="jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
+                    <a href="sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
+                    <a href="blog/" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
+                    <a href="kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
                 </div>
 
                 <!-- CTA + Phone -->
@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- Mobile Hamburger -->
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -80,16 +80,16 @@
 
     <!-- Mobile Menu (fullscreen overlay) -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
-            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-            <a href="kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
-            <a href="sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
-            <a href="blog/" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
-            <a href="kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
+            <a href="uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
+            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+            <a href="kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
+            <a href="sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
+            <a href="blog/" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
+            <a href="kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
             <div class="pt-4">
                 <a href="/#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
                     Bezpłatna konsultacja
@@ -103,7 +103,7 @@
     </div>
 
     <!-- Mobile Sticky Bottom Bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -117,15 +117,15 @@
         <nav class="pt-24 pb-4 text-sm text-muted">
             <div class="max-w-7xl mx-auto px-4">
                 <a href="/" class="hover:text-gold" data-i18n="opinie.breadcrumb_home">Strona główna</a>
-                <span class="mx-2 text-white/20">›</span>
-                <span class="text-white" data-i18n="opinie.breadcrumb_current">Opinie</span>
+                <span class="mx-2 text-text/20">›</span>
+                <span class="text-text" data-i18n="opinie.breadcrumb_current">Opinie</span>
             </div>
         </nav>
 
         <!-- Page Hero -->
-        <section class="bg-bg py-16 lg:py-24">
+        <section class="bg-bg py-12 lg:py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" data-i18n="opinie.hero_title">
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6" data-i18n="opinie.hero_title">
                     Co mówią nasi klienci
                 </h1>
                 <p class="text-muted text-lg max-w-2xl mx-auto" data-i18n="opinie.hero_subtitle">
@@ -135,19 +135,19 @@
         </section>
 
         <!-- Testimonials -->
-        <section class="bg-bg pb-16 lg:pb-24">
+        <section class="bg-bg pb-12 lg:pb-16">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Featured Testimonial -->
-                <div class="fade-in mb-16 lg:mb-20 py-10 lg:py-12 border-b border-white/5">
+                <div class="fade-in mb-10 lg:mb-12 py-8 lg:py-10 border-b border-line/50">
                     <div class="font-heading text-6xl text-gold leading-none mb-4 select-none">"</div>
-                    <blockquote class="text-xl lg:text-2xl text-white/90 italic font-heading leading-relaxed mb-8 max-w-3xl" data-i18n="opinie.featured_quote">
+                    <blockquote class="text-xl lg:text-2xl text-text/90 italic font-heading leading-relaxed mb-8 max-w-3xl" data-i18n="opinie.featured_quote">
                         Ubezpieczyciel oferował mi 12 000 zł i myślałam, że to wszystko co dostanę. Dzięki tej kancelarii uzyskałam 95 000 zł. Nie uwierzyłam, że to możliwe — ale możliwe jest.
                     </blockquote>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold">AK</div>
                         <div>
-                            <p class="text-white font-semibold" data-i18n="opinie.featured_name">Anna K.</p>
+                            <p class="text-text font-semibold" data-i18n="opinie.featured_name">Anna K.</p>
                             <p class="text-muted text-xs" data-i18n="opinie.featured_detail">Wypadek komunikacyjny · Poznań</p>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                 <div class="grid lg:grid-cols-2 gap-6">
 
                     <!-- Testimonial 2 -->
-                    <div class="fade-in bg-surface border border-white/5 rounded-lg p-6">
+                    <div class="fade-in bg-surface-light border border-line/50 rounded-xl shadow-sm p-6">
                         <!-- Stars -->
                         <div class="flex gap-1 mb-4">
                             <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
@@ -166,20 +166,20 @@
                             <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
                             <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
                         </div>
-                        <blockquote class="text-white/80 italic mb-6 text-sm leading-relaxed" data-i18n="opinie.t2_text">
+                        <blockquote class="text-text/80 italic mb-6 text-sm leading-relaxed" data-i18n="opinie.t2_text">
                             "Wypadek przy pracy zniszczył mi kręgosłup. Pracodawca twierdził, że sam jestem winien. Kancelaria wywalczyła dla mnie 67 000 zł — w 3 miesiące. Profesjonalizm na najwyższym poziomie."
                         </blockquote>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-sm">MN</div>
                             <div>
-                                <p class="text-white text-sm font-semibold" data-i18n="opinie.t2_name">Marek N.</p>
+                                <p class="text-text text-sm font-semibold" data-i18n="opinie.t2_name">Marek N.</p>
                                 <p class="text-muted text-xs" data-i18n="opinie.t2_detail">Wypadek przy pracy</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Testimonial 3 -->
-                    <div class="fade-in bg-surface border border-white/5 rounded-lg p-6">
+                    <div class="fade-in bg-surface-light border border-line/50 rounded-xl shadow-sm p-6">
                         <!-- Stars -->
                         <div class="flex gap-1 mb-4">
                             <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
@@ -188,13 +188,13 @@
                             <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
                             <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
                         </div>
-                        <blockquote class="text-white/80 italic mb-6 text-sm leading-relaxed" data-i18n="opinie.t3_text">
+                        <blockquote class="text-text/80 italic mb-6 text-sm leading-relaxed" data-i18n="opinie.t3_text">
                             "Po błędzie medycznym szpital odmawiał jakiejkolwiek odpowiedzialności. Kancelaria wzięła sprawę, zebrała dokumentację i uzyskała odszkodowanie, o którym nie śmiałam marzyć. Dziękuję z całego serca."
                         </blockquote>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-sm">JP</div>
                             <div>
-                                <p class="text-white text-sm font-semibold" data-i18n="opinie.t3_name">Joanna P.</p>
+                                <p class="text-text text-sm font-semibold" data-i18n="opinie.t3_name">Joanna P.</p>
                                 <p class="text-muted text-xs" data-i18n="opinie.t3_detail">Błąd medyczny</p>
                             </div>
                         </div>
@@ -207,21 +207,21 @@
         <!-- CTA Block -->
         <section class="bg-surface py-16 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white mb-4" data-i18n="opinie.cta_title">
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-text mb-4" data-i18n="opinie.cta_title">
                     Miałeś wypadek? Sprawdź ile Ci się należy.
                 </h2>
                 <p class="text-muted mb-8 max-w-xl mx-auto" data-i18n="opinie.cta_subtitle">Bezpłatna analiza sprawy. Nie ryzykujesz nic — prowizja tylko od wygranego odszkodowania.</p>
-                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded font-semibold transition-colors" data-i18n="cta.button">
+                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded-lg font-semibold transition-colors hover:shadow-lg hover:shadow-cta/30" data-i18n="cta.button">
                     Bezpłatna konsultacja
                 </a>
             </div>
         </section>
 
         <!-- Footer -->
-        <section class="bg-bg py-20 lg:py-24 text-center">
+        <section class="bg-bg py-12 lg:py-16 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
-                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded font-semibold transition-colors mb-6" data-i18n="cta.button">
+                <h2 class="font-heading text-4xl lg:text-5xl text-text font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
+                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded-lg font-semibold transition-colors hover:shadow-lg hover:shadow-cta/30 mb-6" data-i18n="cta.button">
                     Bezpłatna konsultacja
                 </a>
                 <p class="text-muted" data-i18n="cta.phone_prefix">
@@ -229,14 +229,14 @@
                 </p>
 
                 <!-- Footer links -->
-                <div class="border-t border-white/5 mt-16 pt-8">
+                <div class="border-t border-line/50 mt-16 pt-8">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-left mb-8">
                         <div>
                             <span class="text-gold font-heading text-lg font-bold" data-i18n="nav.logo">Odszkodowania</span>
                             <p class="text-muted text-sm mt-3" data-i18n="footer.desc">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
                             <div class="space-y-2">
                                 <a href="odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service1">Wypadki komunikacyjne</a>
                                 <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service2">Wypadki przy pracy</a>
@@ -246,7 +246,7 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
                             <div class="space-y-2">
                                 <a href="jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info1">Jak działamy</a>
                                 <a href="sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info2">Nasze sukcesy</a>
@@ -256,7 +256,7 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
                             <div class="space-y-2">
                                 <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                                 <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -275,12 +275,12 @@
     </main>
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
-                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-text transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
+                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
     </div>
