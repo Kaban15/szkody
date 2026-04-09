@@ -34,15 +34,17 @@ npm run test:watch            # run vitest in watch mode
 - **Tailwind CSS via CDN** (`cdn.tailwindcss.com`) with shared config in `js/tailwind-config.js` (loaded via script tag in all pages)
 - **Vanilla JS** (no framework, no bundler, no modules — plain `<script>` tags)
 - **Lucide Icons** via CDN (`unpkg.com/lucide@0.460.0`) — pinned version, call `lucide.createIcons()` after DOM load
-- **Google Fonts**: Fraunces (headings) + Space Grotesk (body)
+- **Google Fonts**: Plus Jakarta Sans (headings + body, weights 400–800)
 
 ### Color Palette (defined in `js/tailwind-config.js` — single source of truth)
-- `bg` (#08080F) — page background (dark navy tint)
-- `surface` (#12121E), `surface-light` (#1C1C2E) — card/section backgrounds
+- `bg` (#FDFBF7) — warm cream page background
+- `surface` (#F5F0E8) — alternate section backgrounds
+- `surface-light` (#FFFFFF) — cards, inputs, elevated elements
 - `gold` (#D4AF37), `gold-light` (#E8C867) — accent, trust elements, secondary buttons
 - `cta` (#E8652D), `cta-hover` (#D4561F) — primary call-to-action buttons (orange)
-- `text` (#E8E2D6) — warm white body text
-- `muted` (#9A9590) — secondary text (warm gray)
+- `text` (#1A1008) — dark brown body text
+- `muted` (#8A7D6F) — secondary text (warm gray)
+- `line` (#EDE7DA) — borders and dividers
 - `error` (#EF4444) — form validation errors
 
 ### Page Structure
@@ -85,7 +87,7 @@ Custom animations and transitions beyond Tailwind utilities:
 Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky bottom bar, cookie consent banner, and Tailwind config in `<head>`. When modifying shared elements, update ALL HTML files.
 
 ### Key Design Patterns
-- **Dark premium theme**: near-black backgrounds with gold accents — deliberately different from competitor blue/white sites
+- **Light warm-cream theme**: cream backgrounds (#FDFBF7) with gold accents and orange CTAs — warm, professional, modern
 - **Trust bar**: social proof strip between hero and quiz (Google rating, badge, stats)
 - **Ticker**: auto-scrolling marquee at top with recent successes (content duplicated for seamless CSS loop — update both copies when changing text)
 - **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`

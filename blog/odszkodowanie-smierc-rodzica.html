@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -96,12 +96,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -109,23 +109,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -146,23 +146,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Kto może ubiegać się o odszkodowanie po śmierci rodzica?</span>
+                    <span class="text-text">Kto może ubiegać się o odszkodowanie po śmierci rodzica?</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Kto może ubiegać się o odszkodowanie po śmierci rodzica?</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Kto może ubiegać się o odszkodowanie po śmierci rodzica?</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -176,8 +176,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#kto-ma-prawo" class="text-gold hover:text-gold-light transition-colors text-sm">1. Kto ma prawo do odszkodowania po śmierci rodzica?</a></li>
                         <li><a href="#jakie-swiadczenia" class="text-gold hover:text-gold-light transition-colors text-sm">2. Jakie świadczenia przysługują dzieciom?</a></li>
@@ -192,44 +192,44 @@
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">Śmierć rodzica w wyniku wypadku to jedna z najtrudniejszych sytuacji, z jakimi może zetknąć się człowiek. W obliczu żałoby trudno myśleć o formalnościach — a jednak to właśnie w tym czasie podejmowane są decyzje, które mogą zaważyć na tym, czy Ty i Twoja rodzina otrzymacie należną pomoc finansową. Niniejszy artykuł wyjaśnia, komu przysługują roszczenia po śmierci rodzica, jakie kwoty są realnie do uzyskania i jak krok po kroku złożyć wniosek.</p>
 
-                    <h2 id="kto-ma-prawo" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">1. Kto ma prawo do odszkodowania po śmierci rodzica?</h2>
+                    <h2 id="kto-ma-prawo" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">1. Kto ma prawo do odszkodowania po śmierci rodzica?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Prawo do roszczeń po śmierci rodzica przysługuje przede wszystkim jego dzieciom — zarówno biologicznym, jak i przysposobionym (adoptowanym). Ustawodawca traktuje te grupy jednakowo: dziecko adoptowane ma identyczne uprawnienia jak dziecko biologiczne.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">Dzieci małoletnie</strong> zajmują w tym kontekście szczególnie silną pozycję. Śmierć rodzica oznacza dla nich nie tylko stratę emocjonalną, lecz także utratę faktycznego opiekuna i żywiciela. Sądy i ubezpieczyciele uwzględniają tę okoliczność przy ustalaniu wysokości zadośćuczynienia oraz przy zasądzaniu renty alimentacyjnej.</p>
-                    <p class="text-muted text-lg mb-6 leading-relaxed"><strong class="text-white">Pełnoletnie dzieci</strong> również mają pełne prawo do dochodzenia roszczeń — wiek nie stanowi przeszkody. Kluczowe jest wykazanie bliskiej więzi emocjonalnej ze zmarłym rodzicem oraz — w przypadku renty alimentacyjnej — faktycznego zależności finansowej. Jeśli po ukończeniu 18 lat nadal mieszkałeś z rodzicem, byłeś przez niego wspierany lub utrzymywałeś z nim bliski kontakt, masz solidne podstawy do dochodzenia zadośćuczynienia.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">Dzieci małoletnie</strong> zajmują w tym kontekście szczególnie silną pozycję. Śmierć rodzica oznacza dla nich nie tylko stratę emocjonalną, lecz także utratę faktycznego opiekuna i żywiciela. Sądy i ubezpieczyciele uwzględniają tę okoliczność przy ustalaniu wysokości zadośćuczynienia oraz przy zasądzaniu renty alimentacyjnej.</p>
+                    <p class="text-muted text-lg mb-6 leading-relaxed"><strong class="text-text">Pełnoletnie dzieci</strong> również mają pełne prawo do dochodzenia roszczeń — wiek nie stanowi przeszkody. Kluczowe jest wykazanie bliskiej więzi emocjonalnej ze zmarłym rodzicem oraz — w przypadku renty alimentacyjnej — faktycznego zależności finansowej. Jeśli po ukończeniu 18 lat nadal mieszkałeś z rodzicem, byłeś przez niego wspierany lub utrzymywałeś z nim bliski kontakt, masz solidne podstawy do dochodzenia zadośćuczynienia.</p>
 
-                    <h2 id="jakie-swiadczenia" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">2. Jakie świadczenia przysługują dzieciom?</h2>
+                    <h2 id="jakie-swiadczenia" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">2. Jakie świadczenia przysługują dzieciom?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Polskie prawo przewiduje kilka odrębnych rodzajów świadczeń dla dzieci po śmierci rodzica. Każde z nich ma inną podstawę prawną i służy innemu celowi — możesz ubiegać się o wszystkie naraz.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Zadośćuczynienie za krzywdę (art. 446 §4 KC)</h3>
-                    <p class="text-muted text-lg mb-6 leading-relaxed">To jednorazowe świadczenie pieniężne za ból, cierpienie i zerwanie więzi rodzinnej. Sądy ustalają jego wysokość indywidualnie, uwzględniając m.in. wiek dziecka, głębokość relacji, wspólne zamieszkanie i skutki psychologiczne straty. Orientacyjne kwoty z orzecznictwa: <strong class="text-white">30 000–150 000 zł na jedno dziecko</strong>. W sprawach, w których rodzic zginął tragicznie, a dziecko było od niego bardzo zależne emocjonalnie, sądy zasądzają kwoty w górnych przedziałach skali.</p>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Zadośćuczynienie za krzywdę (art. 446 §4 KC)</h3>
+                    <p class="text-muted text-lg mb-6 leading-relaxed">To jednorazowe świadczenie pieniężne za ból, cierpienie i zerwanie więzi rodzinnej. Sądy ustalają jego wysokość indywidualnie, uwzględniając m.in. wiek dziecka, głębokość relacji, wspólne zamieszkanie i skutki psychologiczne straty. Orientacyjne kwoty z orzecznictwa: <strong class="text-text">30 000–150 000 zł na jedno dziecko</strong>. W sprawach, w których rodzic zginął tragicznie, a dziecko było od niego bardzo zależne emocjonalnie, sądy zasądzają kwoty w górnych przedziałach skali.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Renta alimentacyjna (art. 446 §2 KC)</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Renta alimentacyjna (art. 446 §2 KC)</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Przysługuje dzieciom, które były na utrzymaniu zmarłego rodzica. Wypłacana co miesiąc, do momentu usamodzielnienia się dziecka — zwykle do ukończenia 25 lat w przypadku kontynuowania nauki. Więcej o rencie znajdziesz w kolejnej sekcji.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Odszkodowanie za pogorszenie sytuacji życiowej (art. 446 §3 KC)</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Odszkodowanie za pogorszenie sytuacji życiowej (art. 446 §3 KC)</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Świadczenie jednorazowe, które kompensuje obiektywne pogorszenie warunków bytowych po śmierci rodzica — np. utratę perspektyw edukacyjnych, konieczność zmiany planów życiowych, pogorszenie standardu życia. Sądy zasądzają je niezależnie od zadośćuczynienia, choć w praktyce obie podstawy często się uzupełniają.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Zwrot kosztów pogrzebu</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Zwrot kosztów pogrzebu</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Ubezpieczyciel OC sprawcy zobowiązany jest zwrócić koszty pogrzebu osobom, które je poniosły (art. 446 §1 KC). Obejmuje to koszty ceremonii, trumny, nagrobka i stypy — w granicach przyjętych miejscowo zwyczajów. Zachowaj wszystkie faktury i rachunki.</p>
 
-                    <h2 id="renta-alimentacyjna" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">3. Renta alimentacyjna — ile i jak długo?</h2>
+                    <h2 id="renta-alimentacyjna" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">3. Renta alimentacyjna — ile i jak długo?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Renta alimentacyjna z art. 446 §2 KC to jedno z najważniejszych — i najczęściej niedochodzonych — świadczeń dla dzieci po śmierci rodzica. Jej celem jest zastąpienie wkładu finansowego, który rodzic wnosiłby w utrzymanie dziecka, gdyby żył.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">Jak długo przysługuje renta?</strong> Zasadniczo do momentu usamodzielnienia się dziecka — rozumianego jako zakończenie nauki i podjęcie pracy zarobkowej. W praktyce, jeśli dziecko studiuje, renta jest przyznawana do ok. 25. roku życia. Jeśli dziecko jest niepełnosprawne lub z innych przyczyn nie jest w stanie się usamodzielnić, renta może być przyznana bezterminowo.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">Ile wynosi renta?</strong> Jej wysokość odpowiada temu, co rodzic faktycznie przeznaczałby na utrzymanie dziecka — przy uwzględnieniu jego zarobków, standardu życia rodziny i liczby osób na utrzymaniu. Jeśli rodzic zarabiał 5 000 zł miesięcznie i utrzymywał dwoje dzieci, renta na jedno dziecko może wynosić ok. 1 500–2 000 zł miesięcznie.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">Jak długo przysługuje renta?</strong> Zasadniczo do momentu usamodzielnienia się dziecka — rozumianego jako zakończenie nauki i podjęcie pracy zarobkowej. W praktyce, jeśli dziecko studiuje, renta jest przyznawana do ok. 25. roku życia. Jeśli dziecko jest niepełnosprawne lub z innych przyczyn nie jest w stanie się usamodzielnić, renta może być przyznana bezterminowo.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">Ile wynosi renta?</strong> Jej wysokość odpowiada temu, co rodzic faktycznie przeznaczałby na utrzymanie dziecka — przy uwzględnieniu jego zarobków, standardu życia rodziny i liczby osób na utrzymaniu. Jeśli rodzic zarabiał 5 000 zł miesięcznie i utrzymywał dwoje dzieci, renta na jedno dziecko może wynosić ok. 1 500–2 000 zł miesięcznie.</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Ważna informacja: renta alimentacyjna z art. 446 §2 KC pochodzi z polisy OC sprawcy wypadku — nie jest to świadczenie z ZUS. ZUS może wypłacać odrębną rentę rodzinną, ale to dwa różne instrumenty, których można dochodzić jednocześnie.</p>
 
-                    <h2 id="jak-zlozyc-roszczenie" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">4. Jak złożyć roszczenie?</h2>
+                    <h2 id="jak-zlozyc-roszczenie" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">4. Jak złożyć roszczenie?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Roszczenia po śmierci rodzica kierujesz do ubezpieczyciela OC sprawcy wypadku. Jeśli sprawca był nieznany lub nieubezpieczony, odpowiedzialność przejmuje Ubezpieczeniowy Fundusz Gwarancyjny (UFG).</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Dokumenty, które będą potrzebne</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Dokumenty, które będą potrzebne</h3>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Akt zgonu rodzica</strong> — potwierdzenie faktu śmierci</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Akt urodzenia dziecka</strong> — potwierdzenie pokrewieństwa</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Dokumenty o dochodach zmarłego</strong> — PIT, zaświadczenie od pracodawcy, wyciągi bankowe</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Zaświadczenie o nauce</strong> (w przypadku renty) — z uczelni lub szkoły</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Dokumentacja z wypadku</strong> — notatka policyjna, wyrok sądu karnego (jeśli zapadł)</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Rachunki za pogrzeb</strong> — jeśli ubiegasz się o ich zwrot</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Dokumentacja psychologiczna</strong> — opinia psychologa potwierdzająca ból i cierpienie wzmacnia roszczenie o zadośćuczynienie</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Akt zgonu rodzica</strong> — potwierdzenie faktu śmierci</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Akt urodzenia dziecka</strong> — potwierdzenie pokrewieństwa</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Dokumenty o dochodach zmarłego</strong> — PIT, zaświadczenie od pracodawcy, wyciągi bankowe</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Zaświadczenie o nauce</strong> (w przypadku renty) — z uczelni lub szkoły</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Dokumentacja z wypadku</strong> — notatka policyjna, wyrok sądu karnego (jeśli zapadł)</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Rachunki za pogrzeb</strong> — jeśli ubiegasz się o ich zwrot</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Dokumentacja psychologiczna</strong> — opinia psychologa potwierdzająca ból i cierpienie wzmacnia roszczenie o zadośćuczynienie</span></li>
                     </ul>
 
                     <p class="text-muted text-lg mb-4 leading-relaxed">Ubezpieczyciel ma 30 dni na wydanie decyzji od momentu otrzymania kompletnych dokumentów (lub 90 dni przy sprawach wymagających dodatkowych wyjaśnień). Pierwsza oferta ubezpieczyciela niemal zawsze jest znacznie zaniżona — zarówno jeśli chodzi o zadośćuczynienie, jak i wysokość renty. Dlatego warto skorzystać z pomocy specjalisty jeszcze przed złożeniem wniosku.</p>
@@ -239,60 +239,60 @@
 
                 <!-- FAQ section -->
                 <section id="faq" class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy pełnoletnie dziecko może dostać odszkodowanie po śmierci rodzica?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Tak — wiek dziecka nie pozbawia go prawa do <strong class="text-white">zadośćuczynienia za krzywdę</strong> (art. 446 §4 KC). Warunkiem jest wykazanie bliskiej więzi emocjonalnej ze zmarłym rodzicem. Pełnoletnie dzieci, które mieszkały z rodzicem, utrzymywały z nim bliski kontakt lub były przez niego wspierane, z powodzeniem uzyskują zadośćuczynienia w wysokości 30 000–100 000 zł i więcej. Renta alimentacyjna przysługuje natomiast jedynie wtedy, gdy rodzic faktycznie łożył na utrzymanie dziecka — najczęściej w trakcie nauki do ok. 25. roku życia.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Tak — wiek dziecka nie pozbawia go prawa do <strong class="text-text">zadośćuczynienia za krzywdę</strong> (art. 446 §4 KC). Warunkiem jest wykazanie bliskiej więzi emocjonalnej ze zmarłym rodzicem. Pełnoletnie dzieci, które mieszkały z rodzicem, utrzymywały z nim bliski kontakt lub były przez niego wspierane, z powodzeniem uzyskują zadośćuczynienia w wysokości 30 000–100 000 zł i więcej. Renta alimentacyjna przysługuje natomiast jedynie wtedy, gdy rodzic faktycznie łożył na utrzymanie dziecka — najczęściej w trakcie nauki do ok. 25. roku życia.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy renta alimentacyjna jest wypłacana jednorazowo?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Co do zasady renta z art. 446 §2 KC wypłacana jest <strong class="text-white">co miesiąc</strong> — w stałej kwocie odpowiadającej utraconemu wkładowi finansowemu rodzica. Istnieje jednak możliwość wnioskowania o jej <strong class="text-white">kapitalizację</strong>, czyli jednorazową wypłatę sumy odpowiadającej całości lub części przyszłych świadczeń. Sąd może przyznać rentę skapitalizowaną na wniosek uprawnionego, jeśli przemawiają za tym szczególne okoliczności. W praktyce wiele rodzin decyduje się na kapitalizację, by jednorazowo sfinansować edukację lub zaspokoić pilne potrzeby.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Co do zasady renta z art. 446 §2 KC wypłacana jest <strong class="text-text">co miesiąc</strong> — w stałej kwocie odpowiadającej utraconemu wkładowi finansowemu rodzica. Istnieje jednak możliwość wnioskowania o jej <strong class="text-text">kapitalizację</strong>, czyli jednorazową wypłatę sumy odpowiadającej całości lub części przyszłych świadczeń. Sąd może przyznać rentę skapitalizowaną na wniosek uprawnionego, jeśli przemawiają za tym szczególne okoliczności. W praktyce wiele rodzin decyduje się na kapitalizację, by jednorazowo sfinansować edukację lub zaspokoić pilne potrzeby.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Co jeśli rodzic zginął w wypadku sprzed lat — czy nadal mogę się ubiegać?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Zależy od terminu przedawnienia. Standardowy termin to <strong class="text-white">3 lata</strong> od dnia, w którym dowiedziałeś się o szkodzie i osobie zobowiązanej do jej naprawienia. Jeżeli jednak śmierć rodzica nastąpiła w wyniku przestępstwa (np. spowodowanie wypadku drogowego ze skutkiem śmiertelnym), termin przedawnienia wynosi <strong class="text-white">20 lat</strong> od dnia popełnienia przestępstwa — niezależnie od tego, kiedy dowiedziałeś się o przysługujących Ci roszczeniach. Warto jak najszybciej skonsultować się ze specjalistą, by ocenić, czy i na jakich warunkach możliwe jest dochodzenie roszczeń.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Zależy od terminu przedawnienia. Standardowy termin to <strong class="text-text">3 lata</strong> od dnia, w którym dowiedziałeś się o szkodzie i osobie zobowiązanej do jej naprawienia. Jeżeli jednak śmierć rodzica nastąpiła w wyniku przestępstwa (np. spowodowanie wypadku drogowego ze skutkiem śmiertelnym), termin przedawnienia wynosi <strong class="text-text">20 lat</strong> od dnia popełnienia przestępstwa — niezależnie od tego, kiedy dowiedziałeś się o przysługujących Ci roszczeniach. Warto jak najszybciej skonsultować się ze specjalistą, by ocenić, czy i na jakich warunkach możliwe jest dochodzenie roszczeń.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Straciłeś rodzica przez czyjąś winę?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Straciłeś rodzica przez czyjąś winę?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Rozumiemy, jak trudny jest ten czas. Bezpłatnie i bez zobowiązań przeanalizujemy Twoją sytuację — powiedz nam, co się stało, a my ocenimy, jakich świadczeń możesz się domagać.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <a href="zadoscuczynienie-smierc-bliskiej-osoby.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="zadoscuczynienie-smierc-bliskiej-osoby.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Zadośćuczynienie po śmierci bliskiej osoby — ile i dla kogo?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Zadośćuczynienie po śmierci bliskiej osoby — ile i dla kogo?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
-                        <a href="przedawnienie-roszczen.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="przedawnienie-roszczen.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Prawo</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Przedawnienie roszczeń — ile masz czasu?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Przedawnienie roszczeń — ile masz czasu?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
@@ -305,7 +305,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -313,7 +313,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -323,7 +323,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -333,7 +333,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -345,18 +345,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>

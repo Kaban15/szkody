@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -96,12 +96,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -109,23 +109,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -146,23 +146,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Odszkodowanie z KRUS za wypadek — ile można uzyskać?</span>
+                    <span class="text-text">Odszkodowanie z KRUS za wypadek — ile można uzyskać?</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">KRUS</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Odszkodowanie z KRUS za wypadek — ile można uzyskać?</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Odszkodowanie z KRUS za wypadek — ile można uzyskać?</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -176,8 +176,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#jednorazowe-odszkodowanie" class="text-gold hover:text-gold-light transition-colors text-sm">1. Jednorazowe odszkodowanie z KRUS — aktualne stawki</a></li>
                         <li><a href="#zasilek-chorobowy" class="text-gold hover:text-gold-light transition-colors text-sm">2. Zasiłek chorobowy z KRUS</a></li>
@@ -192,45 +192,45 @@
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">Wypadek przy pracy rolniczej wiąże się z konkretnymi konsekwencjami finansowymi — zarówno dla Ciebie, jak i Twojego gospodarstwa. KRUS oferuje kilka rodzajów świadczeń: jednorazowe odszkodowanie, zasiłek chorobowy i rentę. Warto dokładnie wiedzieć, ile możesz uzyskać z każdego z nich — i kiedy warto sięgnąć po dodatkowe roszczenia poza systemem ubezpieczeń rolniczych.</p>
 
-                    <h2 id="jednorazowe-odszkodowanie" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">1. Jednorazowe odszkodowanie z KRUS — aktualne stawki</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Podstawowym świadczeniem za wypadek przy pracy rolniczej jest <strong class="text-white">jednorazowe odszkodowanie z tytułu stałego lub długotrwałego uszczerbku na zdrowiu</strong>. Jego wysokość zależy bezpośrednio od stopnia uszczerbku — im wyższy procent, tym wyższa kwota.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Stawka za 1% uszczerbku na zdrowiu przekracza aktualnie <strong class="text-white">1 000 zł</strong> i jest corocznie waloryzowana przez Prezesa KRUS. Dla porównania — kilka lat temu wynosiła ok. 700–800 zł; wzrosty są systematyczne, choć nie zawsze duże.</p>
+                    <h2 id="jednorazowe-odszkodowanie" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">1. Jednorazowe odszkodowanie z KRUS — aktualne stawki</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Podstawowym świadczeniem za wypadek przy pracy rolniczej jest <strong class="text-text">jednorazowe odszkodowanie z tytułu stałego lub długotrwałego uszczerbku na zdrowiu</strong>. Jego wysokość zależy bezpośrednio od stopnia uszczerbku — im wyższy procent, tym wyższa kwota.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Stawka za 1% uszczerbku na zdrowiu przekracza aktualnie <strong class="text-text">1 000 zł</strong> i jest corocznie waloryzowana przez Prezesa KRUS. Dla porównania — kilka lat temu wynosiła ok. 700–800 zł; wzrosty są systematyczne, choć nie zawsze duże.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Przykładowe kwoty odszkodowania</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Przykładowe kwoty odszkodowania</h3>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-white">5% uszczerbku</strong> — ok. 5 000–5 500 zł (np. skręcenie stawu, drobne złamanie)</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-white">15% uszczerbku</strong> — ok. 15 000–16 500 zł (np. złamanie z powikłaniami, uszkodzenie ścięgna)</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-white">30% uszczerbku</strong> — ok. 30 000–33 000 zł (np. utrata funkcji kończyny, poważny uraz kręgosłupa)</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-white">100% uszczerbku lub śmierć</strong> — osobne, wyższe stawki; w przypadku śmierci świadczenie przysługuje również rodzinie rolnika</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-text">5% uszczerbku</strong> — ok. 5 000–5 500 zł (np. skręcenie stawu, drobne złamanie)</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-text">15% uszczerbku</strong> — ok. 15 000–16 500 zł (np. złamanie z powikłaniami, uszkodzenie ścięgna)</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-text">30% uszczerbku</strong> — ok. 30 000–33 000 zł (np. utrata funkcji kończyny, poważny uraz kręgosłupa)</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="circle-dot" class="w-4 h-4"></i></span><span><strong class="text-text">100% uszczerbku lub śmierć</strong> — osobne, wyższe stawki; w przypadku śmierci świadczenie przysługuje również rodzinie rolnika</span></li>
                     </ul>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Stopień uszczerbku orzeka lekarz rzeczoznawca KRUS podczas badania, które odbywa się po zakończeniu leczenia lub gdy stan zdrowia się ustabilizuje. Kluczowe jest, aby badanie odbyło się przy kompletnej dokumentacji medycznej — każdy brakujący dokument może zaniżyć orzeczony procent.</p>
 
-                    <h2 id="zasilek-chorobowy" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">2. Zasiłek chorobowy z KRUS</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Jeśli wypadek spowodował niezdolność do pracy, przysługuje Ci <strong class="text-white">zasiłek chorobowy z KRUS</strong> — niezależnie od jednorazowego odszkodowania. Świadczenie to ma pokryć bieżące straty związane z niemożnością prowadzenia działalności rolniczej.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Dzienna stawka zasiłku wynosi aktualnie ok. <strong class="text-white">20 zł</strong> (dokładna kwota jest corocznie ustalana przez Radę Rolników KRUS). To nieduże wsparcie — przy miesięcznej niezdolności do pracy otrzymasz ok. 600 zł. Niemniej przysługuje Ci automatycznie, bez dodatkowego postępowania, jeśli zgłosiłeś wypadek i jesteś ubezpieczony w KRUS.</p>
+                    <h2 id="zasilek-chorobowy" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">2. Zasiłek chorobowy z KRUS</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Jeśli wypadek spowodował niezdolność do pracy, przysługuje Ci <strong class="text-text">zasiłek chorobowy z KRUS</strong> — niezależnie od jednorazowego odszkodowania. Świadczenie to ma pokryć bieżące straty związane z niemożnością prowadzenia działalności rolniczej.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Dzienna stawka zasiłku wynosi aktualnie ok. <strong class="text-text">20 zł</strong> (dokładna kwota jest corocznie ustalana przez Radę Rolników KRUS). To nieduże wsparcie — przy miesięcznej niezdolności do pracy otrzymasz ok. 600 zł. Niemniej przysługuje Ci automatycznie, bez dodatkowego postępowania, jeśli zgłosiłeś wypadek i jesteś ubezpieczony w KRUS.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Czas trwania zasiłku</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Czas trwania zasiłku</h3>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Standardowo zasiłek wypłacany jest przez <strong class="text-white">maksymalnie 180 dni</strong> (ok. 6 miesięcy)</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>W wyjątkowych przypadkach, gdy rokowania na powrót do zdrowia są dobre, ale leczenie wymaga więcej czasu, możliwe jest <strong class="text-white">przedłużenie do 360 dni</strong></span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Standardowo zasiłek wypłacany jest przez <strong class="text-text">maksymalnie 180 dni</strong> (ok. 6 miesięcy)</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>W wyjątkowych przypadkach, gdy rokowania na powrót do zdrowia są dobre, ale leczenie wymaga więcej czasu, możliwe jest <strong class="text-text">przedłużenie do 360 dni</strong></span></li>
                         <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Zasiłek nie przysługuje za pierwsze 7 dni niezdolności do pracy (tzw. okres wyczekiwania)</span></li>
                     </ul>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Pamiętaj, że zasiłek chorobowy z KRUS jest znacznie niższy niż analogiczne świadczenia z ZUS. Jeśli wypadek nastąpił z winy osoby trzeciej lub wadliwej maszyny rolniczej, istnieje możliwość dochodzenia utraconych dochodów w ramach roszczeń cywilnych — co może przynieść znacznie wyższe kwoty.</p>
 
-                    <h2 id="renta-rolnicza" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">3. Renta rolnicza z tytułu niezdolności do pracy</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Gdy następstwa wypadku są poważne i Twoja niezdolność do pracy w gospodarstwie ma charakter <strong class="text-white">długotrwały lub trwały</strong>, możesz ubiegać się o rentę rolniczą z tytułu niezdolności do pracy. Jest to świadczenie okresowe, wypłacane co miesiąc.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Wysokość renty zależy od stopnia niezdolności do pracy: przy całkowitej niezdolności renta jest wyższa niż przy częściowej. O stopniu niezdolności i jej charakterze (trwała lub czasowa) orzeka <strong class="text-white">lekarz rzeczoznawca KRUS</strong>, a następnie — jeśli złożysz odwołanie — komisja lekarska KRUS.</p>
+                    <h2 id="renta-rolnicza" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">3. Renta rolnicza z tytułu niezdolności do pracy</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Gdy następstwa wypadku są poważne i Twoja niezdolność do pracy w gospodarstwie ma charakter <strong class="text-text">długotrwały lub trwały</strong>, możesz ubiegać się o rentę rolniczą z tytułu niezdolności do pracy. Jest to świadczenie okresowe, wypłacane co miesiąc.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Wysokość renty zależy od stopnia niezdolności do pracy: przy całkowitej niezdolności renta jest wyższa niż przy częściowej. O stopniu niezdolności i jej charakterze (trwała lub czasowa) orzeka <strong class="text-text">lekarz rzeczoznawca KRUS</strong>, a następnie — jeśli złożysz odwołanie — komisja lekarska KRUS.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Renta szkoleniowa</h3>
-                    <p class="text-muted text-lg mb-10 leading-relaxed">Jeśli wypadek uniemożliwia Ci kontynuowanie pracy w rolnictwie, ale istnieje możliwość przekwalifikowania się do innego zawodu, KRUS może przyznać <strong class="text-white">rentę szkoleniową</strong>. Przysługuje ona przez czas trwania szkolenia, maksymalnie przez 6 miesięcy. Jej celem jest wsparcie finansowe podczas zmiany profilu aktywności zawodowej.</p>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Renta szkoleniowa</h3>
+                    <p class="text-muted text-lg mb-10 leading-relaxed">Jeśli wypadek uniemożliwia Ci kontynuowanie pracy w rolnictwie, ale istnieje możliwość przekwalifikowania się do innego zawodu, KRUS może przyznać <strong class="text-text">rentę szkoleniową</strong>. Przysługuje ona przez czas trwania szkolenia, maksymalnie przez 6 miesięcy. Jej celem jest wsparcie finansowe podczas zmiany profilu aktywności zawodowej.</p>
 
-                    <h2 id="dodatkowe-odszkodowanie" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">4. Dodatkowe odszkodowanie poza KRUS</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Świadczenia z KRUS to <strong class="text-white">minimalny poziom ochrony</strong> przewidziany przez system ubezpieczeń społecznych rolników. Kwoty wypłacane przez KRUS są często nieadekwatne do rzeczywistej skali strat — zarówno zdrowotnych, jak i finansowych.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Jeśli wypadek spowodowała osoba trzecia lub wadliwa maszyna rolnicza, masz prawo do znacznie wyższego <strong class="text-white">odszkodowania cywilnego</strong> — niezależnie od wypłaty z KRUS. Możliwe ścieżki roszczeń to:</p>
+                    <h2 id="dodatkowe-odszkodowanie" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">4. Dodatkowe odszkodowanie poza KRUS</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Świadczenia z KRUS to <strong class="text-text">minimalny poziom ochrony</strong> przewidziany przez system ubezpieczeń społecznych rolników. Kwoty wypłacane przez KRUS są często nieadekwatne do rzeczywistej skali strat — zarówno zdrowotnych, jak i finansowych.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Jeśli wypadek spowodowała osoba trzecia lub wadliwa maszyna rolnicza, masz prawo do znacznie wyższego <strong class="text-text">odszkodowania cywilnego</strong> — niezależnie od wypłaty z KRUS. Możliwe ścieżki roszczeń to:</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">OC rolnika</strong> — jeśli sprawcą jest inny rolnik, jego polisa OC rolnika pokrywa Twoje roszczenia cywilne (zadośćuczynienie, utracone zarobki, koszty leczenia, renta wyrównawcza)</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Odpowiedzialność producenta maszyn</strong> — jeśli wypadek spowodowała wadliwa maszyna lub narzędzie rolnicze (np. defekt fabryczny, brak zabezpieczeń), producent ponosi odpowiedzialność za produkt niebezpieczny</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">OC pojazdu</strong> — gdy wypadek nastąpił w związku z ruchem pojazdu mechanicznego (np. ciągnik, przyczepa) — roszczenia kierujesz do ubezpieczyciela OC</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">OC rolnika</strong> — jeśli sprawcą jest inny rolnik, jego polisa OC rolnika pokrywa Twoje roszczenia cywilne (zadośćuczynienie, utracone zarobki, koszty leczenia, renta wyrównawcza)</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Odpowiedzialność producenta maszyn</strong> — jeśli wypadek spowodowała wadliwa maszyna lub narzędzie rolnicze (np. defekt fabryczny, brak zabezpieczeń), producent ponosi odpowiedzialność za produkt niebezpieczny</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">OC pojazdu</strong> — gdy wypadek nastąpił w związku z ruchem pojazdu mechanicznego (np. ciągnik, przyczepa) — roszczenia kierujesz do ubezpieczyciela OC</span></li>
                     </ul>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Kwoty odszkodowań cywilnych są wielokrotnie wyższe niż świadczenia z KRUS. Zadośćuczynienie za ból i cierpienie, renta wyrównawcza za utracone dochody czy zwrot kosztów rehabilitacji — to świadczenia, które przy poważnych wypadkach mogą łącznie sięgać kilkudziesięciu lub nawet kilkuset tysięcy złotych. Więcej o tym przeczytasz na naszej stronie dotyczącej <a href="../odszkodowania-wypadki-rolnicze.html" class="text-gold hover:text-gold-light underline transition-colors">odszkodowań za wypadki rolnicze</a>.</p>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Dochodzenie roszczeń cywilnych wymaga wykazania winy i związku przyczynowego — dlatego warto skonsultować sprawę ze specjalistą, który oceni, czy i jakie dodatkowe roszczenia Ci przysługują. Pierwsza konsultacja jest bezpłatna i nie zobowiązuje do niczego.</p>
@@ -239,60 +239,60 @@
 
                 <!-- FAQ section -->
                 <section id="faq" class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy świadczenia z KRUS wykluczają odszkodowanie cywilne?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Nie — świadczenia z KRUS i odszkodowanie cywilne to <strong class="text-white">dwa niezależne źródła</strong>. Jednorazowe odszkodowanie z KRUS wypłacane jest z ubezpieczenia społecznego rolników i nie stoi na przeszkodzie dochodzeniu roszczeń cywilnych od osoby odpowiedzialnej za wypadek (np. sprawcy kolizji, producenta wadliwej maszyny). Możesz ubiegać się o oba świadczenia jednocześnie — jedno nie pomniejsza drugiego.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Nie — świadczenia z KRUS i odszkodowanie cywilne to <strong class="text-text">dwa niezależne źródła</strong>. Jednorazowe odszkodowanie z KRUS wypłacane jest z ubezpieczenia społecznego rolników i nie stoi na przeszkodzie dochodzeniu roszczeń cywilnych od osoby odpowiedzialnej za wypadek (np. sprawcy kolizji, producenta wadliwej maszyny). Możesz ubiegać się o oba świadczenia jednocześnie — jedno nie pomniejsza drugiego.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Jak długo trwa rozpatrzenie wniosku o odszkodowanie z KRUS?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">KRUS ma <strong class="text-white">14 dni</strong> od przeprowadzenia badania przez lekarza rzeczoznawcę na wydanie orzeczenia o uszczerbku na zdrowiu. Cały proces — od zgłoszenia wypadku do wypłaty świadczenia — trwa zwykle <strong class="text-white">od 2 do 4 miesięcy</strong>. Czas ten może się wydłużyć, jeśli dokumentacja medyczna jest niekompletna lub sprawa wymaga opinii komisji lekarskiej.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">KRUS ma <strong class="text-text">14 dni</strong> od przeprowadzenia badania przez lekarza rzeczoznawcę na wydanie orzeczenia o uszczerbku na zdrowiu. Cały proces — od zgłoszenia wypadku do wypłaty świadczenia — trwa zwykle <strong class="text-text">od 2 do 4 miesięcy</strong>. Czas ten może się wydłużyć, jeśli dokumentacja medyczna jest niekompletna lub sprawa wymaga opinii komisji lekarskiej.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy mogę odwołać się od decyzji KRUS?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Tak. Od orzeczenia lekarza rzeczoznawcy KRUS przysługuje odwołanie do <strong class="text-white">komisji lekarskiej KRUS</strong> — należy je złożyć w ciągu <strong class="text-white">14 dni</strong> od doręczenia orzeczenia. Od ostatecznej decyzji KRUS w sprawie świadczeń możesz odwołać się do <strong class="text-white">sądu rejonowego (sąd pracy i ubezpieczeń społecznych)</strong> — za pośrednictwem KRUS, w terminie miesiąca od doręczenia decyzji. Odwołanie warto złożyć zwłaszcza wtedy, gdy orzeczony procent uszczerbku nie odpowiada Twojemu rzeczywistemu stanowi zdrowia.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Tak. Od orzeczenia lekarza rzeczoznawcy KRUS przysługuje odwołanie do <strong class="text-text">komisji lekarskiej KRUS</strong> — należy je złożyć w ciągu <strong class="text-text">14 dni</strong> od doręczenia orzeczenia. Od ostatecznej decyzji KRUS w sprawie świadczeń możesz odwołać się do <strong class="text-text">sądu rejonowego (sąd pracy i ubezpieczeń społecznych)</strong> — za pośrednictwem KRUS, w terminie miesiąca od doręczenia decyzji. Odwołanie warto złożyć zwłaszcza wtedy, gdy orzeczony procent uszczerbku nie odpowiada Twojemu rzeczywistemu stanowi zdrowia.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Miałeś wypadek w rolnictwie?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Miałeś wypadek w rolnictwie?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Bezpłatnie sprawdzimy, czy przysługują Ci dodatkowe roszczenia poza świadczeniami z KRUS. Bez zobowiązań — tylko konkretna ocena Twoich szans na więcej.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <a href="wypadek-rolnictwo-krus.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="wypadek-rolnictwo-krus.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">KRUS</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Wypadek w rolnictwie — jak zgłosić do KRUS?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Wypadek w rolnictwie — jak zgłosić do KRUS?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
-                        <a href="jednorazowe-odszkodowanie-zus.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="jednorazowe-odszkodowanie-zus.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Jednorazowe odszkodowanie z ZUS — ile wynosi?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Jednorazowe odszkodowanie z ZUS — ile wynosi?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
@@ -305,7 +305,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -313,7 +313,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -323,7 +323,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -333,7 +333,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -345,18 +345,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>

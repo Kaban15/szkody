@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -101,12 +101,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -114,23 +114,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -141,7 +141,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -151,23 +151,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Ile odszkodowania za uszczerbek na zdrowiu po wypadku?</span>
+                    <span class="text-text">Ile odszkodowania za uszczerbek na zdrowiu po wypadku?</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Ile odszkodowania za uszczerbek na zdrowiu po wypadku?</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Ile odszkodowania za uszczerbek na zdrowiu po wypadku?</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -181,8 +181,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#czym-jest-uszczerbek" class="text-gold hover:text-gold-light transition-colors text-sm">1. Czym jest uszczerbek na zdrowiu?</a></li>
                         <li><a href="#ile-za-jeden-procent" class="text-gold hover:text-gold-light transition-colors text-sm">2. Ile wynosi odszkodowanie za 1% uszczerbku?</a></li>
@@ -198,31 +198,31 @@
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">Pytanie „ile mi się należy za uszczerbek na zdrowiu?" zadaje sobie prawie każda osoba po poważniejszym wypadku. Odpowiedź nie jest prosta — bo polskie prawo celowo nie ustala jednej stawki. To, co ostatecznie otrzymasz, zależy od rodzaju i rozmiaru urazu, postawy ubezpieczyciela oraz od tego, jak dobrze przygotujesz swoje roszczenie. W tym artykule znajdziesz konkretne liczby, zasady ich ustalania i praktyczne wskazówki.</p>
 
-                    <h2 id="czym-jest-uszczerbek" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">1. Czym jest uszczerbek na zdrowiu?</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Uszczerbek na zdrowiu to naruszenie sprawności organizmu, które powoduje upośledzenie jego czynności. W praktyce odszkodowawczej wyrażany jest jako procent — od 1% do 100% całkowitego uszczerbku. Podstawą do jego oceny jest <strong class="text-white">tabela uszczerbkowa</strong> stanowiąca załącznik do rozporządzenia Ministra Pracy i Polityki Społecznej (obecnie Ministra Rodziny i Polityki Społecznej), która przypisuje orientacyjne zakresy procentowe dla poszczególnych rodzajów urazów i schorzeń.</p>
+                    <h2 id="czym-jest-uszczerbek" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">1. Czym jest uszczerbek na zdrowiu?</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Uszczerbek na zdrowiu to naruszenie sprawności organizmu, które powoduje upośledzenie jego czynności. W praktyce odszkodowawczej wyrażany jest jako procent — od 1% do 100% całkowitego uszczerbku. Podstawą do jego oceny jest <strong class="text-text">tabela uszczerbkowa</strong> stanowiąca załącznik do rozporządzenia Ministra Pracy i Polityki Społecznej (obecnie Ministra Rodziny i Polityki Społecznej), która przypisuje orientacyjne zakresy procentowe dla poszczególnych rodzajów urazów i schorzeń.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Prawo rozróżnia dwa rodzaje uszczerbku:</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Trwały uszczerbek na zdrowiu</strong> — stan, który według aktualnej wiedzy medycznej nie rokuje poprawy. Uraz pozostawił nieodwracalne skutki (np. utrata narządu, trwałe ograniczenie ruchomości stawu, uszkodzenie nerwu).</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Długotrwały uszczerbek na zdrowiu</strong> — naruszenie sprawności trwające powyżej 6 miesięcy, ale z perspektywą poprawy po leczeniu i rehabilitacji. Procent jest zazwyczaj niższy niż przy uszczerbku trwałym.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Trwały uszczerbek na zdrowiu</strong> — stan, który według aktualnej wiedzy medycznej nie rokuje poprawy. Uraz pozostawił nieodwracalne skutki (np. utrata narządu, trwałe ograniczenie ruchomości stawu, uszkodzenie nerwu).</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Długotrwały uszczerbek na zdrowiu</strong> — naruszenie sprawności trwające powyżej 6 miesięcy, ale z perspektywą poprawy po leczeniu i rehabilitacji. Procent jest zazwyczaj niższy niż przy uszczerbku trwałym.</span></li>
                     </ul>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Warto wiedzieć, że tabela uszczerbkowa to narzędzie pomocnicze — sądy nie są nią związane i mogą przyznać wyższe zadośćuczynienie, jeśli okoliczności sprawy na to wskazują. Tabela wyznacza punkt wyjścia do negocjacji, nie sufit odszkodowania.</p>
 
-                    <h2 id="ile-za-jeden-procent" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">2. Ile wynosi odszkodowanie za 1% uszczerbku?</h2>
+                    <h2 id="ile-za-jeden-procent" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">2. Ile wynosi odszkodowanie za 1% uszczerbku?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Nie istnieje ustawowo określona stawka za 1% uszczerbku na zdrowiu. Polskie prawo cywilne (art. 445 Kodeksu cywilnego) mówi jedynie, że zadośćuczynienie ma być „odpowiednie" — jego wysokość zależy od całokształtu okoliczności sprawy, a nie od prostego przemnożenia procentów przez stawkę.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">W praktyce można jednak wyróżnić dwa poziomy kwot:</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Propozycje ubezpieczycieli</h3>
-                    <p class="text-muted text-lg mb-6 leading-relaxed">Towarzystwa ubezpieczeniowe w postępowaniu likwidacyjnym stosują zazwyczaj stawki z dolnego przedziału — od <strong class="text-white">500 do 1 000 zł za 1% uszczerbku</strong>. Przy 10% uszczerbku oznacza to propozycję rzędu 5 000–10 000 zł. To kwoty skrajnie zaniżone względem tego, co przyznają sądy.</p>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Propozycje ubezpieczycieli</h3>
+                    <p class="text-muted text-lg mb-6 leading-relaxed">Towarzystwa ubezpieczeniowe w postępowaniu likwidacyjnym stosują zazwyczaj stawki z dolnego przedziału — od <strong class="text-text">500 do 1 000 zł za 1% uszczerbku</strong>. Przy 10% uszczerbku oznacza to propozycję rzędu 5 000–10 000 zł. To kwoty skrajnie zaniżone względem tego, co przyznają sądy.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Orzecznictwo sądowe</h3>
-                    <p class="text-muted text-lg mb-6 leading-relaxed">Sądy — opierając się na aktualnym orzecznictwie Sądu Najwyższego — przyznają od <strong class="text-white">1 500 do 3 000 zł za 1% uszczerbku</strong>, a w sprawach o szczególnie dramatycznych okolicznościach (młody wiek poszkodowanego, długotrwałe cierpienia, trwałe zmiany w jakości życia) nawet więcej. Przy 10% uszczerbku sąd może zasądzić 20 000–40 000 zł lub wyżej.</p>
-                    <p class="text-muted text-lg mb-10 leading-relaxed">Różnica między pierwszą propozycją ubezpieczyciela a wyrokiem sądu wynosi nierzadko <strong class="text-white">300–500%</strong>. To właśnie dlatego akceptacja pierwszej oferty bez konsultacji ze specjalistą jest jednym z najkosztowniejszych błędów poszkodowanych.</p>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Orzecznictwo sądowe</h3>
+                    <p class="text-muted text-lg mb-6 leading-relaxed">Sądy — opierając się na aktualnym orzecznictwie Sądu Najwyższego — przyznają od <strong class="text-text">1 500 do 3 000 zł za 1% uszczerbku</strong>, a w sprawach o szczególnie dramatycznych okolicznościach (młody wiek poszkodowanego, długotrwałe cierpienia, trwałe zmiany w jakości życia) nawet więcej. Przy 10% uszczerbku sąd może zasądzić 20 000–40 000 zł lub wyżej.</p>
+                    <p class="text-muted text-lg mb-10 leading-relaxed">Różnica między pierwszą propozycją ubezpieczyciela a wyrokiem sądu wynosi nierzadko <strong class="text-text">300–500%</strong>. To właśnie dlatego akceptacja pierwszej oferty bez konsultacji ze specjalistą jest jednym z najkosztowniejszych błędów poszkodowanych.</p>
 
-                    <h2 id="przykladowe-kwoty" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">3. Przykładowe kwoty odszkodowań</h2>
+                    <h2 id="przykladowe-kwoty" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">3. Przykładowe kwoty odszkodowań</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Poniżej orientacyjne widełki dla najczęstszych rodzajów urazów po wypadkach komunikacyjnych i przy pracy. Pamiętaj, że rzeczywista kwota zależy od okoliczności Twojej sprawy — podane zakresy to punkt odniesienia, nie gwarancja.</p>
 
-                    <div class="bg-surface border border-white/5 rounded-lg overflow-hidden mb-8">
-                        <div class="p-5 border-b border-white/5">
+                    <div class="bg-surface border border-line/50 rounded-lg overflow-hidden mb-8">
+                        <div class="p-5 border-b border-line/50">
                             <div class="grid grid-cols-3 gap-4 text-xs font-semibold text-muted uppercase tracking-wider">
                                 <span>Rodzaj urazu</span>
                                 <span class="text-center">Uszczerbek</span>
@@ -265,116 +265,116 @@
 
                     <p class="text-muted text-sm mb-10 leading-relaxed italic">Podane kwoty obejmują wyłącznie zadośćuczynienie za ból i cierpienie. Pełne odszkodowanie może być znacznie wyższe po doliczeniu kosztów leczenia, utraconych zarobków, renty i innych składników — patrz sekcja 4.</p>
 
-                    <h2 id="pelne-odszkodowanie" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">4. Z czego składa się pełne odszkodowanie?</h2>
+                    <h2 id="pelne-odszkodowanie" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">4. Z czego składa się pełne odszkodowanie?</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Procent uszczerbku na zdrowiu przekłada się przede wszystkim na zadośćuczynienie — ale to tylko jeden z elementów pełnego odszkodowania. Kodeks cywilny daje poszkodowanemu prawo do dochodzenia kilku różnych świadczeń jednocześnie:</p>
 
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-4 list-none pl-0">
                         <li class="flex items-start gap-3">
                             <span class="text-gold mt-1 shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
-                            <span><strong class="text-white">Zadośćuczynienie za ból i cierpienie</strong> (art. 445 KC) — jednorazowe świadczenie za krzywdę niemajątkową: ból fizyczny, cierpienie psychiczne, obniżenie jakości życia, niemożność uprawiania hobby czy trudności w relacjach rodzinnych. To właśnie tu procent uszczerbku odgrywa największą rolę.</span>
+                            <span><strong class="text-text">Zadośćuczynienie za ból i cierpienie</strong> (art. 445 KC) — jednorazowe świadczenie za krzywdę niemajątkową: ból fizyczny, cierpienie psychiczne, obniżenie jakości życia, niemożność uprawiania hobby czy trudności w relacjach rodzinnych. To właśnie tu procent uszczerbku odgrywa największą rolę.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-gold mt-1 shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
-                            <span><strong class="text-white">Zwrot kosztów leczenia i rehabilitacji</strong> (art. 444 § 1 KC) — wizyty u specjalistów, zabiegi, leki, orteza, sprzęt rehabilitacyjny, dojazdy na leczenie. Każdy wydatek udokumentowany fakturą lub rachunkiem powiększa roszczenie.</span>
+                            <span><strong class="text-text">Zwrot kosztów leczenia i rehabilitacji</strong> (art. 444 § 1 KC) — wizyty u specjalistów, zabiegi, leki, orteza, sprzęt rehabilitacyjny, dojazdy na leczenie. Każdy wydatek udokumentowany fakturą lub rachunkiem powiększa roszczenie.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-gold mt-1 shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
-                            <span><strong class="text-white">Utracone dochody</strong> — wynagrodzenie utracone w okresie niezdolności do pracy. Porównuje się zarobki z okresu przed wypadkiem z faktycznym dochodem po wypadku. Przy dłuższej przerwie w pracy kwoty bywają bardzo wysokie.</span>
+                            <span><strong class="text-text">Utracone dochody</strong> — wynagrodzenie utracone w okresie niezdolności do pracy. Porównuje się zarobki z okresu przed wypadkiem z faktycznym dochodem po wypadku. Przy dłuższej przerwie w pracy kwoty bywają bardzo wysokie.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-gold mt-1 shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
-                            <span><strong class="text-white">Renta</strong> (art. 444 § 2 KC) — świadczenie periodyczne przy trwałym uszczerbku, który ogranicza zdolność zarobkowania lub wymaga stałej opieki. Renta może być dożywotnia — jej łączna wartość potrafi przekroczyć jednorazowe zadośćuczynienie.</span>
+                            <span><strong class="text-text">Renta</strong> (art. 444 § 2 KC) — świadczenie periodyczne przy trwałym uszczerbku, który ogranicza zdolność zarobkowania lub wymaga stałej opieki. Renta może być dożywotnia — jej łączna wartość potrafi przekroczyć jednorazowe zadośćuczynienie.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-gold mt-1 shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></span>
-                            <span><strong class="text-white">Koszty opieki osób trzecich</strong> — jeśli po wypadku potrzebowałeś pomocy rodziny lub opiekuna przy codziennych czynnościach, masz prawo do zwrotu tych kosztów, nawet jeśli opieka była sprawowana nieodpłatnie przez bliskich.</span>
+                            <span><strong class="text-text">Koszty opieki osób trzecich</strong> — jeśli po wypadku potrzebowałeś pomocy rodziny lub opiekuna przy codziennych czynnościach, masz prawo do zwrotu tych kosztów, nawet jeśli opieka była sprawowana nieodpłatnie przez bliskich.</span>
                         </li>
                     </ul>
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">W sprawach z poważnym uszczerbkiem na zdrowiu suma wszystkich tych składników regularnie przekracza 100 000 zł — a ubezpieczyciel w pierwszej propozycji obejmuje często tylko zadośćuczynienie i to w zaniżonej kwocie.</p>
 
-                    <h2 id="jak-uzyskac-wiecej" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">5. Jak uzyskać wyższe odszkodowanie?</h2>
+                    <h2 id="jak-uzyskac-wiecej" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">5. Jak uzyskać wyższe odszkodowanie?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Wysokość odszkodowania, jakie ostatecznie otrzymasz, w dużej mierze zależy od jakości Twojego przygotowania. Oto co w praktyce ma największy wpływ na wynik:</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Kompletna dokumentacja medyczna</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Kompletna dokumentacja medyczna</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Zbieraj wszystko: wypisy ze szpitala, karty wizyty, wyniki badań obrazowych (RTG, MRI, TK), opinie specjalistów, zaświadczenia o zwolnieniach lekarskich, faktury za leki i rehabilitację. Im pełniejsza dokumentacja, tym trudniej ubezpieczycielowi kwestionować zakres obrażeń i czas leczenia.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Niezależna opinia lekarska</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Niezależna opinia lekarska</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Orzecznik ubezpieczyciela to pracownik lub współpracownik firmy, która ma interes w jak najniższym uszczerbku. Uzyskaj niezależną ocenę u specjalisty (ortopedy, neurologa, psychiatry — w zależności od rodzaju urazu). Taka opinia jest mocnym argumentem przy odwołaniu i w sądzie.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Nie akceptuj pierwszej propozycji</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Nie akceptuj pierwszej propozycji</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Pierwsza oferta ubezpieczyciela jest prawie zawsze zaniżona — to element strategii negocjacyjnej. Przyjmując ją, zazwyczaj podpisujesz oświadczenie o zrzeczeniu się dalszych roszczeń. Zanim to zrobisz, zleć ocenę niezależnemu specjaliście od <a href="../odszkodowania-komunikacyjne.html" class="text-gold hover:text-gold-light underline transition-colors">odszkodowań komunikacyjnych</a>, który oceni realną wartość Twojej sprawy.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Skorzystaj z pomocy specjalisty</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Skorzystaj z pomocy specjalisty</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Doświadczony pełnomocnik zna realne stawki sądowe, wie jak budować dokumentację i jak negocjować z ubezpieczycielem. Pracujemy w modelu success fee — honorarium pobieramy wyłącznie od uzyskanego odszkodowania, dopiero po wypłacie środków na Twoje konto. Jeśli nie wygramy, nie płacisz nic. Pierwsza konsultacja jest bezpłatna.</p>
 
                 </article>
 
                 <!-- FAQ section -->
                 <section id="faq" class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Kto ocenia procent uszczerbku na zdrowiu?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Procent uszczerbku ocenia <strong class="text-white">lekarz orzecznik</strong> towarzystwa ubezpieczeniowego lub — w postępowaniu sądowym — <strong class="text-white">biegły sądowy</strong> z zakresu medycyny. Orzecznik ubezpieczyciela działa w interesie swojego pracodawcy i często zaniża procent uszczerbku. Dlatego warto niezależnie uzyskać opinię lekarską od specjalisty (np. ortopedy, neurologa), która może posłużyć jako kontrargument przy odwołaniu lub w sądzie.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Procent uszczerbku ocenia <strong class="text-text">lekarz orzecznik</strong> towarzystwa ubezpieczeniowego lub — w postępowaniu sądowym — <strong class="text-text">biegły sądowy</strong> z zakresu medycyny. Orzecznik ubezpieczyciela działa w interesie swojego pracodawcy i często zaniża procent uszczerbku. Dlatego warto niezależnie uzyskać opinię lekarską od specjalisty (np. ortopedy, neurologa), która może posłużyć jako kontrargument przy odwołaniu lub w sądzie.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy mogę kwestionować procent uszczerbku ustalony przez ubezpieczyciela?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Tak — masz pełne prawo do zakwestionowania orzeczenia lekarza ubezpieczyciela. Możesz <strong class="text-white">złożyć odwołanie</strong> od decyzji wraz z własną dokumentacją medyczną i niezależną opinią lekarską. Jeśli ubezpieczyciel podtrzyma swoje stanowisko, sprawa może trafić do sądu, gdzie biegły sądowy dokona niezależnej oceny. W praktyce niezależne opinie lekarskie bardzo często skutkują podwyższeniem orzeczonego procentu uszczerbku.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Tak — masz pełne prawo do zakwestionowania orzeczenia lekarza ubezpieczyciela. Możesz <strong class="text-text">złożyć odwołanie</strong> od decyzji wraz z własną dokumentacją medyczną i niezależną opinią lekarską. Jeśli ubezpieczyciel podtrzyma swoje stanowisko, sprawa może trafić do sądu, gdzie biegły sądowy dokona niezależnej oceny. W praktyce niezależne opinie lekarskie bardzo często skutkują podwyższeniem orzeczonego procentu uszczerbku.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Ile czasu trwa ustalenie wysokości odszkodowania?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Ubezpieczyciel ma ustawowy termin <strong class="text-white">30 dni</strong> od daty zgłoszenia szkody na wydanie decyzji. W praktyce, gdy sprawa wymaga dodatkowych wyjaśnień lub badania przez orzecznika, termin może się wydłużyć do <strong class="text-white">90 dni</strong>. Jeśli sprawa trafi do sądu, postępowanie trwa zazwyczaj od <strong class="text-white">1 do 3 lat</strong> w zależności od stopnia skomplikowania sprawy i obciążenia sądu.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Ubezpieczyciel ma ustawowy termin <strong class="text-text">30 dni</strong> od daty zgłoszenia szkody na wydanie decyzji. W praktyce, gdy sprawa wymaga dodatkowych wyjaśnień lub badania przez orzecznika, termin może się wydłużyć do <strong class="text-text">90 dni</strong>. Jeśli sprawa trafi do sądu, postępowanie trwa zazwyczaj od <strong class="text-text">1 do 3 lat</strong> w zależności od stopnia skomplikowania sprawy i obciążenia sądu.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy odszkodowanie za uszczerbek na zdrowiu jest opodatkowane?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Co do zasady <strong class="text-white">nie</strong>. Odszkodowania i zadośćuczynienia za uszczerbek na zdrowiu i ból i cierpienie są zwolnione z PIT na mocy art. 21 ust. 1 pkt 3 ustawy o podatku dochodowym od osób fizycznych. Wyjątek stanowią świadczenia z tytułu utraconych korzyści (np. odszkodowanie za utracone zarobki może podlegać opodatkowaniu) — przy większych kwotach warto skonsultować kwestię podatkową z doradcą.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Co do zasady <strong class="text-text">nie</strong>. Odszkodowania i zadośćuczynienia za uszczerbek na zdrowiu i ból i cierpienie są zwolnione z PIT na mocy art. 21 ust. 1 pkt 3 ustawy o podatku dochodowym od osób fizycznych. Wyjątek stanowią świadczenia z tytułu utraconych korzyści (np. odszkodowanie za utracone zarobki może podlegać opodatkowaniu) — przy większych kwotach warto skonsultować kwestię podatkową z doradcą.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Chcesz wiedzieć, ile należy Ci się za Twój uraz?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Chcesz wiedzieć, ile należy Ci się za Twój uraz?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Bezpłatnie ocenimy Twoją sprawę i podamy realistyczny przedział odszkodowania. Żadnych zobowiązań — tylko konkretna analiza szans.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <a href="co-robic-po-wypadku.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="co-robic-po-wypadku.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Co robić po wypadku samochodowym?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Co robić po wypadku samochodowym?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
-                        <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Jak dokumentować obrażenia po wypadku?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Jak dokumentować obrażenia po wypadku?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
@@ -387,7 +387,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -395,7 +395,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -405,7 +405,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -415,7 +415,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -427,18 +427,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>

@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -96,12 +96,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -109,23 +109,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -146,23 +146,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Odszkodowanie za wypadek przy pracy od pracodawcy</span>
+                    <span class="text-text">Odszkodowanie za wypadek przy pracy od pracodawcy</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Odszkodowanie za wypadek przy pracy od pracodawcy</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Odszkodowanie za wypadek przy pracy od pracodawcy</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -176,8 +176,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#odpowiedzialnosc" class="text-gold hover:text-gold-light transition-colors text-sm">1. Kiedy pracodawca odpowiada za wypadek przy pracy?</a></li>
                         <li><a href="#co-mozesz-uzyskac" class="text-gold hover:text-gold-light transition-colors text-sm">2. Co możesz uzyskać od pracodawcy?</a></li>
@@ -193,48 +193,48 @@
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">Wiele osób poszkodowanych w wypadku przy pracy ogranicza się do złożenia wniosku do ZUS i czeka na jednorazowe odszkodowanie. To błąd, który może kosztować Cię dziesiątki — a w poważnych przypadkach setki — tysięcy złotych. ZUS to jedno źródło świadczeń, pracodawca to drugie, i oba możesz uruchomić jednocześnie. Poniżej wyjaśniam, kiedy i jak to zrobić.</p>
 
-                    <h2 id="odpowiedzialnosc" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">1. Kiedy pracodawca odpowiada za wypadek przy pracy?</h2>
+                    <h2 id="odpowiedzialnosc" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">1. Kiedy pracodawca odpowiada za wypadek przy pracy?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Odpowiedzialność pracodawcy za wypadek przy pracy wynika z Kodeksu cywilnego — nie z prawa pracy. Mamy tu do czynienia z dwiema podstawami prawnymi, które działają niezależnie od siebie.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">Art. 415 KC — odpowiedzialność na zasadzie winy.</strong> Pracodawca odpowiada, gdy można mu przypisać zawinione działanie lub zaniechanie: nie przeprowadził wymaganych szkoleń BHP, nie dostarczył środków ochrony indywidualnej (kasków, rękawic, uprzęży), dopuścił do pracy na maszynie z uszkodzonym osprzętem zabezpieczającym albo tolerował niebezpieczne praktyki w zakładzie. W takim przypadku Twoim zadaniem jest wykazanie winy — i to właśnie tu pomoc specjalisty ma największe znaczenie.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">Art. 435 KC — odpowiedzialność na zasadzie ryzyka.</strong> Ta podstawa jest znacznie korzystniejsza dla poszkodowanego. Stosuje się ją do przedsiębiorstw wprawianych w ruch za pomocą sił przyrody — zakładów produkcyjnych, fabryk, firm budowlanych, składów z ciężkim sprzętem. Pracodawca odpowiada tutaj bez względu na winę — wystarczy wykazać związek przyczynowy między ruchem przedsiębiorstwa a wypadkiem. Pracodawca może zwolnić się z odpowiedzialności tylko wtedy, gdy udowodni siłę wyższą, wyłączną winę poszkodowanego lub wyłączną winę osoby trzeciej.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">Art. 415 KC — odpowiedzialność na zasadzie winy.</strong> Pracodawca odpowiada, gdy można mu przypisać zawinione działanie lub zaniechanie: nie przeprowadził wymaganych szkoleń BHP, nie dostarczył środków ochrony indywidualnej (kasków, rękawic, uprzęży), dopuścił do pracy na maszynie z uszkodzonym osprzętem zabezpieczającym albo tolerował niebezpieczne praktyki w zakładzie. W takim przypadku Twoim zadaniem jest wykazanie winy — i to właśnie tu pomoc specjalisty ma największe znaczenie.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">Art. 435 KC — odpowiedzialność na zasadzie ryzyka.</strong> Ta podstawa jest znacznie korzystniejsza dla poszkodowanego. Stosuje się ją do przedsiębiorstw wprawianych w ruch za pomocą sił przyrody — zakładów produkcyjnych, fabryk, firm budowlanych, składów z ciężkim sprzętem. Pracodawca odpowiada tutaj bez względu na winę — wystarczy wykazać związek przyczynowy między ruchem przedsiębiorstwa a wypadkiem. Pracodawca może zwolnić się z odpowiedzialności tylko wtedy, gdy udowodni siłę wyższą, wyłączną winę poszkodowanego lub wyłączną winę osoby trzeciej.</p>
                     <p class="text-muted text-lg mb-10 leading-relaxed">W praktyce odpowiedzialność zachodzi najczęściej w sytuacjach takich jak: brak lub nieprawidłowe zabezpieczenia stanowiska pracy, zatrudnienie na maszynie bez właściwego przeszkolenia, zaniedbanie konserwacji sprzętu, praca w warunkach przekraczających dopuszczalne normy (hałas, temperatura, stężenie substancji), czy brak nadzoru nad pracami niebezpiecznymi.</p>
 
-                    <h2 id="co-mozesz-uzyskac" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">2. Co możesz uzyskać od pracodawcy?</h2>
+                    <h2 id="co-mozesz-uzyskac" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">2. Co możesz uzyskać od pracodawcy?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Roszczenia wobec pracodawcy są zdecydowanie szersze niż to, co oferuje ZUS. Przysługują Ci:</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-3 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Zadośćuczynienie za ból i cierpienie (art. 445 KC)</strong> — jednorazowa kwota za doznaną krzywdę. Sądy zasądzają od kilkunastu do nawet kilkuset tysięcy złotych zależnie od rozmiaru obrażeń, długości leczenia i trwałości następstw. Nie ma ustawowego limitu — górną granicę wyznacza rozmiar krzywdy.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Odszkodowanie za koszty leczenia (art. 444 §1 KC)</strong> — zwrot wydatków na wizyty lekarskie, zabiegi, leki, rehabilitację, protezy, sprzęt ortopedyczny, transport do placówek medycznych i koszty opieki osób trzecich w czasie choroby.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Renta wyrównawcza za utracone dochody (art. 444 §2 KC)</strong> — jeśli wypadek trwale lub długotrwale zmniejszył Twoją zdolność do zarobkowania, możesz dochodzić comiesięcznej renty równoważącej różnicę między dochodami sprzed wypadku a tym, co jesteś w stanie zarabiać po wypadku.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Zwrot kosztów przekwalifikowania zawodowego</strong> — jeśli wskutek wypadku nie możesz wykonywać dotychczasowego zawodu i musisz zdobywać nowe kwalifikacje, te wydatki obciążają pracodawcę.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Renta na zwiększone potrzeby</strong> — stałe wydatki na leki, rehabilitację, opiekę, dojazdy do specjalistów, które nie byłyby potrzebne przed wypadkiem.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Zadośćuczynienie za ból i cierpienie (art. 445 KC)</strong> — jednorazowa kwota za doznaną krzywdę. Sądy zasądzają od kilkunastu do nawet kilkuset tysięcy złotych zależnie od rozmiaru obrażeń, długości leczenia i trwałości następstw. Nie ma ustawowego limitu — górną granicę wyznacza rozmiar krzywdy.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Odszkodowanie za koszty leczenia (art. 444 §1 KC)</strong> — zwrot wydatków na wizyty lekarskie, zabiegi, leki, rehabilitację, protezy, sprzęt ortopedyczny, transport do placówek medycznych i koszty opieki osób trzecich w czasie choroby.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Renta wyrównawcza za utracone dochody (art. 444 §2 KC)</strong> — jeśli wypadek trwale lub długotrwale zmniejszył Twoją zdolność do zarobkowania, możesz dochodzić comiesięcznej renty równoważącej różnicę między dochodami sprzed wypadku a tym, co jesteś w stanie zarabiać po wypadku.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Zwrot kosztów przekwalifikowania zawodowego</strong> — jeśli wskutek wypadku nie możesz wykonywać dotychczasowego zawodu i musisz zdobywać nowe kwalifikacje, te wydatki obciążają pracodawcę.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Renta na zwiększone potrzeby</strong> — stałe wydatki na leki, rehabilitację, opiekę, dojazdy do specjalistów, które nie byłyby potrzebne przed wypadkiem.</span></li>
                     </ul>
-                    <p class="text-muted text-lg mb-10 leading-relaxed">Wszystkie powyższe roszczenia są <strong class="text-white">niezależne od świadczeń z ZUS</strong>. Fakt, że ZUS wypłacił Ci jednorazowe odszkodowanie, nie zmniejsza automatycznie Twoich roszczeń wobec pracodawcy — choć sąd może wziąć tę kwotę pod uwagę przy ustalaniu ostatecznej wysokości zasądzonych świadczeń.</p>
+                    <p class="text-muted text-lg mb-10 leading-relaxed">Wszystkie powyższe roszczenia są <strong class="text-text">niezależne od świadczeń z ZUS</strong>. Fakt, że ZUS wypłacił Ci jednorazowe odszkodowanie, nie zmniejsza automatycznie Twoich roszczeń wobec pracodawcy — choć sąd może wziąć tę kwotę pod uwagę przy ustalaniu ostatecznej wysokości zasądzonych świadczeń.</p>
 
-                    <h2 id="pracodawca-vs-zus" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">3. Odszkodowanie od pracodawcy a świadczenia z ZUS</h2>
+                    <h2 id="pracodawca-vs-zus" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">3. Odszkodowanie od pracodawcy a świadczenia z ZUS</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">To dwa całkowicie odrębne systemy prawne, które działają na innych zasadach i nie wykluczają się nawzajem. Możesz — i powinieneś — dochodzić obu jednocześnie.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">ZUS wypłaca</strong> jednorazowe odszkodowanie za trwały uszczerbek na zdrowiu (stawka za 1% uszczerbku wynosi w 2026 r. 1 445 zł), zasiłek chorobowy w wysokości 100% wynagrodzenia oraz świadczenie rehabilitacyjne i rentę z tytułu niezdolności do pracy. Te świadczenia są niezależne od winy — wynikają z obowiązkowego ubezpieczenia wypadkowego i przysługują niemal automatycznie po udowodnieniu związku wypadku z pracą.</p>
-                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-white">Pracodawca odpowiada</strong> za winę lub ryzyko — co oznacza, że podstawa jest wyższa i bardziej elastyczna. Zadośćuczynienie z art. 445 KC nie ma ustawowego pułapu i może wielokrotnie przekroczyć kwotę z ZUS. Renta wyrównawcza z KC uzupełnia rentę z ZUS do pełnej wysokości utraconych zarobków.</p>
-                    <p class="text-muted text-lg mb-10 leading-relaxed">Sąd, zasądzając odszkodowanie od pracodawcy, <strong class="text-white">może — ale nie musi</strong> — pomniejszyć zasądzoną kwotę o świadczenia już wypłacone przez ZUS. W praktyce sądy odliczają jednorazowe odszkodowanie z ZUS od odszkodowania majątkowego (kosztów leczenia), ale rzadko odliczają je od zadośćuczynienia za krzywdę — bo to zupełnie inny rodzaj świadczenia.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">ZUS wypłaca</strong> jednorazowe odszkodowanie za trwały uszczerbek na zdrowiu (stawka za 1% uszczerbku wynosi w 2026 r. 1 445 zł), zasiłek chorobowy w wysokości 100% wynagrodzenia oraz świadczenie rehabilitacyjne i rentę z tytułu niezdolności do pracy. Te świadczenia są niezależne od winy — wynikają z obowiązkowego ubezpieczenia wypadkowego i przysługują niemal automatycznie po udowodnieniu związku wypadku z pracą.</p>
+                    <p class="text-muted text-lg mb-4 leading-relaxed"><strong class="text-text">Pracodawca odpowiada</strong> za winę lub ryzyko — co oznacza, że podstawa jest wyższa i bardziej elastyczna. Zadośćuczynienie z art. 445 KC nie ma ustawowego pułapu i może wielokrotnie przekroczyć kwotę z ZUS. Renta wyrównawcza z KC uzupełnia rentę z ZUS do pełnej wysokości utraconych zarobków.</p>
+                    <p class="text-muted text-lg mb-10 leading-relaxed">Sąd, zasądzając odszkodowanie od pracodawcy, <strong class="text-text">może — ale nie musi</strong> — pomniejszyć zasądzoną kwotę o świadczenia już wypłacone przez ZUS. W praktyce sądy odliczają jednorazowe odszkodowanie z ZUS od odszkodowania majątkowego (kosztów leczenia), ale rzadko odliczają je od zadośćuczynienia za krzywdę — bo to zupełnie inny rodzaj świadczenia.</p>
 
-                    <h2 id="jak-dochodzic" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">4. Jak dochodzić roszczeń od pracodawcy?</h2>
+                    <h2 id="jak-dochodzic" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">4. Jak dochodzić roszczeń od pracodawcy?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Procedura składa się z kilku etapów, które warto przejść po kolei — każdy następny jest droższy i bardziej czasochłonny, ale czasem konieczny.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Krok 1: Wezwanie przedsądowe</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Krok 1: Wezwanie przedsądowe</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Zanim pójdziesz do sądu, skieruj do pracodawcy pisemne wezwanie do zapłaty z określoną kwotą i terminem (zwykle 14–30 dni). Wiele spraw kończy się na tym etapie — szczególnie gdy pracodawca ma ubezpieczenie OC odpowiedzialności cywilnej, bo jego ubezpieczyciel może chcieć uniknąć procesu sądowego.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Krok 2: Roszczenie do ubezpieczyciela OC pracodawcy</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Krok 2: Roszczenie do ubezpieczyciela OC pracodawcy</h3>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Większość pracodawców wykupuje ubezpieczenie OC działalności. Jeśli tak, możesz skierować roszczenie bezpośrednio do ubezpieczyciela — bez konieczności pozywania pracodawcy. Ubezpieczyciel ma 30 dni na wydanie decyzji (90 dni przy sprawach wymagających dodatkowych wyjaśnień).</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Krok 3: Pozew do sądu pracy</h3>
-                    <p class="text-muted text-lg mb-6 leading-relaxed">Jeśli wezwanie i negocjacje nie przyniosły rezultatu — kierujesz sprawę do sądu pracy. Ważna informacja: <strong class="text-white">sprawy przed sądami pracy do wartości 50 000 zł są zwolnione z opłaty sądowej</strong>. Powyżej tej kwoty opłata wynosi 5% wartości przedmiotu sporu, ale wnoszona jest przez pracodawcę w razie przegranej.</p>
-                    <p class="text-muted text-lg mb-10 leading-relaxed"><strong class="text-white">Termin przedawnienia roszczeń</strong> cywilnych wobec pracodawcy wynosi <strong class="text-white">3 lata</strong> od dnia, w którym dowiedziałeś się o szkodzie i osobie za nią odpowiedzialnej. Jeśli wypadek był skutkiem przestępstwa (np. narażenie pracownika na bezpośrednie niebezpieczeństwo — art. 220 KK), termin wydłuża się do 20 lat. Nie zwlekaj — każdy rok zwłoki to utrazone dowody i zeznania świadków, którzy zmieniają miejsce pracy.</p>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Krok 3: Pozew do sądu pracy</h3>
+                    <p class="text-muted text-lg mb-6 leading-relaxed">Jeśli wezwanie i negocjacje nie przyniosły rezultatu — kierujesz sprawę do sądu pracy. Ważna informacja: <strong class="text-text">sprawy przed sądami pracy do wartości 50 000 zł są zwolnione z opłaty sądowej</strong>. Powyżej tej kwoty opłata wynosi 5% wartości przedmiotu sporu, ale wnoszona jest przez pracodawcę w razie przegranej.</p>
+                    <p class="text-muted text-lg mb-10 leading-relaxed"><strong class="text-text">Termin przedawnienia roszczeń</strong> cywilnych wobec pracodawcy wynosi <strong class="text-text">3 lata</strong> od dnia, w którym dowiedziałeś się o szkodzie i osobie za nią odpowiedzialnej. Jeśli wypadek był skutkiem przestępstwa (np. narażenie pracownika na bezpośrednie niebezpieczeństwo — art. 220 KK), termin wydłuża się do 20 lat. Nie zwlekaj — każdy rok zwłoki to utrazone dowody i zeznania świadków, którzy zmieniają miejsce pracy.</p>
 
-                    <h2 id="pulapki" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">5. Na co uważać — najczęstsze pułapki</h2>
+                    <h2 id="pulapki" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">5. Na co uważać — najczęstsze pułapki</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Poszkodowani tracą pieniądze nie tylko z powodu braku wiedzy o przysługujących im roszczeniach — równie często wpadają w pułapki zastawiane przez pracodawców lub ich ubezpieczycieli.</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-3 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Podpisanie ugody za szybko i za mało</strong> — ubezpieczyciel może zaproponować „szybką wypłatę" kilku tysięcy złotych w zamian za zrzeczenie się wszelkich dalszych roszczeń. Jeśli podpiszesz — tracisz prawo do zadośćuczynienia, renty i zwrotu kosztów leczenia na lata. Nigdy nie podpisuj ugody bez oceny przez specjalistę.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Przyczynienie się pracownika</strong> — jeśli sąd ustali, że w pewnym stopniu przyczyniłeś się do wypadku (np. pracowałeś bez wymaganego kasku, mimo że był dostępny), odszkodowanie może zostać zmniejszone proporcjonalnie. Pracodawcy i ich prawnicy często wyolbrzymiają stopień przyczynienia. Ważne jest udokumentowanie, że to pracodawca był odpowiedzialny za kulturę BHP w zakładzie.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Brak lub sfałszowany protokół powypadkowy</strong> — pracodawca ma obowiązek sporządzić protokół powypadkowy w ciągu 14 dni od wypadku. Jeśli tego nie zrobi lub protokół pomija istotne okoliczności, masz prawo wnieść zastrzeżenia na piśmie i nie podpisywać protokołu, z którym się nie zgadzasz. Protokół jest kluczowym dowodem — zarówno w postępowaniu w ZUS, jak i w sądzie.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Podpisanie ugody za szybko i za mało</strong> — ubezpieczyciel może zaproponować „szybką wypłatę" kilku tysięcy złotych w zamian za zrzeczenie się wszelkich dalszych roszczeń. Jeśli podpiszesz — tracisz prawo do zadośćuczynienia, renty i zwrotu kosztów leczenia na lata. Nigdy nie podpisuj ugody bez oceny przez specjalistę.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Przyczynienie się pracownika</strong> — jeśli sąd ustali, że w pewnym stopniu przyczyniłeś się do wypadku (np. pracowałeś bez wymaganego kasku, mimo że był dostępny), odszkodowanie może zostać zmniejszone proporcjonalnie. Pracodawcy i ich prawnicy często wyolbrzymiają stopień przyczynienia. Ważne jest udokumentowanie, że to pracodawca był odpowiedzialny za kulturę BHP w zakładzie.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Brak lub sfałszowany protokół powypadkowy</strong> — pracodawca ma obowiązek sporządzić protokół powypadkowy w ciągu 14 dni od wypadku. Jeśli tego nie zrobi lub protokół pomija istotne okoliczności, masz prawo wnieść zastrzeżenia na piśmie i nie podpisywać protokołu, z którym się nie zgadzasz. Protokół jest kluczowym dowodem — zarówno w postępowaniu w ZUS, jak i w sądzie.</span></li>
                     </ul>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Kompleksową pomoc w dochodzeniu roszczeń po wypadkach przy pracy — od protokołu, przez ZUS, po pozew cywilny — oferujemy na stronie <a href="../odszkodowania-wypadki-przy-pracy.html" class="text-gold hover:text-gold-light underline transition-colors">odszkodowania za wypadki przy pracy</a>. Ocena Twojej sprawy jest bezpłatna i do niczego Cię nie zobowiązuje.</p>
 
@@ -242,60 +242,60 @@
 
                 <!-- FAQ section -->
                 <section id="faq" class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy mogę pozwać pracodawcę jeśli pracuję na umowę zlecenie?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Tak — odpowiedzialność cywilna pracodawcy na podstawie <strong class="text-white">art. 415 lub art. 435 Kodeksu cywilnego</strong> nie zależy od rodzaju umowy. Nawet jeśli jesteś zleceniobiorcą, możesz dochodzić odszkodowania, zadośćuczynienia i renty wyrównawczej od osoby, która powierzyła Ci pracę w warunkach stwarzających ryzyko wypadku. Inaczej jest jedynie ze świadczeniami z ZUS — tu liczy się tytuł ubezpieczeniowy, ale zleceniobiorcy objęci ubezpieczeniem wypadkowym również mogą złożyć wniosek do ZUS.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Tak — odpowiedzialność cywilna pracodawcy na podstawie <strong class="text-text">art. 415 lub art. 435 Kodeksu cywilnego</strong> nie zależy od rodzaju umowy. Nawet jeśli jesteś zleceniobiorcą, możesz dochodzić odszkodowania, zadośćuczynienia i renty wyrównawczej od osoby, która powierzyła Ci pracę w warunkach stwarzających ryzyko wypadku. Inaczej jest jedynie ze świadczeniami z ZUS — tu liczy się tytuł ubezpieczeniowy, ale zleceniobiorcy objęci ubezpieczeniem wypadkowym również mogą złożyć wniosek do ZUS.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy pracodawca może mnie zwolnić za dochodzenie odszkodowania?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Nie. Wypowiedzenie umowy lub rozwiązanie jej bez wypowiedzenia w odpowiedzi na dochodzenie przez Ciebie roszczeń odszkodowawczych byłoby działaniem odwetowym. Prawo pracy (<strong class="text-white">art. 45 i art. 52 KP</strong>) chroni pracownika przed rozwiązaniem stosunku pracy, które byłoby nieuzasadnione lub sprzeczne z zasadami współżycia społecznego. W razie zwolnienia masz prawo wnieść odwołanie do sądu pracy i dochodzić przywrócenia do pracy lub dodatkowego odszkodowania — niezależnie od toczącego się postępowania o wypadek.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Nie. Wypowiedzenie umowy lub rozwiązanie jej bez wypowiedzenia w odpowiedzi na dochodzenie przez Ciebie roszczeń odszkodowawczych byłoby działaniem odwetowym. Prawo pracy (<strong class="text-text">art. 45 i art. 52 KP</strong>) chroni pracownika przed rozwiązaniem stosunku pracy, które byłoby nieuzasadnione lub sprzeczne z zasadami współżycia społecznego. W razie zwolnienia masz prawo wnieść odwołanie do sądu pracy i dochodzić przywrócenia do pracy lub dodatkowego odszkodowania — niezależnie od toczącego się postępowania o wypadek.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Ile czasu trwa sprawa sądowa o odszkodowanie od pracodawcy?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Postępowanie przed sądem pracy pierwszej instancji trwa zwykle od <strong class="text-white">12 do 24 miesięcy</strong>, zależnie od złożoności sprawy i obciążenia sądu. Wiele spraw kończy się jednak ugodą — często już po kilku miesiącach od wytoczenia powództwa, gdy pracodawca lub jego ubezpieczyciel wolą uniknąć długiego procesu. Warto najpierw skierować <strong class="text-white">przedsądowe wezwanie do zapłaty</strong> — daje szansę na szybsze rozwiązanie bez wchodzenia na drogę sądową.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Postępowanie przed sądem pracy pierwszej instancji trwa zwykle od <strong class="text-text">12 do 24 miesięcy</strong>, zależnie od złożoności sprawy i obciążenia sądu. Wiele spraw kończy się jednak ugodą — często już po kilku miesiącach od wytoczenia powództwa, gdy pracodawca lub jego ubezpieczyciel wolą uniknąć długiego procesu. Warto najpierw skierować <strong class="text-text">przedsądowe wezwanie do zapłaty</strong> — daje szansę na szybsze rozwiązanie bez wchodzenia na drogę sądową.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Byłeś poszkodowany w wypadku przy pracy?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Byłeś poszkodowany w wypadku przy pracy?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Bezpłatnie ocenimy, czy masz roszczenia wobec pracodawcy — i ile możesz uzyskać ponad to, co wypłaci ZUS. Żadnych zobowiązań, konkretna odpowiedź.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <a href="jak-zglosic-wypadek-przy-pracy.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="jak-zglosic-wypadek-przy-pracy.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Jak zgłosić wypadek przy pracy — krok po kroku</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Jak zgłosić wypadek przy pracy — krok po kroku</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
-                        <a href="jednorazowe-odszkodowanie-zus.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="jednorazowe-odszkodowanie-zus.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Jednorazowe odszkodowanie z ZUS — ile wynosi?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Jednorazowe odszkodowanie z ZUS — ile wynosi?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
@@ -308,7 +308,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -316,7 +316,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -326,7 +326,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -336,7 +336,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -348,18 +348,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>

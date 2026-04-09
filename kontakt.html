@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -62,11 +62,11 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
-                    <a href="jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-                    <a href="kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
-                    <a href="sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
-                    <a href="blog/" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
+                    <a href="uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
+                    <a href="jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
+                    <a href="sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
+                    <a href="blog/" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
                     <a href="kontakt.html" class="text-gold transition-colors text-sm font-medium" data-i18n="nav.kontakt">Kontakt</a>
                 </div>
 
@@ -83,7 +83,7 @@
                 </div>
 
                 <!-- Mobile Hamburger -->
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -92,15 +92,15 @@
 
     <!-- Mobile Menu (fullscreen overlay) -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
-            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-            <a href="kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
-            <a href="sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
-            <a href="blog/" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
+            <a href="uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
+            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+            <a href="kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
+            <a href="sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
+            <a href="blog/" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
             <a href="kontakt.html" class="block text-2xl font-heading text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
             <div class="pt-4">
                 <a href="kontakt.html" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
@@ -115,7 +115,7 @@
     </div>
 
     <!-- Mobile Sticky Bottom Bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -126,94 +126,94 @@
 
     <main class="pt-16 lg:pt-20">
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors" data-i18n="kontakt.breadcrumb_home">Strona główna</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white" data-i18n="kontakt.breadcrumb_current">Kontakt</span>
+                    <span class="text-text" data-i18n="kontakt.breadcrumb_current">Kontakt</span>
                 </nav>
             </div>
         </div>
 
         <!-- Hero -->
-        <section class="bg-bg py-12 lg:py-16 border-b border-white/5">
+        <section class="bg-bg py-12 lg:py-16 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-3xl lg:text-4xl font-bold text-white mb-4" data-i18n="kontakt.hero_title">Skontaktuj się z nami</h1>
+                <h1 class="font-heading text-3xl lg:text-4xl font-bold text-text mb-4" data-i18n="kontakt.hero_title">Skontaktuj się z nami</h1>
                 <p class="text-muted max-w-2xl mx-auto" data-i18n="kontakt.hero_subtitle">Bezpłatna konsultacja. Bez zobowiązań. Odpowiadamy w ciągu 30 minut w godzinach pracy.</p>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="py-16 lg:py-24 bg-bg">
+        <section class="py-12 lg:py-16 bg-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-16">
                     <!-- Left: Contact info -->
                     <div class="mb-12 lg:mb-0">
-                        <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4" data-i18n="kontakt.info_title">Dane kontaktowe</h2>
+                        <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4" data-i18n="kontakt.info_title">Dane kontaktowe</h2>
                         <p class="text-muted mb-8" data-i18n="kontakt.info_subtitle">Jesteśmy do Twojej dyspozycji. Zadzwoń, napisz lub wypełnij formularz — oddzwonimy najszybciej jak to możliwe.</p>
                         <div class="space-y-4">
-                            <a href="tel:+48XXXXXXXXX" class="flex items-center gap-4 text-white hover:text-gold transition-colors">
-                                <div class="w-12 h-12 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
+                            <a href="tel:+48XXXXXXXXX" class="flex items-center gap-4 text-text hover:text-gold transition-colors">
+                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
                                     <i data-lucide="phone" class="w-5 h-5 text-gold"></i>
                                 </div>
                                 <div>
                                     <p class="text-muted text-xs" data-i18n="kontakt.phone_label">Telefon</p>
-                                    <p class="font-semibold text-white">+48 XXX XXX XXX</p>
+                                    <p class="font-semibold text-text">+48 XXX XXX XXX</p>
                                 </div>
                             </a>
-                            <a href="mailto:kontakt@example.pl" class="flex items-center gap-4 text-white hover:text-gold transition-colors">
-                                <div class="w-12 h-12 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
+                            <a href="mailto:kontakt@example.pl" class="flex items-center gap-4 text-text hover:text-gold transition-colors">
+                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
                                     <i data-lucide="mail" class="w-5 h-5 text-gold"></i>
                                 </div>
                                 <div>
                                     <p class="text-muted text-xs" data-i18n="kontakt.email_label">Email</p>
-                                    <p class="font-semibold text-white">kontakt@example.pl</p>
+                                    <p class="font-semibold text-text">kontakt@example.pl</p>
                                 </div>
                             </a>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
+                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
                                     <i data-lucide="map-pin" class="w-5 h-5 text-gold"></i>
                                 </div>
                                 <div>
                                     <p class="text-muted text-xs" data-i18n="kontakt.office_label">Biuro</p>
-                                    <p class="font-semibold text-white" data-i18n="kontakt.office_value">Poznań • Obsługujemy całą Polskę</p>
+                                    <p class="font-semibold text-text" data-i18n="kontakt.office_value">Poznań • Obsługujemy całą Polskę</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
+                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
                                     <i data-lucide="clock" class="w-5 h-5 text-gold"></i>
                                 </div>
                                 <div>
                                     <p class="text-muted text-xs" data-i18n="kontakt.hours_label">Godziny pracy</p>
-                                    <p class="font-semibold text-white" data-i18n="kontakt.hours_value">Pn–Pt 8:00–18:00 • Sb 9:00–14:00</p>
+                                    <p class="font-semibold text-text" data-i18n="kontakt.hours_value">Pn–Pt 8:00–18:00 • Sb 9:00–14:00</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Google Maps Embed -->
-                        <div class="mt-8 rounded-xl overflow-hidden h-48 border border-white/10">
+                        <div class="mt-8 rounded-xl overflow-hidden h-48 border border-line">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2434.0!2d16.9!3d52.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPozna%C5%84!5e0!3m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokalizacja biura w Poznaniu"></iframe>
                         </div>
                     </div>
 
                     <!-- Right: Form -->
                     <div>
-                        <form id="contact-form" class="bg-surface-light border border-white/10 rounded-xl p-6 sm:p-8" novalidate>
-                            <h2 class="font-heading text-xl font-bold text-white mb-6" data-i18n="kontakt.form_title">Napisz do nas</h2>
+                        <form id="contact-form" class="bg-surface-light border border-line rounded-xl p-6 sm:p-8" novalidate>
+                            <h2 class="font-heading text-xl font-bold text-text mb-6" data-i18n="kontakt.form_title">Napisz do nas</h2>
                             <div class="space-y-4">
                                 <div>
                                     <input type="text" id="contact-name" data-i18n-placeholder="kontakt.name_placeholder" placeholder="Imię *" required minlength="2"
-                                        class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-muted focus:border-gold focus:outline-none transition-colors">
+                                        class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
                                     <p class="text-error text-xs mt-1 hidden" id="contact-name-error" data-i18n="kontakt.name_error">Podaj swoje imię (min. 2 znaki)</p>
                                 </div>
                                 <div>
                                     <input type="tel" id="contact-phone" data-i18n-placeholder="kontakt.phone_placeholder" placeholder="Numer telefonu *" required
-                                        class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-muted focus:border-gold focus:outline-none transition-colors">
+                                        class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
                                     <p class="text-error text-xs mt-1 hidden" id="contact-phone-error" data-i18n="kontakt.phone_error">Podaj prawidłowy numer telefonu</p>
                                 </div>
                                 <input type="email" id="contact-email" data-i18n-placeholder="kontakt.email_placeholder" placeholder="Email (opcjonalnie)"
-                                    class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-muted focus:border-gold focus:outline-none transition-colors">
-                                <select id="contact-type" class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-muted focus:border-gold focus:outline-none transition-colors">
+                                    class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
+                                <select id="contact-type" class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
                                     <option value="" data-i18n="kontakt.type_default">Rodzaj sprawy (opcjonalnie)</option>
                                     <option value="komunikacyjny" data-i18n="kontakt.type_car">Wypadek komunikacyjny</option>
                                     <option value="praca" data-i18n="kontakt.type_work">Wypadek przy pracy</option>
@@ -223,7 +223,7 @@
                                     <option value="inne" data-i18n="kontakt.type_other">Inne</option>
                                 </select>
                                 <textarea id="contact-message" data-i18n-placeholder="kontakt.message_placeholder" placeholder="Opisz swoją sytuację (opcjonalnie)" rows="4"
-                                    class="w-full px-4 py-3 rounded-lg bg-surface border border-white/10 text-white placeholder-muted focus:border-gold focus:outline-none resize-none transition-colors"></textarea>
+                                    class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 resize-none transition-colors"></textarea>
                                 <div class="flex items-start gap-2">
                                     <input type="checkbox" id="contact-consent" required class="mt-1 w-4 h-4 accent-gold">
                                     <label for="contact-consent" class="text-xs text-muted" data-i18n="kontakt.consent">
@@ -238,7 +238,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" id="contact-submit" class="w-full mt-6 bg-cta hover:bg-cta-hover text-white cta-glow py-3 rounded font-semibold transition-colors" data-i18n="kontakt.submit">
+                            <button type="submit" id="contact-submit" class="w-full mt-6 bg-cta hover:bg-cta-hover text-white cta-glow py-3 rounded-lg font-semibold transition-colors hover:shadow-lg hover:shadow-cta/30" data-i18n="kontakt.submit">
                                 Wyślij wiadomość →
                             </button>
                         </form>
@@ -247,8 +247,8 @@
                                 <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 </div>
-                                <h3 class="text-white font-heading text-xl font-bold mb-2">Dziękujemy!</h3>
-                                <p class="text-white/60 text-sm">Skontaktujemy się z Tobą wkrótce.</p>
+                                <h3 class="text-text font-heading text-xl font-bold mb-2">Dziękujemy!</h3>
+                                <p class="text-text/60 text-sm">Skontaktujemy się z Tobą wkrótce.</p>
                             </div>
                         </template>
                     </div>
@@ -259,8 +259,8 @@
         <!-- CTA Block -->
         <section class="bg-surface py-20 lg:py-28 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
-                <a href="kontakt.html" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded font-semibold transition-colors mb-6" data-i18n="cta.button">
+                <h2 class="font-heading text-4xl lg:text-5xl text-text font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
+                <a href="kontakt.html" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded-lg font-semibold transition-colors hover:shadow-lg hover:shadow-cta/30 mb-6" data-i18n="cta.button">
                     Bezpłatna konsultacja
                 </a>
                 <p class="text-muted" data-i18n="cta.phone_prefix">
@@ -268,14 +268,14 @@
                 </p>
 
                 <!-- Footer -->
-                <div class="border-t border-white/5 mt-16 pt-8">
+                <div class="border-t border-line/50 mt-16 pt-8">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-left mb-8">
                         <div>
                             <span class="text-gold font-heading text-lg font-bold" data-i18n="nav.logo">Odszkodowania</span>
                             <p class="text-muted text-sm mt-3" data-i18n="footer.desc">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
                             <div class="space-y-2">
                                 <a href="odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service1">Wypadki komunikacyjne</a>
                                 <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service2">Wypadki przy pracy</a>
@@ -285,7 +285,7 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
                             <div class="space-y-2">
                                 <a href="jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info1">Jak działamy</a>
                                 <a href="sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info2">Nasze sukcesy</a>
@@ -295,7 +295,7 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
                             <div class="space-y-2">
                                 <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                                 <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -314,12 +314,12 @@
     </main>
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
-                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-text transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
+                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
     </div>

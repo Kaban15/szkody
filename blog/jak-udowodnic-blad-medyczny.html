@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -96,12 +96,12 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
@@ -109,23 +109,23 @@
                     </a>
                     <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Sukcesy</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
             <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors">Kontakt</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
             <div class="pt-4">
                 <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
         <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
@@ -146,23 +146,23 @@
     <main class="pt-20">
 
         <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-white/5">
+        <div class="bg-surface border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors">Strona główna</a>
                     <span class="mx-2">›</span>
                     <a href="../blog/" class="hover:text-gold transition-colors">Baza wiedzy</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white">Jak udowodnić błąd medyczny?</span>
+                    <span class="text-text">Jak udowodnić błąd medyczny?</span>
                 </nav>
             </div>
         </div>
 
         <!-- Article header -->
-        <section class="bg-surface py-14 lg:py-20 border-b border-white/5">
+        <section class="bg-surface py-14 lg:py-20 border-b border-line/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-white mt-3 mb-4">Jak udowodnić błąd medyczny?</h1>
+                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mt-3 mb-4">Jak udowodnić błąd medyczny?</h1>
                 <div class="flex items-center gap-4 text-muted text-sm">
                     <time datetime="2026-04-07">7 kwietnia 2026</time>
                     <span>·</span>
@@ -176,8 +176,8 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Table of contents -->
-                <nav class="bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h2 class="font-heading text-lg font-bold text-white mb-4">Spis treści</h2>
+                <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
+                    <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
                         <li><a href="#definicja" class="text-gold hover:text-gold-light transition-colors text-sm">1. Czym jest błąd medyczny w świetle prawa?</a></li>
                         <li><a href="#dowody" class="text-gold hover:text-gold-light transition-colors text-sm">2. Jakie dowody są potrzebne?</a></li>
@@ -193,22 +193,22 @@
 
                     <p class="text-muted text-lg mb-10 leading-relaxed">Błędy medyczne to jedne z najtrudniejszych spraw odszkodowawczych w polskim systemie prawnym. Pacjent staje naprzeciw szpitala, ubezpieczyciela i biegłych lekarzy — bez wiedzy medycznej i prawnej bywa bezradny. Ten poradnik pokaże Ci krok po kroku, jak zbudować solidną podstawę dowodową i której drogi użyć, żeby skutecznie dochodzić odszkodowania.</p>
 
-                    <h2 id="definicja" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">1. Czym jest błąd medyczny w świetle prawa?</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Polskie prawo nie definiuje pojęcia „błąd medyczny" wprost, jednak orzecznictwo i doktryna są zgodne: to <strong class="text-white">działanie lub zaniechanie niezgodne z aktualną wiedzą i praktyką medyczną</strong>, które wyrządziło pacjentowi szkodę. Nie każde niepowodzenie lecznicze jest błędem — medycyna ma swoje granice. Kluczowe jest pytanie: czy postępujący prawidłowo lekarz lub personel mógłby tego uniknąć?</p>
+                    <h2 id="definicja" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">1. Czym jest błąd medyczny w świetle prawa?</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Polskie prawo nie definiuje pojęcia „błąd medyczny" wprost, jednak orzecznictwo i doktryna są zgodne: to <strong class="text-text">działanie lub zaniechanie niezgodne z aktualną wiedzą i praktyką medyczną</strong>, które wyrządziło pacjentowi szkodę. Nie każde niepowodzenie lecznicze jest błędem — medycyna ma swoje granice. Kluczowe jest pytanie: czy postępujący prawidłowo lekarz lub personel mógłby tego uniknąć?</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">W praktyce wyróżniamy cztery główne rodzaje błędów:</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="stethoscope" class="w-4 h-4"></i></span><span><strong class="text-white">Błąd diagnostyczny</strong> — postawienie błędnej diagnozy lub przeoczenie schorzenia, które przy właściwej staranności powinno zostać rozpoznane (np. nierozpoznany zawał, pominięty nowotwór w badaniach obrazowych).</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="pill" class="w-4 h-4"></i></span><span><strong class="text-white">Błąd terapeutyczny</strong> — zastosowanie niewłaściwego leczenia, złej dawki leku lub metody postępowania nieadekwatnej do stanu pacjenta.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="building-2" class="w-4 h-4"></i></span><span><strong class="text-white">Błąd organizacyjny</strong> — braki kadrowe, sprzętowe lub proceduralne po stronie placówki, które bezpośrednio wpłynęły na jakość opieki (np. brak monitoringu pooperacyjnego, zbyt długi czas oczekiwania na pomoc).</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="scissors" class="w-4 h-4"></i></span><span><strong class="text-white">Błąd techniczny</strong> — błąd popełniony podczas zabiegu chirurgicznego lub innej procedury medycznej (np. uszkodzenie naczynia, pozostawienie ciała obcego w jamie brzusznej).</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="stethoscope" class="w-4 h-4"></i></span><span><strong class="text-text">Błąd diagnostyczny</strong> — postawienie błędnej diagnozy lub przeoczenie schorzenia, które przy właściwej staranności powinno zostać rozpoznane (np. nierozpoznany zawał, pominięty nowotwór w badaniach obrazowych).</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="pill" class="w-4 h-4"></i></span><span><strong class="text-text">Błąd terapeutyczny</strong> — zastosowanie niewłaściwego leczenia, złej dawki leku lub metody postępowania nieadekwatnej do stanu pacjenta.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="building-2" class="w-4 h-4"></i></span><span><strong class="text-text">Błąd organizacyjny</strong> — braki kadrowe, sprzętowe lub proceduralne po stronie placówki, które bezpośrednio wpłynęły na jakość opieki (np. brak monitoringu pooperacyjnego, zbyt długi czas oczekiwania na pomoc).</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="scissors" class="w-4 h-4"></i></span><span><strong class="text-text">Błąd techniczny</strong> — błąd popełniony podczas zabiegu chirurgicznego lub innej procedury medycznej (np. uszkodzenie naczynia, pozostawienie ciała obcego w jamie brzusznej).</span></li>
                     </ul>
-                    <p class="text-muted text-lg mb-10 leading-relaxed">Aby skutecznie dochodzić odszkodowania, musisz wykazać trzy elementy: <strong class="text-white">błąd</strong> (niezgodność z wiedzą medyczną), <strong class="text-white">szkodę</strong> (uszczerbek na zdrowiu, straty majątkowe, cierpienie) i <strong class="text-white">związek przyczynowy</strong> między nimi. To właśnie trzeci element — związek przyczynowy — jest najczęściej kwestionowany przez szpitale i ubezpieczycieli.</p>
+                    <p class="text-muted text-lg mb-10 leading-relaxed">Aby skutecznie dochodzić odszkodowania, musisz wykazać trzy elementy: <strong class="text-text">błąd</strong> (niezgodność z wiedzą medyczną), <strong class="text-text">szkodę</strong> (uszczerbek na zdrowiu, straty majątkowe, cierpienie) i <strong class="text-text">związek przyczynowy</strong> między nimi. To właśnie trzeci element — związek przyczynowy — jest najczęściej kwestionowany przez szpitale i ubezpieczycieli.</p>
 
-                    <h2 id="dowody" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">2. Jakie dowody są potrzebne?</h2>
+                    <h2 id="dowody" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">2. Jakie dowody są potrzebne?</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Sprawy o błędy medyczne wygrywają lub przegrywają na dowodach. Im szybciej zaczniesz je gromadzić, tym lepiej — część dokumentów może zostać zniszczona lub zmieniona po upływie ustawowych terminów przechowywania.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Dokumentacja medyczna</h3>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">To fundament każdej sprawy. Masz pełne prawo do jej uzyskania na podstawie <strong class="text-white">art. 23–30a ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta</strong>. Przede wszystkim zbierz:</p>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Dokumentacja medyczna</h3>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">To fundament każdej sprawy. Masz pełne prawo do jej uzyskania na podstawie <strong class="text-text">art. 23–30a ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta</strong>. Przede wszystkim zbierz:</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
                         <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Historię choroby z leczenia szpitalnego i ambulatoryjnego</span></li>
                         <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Karty zabiegowe i operacyjne wraz z opisami przebiegu procedur</span></li>
@@ -218,104 +218,104 @@
                         <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span>Rachunki i faktury za leki, wizyty, sprzęt ortopedyczny i transport medyczny</span></li>
                     </ul>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Opinia biegłego lekarza</h3>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">To <strong class="text-white">kluczowy dowód w sprawach o błędy medyczne</strong>. Sąd ani komisja ds. zdarzeń medycznych nie są w stanie samodzielnie ocenić, czy postępowanie lekarza było prawidłowe — potrzebują specjalisty w tej samej dziedzinie medycyny. Opinia biegłego powinna odpowiadać na trzy pytania: czy popełniono błąd, jaka była szkoda i czy między nimi istnieje związek przyczynowy.</p>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Opinia biegłego lekarza</h3>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">To <strong class="text-text">kluczowy dowód w sprawach o błędy medyczne</strong>. Sąd ani komisja ds. zdarzeń medycznych nie są w stanie samodzielnie ocenić, czy postępowanie lekarza było prawidłowe — potrzebują specjalisty w tej samej dziedzinie medycyny. Opinia biegłego powinna odpowiadać na trzy pytania: czy popełniono błąd, jaka była szkoda i czy między nimi istnieje związek przyczynowy.</p>
 
-                    <h3 class="font-heading text-xl font-bold text-white mb-3">Pozostałe dowody</h3>
+                    <h3 class="font-heading text-xl font-bold text-text mb-3">Pozostałe dowody</h3>
                     <ul class="text-muted text-lg mb-10 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Zeznania świadków</strong> — rodzina, osoby towarzyszące pacjentowi, inni pacjenci na sali — mogą potwierdzić, jak wyglądało postępowanie personelu</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Zdjęcia obrażeń</strong> — fotografuj zmiany skórne, odleżyny, blizny pooperacyjne na różnych etapach gojenia</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Korespondencja ze szpitalem</strong> — pisma, e-maile, skargi złożone w placówce i odpowiedzi kierownictwa</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-white">Dziennik objawów i kosztów</strong> — notatki prowadzone przez pacjenta lub rodzinę mogą wykazać związek między zdarzeniem a trwającym cierpieniem</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Zeznania świadków</strong> — rodzina, osoby towarzyszące pacjentowi, inni pacjenci na sali — mogą potwierdzić, jak wyglądało postępowanie personelu</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Zdjęcia obrażeń</strong> — fotografuj zmiany skórne, odleżyny, blizny pooperacyjne na różnych etapach gojenia</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Korespondencja ze szpitalem</strong> — pisma, e-maile, skargi złożone w placówce i odpowiedzi kierownictwa</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="check" class="w-4 h-4"></i></span><span><strong class="text-text">Dziennik objawów i kosztów</strong> — notatki prowadzone przez pacjenta lub rodzinę mogą wykazać związek między zdarzeniem a trwającym cierpieniem</span></li>
                     </ul>
 
-                    <h2 id="dokumentacja" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">3. Krok po kroku: jak zebrać dokumentację</h2>
+                    <h2 id="dokumentacja" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">3. Krok po kroku: jak zebrać dokumentację</h2>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Gromadzenie dokumentów wymaga systematycznego działania. Oto konkretne kroki, które powinieneś podjąć jak najwcześniej:</p>
 
                     <div class="space-y-6 mb-10">
                         <div class="flex gap-4">
                             <div class="shrink-0 w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold font-bold text-sm">1</div>
                             <div>
-                                <p class="text-white font-semibold mb-1">Złóż wniosek o kopię dokumentacji medycznej</p>
-                                <p class="text-muted text-lg leading-relaxed">Wniosek składasz pisemnie bezpośrednio w placówce lub za pośrednictwem poczty. Szpital ma <strong class="text-white">14 dni</strong> na wydanie kopii (art. 28 ustawy o prawach pacjenta). Możesz żądać kopii papierowej lub elektronicznej. Zachowaj potwierdzenie złożenia wniosku oraz datę odbioru dokumentów.</p>
+                                <p class="text-text font-semibold mb-1">Złóż wniosek o kopię dokumentacji medycznej</p>
+                                <p class="text-muted text-lg leading-relaxed">Wniosek składasz pisemnie bezpośrednio w placówce lub za pośrednictwem poczty. Szpital ma <strong class="text-text">14 dni</strong> na wydanie kopii (art. 28 ustawy o prawach pacjenta). Możesz żądać kopii papierowej lub elektronicznej. Zachowaj potwierdzenie złożenia wniosku oraz datę odbioru dokumentów.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
                             <div class="shrink-0 w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold font-bold text-sm">2</div>
                             <div>
-                                <p class="text-white font-semibold mb-1">Zrób kopie wszystkich rachunków i faktur</p>
+                                <p class="text-text font-semibold mb-1">Zrób kopie wszystkich rachunków i faktur</p>
                                 <p class="text-muted text-lg leading-relaxed">Każdy udokumentowany wydatek związany z leczeniem, rehabilitacją, zakupem leków i sprzętu ortopedycznego zwiększa wartość roszczenia majątkowego. Skanuj i archiwizuj na bieżąco — papier blaknie i niszczy się.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
                             <div class="shrink-0 w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold font-bold text-sm">3</div>
                             <div>
-                                <p class="text-white font-semibold mb-1">Zbierz dane świadków</p>
+                                <p class="text-text font-semibold mb-1">Zbierz dane świadków</p>
                                 <p class="text-muted text-lg leading-relaxed">Zapytaj bliskich, którzy byli obecni podczas hospitalizacji lub wizyt lekarskich, czy są skłonni złożyć zeznania. Zapisz ich dane kontaktowe. Innych pacjentów możesz spróbować odszukać przez stowarzyszenia pacjentów lub media społecznościowe.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
                             <div class="shrink-0 w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold font-bold text-sm">4</div>
                             <div>
-                                <p class="text-white font-semibold mb-1">Prowadź dziennik objawów</p>
+                                <p class="text-text font-semibold mb-1">Prowadź dziennik objawów</p>
                                 <p class="text-muted text-lg leading-relaxed">Codziennie notuj dolegliwości, ograniczenia w codziennym funkcjonowaniu, problemy ze snem, konieczność przyjmowania środków przeciwbólowych. Taki dziennik jest dowodem na rozmiar cierpienia przy ustalaniu wysokości zadośćuczynienia.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
                             <div class="shrink-0 w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold font-bold text-sm">5</div>
                             <div>
-                                <p class="text-white font-semibold mb-1">Zamów prywatną opinię lekarza specjalisty</p>
+                                <p class="text-text font-semibold mb-1">Zamów prywatną opinię lekarza specjalisty</p>
                                 <p class="text-muted text-lg leading-relaxed">Przed podjęciem jakichkolwiek kroków prawnych warto zlecić wstępną opinię niezależnemu specjaliście w tej samej dziedzinie medycyny. Opinia pozwoli ocenić, czy sprawa ma szansę powodzenia, i będzie punktem wyjścia w postępowaniu przed komisją lub sądem.</p>
                             </div>
                         </div>
                     </div>
 
-                    <h2 id="drogi-roszczen" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">4. Drogi dochodzenia roszczeń</h2>
+                    <h2 id="drogi-roszczen" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">4. Drogi dochodzenia roszczeń</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Masz do wyboru trzy główne ścieżki. Każda ma inne zalety, terminy i limity kwotowe:</p>
 
                     <div class="overflow-x-auto mb-10">
                         <table class="w-full text-sm border-collapse">
                             <thead>
                                 <tr class="bg-surface-light">
-                                    <th class="text-left text-white font-semibold p-4 border border-white/10">Droga</th>
-                                    <th class="text-left text-white font-semibold p-4 border border-white/10">Czas</th>
-                                    <th class="text-left text-white font-semibold p-4 border border-white/10">Limit</th>
-                                    <th class="text-left text-white font-semibold p-4 border border-white/10">Uwagi</th>
+                                    <th class="text-left text-text font-semibold p-4 border border-line">Droga</th>
+                                    <th class="text-left text-text font-semibold p-4 border border-line">Czas</th>
+                                    <th class="text-left text-text font-semibold p-4 border border-line">Limit</th>
+                                    <th class="text-left text-text font-semibold p-4 border border-line">Uwagi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="text-white font-medium p-4 border border-white/10">Komisja ds. orzekania o zdarzeniach medycznych</td>
-                                    <td class="text-muted p-4 border border-white/10">4–6 miesięcy</td>
-                                    <td class="text-muted p-4 border border-white/10">Max 300 000 zł (śmierć: 100 000 zł)</td>
-                                    <td class="text-muted p-4 border border-white/10">Tańsza i szybsza; działa przy urzędach marszałkowskich; orzeczenie nie jest wyrokiem — ubezpieczyciel może odrzucić</td>
+                                    <td class="text-text font-medium p-4 border border-line">Komisja ds. orzekania o zdarzeniach medycznych</td>
+                                    <td class="text-muted p-4 border border-line">4–6 miesięcy</td>
+                                    <td class="text-muted p-4 border border-line">Max 300 000 zł (śmierć: 100 000 zł)</td>
+                                    <td class="text-muted p-4 border border-line">Tańsza i szybsza; działa przy urzędach marszałkowskich; orzeczenie nie jest wyrokiem — ubezpieczyciel może odrzucić</td>
                                 </tr>
                                 <tr class="bg-surface/50">
-                                    <td class="text-white font-medium p-4 border border-white/10">Sąd cywilny</td>
-                                    <td class="text-muted p-4 border border-white/10">1–5 lat</td>
-                                    <td class="text-muted p-4 border border-white/10">Brak limitu</td>
-                                    <td class="text-muted p-4 border border-white/10">Najszerszy zakres roszczeń; wyrok jest tytułem wykonawczym; wymaga dowodów i biegłych; zwykle zalecana przy poważnych szkodach</td>
+                                    <td class="text-text font-medium p-4 border border-line">Sąd cywilny</td>
+                                    <td class="text-muted p-4 border border-line">1–5 lat</td>
+                                    <td class="text-muted p-4 border border-line">Brak limitu</td>
+                                    <td class="text-muted p-4 border border-line">Najszerszy zakres roszczeń; wyrok jest tytułem wykonawczym; wymaga dowodów i biegłych; zwykle zalecana przy poważnych szkodach</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-white font-medium p-4 border border-white/10">Rzecznik Praw Pacjenta</td>
-                                    <td class="text-muted p-4 border border-white/10">Zmienny</td>
-                                    <td class="text-muted p-4 border border-white/10">Brak odszkodowania</td>
-                                    <td class="text-muted p-4 border border-white/10">Interwencja i mediacja, nie wypłata; może pomóc uzyskać dokumentację i podjąć działania wobec placówki</td>
+                                    <td class="text-text font-medium p-4 border border-line">Rzecznik Praw Pacjenta</td>
+                                    <td class="text-muted p-4 border border-line">Zmienny</td>
+                                    <td class="text-muted p-4 border border-line">Brak odszkodowania</td>
+                                    <td class="text-muted p-4 border border-line">Interwencja i mediacja, nie wypłata; może pomóc uzyskać dokumentację i podjąć działania wobec placówki</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <p class="text-muted text-lg mb-10 leading-relaxed">Komisja ds. zdarzeń medycznych jest dobrym pierwszym krokiem przy szkodach do 300 000 zł — postępowanie jest bezpłatne dla pacjenta, a wniosek można złożyć samodzielnie. Jednak jeśli komisja wyda orzeczenie i ubezpieczyciel zdecyduje się złożyć propozycję, Ty nadal możesz ją odrzucić i skierować sprawę do sądu. Obie drogi się nie wykluczają.</p>
 
-                    <h2 id="pomoc-specjalisty" class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">5. Kiedy warto skorzystać z pomocy specjalisty?</h2>
-                    <p class="text-muted text-lg mb-4 leading-relaxed">Sprawy o błędy medyczne są <strong class="text-white">najtrudniejszymi sprawami odszkodowawczymi w polskim prawie</strong>. Szpitale dysponują wyspecjalizowanymi działami prawnymi i stałą współpracą z biegłymi, którzy od lat wydają opinie w postępowaniach sądowych. Samodzielna walka z taką machiną bywa z góry skazana na niepowodzenie.</p>
+                    <h2 id="pomoc-specjalisty" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">5. Kiedy warto skorzystać z pomocy specjalisty?</h2>
+                    <p class="text-muted text-lg mb-4 leading-relaxed">Sprawy o błędy medyczne są <strong class="text-text">najtrudniejszymi sprawami odszkodowawczymi w polskim prawie</strong>. Szpitale dysponują wyspecjalizowanymi działami prawnymi i stałą współpracą z biegłymi, którzy od lat wydają opinie w postępowaniach sądowych. Samodzielna walka z taką machiną bywa z góry skazana na niepowodzenie.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Specjalista od <a href="../odszkodowania-bledy-medyczne.html" class="text-gold hover:text-gold-light underline transition-colors">odszkodowań za błędy medyczne</a> zna biegłych w poszczególnych specjalnościach, wie jak sformułować pytania, żeby opinia była jednoznaczna, i potrafi ocenić wstępnie realną wartość sprawy zanim zdecydujesz się ponieść koszty postępowania.</p>
                     <p class="text-muted text-lg mb-4 leading-relaxed">Skorzystaj z pomocy specjalisty szczególnie, gdy:</p>
                     <ul class="text-muted text-lg mb-6 leading-relaxed space-y-2 list-none pl-0">
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Błąd spowodował trwały uszczerbek na zdrowiu</strong> — trwałe kalectwo, niepełnosprawność, konieczność długoterminowej opieki lub rentę</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Szpital lub ubezpieczyciel odmawia wypłaty</strong> albo proponuje kwotę rażąco niską wobec rzeczywistej szkody</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Sprawa dotyczy śmierci bliskiej osoby</strong> w wyniku błędu medycznego — zadośćuczynienie dla rodziny jest szczególnie złożone</span></li>
-                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-white">Potrzebujesz opinii biegłego</strong> — specjalista wie, do kogo się zwrócić i jak ocenić jakość opinii</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Błąd spowodował trwały uszczerbek na zdrowiu</strong> — trwałe kalectwo, niepełnosprawność, konieczność długoterminowej opieki lub rentę</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Szpital lub ubezpieczyciel odmawia wypłaty</strong> albo proponuje kwotę rażąco niską wobec rzeczywistej szkody</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Sprawa dotyczy śmierci bliskiej osoby</strong> w wyniku błędu medycznego — zadośćuczynienie dla rodziny jest szczególnie złożone</span></li>
+                        <li class="flex items-start gap-3"><span class="text-gold mt-1 shrink-0"><i data-lucide="alert-triangle" class="w-4 h-4"></i></span><span><strong class="text-text">Potrzebujesz opinii biegłego</strong> — specjalista wie, do kogo się zwrócić i jak ocenić jakość opinii</span></li>
                     </ul>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Działamy w modelu success fee: honorarium pobieramy wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy, nie płacisz nic. Pierwsza konsultacja i wstępna ocena Twojej sprawy są całkowicie bezpłatne.</p>
 
@@ -323,60 +323,60 @@
 
                 <!-- FAQ section -->
                 <section id="faq" class="mt-16 mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Ile czasu mam na zgłoszenie roszczenia za błąd medyczny?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Roszczenie o odszkodowanie za błąd medyczny przedawnia się po <strong class="text-white">3 latach</strong> od dnia, w którym dowiedziałeś się o szkodzie i osobie zobowiązanej do jej naprawienia. Obowiązuje jednak bezwzględny limit <strong class="text-white">10 lat od dnia zdarzenia</strong> (art. 442¹ § 1 KC). Jeśli błąd medyczny był wynikiem przestępstwa — np. spowodowania ciężkiego uszczerbku na zdrowiu — termin przedawnienia wynosi <strong class="text-white">20 lat</strong> od dnia popełnienia przestępstwa. W praktyce warto działać jak najszybciej: dowody i dokumentacja medyczna są wtedy pełniejsze, a świadkowie pamiętają więcej szczegółów.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Roszczenie o odszkodowanie za błąd medyczny przedawnia się po <strong class="text-text">3 latach</strong> od dnia, w którym dowiedziałeś się o szkodzie i osobie zobowiązanej do jej naprawienia. Obowiązuje jednak bezwzględny limit <strong class="text-text">10 lat od dnia zdarzenia</strong> (art. 442¹ § 1 KC). Jeśli błąd medyczny był wynikiem przestępstwa — np. spowodowania ciężkiego uszczerbku na zdrowiu — termin przedawnienia wynosi <strong class="text-text">20 lat</strong> od dnia popełnienia przestępstwa. W praktyce warto działać jak najszybciej: dowody i dokumentacja medyczna są wtedy pełniejsze, a świadkowie pamiętają więcej szczegółów.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Czy mogę żądać odszkodowania od lekarza osobiście?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Tak, lekarz może ponosić odpowiedzialność cywilną na podstawie art. 415 lub 430 KC. W praktyce jednak roszczenie kieruje się do <strong class="text-white">szpitala lub innej placówki medycznej</strong> oraz do jej ubezpieczyciela OC — placówki mają obowiązkowe polisy OC, a wypłata z ubezpieczenia jest pewniejsza i szybsza niż egzekucja bezpośrednio od lekarza. Pozew można złożyć przeciwko placówce i lekarzowi łącznie.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Tak, lekarz może ponosić odpowiedzialność cywilną na podstawie art. 415 lub 430 KC. W praktyce jednak roszczenie kieruje się do <strong class="text-text">szpitala lub innej placówki medycznej</strong> oraz do jej ubezpieczyciela OC — placówki mają obowiązkowe polisy OC, a wypłata z ubezpieczenia jest pewniejsza i szybsza niż egzekucja bezpośrednio od lekarza. Pozew można złożyć przeciwko placówce i lekarzowi łącznie.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface border border-line/50 rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span>Ile kosztuje opinia biegłego lekarza?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
                             <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm">Prywatna opinia specjalisty zamówiona przed postępowaniem kosztuje zazwyczaj od <strong class="text-white">2 000 do 5 000 zł</strong> — zależnie od specjalizacji i zakresu analizy dokumentacji. W postępowaniu sądowym koszty opinii biegłego sądowego <strong class="text-white">ponosi strona przegrywająca</strong> — jeśli wygrasz sprawę, sąd zasądzi je od szpitala lub jego ubezpieczyciela. Specjalista od odszkodowań współpracuje ze sprawdzonymi biegłymi i może wstępnie ocenić szansę sprawy, zanim zdecydujesz się ponieść ten koszt.</p>
+                                <p class="px-5 pb-5 text-muted text-sm">Prywatna opinia specjalisty zamówiona przed postępowaniem kosztuje zazwyczaj od <strong class="text-text">2 000 do 5 000 zł</strong> — zależnie od specjalizacji i zakresu analizy dokumentacji. W postępowaniu sądowym koszty opinii biegłego sądowego <strong class="text-text">ponosi strona przegrywająca</strong> — jeśli wygrasz sprawę, sąd zasądzi je od szpitala lub jego ubezpieczyciela. Specjalista od odszkodowań współpracuje ze sprawdzonymi biegłymi i może wstępnie ocenić szansę sprawy, zanim zdecydujesz się ponieść ten koszt.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- CTA box -->
-                <div class="bg-surface border border-white/5 rounded-lg p-8 lg:p-12 text-center my-16">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">Podejrzewasz błąd medyczny?</h2>
+                <div class="bg-surface border border-line/50 rounded-lg p-8 lg:p-12 text-center my-16">
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4">Podejrzewasz błąd medyczny?</h2>
                     <p class="text-muted mb-8 max-w-xl mx-auto">Bezpłatnie przeanalizujemy Twoją dokumentację i ocenimy, czy masz podstawy do roszczenia. Żadnych zobowiązań — tylko konkretna odpowiedź.</p>
                     <a href="../index.html#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-3 rounded font-semibold transition-colors">Bezpłatna konsultacja →</a>
                 </div>
 
                 <!-- Related articles -->
                 <section class="mb-16">
-                    <h2 class="font-heading text-2xl font-bold text-white mb-6">Powiązane artykuły</h2>
+                    <h2 class="font-heading text-2xl font-bold text-text mb-6">Powiązane artykuły</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="jak-dokumentowac-obrazenia.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Poradnik</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Jak dokumentować obrażenia po wypadku?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Jak dokumentować obrażenia po wypadku?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
-                        <a href="przedawnienie-roszczen.html" class="bg-surface border border-white/5 rounded-lg overflow-hidden card-hover block">
+                        <a href="przedawnienie-roszczen.html" class="bg-surface border border-line/50 rounded-lg overflow-hidden card-hover block">
                             <div class="p-6">
                                 <span class="text-xs font-medium text-gold uppercase tracking-wider">Prawo</span>
-                                <h3 class="font-heading text-lg font-bold text-white mt-2 mb-2">Przedawnienie roszczeń — ile masz czasu?</h3>
+                                <h3 class="font-heading text-lg font-bold text-text mt-2 mb-2">Przedawnienie roszczeń — ile masz czasu?</h3>
                                 <span class="text-gold text-sm font-semibold">Czytaj dalej →</span>
                             </div>
                         </a>
@@ -389,7 +389,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-white/5 py-16">
+    <footer class="bg-surface border-t border-line/50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
@@ -397,7 +397,7 @@
                     <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
                         <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
                         <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
@@ -407,7 +407,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
                         <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
                         <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
@@ -417,7 +417,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
                         <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                         <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -429,18 +429,18 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 text-center">
+            <div class="border-t border-line/50 pt-8 text-center">
                 <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>
             </div>
         </div>

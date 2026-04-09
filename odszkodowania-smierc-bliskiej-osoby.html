@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="css/styles.css">
@@ -62,12 +62,12 @@
                     <span class="text-gold font-heading text-xl lg:text-2xl font-bold" data-i18n="nav.logo">Odszkodowania</span>
                 </a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="uslugi.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
-                    <a href="jak-dzialamy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-                    <a href="kalkulator.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
-                    <a href="sukcesy.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
-                    <a href="blog/" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
-                    <a href="kontakt.html" class="text-white/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
+                    <a href="uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
+                    <a href="jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
+                    <a href="sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
+                    <a href="blog/" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
+                    <a href="kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <div class="lang-switcher-mount"></div>
@@ -75,11 +75,11 @@
                         <i data-lucide="phone" class="w-4 h-4"></i>
                         +48 XXX XXX XXX
                     </a>
-                    <a href="/#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors" data-i18n="nav.cta">
+                    <a href="/#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="nav.cta">
                         Bezpłatna konsultacja
                     </a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
+                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -88,18 +88,18 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
+        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="uslugi.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
-            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-            <a href="kalkulator.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
-            <a href="sukcesy.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
-            <a href="blog/" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
-            <a href="kontakt.html" class="block text-2xl font-heading text-white hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
+            <a href="uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
+            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+            <a href="kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
+            <a href="sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
+            <a href="blog/" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
+            <a href="kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
             <div class="pt-4">
-                <a href="/#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
+                <a href="/#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
                     Bezpłatna konsultacja
                 </a>
             </div>
@@ -111,33 +111,33 @@
     </div>
 
     <!-- Mobile Sticky Bottom Bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-white/10 p-3 flex gap-3 lg:hidden transition-transform duration-300">
-        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
+        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
-        <a href="/#quiz" class="flex-1 border border-gold text-gold text-center py-3 rounded font-semibold text-sm" data-i18n="sticky.quote">
+        <a href="/#quiz" class="flex-1 border border-gold text-gold text-center py-3 rounded-lg font-semibold text-sm" data-i18n="sticky.quote">
             Bezpłatna wycena
         </a>
     </div>
 
     <main class="pt-16 lg:pt-20">
         <!-- Breadcrumb -->
-        <div class="bg-bg border-b border-white/5">
+        <div class="bg-bg border-b border-line/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
                 <nav class="text-sm text-muted">
                     <a href="/" class="hover:text-gold transition-colors" data-i18n="smierc.breadcrumb_home">Strona główna</a>
                     <span class="mx-2">›</span>
-                    <span class="text-white/70" data-i18n="smierc.breadcrumb_current">Odszkodowania po śmierci bliskiej osoby</span>
+                    <span class="text-text/70" data-i18n="smierc.breadcrumb_current">Odszkodowania po śmierci bliskiej osoby</span>
                 </nav>
             </div>
         </div>
 
         <!-- Hero -->
-        <section class="bg-bg py-16 lg:py-24">
+        <section class="bg-bg py-12 lg:py-16">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight" data-i18n="smierc.hero_title">Odszkodowania po śmierci bliskiej osoby</h1>
+                <h1 class="font-heading text-4xl lg:text-6xl font-bold text-text mb-4 leading-tight" data-i18n="smierc.hero_title">Odszkodowania po śmierci bliskiej osoby</h1>
                 <p class="text-muted text-lg max-w-2xl mx-auto mb-8" data-i18n="smierc.hero_subtitle">Strata bliskiego to ból, którego nie zastąpi żadna kwota. Ale rodzina ofiary ma prawo do sprawiedliwego zadośćuczynienia. Pomożemy Ci je uzyskać — bez zbędnych formalności i z pełnym szacunkiem dla Twojej sytuacji.</p>
-                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-4 rounded font-semibold transition-colors" data-i18n="smierc.hero_cta">Bezpłatna analiza sprawy →</a>
+                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-4 rounded-lg font-semibold transition-colors hover:shadow-lg hover:shadow-cta/30" data-i18n="smierc.hero_cta">Bezpłatna analiza sprawy →</a>
             </div>
         </section>
 
@@ -147,46 +147,46 @@
 
                 <!-- Kto może ubiegać się -->
                 <div class="fade-in mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4" data-i18n="smierc.who_title">Kto może ubiegać się o odszkodowanie?</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4" data-i18n="smierc.who_title">Kto może ubiegać się o odszkodowanie?</h2>
                     <p class="text-muted text-lg" data-i18n="smierc.who_text">Po śmierci bliskiej osoby w wyniku wypadku lub błędu medycznego, prawo do odszkodowania i zadośćuczynienia przysługuje najbliższym członkom rodziny: małżonkowi, dzieciom, rodzicom, rodzeństwu, a w niektórych przypadkach także dalszym krewnym lub osobom faktycznie bliskim. Nie musisz być formalnie spokrewniony, by ubiegać się o świadczenie.</p>
                 </div>
 
                 <!-- Co możesz uzyskać -->
                 <div class="fade-in mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6" data-i18n="smierc.benefits_title">Co możesz uzyskać?</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6" data-i18n="smierc.benefits_title">Co możesz uzyskać?</h2>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-white" data-i18n="smierc.benefit1">Zadośćuczynienie za ból i cierpienie po stracie bliskiego (art. 446 § 4 k.c.)</span>
+                            <span class="text-text" data-i18n="smierc.benefit1">Zadośćuczynienie za ból i cierpienie po stracie bliskiego (art. 446 § 4 k.c.)</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-white" data-i18n="smierc.benefit2">Odszkodowanie za znaczne pogorszenie sytuacji życiowej (art. 446 § 3 k.c.)</span>
+                            <span class="text-text" data-i18n="smierc.benefit2">Odszkodowanie za znaczne pogorszenie sytuacji życiowej (art. 446 § 3 k.c.)</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-white" data-i18n="smierc.benefit3">Zwrot kosztów leczenia i pogrzebu</span>
+                            <span class="text-text" data-i18n="smierc.benefit3">Zwrot kosztów leczenia i pogrzebu</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-white" data-i18n="smierc.benefit4">Renta alimentacyjna dla uprawnionych (dzieci, małżonek)</span>
+                            <span class="text-text" data-i18n="smierc.benefit4">Renta alimentacyjna dla uprawnionych (dzieci, małżonek)</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-white" data-i18n="smierc.benefit5">Zwrot utraconych dochodów rodziny</span>
+                            <span class="text-text" data-i18n="smierc.benefit5">Zwrot utraconych dochodów rodziny</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Jak postępujemy -->
                 <div class="fade-in mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4" data-i18n="smierc.process_title">Jak postępujemy w sprawie o śmierć bliskiej osoby?</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4" data-i18n="smierc.process_title">Jak postępujemy w sprawie o śmierć bliskiej osoby?</h2>
                     <p class="text-muted text-lg" data-i18n="smierc.process_text">Wiemy, że w tak trudnym czasie formalności są szczególnie uciążliwe. Dlatego przejmujemy na siebie cały ciężar administracyjny — od zebrania dokumentacji, przez kontakt z ubezpieczycielem, po negocjacje i ewentualny proces sądowy. Ty możesz skupić się na sobie i rodzinie.</p>
                 </div>
 
                 <!-- Mini case study -->
-                <div class="fade-in bg-surface border border-white/5 rounded-lg p-6 mb-12">
-                    <h3 class="font-heading text-lg font-bold text-white mb-4" data-i18n="smierc.case_title">Przykładowa sprawa</h3>
+                <div class="fade-in bg-surface-light rounded-xl shadow-sm p-6 mb-12">
+                    <h3 class="font-heading text-lg font-bold text-text mb-4" data-i18n="smierc.case_title">Przykładowa sprawa</h3>
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
                         <div>
                             <p class="text-muted text-sm mb-1" data-i18n="smierc.case_offered_label">Ubezpieczyciel oferował</p>
@@ -203,10 +203,10 @@
 
                 <!-- FAQ -->
                 <div class="fade-in mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-6" data-i18n="smierc.faq_title">Najczęstsze pytania</h2>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6" data-i18n="smierc.faq_title">Najczęstsze pytania</h2>
                     <div class="space-y-3">
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface-light border border-line rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span data-i18n="smierc.faq1_q">Kto może złożyć wniosek o odszkodowanie po śmierci bliskiej osoby?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
@@ -214,8 +214,8 @@
                                 <p class="px-5 pb-5 text-muted text-sm" data-i18n="smierc.faq1_a">Prawo do odszkodowania przysługuje najbliższym: małżonkowi, dzieciom, rodzicom, a w uzasadnionych przypadkach rodzeństwu i innym bliskim. Sądy coraz częściej uznają prawa osób faktycznie bliskich, nawet bez formalnych więzów rodzinnych. Warto skonsultować indywidualną sytuację — bezpłatnie przeanalizujemy Twoje uprawnienia.</p>
                             </div>
                         </div>
-                        <div class="bg-surface border border-white/5 rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-white">
+                        <div class="bg-surface-light border border-line rounded-lg overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
                                 <span data-i18n="smierc.faq2_q">W jaki sposób wyliczana jest kwota zadośćuczynienia?</span>
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
                             </button>
@@ -231,31 +231,31 @@
         <!-- CTA Block -->
         <section class="bg-surface py-16 text-center">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white mb-4" data-i18n="smierc.cta_title">Straciłeś bliską osobę w wyniku cudzego działania?</h2>
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-text mb-4" data-i18n="smierc.cta_title">Straciłeś bliską osobę w wyniku cudzego działania?</h2>
                 <p class="text-muted text-lg mb-8" data-i18n="smierc.cta_subtitle">Bezpłatnie i dyskretnie przeanalizujemy Twoją sprawę i powiemy ile możesz uzyskać dla siebie i rodziny.</p>
-                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-4 rounded font-semibold transition-colors text-lg" data-i18n="smierc.cta_button">Sprawdź ile Ci się należy →</a>
+                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-4 rounded-lg font-semibold transition-colors text-lg hover:shadow-lg hover:shadow-cta/30" data-i18n="smierc.cta_button">Sprawdź ile Ci się należy →</a>
             </div>
         </section>
 
         <!-- Footer CTA + Footer -->
         <section class="bg-bg py-20 lg:py-32 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
-                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded font-semibold transition-colors mb-6" data-i18n="cta.button">
+                <h2 class="font-heading text-4xl lg:text-5xl text-text font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
+                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded-lg font-semibold transition-colors mb-6 hover:shadow-lg hover:shadow-cta/30" data-i18n="cta.button">
                     Bezpłatna konsultacja
                 </a>
                 <p class="text-muted" data-i18n="cta.phone_prefix">
                     lub zadzwoń: <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors font-medium">+48 XXX XXX XXX</a>
                 </p>
 
-                <div class="border-t border-white/5 mt-16 pt-8">
+                <div class="border-t border-line/50 mt-16 pt-8">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-left mb-8">
                         <div>
                             <span class="text-gold font-heading text-lg font-bold" data-i18n="nav.logo">Odszkodowania</span>
                             <p class="text-muted text-sm mt-3" data-i18n="footer.desc">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
                             <div class="space-y-2">
                                 <a href="odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service1">Wypadki komunikacyjne</a>
                                 <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service2">Wypadki przy pracy</a>
@@ -265,7 +265,7 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
                             <div class="space-y-2">
                                 <a href="jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info1">Jak działamy</a>
                                 <a href="sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info2">Nasze sukcesy</a>
@@ -275,7 +275,7 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
+                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
                             <div class="space-y-2">
                                 <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
                                 <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
@@ -294,12 +294,12 @@
     </main>
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-white/10 hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-white/20 text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
-                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
+                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-text transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
+                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
     </div>
