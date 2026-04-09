@@ -1,29 +1,33 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Lenis smooth scroll init
-    const lenis = new Lenis({
+    // Lenis smooth scroll init (only on pages that load the Lenis CDN)
+    const hasLenis = typeof Lenis !== 'undefined';
+    const lenis = hasLenis ? new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
         smoothWheel: true,
-    });
+    }) : null;
 
-    window.lenis = lenis;
+    if (lenis) {
+        window.lenis = lenis;
 
-    function raf(time) {
-        lenis.raf(time);
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
         requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
-    // Parallax on scroll
-    const parallaxEls = document.querySelectorAll('[data-parallax]');
-    const scrollTextDividers = document.querySelectorAll('[data-scroll-text]');
-    const isMobile = window.innerWidth < 768;
+    // Parallax + horizontal scroll text (requires Lenis)
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (!prefersReduced) {
+    if (lenis && !prefersReduced) {
+        const parallaxEls = document.querySelectorAll('[data-parallax]');
+        const scrollTextDividers = document.querySelectorAll('[data-scroll-text]');
+        const isMobile = window.innerWidth < 768;
+
         lenis.on('scroll', ({ scroll }) => {
             // Parallax
             parallaxEls.forEach(el => {
