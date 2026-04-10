@@ -142,67 +142,95 @@
             </div>
         </section>
 
-        <!-- SERVICE CARDS 2x3 GRID -->
-        <section class="bg-v2-surface py-16 lg:py-20">
+        <!-- SECTION HEADING — Votum style -->
+        <section class="bg-white py-16 lg:py-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-v2-text text-2xl lg:text-3xl font-bold mb-4">Nasze usługi</h2>
-                    <p class="text-v2-muted max-w-2xl mx-auto">Pomagamy w każdym rodzaju sprawy odszkodowawczej. Wybierz swoją kategorię lub skontaktuj się z nami.</p>
+                <p class="text-v2-muted text-sm uppercase tracking-widest mb-4">Doświadczenie i skuteczność</p>
+                <h2 class="text-v2-text text-3xl lg:text-5xl font-extrabold leading-tight mb-6">Stoimy po stronie ofiar wypadków</h2>
+                <p class="text-v2-muted text-lg max-w-3xl">Pomagamy w każdym rodzaju sprawy odszkodowawczej. Wybierz swoją kategorię lub skontaktuj się z nami.</p>
+            </div>
+        </section>
+
+        <!-- ICON FEATURES — large icons, 3 columns, Votum style -->
+        <section class="bg-white pb-16 lg:pb-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-12 lg:gap-16 mb-20">
+                    <div class="v2-slide-left">
+                        <i data-lucide="file-search" class="w-16 h-16 text-v2-text mb-6 stroke-[1.2]"></i>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Bezpłatna analiza sprawy</h3>
+                        <p class="text-v2-muted text-base leading-relaxed">Analiza sprawy związanej z wypadkiem zawsze jest bezpłatna. Poszkodowani mogą starać się o odszkodowanie, zadośćuczynienie, zwrot kosztów czy rentę odszkodowawczą.</p>
+                    </div>
+                    <div class="v2-slide-left" style="transition-delay: 0.1s;">
+                        <i data-lucide="shield" class="w-16 h-16 text-v2-text mb-6 stroke-[1.2]"></i>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Ochrona praw poszkodowanych</h3>
+                        <p class="text-v2-muted text-base leading-relaxed">Prawa osób poszkodowanych w wypadkach często nie są przestrzegane. Ofiarom nieszczęśliwych zdarzeń komunikacyjnych, w rolnictwie oraz przy pracy może należeć się szereg świadczeń.</p>
+                    </div>
+                    <div class="v2-slide-left" style="transition-delay: 0.2s;">
+                        <i data-lucide="scale" class="w-16 h-16 text-v2-text mb-6 stroke-[1.2]"></i>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Mediacje z ubezpieczycielami</h3>
+                        <p class="text-v2-muted text-base leading-relaxed">Wiele spornych sytuacji dotyczących zaniżonego odszkodowania po wypadku można rozwiązać polubownie. Doświadczeni eksperci potrafią negocjować z ubezpieczycielami.</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- SERVICE CARDS — 2x3 grid, slide-in animation -->
+        <section class="bg-v2-surface py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Card 1 -->
-                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="car" class="w-6 h-6 text-v2-cta"></i>
+                    <div class="v2-slide-left bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="car" class="w-7 h-7 text-v2-cta"></i>
                         </div>
-                        <h3 class="text-v2-text font-bold text-lg mb-2">Wypadki komunikacyjne</h3>
-                        <p class="text-v2-muted text-sm mb-4">Odszkodowania po wypadkach samochodowych, motocyklowych, potrąceniach pieszych i rowerzystów. Ubezpieczyciele zaniżają wypłaty nawet o 80%.</p>
-                        <a href="odszkodowania-komunikacyjne.html" class="text-v2-cta text-sm font-semibold hover:underline">Dowiedz się więcej →</a>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Wypadki komunikacyjne</h3>
+                        <p class="text-v2-muted text-base leading-relaxed mb-6">Odszkodowania po wypadkach samochodowych, motocyklowych, potrąceniach pieszych i rowerzystów. Ubezpieczyciele zaniżają wypłaty nawet o 80%.</p>
+                        <a href="odszkodowania-komunikacyjne.html" class="text-v2-cta font-semibold hover:underline">Dowiedz się więcej →</a>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="hard-hat" class="w-6 h-6 text-v2-cta"></i>
+                    <div class="v2-slide-right bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="hard-hat" class="w-7 h-7 text-v2-cta"></i>
                         </div>
-                        <h3 class="text-v2-text font-bold text-lg mb-2">Wypadki przy pracy</h3>
-                        <p class="text-v2-muted text-sm mb-4">Odszkodowania za urazy doznane w miejscu pracy lub w drodze do/z pracy. Pracodawcy i ubezpieczyciele bagatelizują takie sprawy.</p>
-                        <a href="odszkodowania-wypadki-przy-pracy.html" class="text-v2-cta text-sm font-semibold hover:underline">Dowiedz się więcej →</a>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Wypadki przy pracy</h3>
+                        <p class="text-v2-muted text-base leading-relaxed mb-6">Odszkodowania za urazy doznane w miejscu pracy lub w drodze do/z pracy. Pracodawcy i ubezpieczyciele bagatelizują takie sprawy.</p>
+                        <a href="odszkodowania-wypadki-przy-pracy.html" class="text-v2-cta font-semibold hover:underline">Dowiedz się więcej →</a>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="stethoscope" class="w-6 h-6 text-v2-cta"></i>
+                    <div class="v2-slide-left bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="stethoscope" class="w-7 h-7 text-v2-cta"></i>
                         </div>
-                        <h3 class="text-v2-text font-bold text-lg mb-2">Błędy medyczne</h3>
-                        <p class="text-v2-muted text-sm mb-4">Błędy lekarskie, nieprawidłowa diagnoza, powikłania pooperacyjne, zakażenia szpitalne. Współpracujemy z biegłymi medycznymi.</p>
-                        <a href="odszkodowania-bledy-medyczne.html" class="text-v2-cta text-sm font-semibold hover:underline">Dowiedz się więcej →</a>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Błędy medyczne</h3>
+                        <p class="text-v2-muted text-base leading-relaxed mb-6">Błędy lekarskie, nieprawidłowa diagnoza, powikłania pooperacyjne, zakażenia szpitalne. Współpracujemy z biegłymi medycznymi.</p>
+                        <a href="odszkodowania-bledy-medyczne.html" class="text-v2-cta font-semibold hover:underline">Dowiedz się więcej →</a>
                     </div>
                     <!-- Card 4 -->
-                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="heart" class="w-6 h-6 text-v2-cta"></i>
+                    <div class="v2-slide-right bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="heart" class="w-7 h-7 text-v2-cta"></i>
                         </div>
-                        <h3 class="text-v2-text font-bold text-lg mb-2">Śmierć bliskiej osoby</h3>
-                        <p class="text-v2-muted text-sm mb-4">Zadośćuczynienie, odszkodowanie i renta dla rodziny po tragicznej śmierci bliskiego. Pełne wsparcie finansowe w najtrudniejszym momencie.</p>
-                        <a href="odszkodowania-smierc-bliskiej-osoby.html" class="text-v2-cta text-sm font-semibold hover:underline">Dowiedz się więcej →</a>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Śmierć bliskiej osoby</h3>
+                        <p class="text-v2-muted text-base leading-relaxed mb-6">Zadośćuczynienie, odszkodowanie i renta dla rodziny po tragicznej śmierci bliskiego. Pełne wsparcie finansowe w najtrudniejszym momencie.</p>
+                        <a href="odszkodowania-smierc-bliskiej-osoby.html" class="text-v2-cta font-semibold hover:underline">Dowiedz się więcej →</a>
                     </div>
                     <!-- Card 5 -->
-                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="wheat" class="w-6 h-6 text-v2-cta"></i>
+                    <div class="v2-slide-left bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="wheat" class="w-7 h-7 text-v2-cta"></i>
                         </div>
-                        <h3 class="text-v2-text font-bold text-lg mb-2">Wypadki w rolnictwie</h3>
-                        <p class="text-v2-muted text-sm mb-4">Odszkodowania za wypadki podczas prac rolniczych, urazy spowodowane maszynami i narzędziami. Specyfika prawa rolniczego wymaga doświadczenia.</p>
-                        <a href="odszkodowania-wypadki-rolnicze.html" class="text-v2-cta text-sm font-semibold hover:underline">Dowiedz się więcej →</a>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Wypadki w rolnictwie</h3>
+                        <p class="text-v2-muted text-base leading-relaxed mb-6">Odszkodowania za wypadki podczas prac rolniczych, urazy spowodowane maszynami i narzędziami. Specyfika prawa rolniczego wymaga doświadczenia.</p>
+                        <a href="odszkodowania-wypadki-rolnicze.html" class="text-v2-cta font-semibold hover:underline">Dowiedz się więcej →</a>
                     </div>
                     <!-- Card 6 -->
-                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="help-circle" class="w-6 h-6 text-v2-cta"></i>
+                    <div class="v2-slide-right bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="help-circle" class="w-7 h-7 text-v2-cta"></i>
                         </div>
-                        <h3 class="text-v2-text font-bold text-lg mb-2">Inna sprawa?</h3>
-                        <p class="text-v2-muted text-sm mb-4">Nie widzisz swojej sytuacji na liście? Każda sprawa jest inna — skontaktuj się z nami. Bezpłatnie ocenimy Twoje szanse.</p>
-                        <a href="/#quiz" class="text-v2-cta text-sm font-semibold hover:underline">Sprawdź swoją sprawę →</a>
+                        <h3 class="text-v2-text font-bold text-xl mb-3">Inna sprawa?</h3>
+                        <p class="text-v2-muted text-base leading-relaxed mb-6">Nie widzisz swojej sytuacji na liście? Każda sprawa jest inna — skontaktuj się z nami. Bezpłatnie ocenimy Twoje szanse.</p>
+                        <a href="#page-contact" class="text-v2-cta font-semibold hover:underline">Sprawdź swoją sprawę →</a>
                     </div>
                 </div>
             </div>
@@ -357,6 +385,21 @@
     <script>
     lucide.createIcons();
     (function() {
+        // Slide-in animation observer
+        var slideEls = document.querySelectorAll('.v2-slide-left, .v2-slide-right');
+        if (slideEls.length) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            slideEls.forEach(function(el) { obs.observe(el); });
+        }
+
+        // Form validation
         window.formValidation.attachLiveValidation('pf-name', window.formValidation.validateName);
         window.formValidation.attachLiveValidation('pf-phone', window.formValidation.validatePhone);
         var form = document.getElementById('pf-form');
