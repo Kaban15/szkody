@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
@@ -91,56 +91,56 @@
 <body class="font-body text-text bg-bg">
 
     <!-- Nav -->
-    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-solid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
-                <a href="/"><span class="text-gold font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
+                <a href="/"><span class="text-v2-text font-heading text-xl lg:text-2xl font-bold">Odszkodowania</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="../uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm">Usługi</a>
-                    <a href="../jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Jak działamy</a>
-                    <a href="../kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kalkulator</a>
-                    <a href="../sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm">Sukcesy</a>
+                    <a href="../uslugi.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm">Usługi</a>
+                    <a href="../jak-dzialamy.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm">Jak działamy</a>
+                    <a href="../kalkulator.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm">Kalkulator</a>
+                    <a href="../sukcesy.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm">Sukcesy</a>
                     <a href="../blog/" class="text-gold transition-colors text-sm font-medium">Blog</a>
-                    <a href="../kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm">Kontakt</a>
+                    <a href="../kontakt.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
-                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2">
+                    <a href="tel:+48XXXXXXXXX" class="text-v2-cta hover:text-v2-cta-hover transition-colors text-sm font-medium flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4"></i> +48 XXX XXX XXX
                     </a>
-                    <a href="../index.html#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
+                    <a href="../index.html#quiz" class="bg-v2-cta hover:bg-v2-cta-hover text-white px-5 py-2 rounded text-sm font-semibold transition-colors">Bezpłatna konsultacja</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-v2-text p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile menu overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-lg flex items-center justify-center">
+        <button class="absolute top-4 right-4 text-v2-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="../uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Usługi</a>
-            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Jak działamy</a>
-            <a href="../kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kalkulator</a>
-            <a href="../sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Sukcesy</a>
-            <a href="../blog/" class="block text-2xl font-heading text-gold transition-colors">Blog</a>
-            <a href="../kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors">Kontakt</a>
+            <a href="../uslugi.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors">Usługi</a>
+            <a href="../jak-dzialamy.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors">Jak działamy</a>
+            <a href="../kalkulator.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors">Kalkulator</a>
+            <a href="../sukcesy.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors">Sukcesy</a>
+            <a href="../blog/" class="block text-2xl font-heading text-v2-cta transition-colors">Blog</a>
+            <a href="../kontakt.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors">Kontakt</a>
             <div class="pt-4">
-                <a href="../index.html#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
+                <a href="../index.html#quiz" class="inline-block bg-v2-cta hover:bg-v2-cta-hover text-white px-8 py-3 rounded text-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
             </div>
-            <a href="tel:+48XXXXXXXXX" class="block text-gold text-lg font-medium pt-2">
+            <a href="tel:+48XXXXXXXXX" class="block text-v2-cta text-lg font-medium pt-2">
                 <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>+48 XXX XXX XXX
             </a>
         </div>
     </div>
 
     <!-- Mobile sticky bottom bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
-        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-v2-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
+        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-v2-cta text-white text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
-        <a href="../index.html#quiz" class="flex-1 border border-gold text-gold text-center py-3 rounded font-semibold text-sm">Bezpłatna wycena</a>
+        <a href="../index.html#quiz" class="flex-1 border border-v2-cta text-v2-cta text-center py-3 rounded font-semibold text-sm">Bezpłatna wycena</a>
     </div>
 
     <main class="pt-20">
@@ -179,11 +179,11 @@
                 <nav class="bg-surface border border-line/50 rounded-lg p-6 mb-12">
                     <h2 class="font-heading text-lg font-bold text-text mb-4">Spis treści</h2>
                     <ul class="space-y-2">
-                        <li><a href="#czym-jest-wypadek" class="text-gold hover:text-gold-light transition-colors text-sm">Czym jest wypadek przy pracy?</a></li>
-                        <li><a href="#krok-1-zabezpiecz" class="text-gold hover:text-gold-light transition-colors text-sm">Krok 1: Zabezpiecz miejsce i zgłoś zdarzenie</a></li>
-                        <li><a href="#krok-2-protokol" class="text-gold hover:text-gold-light transition-colors text-sm">Krok 2: Dokumentacja i protokół powypadkowy</a></li>
-                        <li><a href="#krok-3-zus" class="text-gold hover:text-gold-light transition-colors text-sm">Krok 3: Zgłoszenie do ZUS i orzeczenie lekarskie</a></li>
-                        <li><a href="#dodatkowe-roszczenia" class="text-gold hover:text-gold-light transition-colors text-sm">Dodatkowe roszczenia poza ZUS</a></li>
+                        <li><a href="#czym-jest-wypadek" class="text-v2-cta hover:text-v2-cta-hover transition-colors text-sm">Czym jest wypadek przy pracy?</a></li>
+                        <li><a href="#krok-1-zabezpiecz" class="text-v2-cta hover:text-v2-cta-hover transition-colors text-sm">Krok 1: Zabezpiecz miejsce i zgłoś zdarzenie</a></li>
+                        <li><a href="#krok-2-protokol" class="text-v2-cta hover:text-v2-cta-hover transition-colors text-sm">Krok 2: Dokumentacja i protokół powypadkowy</a></li>
+                        <li><a href="#krok-3-zus" class="text-v2-cta hover:text-v2-cta-hover transition-colors text-sm">Krok 3: Zgłoszenie do ZUS i orzeczenie lekarskie</a></li>
+                        <li><a href="#dodatkowe-roszczenia" class="text-v2-cta hover:text-v2-cta-hover transition-colors text-sm">Dodatkowe roszczenia poza ZUS</a></li>
                     </ul>
                 </nav>
 
@@ -214,7 +214,7 @@
                     <h2 id="dodatkowe-roszczenia" class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4 mt-12">Dodatkowe roszczenia poza ZUS</h2>
                     <p class="text-muted text-lg mb-6 leading-relaxed">Świadczenia z ZUS to nie wszystko. Jeśli do wypadku doszło z winy pracodawcy — np. wskutek zaniedbania przepisów BHP, braku właściwych zabezpieczeń maszyn lub zaniechania szkolenia pracowników — masz prawo dochodzić <strong class="text-text">dodatkowego odszkodowania od pracodawcy na drodze cywilnej</strong>. Podstawą prawną jest art. 415 Kodeksu cywilnego (odpowiedzialność na zasadzie winy) lub art. 435 KC (odpowiedzialność na zasadzie ryzyka dla przedsiębiorstw wprawianych w ruch siłami przyrody, jak zakłady przemysłowe).</p>
                     <p class="text-muted text-lg mb-6 leading-relaxed">W ramach roszczenia cywilnego możesz ubiegać się o: odszkodowanie za szkodę majątkową (koszty leczenia, rehabilitacji, opieki, utracone zarobki), zadośćuczynienie za doznaną krzywdę i cierpienie fizyczne oraz rentę wyrównawczą — jeśli wypadek trwale obniżył Twoją zdolność do pracy i zarobkowania. Kwoty uzyskiwane od pracodawcy mogą wielokrotnie przewyższać wypłatę z ZUS.</p>
-                    <p class="text-muted text-lg mb-6 leading-relaxed">Postępowanie cywilne bywa skomplikowane — wymaga zebrania dokumentacji medycznej, wyceny szkody i niejednokrotnie opinii biegłego sądowego. Specjaliści z <a href="../odszkodowania-wypadki-przy-pracy.html" class="text-gold hover:text-gold-light transition-colors underline">działu odszkodowań za wypadki przy pracy</a> mogą przeprowadzić Cię przez cały ten proces — od analizy protokołu powypadkowego aż po finalne rozliczenie z pracodawcą lub jego ubezpieczycielem.</p>
+                    <p class="text-muted text-lg mb-6 leading-relaxed">Postępowanie cywilne bywa skomplikowane — wymaga zebrania dokumentacji medycznej, wyceny szkody i niejednokrotnie opinii biegłego sądowego. Specjaliści z <a href="../odszkodowania-wypadki-przy-pracy.html" class="text-v2-cta hover:text-v2-cta-hover transition-colors underline">działu odszkodowań za wypadki przy pracy</a> mogą przeprowadzić Cię przez cały ten proces — od analizy protokołu powypadkowego aż po finalne rozliczenie z pracodawcą lub jego ubezpieczycielem.</p>
 
                 </article>
 
@@ -293,56 +293,56 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface border-t border-line/50 py-16">
+    <footer class="bg-v2-footer border-t border-white/10 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="col-span-2 lg:col-span-1">
-                    <span class="text-gold font-heading text-lg font-bold">Odszkodowania</span>
-                    <p class="text-muted text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
+                    <span class="text-white font-heading text-lg font-bold">Odszkodowania</span>
+                    <p class="text-white/60 text-sm mt-3">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
                 <div>
-                    <h4 class="text-text text-sm font-semibold mb-3">Usługi</h4>
+                    <h4 class="text-white text-sm font-semibold mb-3">Usługi</h4>
                     <div class="space-y-2">
-                        <a href="../odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki komunikacyjne</a>
-                        <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki przy pracy</a>
-                        <a href="../odszkodowania-bledy-medyczne.html" class="block text-muted text-sm hover:text-gold transition-colors">Błędy medyczne</a>
-                        <a href="../odszkodowania-smierc-bliskiej-osoby.html" class="block text-muted text-sm hover:text-gold transition-colors">Śmierć bliskiej osoby</a>
-                        <a href="../odszkodowania-wypadki-rolnicze.html" class="block text-muted text-sm hover:text-gold transition-colors">Wypadki w rolnictwie</a>
+                        <a href="../odszkodowania-komunikacyjne.html" class="block text-white/60 text-sm hover:text-white transition-colors">Wypadki komunikacyjne</a>
+                        <a href="../odszkodowania-wypadki-przy-pracy.html" class="block text-white/60 text-sm hover:text-white transition-colors">Wypadki przy pracy</a>
+                        <a href="../odszkodowania-bledy-medyczne.html" class="block text-white/60 text-sm hover:text-white transition-colors">Błędy medyczne</a>
+                        <a href="../odszkodowania-smierc-bliskiej-osoby.html" class="block text-white/60 text-sm hover:text-white transition-colors">Śmierć bliskiej osoby</a>
+                        <a href="../odszkodowania-wypadki-rolnicze.html" class="block text-white/60 text-sm hover:text-white transition-colors">Wypadki w rolnictwie</a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-text text-sm font-semibold mb-3">Informacje</h4>
+                    <h4 class="text-white text-sm font-semibold mb-3">Informacje</h4>
                     <div class="space-y-2">
-                        <a href="../jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors">Jak działamy</a>
-                        <a href="../sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors">Nasze sukcesy</a>
-                        <a href="../kalkulator.html" class="block text-muted text-sm hover:text-gold transition-colors">Kalkulator odszkodowań</a>
+                        <a href="../jak-dzialamy.html" class="block text-white/60 text-sm hover:text-white transition-colors">Jak działamy</a>
+                        <a href="../sukcesy.html" class="block text-white/60 text-sm hover:text-white transition-colors">Nasze sukcesy</a>
+                        <a href="../kalkulator.html" class="block text-white/60 text-sm hover:text-white transition-colors">Kalkulator odszkodowań</a>
                         <a href="../blog/" class="block text-gold text-sm">Blog</a>
-                        <a href="../polityka-prywatnosci.html" class="block text-muted text-sm hover:text-gold transition-colors">Polityka prywatności</a>
+                        <a href="../polityka-prywatnosci.html" class="block text-white/60 text-sm hover:text-white transition-colors">Polityka prywatności</a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-text text-sm font-semibold mb-3">Kontakt</h4>
+                    <h4 class="text-white text-sm font-semibold mb-3">Kontakt</h4>
                     <div class="space-y-2">
-                        <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
-                        <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
+                        <a href="tel:+48XXXXXXXXX" class="block text-white/60 text-sm hover:text-white transition-colors">+48 XXX XXX XXX</a>
+                        <a href="mailto:kontakt@example.pl" class="block text-white/60 text-sm hover:text-white transition-colors">kontakt@example.pl</a>
                         <p class="text-muted text-sm">Poznań, Polska</p>
                         <div class="flex gap-3 mt-2">
-                            <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                            <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                            <a href="#" class="text-white/60 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                            <a href="#" class="text-white/60 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-line/50 pt-8 text-center">
-                <p class="text-muted/50 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-white/40 text-xs">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-v2-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
+            <p class="text-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="../polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
                 <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-white transition-colors">Tylko niezbędne</button>
                 <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded text-sm font-semibold transition-colors">Akceptuję</button>

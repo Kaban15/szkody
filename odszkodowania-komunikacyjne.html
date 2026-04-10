@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="css/styles.css">
@@ -55,31 +55,31 @@
 <body class="font-body text-text bg-bg">
 
     <!-- NAWIGACJA -->
-    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-solid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/">
-                    <span class="text-gold font-heading text-xl lg:text-2xl font-bold" data-i18n="nav.logo">Odszkodowania</span>
+                    <span class="text-v2-text font-heading text-xl lg:text-2xl font-bold" data-i18n="nav.logo">Odszkodowania</span>
                 </a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="uslugi.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
-                    <a href="jak-dzialamy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-                    <a href="kalkulator.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
-                    <a href="sukcesy.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
-                    <a href="blog/" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.blog">Blog</a>
-                    <a href="kontakt.html" class="text-text/60 hover:text-gold transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
+                    <a href="uslugi.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm" data-i18n="nav.uslugi">Usługi</a>
+                    <a href="jak-dzialamy.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+                    <a href="kalkulator.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm" data-i18n="nav.kalkulator">Kalkulator</a>
+                    <a href="sukcesy.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm" data-i18n="nav.sukcesy">Sukcesy</a>
+                    <a href="blog/" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm" data-i18n="nav.blog">Blog</a>
+                    <a href="kontakt.html" class="text-v2-text/60 hover:text-v2-cta transition-colors text-sm" data-i18n="nav.kontakt">Kontakt</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
                     <div class="lang-switcher-mount"></div>
-                    <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors text-sm font-medium flex items-center gap-2" data-i18n="nav.phone">
+                    <a href="tel:+48XXXXXXXXX" class="text-v2-cta hover:text-v2-cta-hover transition-colors text-sm font-medium flex items-center gap-2" data-i18n="nav.phone">
                         <i data-lucide="phone" class="w-4 h-4"></i>
                         +48 XXX XXX XXX
                     </a>
-                    <a href="/#quiz" class="border border-cta text-cta hover:bg-cta hover:text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="nav.cta">
+                    <a href="/#quiz" class="bg-v2-cta hover:bg-v2-cta-hover text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="nav.cta">
                         Bezpłatna konsultacja
                     </a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-text p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
+                <button id="mobile-menu-btn" class="lg:hidden text-v2-text p-2" aria-label="Menu" data-i18n-aria="nav.menu_aria">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -87,23 +87,23 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-lg flex items-center justify-center">
-        <button class="absolute top-4 right-4 text-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-lg flex items-center justify-center">
+        <button class="absolute top-4 right-4 text-v2-text p-2" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.body.classList.remove('overflow-hidden'); document.querySelector('#mobile-menu-btn [data-lucide]').setAttribute('data-lucide','menu'); lucide.createIcons();" aria-label="Zamknij menu" data-i18n-aria="nav.close_menu_aria">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <div class="text-center space-y-6">
-            <a href="uslugi.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.uslugi">Usługi</a>
-            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
-            <a href="kalkulator.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
-            <a href="sukcesy.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
-            <a href="blog/" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.blog">Blog</a>
-            <a href="kontakt.html" class="block text-2xl font-heading text-text hover:text-gold transition-colors" data-i18n="nav.kontakt">Kontakt</a>
+            <a href="uslugi.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors" data-i18n="nav.uslugi">Usługi</a>
+            <a href="jak-dzialamy.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors" data-i18n="nav.jak_dzialamy">Jak działamy</a>
+            <a href="kalkulator.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors" data-i18n="nav.kalkulator">Kalkulator</a>
+            <a href="sukcesy.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors" data-i18n="nav.sukcesy">Sukcesy</a>
+            <a href="blog/" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors" data-i18n="nav.blog">Blog</a>
+            <a href="kontakt.html" class="block text-2xl font-heading text-v2-text hover:text-v2-cta transition-colors" data-i18n="nav.kontakt">Kontakt</a>
             <div class="pt-4">
-                <a href="/#quiz" class="inline-block border border-cta text-cta hover:bg-cta hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
+                <a href="/#quiz" class="inline-block bg-v2-cta hover:bg-v2-cta-hover text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors" data-i18n="nav.cta_mobile">
                     Bezpłatna konsultacja
                 </a>
             </div>
-            <a href="tel:+48XXXXXXXXX" class="block text-gold text-lg font-medium pt-2" data-i18n="nav.phone_mobile">
+            <a href="tel:+48XXXXXXXXX" class="block text-v2-cta text-lg font-medium pt-2" data-i18n="nav.phone_mobile">
                 <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>+48 XXX XXX XXX
             </a>
             <div class="lang-switcher-mount mobile pt-4 flex justify-center"></div>
@@ -111,11 +111,11 @@
     </div>
 
     <!-- Mobile Sticky Bottom Bar -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-bg border-t border-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
-        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-gold text-bg text-center py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
+    <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-v2-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
+        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-v2-cta text-white text-center py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
-        <a href="/#quiz" class="flex-1 border border-gold text-gold text-center py-3 rounded-lg font-semibold text-sm" data-i18n="sticky.quote">
+        <a href="/#quiz" class="flex-1 border border-v2-cta text-v2-cta text-center py-3 rounded-lg font-semibold text-sm" data-i18n="sticky.quote">
             Bezpłatna wycena
         </a>
     </div>
@@ -223,68 +223,68 @@
         </section>
 
         <!-- Footer CTA + Footer -->
-        <section class="bg-bg py-20 lg:py-32 text-center">
+        <section class="bg-v2-footer py-20 lg:py-32 text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="font-heading text-4xl lg:text-5xl text-text font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
+                <h2 class="font-heading text-4xl lg:text-5xl text-white font-bold mb-8" data-i18n="cta.title">Miałeś wypadek? Porozmawiajmy.</h2>
                 <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow text-lg px-8 py-4 rounded-lg font-semibold transition-colors mb-6 hover:shadow-lg hover:shadow-cta/30" data-i18n="cta.button">
                     Bezpłatna konsultacja
                 </a>
-                <p class="text-muted" data-i18n="cta.phone_prefix">
-                    lub zadzwoń: <a href="tel:+48XXXXXXXXX" class="text-gold hover:text-gold-light transition-colors font-medium">+48 XXX XXX XXX</a>
+                <p class="text-white/60" data-i18n="cta.phone_prefix">
+                    lub zadzwoń: <a href="tel:+48XXXXXXXXX" class="text-v2-cta hover:text-v2-cta-hover transition-colors font-medium">+48 XXX XXX XXX</a>
                 </p>
 
-                <div class="border-t border-line/50 mt-16 pt-8">
+                <div class="border-t border-white/10 mt-16 pt-8">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-left mb-8">
                         <div>
-                            <span class="text-gold font-heading text-lg font-bold" data-i18n="nav.logo">Odszkodowania</span>
-                            <p class="text-muted text-sm mt-3" data-i18n="footer.desc">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
+                            <span class="text-white font-heading text-lg font-bold" data-i18n="nav.logo">Odszkodowania</span>
+                            <p class="text-white/60 text-sm mt-3" data-i18n="footer.desc">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                         </div>
                         <div>
-                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
+                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.services_title">Usługi</h4>
                             <div class="space-y-2">
-                                <a href="odszkodowania-komunikacyjne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service1">Wypadki komunikacyjne</a>
-                                <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service2">Wypadki przy pracy</a>
-                                <a href="odszkodowania-bledy-medyczne.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service3">Błędy medyczne</a>
-                                <a href="odszkodowania-smierc-bliskiej-osoby.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service4">Śmierć bliskiej osoby</a>
-                                <a href="odszkodowania-wypadki-rolnicze.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.service5">Wypadki w rolnictwie</a>
+                                <a href="odszkodowania-komunikacyjne.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.service1">Wypadki komunikacyjne</a>
+                                <a href="odszkodowania-wypadki-przy-pracy.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.service2">Wypadki przy pracy</a>
+                                <a href="odszkodowania-bledy-medyczne.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.service3">Błędy medyczne</a>
+                                <a href="odszkodowania-smierc-bliskiej-osoby.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.service4">Śmierć bliskiej osoby</a>
+                                <a href="odszkodowania-wypadki-rolnicze.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.service5">Wypadki w rolnictwie</a>
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
+                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.info_title">Informacje</h4>
                             <div class="space-y-2">
-                                <a href="jak-dzialamy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info1">Jak działamy</a>
-                                <a href="sukcesy.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info2">Nasze sukcesy</a>
-                                <a href="kalkulator.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info3">Kalkulator odszkodowań</a>
-                                <a href="blog/" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info4">Blog</a>
-                                <a href="polityka-prywatnosci.html" class="block text-muted text-sm hover:text-gold transition-colors" data-i18n="footer.info5">Polityka prywatności</a>
+                                <a href="jak-dzialamy.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.info1">Jak działamy</a>
+                                <a href="sukcesy.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.info2">Nasze sukcesy</a>
+                                <a href="kalkulator.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.info3">Kalkulator odszkodowań</a>
+                                <a href="blog/" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.info4">Blog</a>
+                                <a href="polityka-prywatnosci.html" class="block text-white/60 text-sm hover:text-white transition-colors" data-i18n="footer.info5">Polityka prywatności</a>
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-text text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
+                            <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
                             <div class="space-y-2">
-                                <a href="tel:+48XXXXXXXXX" class="block text-muted text-sm hover:text-gold transition-colors">+48 XXX XXX XXX</a>
-                                <a href="mailto:kontakt@example.pl" class="block text-muted text-sm hover:text-gold transition-colors">kontakt@example.pl</a>
-                                <p class="text-muted text-sm" data-i18n="footer.address">Poznań, Polska</p>
+                                <a href="tel:+48XXXXXXXXX" class="block text-white/60 text-sm hover:text-white transition-colors">+48 XXX XXX XXX</a>
+                                <a href="mailto:kontakt@example.pl" class="block text-white/60 text-sm hover:text-white transition-colors">kontakt@example.pl</a>
+                                <p class="text-white/60 text-sm" data-i18n="footer.address">Poznań, Polska</p>
                                 <div class="flex gap-3 mt-2">
-                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="Facebook" data-i18n-aria="footer.facebook_aria"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                                    <a href="#" class="text-muted hover:text-gold transition-colors" aria-label="LinkedIn" data-i18n-aria="footer.linkedin_aria"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                                    <a href="#" class="text-white/60 hover:text-white transition-colors" aria-label="Facebook" data-i18n-aria="footer.facebook_aria"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                                    <a href="#" class="text-white/60 hover:text-white transition-colors" aria-label="LinkedIn" data-i18n-aria="footer.linkedin_aria"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <p class="text-muted/50 text-xs" data-i18n="footer.copyright">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
+                    <p class="text-white/40 text-xs" data-i18n="footer.copyright">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line hidden">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-v2-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-gold underline">Polityka prywatności</a></p>
+            <p class="text-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-line text-muted px-4 py-2 rounded text-sm hover:text-text transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
-                <button id="cookie-accept" class="bg-cta hover:bg-cta-hover text-white cta-glow px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
+                <button id="cookie-reject" class="border border-v2-line text-v2-muted px-4 py-2 rounded text-sm hover:text-v2-text transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
+                <button id="cookie-accept" class="bg-v2-cta hover:bg-v2-cta-hover text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
     </div>
