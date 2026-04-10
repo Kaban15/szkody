@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!nav) return;
 
+    // If nav starts with nav-solid (subpages), keep it permanently
+    const navStartsSolid = nav.classList.contains('nav-solid');
+
     // Scroll-to-top button (created dynamically — works on all pages)
     const SCROLL_THRESHOLD = 400;
     const scrollBtn = document.createElement('button');
@@ -30,8 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollY = window.scrollY;
         const heroHeight = window.innerHeight * 0.5;
 
-        // Solid after scrolling past half the viewport
-        nav.classList.toggle('nav-solid', scrollY > heroHeight);
+        // Solid after scrolling past half the viewport (skip if nav starts solid — subpages)
+        if (!navStartsSolid) {
+            nav.classList.toggle('nav-solid', scrollY > heroHeight);
+        }
 
         // Hide/show on scroll direction (only after hero)
         if (scrollY > heroHeight) {
