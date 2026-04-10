@@ -330,3 +330,19 @@ body.v2-theme #nav-logo {
 body.v2-theme #main-nav.nav-solid #nav-logo {
     font-size: 1.25rem;
 }
+
+/* V2 subpage nav — dark background (matches main page scrolled state) */
+body.v2-theme.v2-subpage #main-nav.nav-solid {
+    background-color: rgba(26, 26, 46, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.v2-theme.v2-subpage #main-nav.nav-solid a,
+body.v2-theme.v2-subpage #main-nav.nav-solid button,
+body.v2-theme.v2-subpage #main-nav.nav-solid #nav-logo {
+    color: #FFFFFF !important;
+}
+
+body.v2-theme.v2-subpage #main-nav.nav-solid a:hover {
+    color: #dc2626 !important;
+}
