@@ -120,103 +120,184 @@
         </a>
     </div>
 
-    <main class="pt-16 lg:pt-20">
-        <!-- Breadcrumb -->
-        <div class="bg-bg border-b border-line/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                <nav class="text-sm text-muted">
-                    <a href="/" class="hover:text-gold transition-colors" data-i18n="medyczne.breadcrumb_home">Strona główna</a>
-                    <span class="mx-2">›</span>
-                    <span class="text-text/70" data-i18n="medyczne.breadcrumb_current">Błędy medyczne</span>
+    <main>
+        <!-- BREADCRUMB BAR -->
+        <section class="bg-v2-cta mt-16 lg:mt-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                <nav class="text-white/80 text-sm flex items-center gap-2">
+                    <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+                    <span>›</span>
+                    <span class="text-white font-medium">Błędy medyczne</span>
                 </nav>
-            </div>
-        </div>
-
-        <!-- Hero -->
-        <section class="bg-bg py-12 lg:py-16">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-4xl lg:text-6xl font-bold text-text mb-4 leading-tight" data-i18n="medyczne.hero_title">Odszkodowania za błędy medyczne</h1>
-                <p class="text-muted text-lg max-w-2xl mx-auto mb-8" data-i18n="medyczne.hero_subtitle">Szpitale i ubezpieczyciele medyczni minimalizują swoje wypłaty. Pomagamy uzyskać pełne odszkodowanie za błędną diagnozę, zakażenia szpitalne i błędy podczas operacji.</p>
-                <a href="/#quiz" class="inline-block bg-cta hover:bg-cta-hover text-white cta-glow px-8 py-4 rounded-lg font-semibold transition-colors hover:shadow-lg hover:shadow-cta/30" data-i18n="medyczne.hero_cta">Bezpłatna analiza sprawy →</a>
             </div>
         </section>
 
-        <!-- Content -->
-        <section class="bg-bg py-8 lg:py-16">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Komu pomagamy -->
-                <div class="fade-in mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4" data-i18n="medyczne.who_title">Komu pomagamy?</h2>
-                    <p class="text-muted text-lg" data-i18n="medyczne.who_text">Specjalizujemy się w sprawach o odszkodowanie za błędy medyczne na terenie całej Polski. Pomagamy pacjentom poszkodowanym przez błędną diagnozę, nieprawidłowo przeprowadzone zabiegi i operacje, zakażenia szpitalne (w tym MRSA i sepsa) oraz nieodpowiednie leczenie farmakologiczne.</p>
-                </div>
-
-                <!-- Co możesz uzyskać -->
-                <div class="fade-in mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6" data-i18n="medyczne.benefits_title">Co możesz uzyskać?</h2>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-text" data-i18n="medyczne.benefit1">Zadośćuczynienie za ból, cierpienie i pogorszenie jakości życia</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-text" data-i18n="medyczne.benefit2">Zwrot kosztów dodatkowego leczenia i rehabilitacji</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-text" data-i18n="medyczne.benefit3">Odszkodowanie za utracone zarobki w czasie leczenia</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-text" data-i18n="medyczne.benefit4">Renta na przyszłość przy trwałym uszczerbku na zdrowiu</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i>
-                            <span class="text-text" data-i18n="medyczne.benefit5">Zwrot kosztów opieki osób trzecich</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Mini case study -->
-                <div class="fade-in bg-surface-light rounded-xl shadow-sm p-6 mb-12">
-                    <h3 class="font-heading text-lg font-bold text-text mb-4" data-i18n="medyczne.case_title">Przykładowa sprawa</h3>
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                        <div>
-                            <p class="text-muted text-sm mb-1" data-i18n="medyczne.case_offered_label">Propozycja szpitala</p>
-                            <p class="text-muted line-through text-xl font-bold" data-i18n="medyczne.case_offered_amount">12 000 zł</p>
-                        </div>
-                        <div class="sm:text-right">
-                            <p class="text-muted text-sm mb-1" data-i18n="medyczne.case_obtained_label">Uzyskaliśmy</p>
-                            <p class="text-gold text-2xl lg:text-3xl font-bold font-heading" data-i18n="medyczne.case_obtained_amount">95 000 zł</p>
-                            <p class="text-gold text-sm font-semibold" data-i18n="medyczne.case_multiplier">7.9x więcej</p>
+        <!-- HERO -->
+        <section class="bg-v2-bg py-16 lg:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div>
+                        <p class="text-v2-cta text-sm font-semibold uppercase tracking-wider mb-4">Błędy medyczne</p>
+                        <h1 class="text-v2-text text-3xl lg:text-5xl font-bold leading-tight mb-6">Doświadczyłeś błędu medycznego?</h1>
+                        <p class="text-v2-muted text-lg mb-8">Szpitale i ubezpieczyciele medyczni minimalizują swoje wypłaty. Pomagamy uzyskać pełne odszkodowanie za błędną diagnozę, zakażenia szpitalne i błędy podczas operacji. Pomagamy pacjentom poszkodowanym przez nieprawidłowo przeprowadzone zabiegi oraz nieodpowiednie leczenie farmakologiczne.</p>
+                        <a href="#page-contact" class="inline-block bg-v2-cta hover:bg-v2-cta-hover text-white px-8 py-4 rounded-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <div class="bg-gray-200 rounded-xl aspect-[4/3] flex items-center justify-center">
+                            <span class="text-gray-400 text-4xl font-bold">FOTO</span>
                         </div>
                     </div>
-                    <p class="text-muted text-sm" data-i18n="medyczne.case_desc">Pacjent zakażony w szpitalu bakterią gronkowca otrzymał ugodową propozycję 12 tys. zł. Nasz zespół udowodnił zaniedbania placówki i wywalczył 7,9-krotnie wyższe odszkodowanie.</p>
                 </div>
+            </div>
+        </section>
 
-                <!-- FAQ -->
-                <div class="fade-in mb-12">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-6" data-i18n="medyczne.faq_title">Najczęstsze pytania</h2>
-                    <div class="space-y-3">
-                        <div class="bg-surface-light border border-line rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
-                                <span data-i18n="medyczne.faq1_q">Jak udowodnić, że lekarz popełnił błąd?</span>
-                                <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm" data-i18n="medyczne.faq1_a">W sprawach o błąd medyczny kluczowa jest dokumentacja medyczna i opinia biegłego lekarza. Nasz zespół współpracuje ze specjalistami z różnych dziedzin medycyny, którzy oceniają, czy postępowanie personelu było zgodne ze sztuką lekarską. Zajmujemy się kompletowaniem dokumentacji — nie musisz tego robić sam.</p>
+        <!-- CO MOŻESZ UZYSKAĆ -->
+        <section class="bg-v2-surface py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold mb-8">Co możesz uzyskać?</h2>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
+                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i data-lucide="heart" class="w-5 h-5 text-v2-cta"></i>
+                        </div>
+                        <div>
+                            <p class="text-v2-text font-semibold">Zadośćuczynienie za ból, cierpienie i pogorszenie jakości życia</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
+                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i data-lucide="stethoscope" class="w-5 h-5 text-v2-cta"></i>
+                        </div>
+                        <div>
+                            <p class="text-v2-text font-semibold">Zwrot kosztów dodatkowego leczenia i rehabilitacji</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
+                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i data-lucide="wallet" class="w-5 h-5 text-v2-cta"></i>
+                        </div>
+                        <div>
+                            <p class="text-v2-text font-semibold">Odszkodowanie za utracone zarobki w czasie leczenia</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
+                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-v2-cta"></i>
+                        </div>
+                        <div>
+                            <p class="text-v2-text font-semibold">Renta na przyszłość przy trwałym uszczerbku na zdrowiu</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line sm:col-span-2 sm:max-w-[calc(50%-0.75rem)]">
+                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i data-lucide="users" class="w-5 h-5 text-v2-cta"></i>
+                        </div>
+                        <div>
+                            <p class="text-v2-text font-semibold">Zwrot kosztów opieki osób trzecich</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MINI CASE STUDY -->
+        <section class="bg-v2-text py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div>
+                        <p class="text-v2-cta text-sm font-semibold uppercase tracking-wider mb-4">Przykładowa sprawa</p>
+                        <h2 class="text-white text-2xl lg:text-3xl font-bold mb-4">Zakażenie szpitalne gronkowcem</h2>
+                        <p class="text-white/70 mb-6">Pacjent zakażony w szpitalu bakterią gronkowca otrzymał ugodową propozycję 12 tys. zł. Nasz zespół udowodnił zaniedbania placówki i wywalczył 7,9-krotnie wyższe odszkodowanie.</p>
+                    </div>
+                    <div class="mt-8 lg:mt-0 flex items-center gap-8">
+                        <div class="text-center">
+                            <p class="text-white/50 text-sm mb-1">Propozycja szpitala</p>
+                            <p class="text-white/60 line-through text-2xl font-bold">12 000 zł</p>
+                        </div>
+                        <div class="text-4xl text-v2-cta font-bold">→</div>
+                        <div class="text-center">
+                            <p class="text-white/50 text-sm mb-1">Uzyskaliśmy</p>
+                            <p class="text-v2-cta text-3xl lg:text-4xl font-bold">95 000 zł</p>
+                            <p class="text-v2-cta text-sm font-semibold">7.9x więcej</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="bg-v2-bg py-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold mb-8">Najczęściej zadawane pytania</h2>
+                <div class="space-y-4">
+                    <div class="border border-v2-line rounded-lg">
+                        <button class="faq-toggle w-full flex justify-between items-center p-4 text-left text-v2-text font-semibold hover:text-v2-cta transition-colors" aria-expanded="false" aria-controls="faq-1">
+                            Jak udowodnić, że lekarz popełnił błąd?
+                            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i>
+                        </button>
+                        <div id="faq-1" class="faq-answer" role="region">
+                            <p class="px-4 pb-4 text-v2-muted">W sprawach o błąd medyczny kluczowa jest dokumentacja medyczna i opinia biegłego lekarza. Nasz zespół współpracuje ze specjalistami z różnych dziedzin medycyny, którzy oceniają, czy postępowanie personelu było zgodne ze sztuką lekarską. Zajmujemy się kompletowaniem dokumentacji — nie musisz tego robić sam.</p>
+                        </div>
+                    </div>
+                    <div class="border border-v2-line rounded-lg">
+                        <button class="faq-toggle w-full flex justify-between items-center p-4 text-left text-v2-text font-semibold hover:text-v2-cta transition-colors" aria-expanded="false" aria-controls="faq-2">
+                            Ile czasu mam na dochodzenie odszkodowania za błąd medyczny?
+                            <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i>
+                        </button>
+                        <div id="faq-2" class="faq-answer" role="region">
+                            <p class="px-4 pb-4 text-v2-muted">Termin przedawnienia w sprawach medycznych wynosi co do zasady 3 lata od dnia, w którym poszkodowany dowiedział się o szkodzie i osobie obowiązanej do jej naprawienia. W przypadku czynu niedozwolonego będącego przestępstwem termin wynosi 20 lat. Nie zwlekaj — skontaktuj się z nami jak najszybciej.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section id="page-contact" class="bg-v2-surface py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                    <div class="mb-10 lg:mb-0">
+                        <h2 class="text-v2-text text-2xl lg:text-3xl font-bold mb-4">Porozmawiajmy o Twojej sprawie</h2>
+                        <p class="text-v2-muted mb-6">Bezpłatnie przeanalizujemy Twój przypadek.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-v2-cta"></i>
+                                <a href="tel:+48XXXXXXXXX" class="text-v2-text font-semibold hover:text-v2-cta transition-colors">+48 XXX XXX XXX</a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-v2-cta"></i>
+                                <a href="mailto:kontakt@example.pl" class="text-v2-text font-semibold hover:text-v2-cta transition-colors">kontakt@example.pl</a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="clock" class="w-5 h-5 text-v2-cta"></i>
+                                <span class="text-v2-muted">Pon–Pt: 8:00–18:00, Sob: 9:00–14:00</span>
                             </div>
                         </div>
-                        <div class="bg-surface-light border border-line rounded-lg overflow-hidden">
-                            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold text-text">
-                                <span data-i18n="medyczne.faq2_q">Ile czasu mam na dochodzenie odszkodowania za błąd medyczny?</span>
-                                <i data-lucide="chevron-down" class="w-5 h-5 text-gold shrink-0 transition-transform"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p class="px-5 pb-5 text-muted text-sm" data-i18n="medyczne.faq2_a">Termin przedawnienia w sprawach medycznych wynosi co do zasady 3 lata od dnia, w którym poszkodowany dowiedział się o szkodzie i osobie obowiązanej do jej naprawienia. W przypadku czynu niedozwolonego będącego przestępstwem termin wynosi 20 lat. Nie zwlekaj — skontaktuj się z nami jak najszybciej.</p>
+                    </div>
+                    <div>
+                        <form id="page-form" novalidate class="space-y-4">
+                            <input type="text" id="pf-name" placeholder="Imię i nazwisko *" required minlength="2" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
+                            <p class="text-red-500 text-xs mt-1 hidden" id="pf-name-error">Podaj swoje imię</p>
+                            <input type="tel" id="pf-phone" placeholder="Numer telefonu *" required class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
+                            <p class="text-red-500 text-xs mt-1 hidden" id="pf-phone-error">Podaj prawidłowy numer</p>
+                            <input type="email" id="pf-email" placeholder="E-mail" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
+                            <p class="text-red-500 text-xs mt-1 hidden" id="pf-email-error">Podaj prawidłowy email</p>
+                            <textarea placeholder="Opisz swoją sprawę" rows="4" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors resize-none"></textarea>
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" id="pf-consent" required class="mt-1 w-4 h-4 accent-v2-cta">
+                                <label for="pf-consent" class="text-v2-muted text-xs">Wyrażam zgodę na przetwarzanie danych osobowych. <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *</label>
                             </div>
-                        </div>
+                            <button type="submit" class="w-full bg-v2-cta hover:bg-v2-cta-hover text-white py-3 rounded-lg font-semibold transition-colors">Wyślij</button>
+                        </form>
+                        <template id="pf-success">
+                            <div class="text-center py-8">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
+                                </div>
+                                <h3 class="text-v2-text text-2xl font-bold mb-2">Dziękujemy!</h3>
+                                <p class="text-v2-muted">Skontaktujemy się wkrótce.</p>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -289,11 +370,36 @@
         </div>
     </div>
 
+    <script src="js/form-validation.js"></script>
     <script src="js/cookie-consent.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/navigation.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+    lucide.createIcons();
+    (function() {
+        'use strict';
+        const form = document.getElementById('page-form');
+        if (!form || !window.formValidation) return;
+        const fv = window.formValidation;
+        fv.attachLiveValidation('pf-name', 'pf-name-error', fv.validateName);
+        fv.attachLiveValidation('pf-phone', 'pf-phone-error', fv.validatePhone);
+        fv.attachLiveValidation('pf-email', 'pf-email-error', fv.validateEmail);
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nameOk = fv.validateName(document.getElementById('pf-name').value);
+            const phoneOk = fv.validatePhone(document.getElementById('pf-phone').value);
+            const emailEl = document.getElementById('pf-email');
+            const emailOk = !emailEl.value || fv.validateEmail(emailEl.value);
+            const consent = document.getElementById('pf-consent').checked;
+            if (!nameOk) fv.showError('pf-name', 'pf-name-error');
+            if (!phoneOk) fv.showError('pf-phone', 'pf-phone-error');
+            if (!emailOk) fv.showError('pf-email', 'pf-email-error');
+            if (!nameOk || !phoneOk || !emailOk || !consent) return;
+            fv.submitForm(form, 'pf-success');
+        });
+    })();
+    </script>
 </body>
 </html>

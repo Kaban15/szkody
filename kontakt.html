@@ -124,134 +124,138 @@
         </a>
     </div>
 
-    <main class="pt-16 lg:pt-20">
-        <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-line/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                <nav class="text-sm text-muted">
-                    <a href="/" class="hover:text-gold transition-colors" data-i18n="kontakt.breadcrumb_home">Strona główna</a>
-                    <span class="mx-2">›</span>
-                    <span class="text-text" data-i18n="kontakt.breadcrumb_current">Kontakt</span>
+    <main>
+        <!-- BREADCRUMB BAR -->
+        <section class="bg-v2-cta mt-16 lg:mt-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                <nav class="text-white/80 text-sm flex items-center gap-2">
+                    <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+                    <span>›</span>
+                    <span class="text-white font-medium">Kontakt</span>
                 </nav>
-            </div>
-        </div>
-
-        <!-- Hero -->
-        <section class="bg-bg py-12 lg:py-16 border-b border-line/50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-3xl lg:text-4xl font-bold text-text mb-4" data-i18n="kontakt.hero_title">Skontaktuj się z nami</h1>
-                <p class="text-muted max-w-2xl mx-auto" data-i18n="kontakt.hero_subtitle">Bezpłatna konsultacja. Bez zobowiązań. Odpowiadamy w ciągu 30 minut w godzinach pracy.</p>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="py-12 lg:py-16 bg-bg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+        <!-- HERO -->
+        <section class="bg-v2-bg py-16 lg:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-v2-text text-3xl lg:text-5xl font-bold leading-tight mb-6">Skontaktuj się z nami</h1>
+                <p class="text-v2-muted text-lg max-w-2xl mx-auto">Bezpłatna konsultacja. Bez zobowiązań. Odpowiadamy w ciągu 30 minut w godzinach pracy.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="bg-v2-surface py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12">
                     <!-- Left: Contact info -->
-                    <div class="mb-12 lg:mb-0">
-                        <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4" data-i18n="kontakt.info_title">Dane kontaktowe</h2>
-                        <p class="text-muted mb-8" data-i18n="kontakt.info_subtitle">Jesteśmy do Twojej dyspozycji. Zadzwoń, napisz lub wypełnij formularz — oddzwonimy najszybciej jak to możliwe.</p>
+                    <div class="mb-10 lg:mb-0">
+                        <h2 class="text-v2-text text-2xl lg:text-3xl font-bold mb-4">Dane kontaktowe</h2>
+                        <p class="text-v2-muted mb-8">Jesteśmy do Twojej dyspozycji. Zadzwoń, napisz lub wypełnij formularz — oddzwonimy najszybciej jak to możliwe.</p>
                         <div class="space-y-4">
-                            <a href="tel:+48XXXXXXXXX" class="flex items-center gap-4 text-v2-text hover:text-v2-cta transition-colors">
-                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
-                                    <i data-lucide="phone" class="w-5 h-5 text-gold"></i>
+                            <a href="tel:+48XXXXXXXXX" class="flex items-center gap-4 hover:text-v2-cta transition-colors">
+                                <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                                    <i data-lucide="phone" class="w-5 h-5 text-v2-cta"></i>
                                 </div>
                                 <div>
-                                    <p class="text-muted text-xs" data-i18n="kontakt.phone_label">Telefon</p>
-                                    <p class="font-semibold text-text">+48 XXX XXX XXX</p>
+                                    <p class="text-v2-muted text-xs">Telefon</p>
+                                    <p class="font-semibold text-v2-text">+48 XXX XXX XXX</p>
                                 </div>
                             </a>
-                            <a href="mailto:kontakt@example.pl" class="flex items-center gap-4 text-v2-text hover:text-v2-cta transition-colors">
-                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
-                                    <i data-lucide="mail" class="w-5 h-5 text-gold"></i>
+                            <a href="mailto:kontakt@example.pl" class="flex items-center gap-4 hover:text-v2-cta transition-colors">
+                                <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5 text-v2-cta"></i>
                                 </div>
                                 <div>
-                                    <p class="text-muted text-xs" data-i18n="kontakt.email_label">Email</p>
-                                    <p class="font-semibold text-text">kontakt@example.pl</p>
+                                    <p class="text-v2-muted text-xs">Email</p>
+                                    <p class="font-semibold text-v2-text">kontakt@example.pl</p>
                                 </div>
                             </a>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
-                                    <i data-lucide="map-pin" class="w-5 h-5 text-gold"></i>
+                                <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-v2-cta"></i>
                                 </div>
                                 <div>
-                                    <p class="text-muted text-xs" data-i18n="kontakt.office_label">Biuro</p>
-                                    <p class="font-semibold text-text" data-i18n="kontakt.office_value">Poznań • Obsługujemy całą Polskę</p>
+                                    <p class="text-v2-muted text-xs">Biuro</p>
+                                    <p class="font-semibold text-v2-text">Poznań &bull; Obsługujemy całą Polskę</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 border border-line rounded-xl flex items-center justify-center shrink-0">
-                                    <i data-lucide="clock" class="w-5 h-5 text-gold"></i>
+                                <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
+                                    <i data-lucide="clock" class="w-5 h-5 text-v2-cta"></i>
                                 </div>
                                 <div>
-                                    <p class="text-muted text-xs" data-i18n="kontakt.hours_label">Godziny pracy</p>
-                                    <p class="font-semibold text-text" data-i18n="kontakt.hours_value">Pn–Pt 8:00–18:00 • Sb 9:00–14:00</p>
+                                    <p class="text-v2-muted text-xs">Godziny pracy</p>
+                                    <p class="font-semibold text-v2-text">Pn–Pt 8:00–18:00 &bull; Sb 9:00–14:00</p>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Google Maps Embed -->
-                        <div class="mt-8 rounded-xl overflow-hidden h-48 border border-line">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2434.0!2d16.9!3d52.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPozna%C5%84!5e0!3m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokalizacja biura w Poznaniu"></iframe>
                         </div>
                     </div>
 
                     <!-- Right: Form -->
                     <div>
-                        <form id="contact-form" class="bg-surface-light border border-line rounded-xl p-6 sm:p-8" novalidate>
-                            <h2 class="font-heading text-xl font-bold text-text mb-6" data-i18n="kontakt.form_title">Napisz do nas</h2>
-                            <div class="space-y-4">
-                                <div>
-                                    <input type="text" id="contact-name" data-i18n-placeholder="kontakt.name_placeholder" placeholder="Imię *" required minlength="2"
-                                        class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
-                                    <p class="text-error text-xs mt-1 hidden" id="contact-name-error" data-i18n="kontakt.name_error">Podaj swoje imię (min. 2 znaki)</p>
-                                </div>
-                                <div>
-                                    <input type="tel" id="contact-phone" data-i18n-placeholder="kontakt.phone_placeholder" placeholder="Numer telefonu *" required
-                                        class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
-                                    <p class="text-error text-xs mt-1 hidden" id="contact-phone-error" data-i18n="kontakt.phone_error">Podaj prawidłowy numer telefonu</p>
-                                </div>
-                                <input type="email" id="contact-email" data-i18n-placeholder="kontakt.email_placeholder" placeholder="Email (opcjonalnie)"
-                                    class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
-                                <select id="contact-type" class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-colors">
-                                    <option value="" data-i18n="kontakt.type_default">Rodzaj sprawy (opcjonalnie)</option>
-                                    <option value="komunikacyjny" data-i18n="kontakt.type_car">Wypadek komunikacyjny</option>
-                                    <option value="praca" data-i18n="kontakt.type_work">Wypadek przy pracy</option>
-                                    <option value="medyczny" data-i18n="kontakt.type_medical">Błąd medyczny</option>
-                                    <option value="smierc" data-i18n="kontakt.type_death">Śmierć bliskiej osoby</option>
-                                    <option value="rolnictwo" data-i18n="kontakt.type_farm">Wypadek w rolnictwie</option>
-                                    <option value="inne" data-i18n="kontakt.type_other">Inne</option>
-                                </select>
-                                <textarea id="contact-message" data-i18n-placeholder="kontakt.message_placeholder" placeholder="Opisz swoją sytuację (opcjonalnie)" rows="4"
-                                    class="w-full px-4 py-3 rounded-xl bg-surface-light border border-line text-text placeholder-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 resize-none transition-colors"></textarea>
-                                <div class="flex items-start gap-2">
-                                    <input type="checkbox" id="contact-consent" required class="mt-1 w-4 h-4 accent-gold">
-                                    <label for="contact-consent" class="text-xs text-muted" data-i18n="kontakt.consent">
-                                        Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
-                                        <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *
-                                    </label>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <input type="checkbox" id="contact-marketing" class="mt-1 w-4 h-4 accent-gold">
-                                    <label for="contact-marketing" class="text-xs text-muted" data-i18n="kontakt.marketing">
-                                        Wyrażam zgodę na kontakt marketingowy (opcjonalne)
-                                    </label>
-                                </div>
+                        <form id="contact-form" class="space-y-4" novalidate>
+                            <h2 class="text-v2-text text-xl font-bold mb-4">Napisz do nas</h2>
+                            <div>
+                                <input type="text" id="contact-name" placeholder="Imię *" required minlength="2"
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="contact-name-error">Podaj swoje imię (min. 2 znaki)</p>
                             </div>
-                            <button type="submit" id="contact-submit" class="w-full mt-6 bg-cta hover:bg-cta-hover text-white cta-glow py-3 rounded-lg font-semibold transition-colors hover:shadow-lg hover:shadow-cta/30" data-i18n="kontakt.submit">
-                                Wyślij wiadomość →
+                            <div>
+                                <input type="tel" id="contact-phone" placeholder="Numer telefonu *" required
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="contact-phone-error">Podaj prawidłowy numer telefonu</p>
+                            </div>
+                            <input type="email" id="contact-email" placeholder="Email (opcjonalnie)"
+                                class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
+                            <select id="contact-type" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
+                                <option value="">Rodzaj sprawy (opcjonalnie)</option>
+                                <option value="komunikacyjny">Wypadek komunikacyjny</option>
+                                <option value="praca">Wypadek przy pracy</option>
+                                <option value="medyczny">Błąd medyczny</option>
+                                <option value="smierc">Śmierć bliskiej osoby</option>
+                                <option value="rolnictwo">Wypadek w rolnictwie</option>
+                                <option value="inne">Inne</option>
+                            </select>
+                            <textarea id="contact-message" placeholder="Opisz swoją sytuację (opcjonalnie)" rows="4"
+                                class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors resize-none"></textarea>
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" id="contact-consent" required class="mt-1 w-4 h-4 accent-v2-cta">
+                                <label for="contact-consent" class="text-v2-muted text-xs">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
+                                    <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *
+                                </label>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" id="contact-marketing" class="mt-1 w-4 h-4 accent-v2-cta">
+                                <label for="contact-marketing" class="text-v2-muted text-xs">
+                                    Wyrażam zgodę na kontakt marketingowy (opcjonalne)
+                                </label>
+                            </div>
+                            <button type="submit" id="contact-submit" class="w-full bg-v2-cta hover:bg-v2-cta-hover text-white py-3 rounded-lg font-semibold transition-colors">
+                                Wyślij wiadomość
                             </button>
                         </form>
                         <template id="contact-success-template">
                             <div class="text-center py-8">
-                                <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
                                 </div>
-                                <h3 class="text-text font-heading text-xl font-bold mb-2">Dziękujemy!</h3>
-                                <p class="text-text/60 text-sm">Skontaktujemy się z Tobą wkrótce.</p>
+                                <h3 class="text-v2-text text-xl font-bold mb-2">Dziękujemy!</h3>
+                                <p class="text-v2-muted text-sm">Skontaktujemy się z Tobą wkrótce.</p>
                             </div>
                         </template>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOOGLE MAPS -->
+        <section class="bg-v2-bg py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-v2-text text-2xl font-bold mb-6">Nasza lokalizacja</h2>
+                <div class="rounded-xl overflow-hidden h-64 border border-v2-line">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2434.0!2d16.9!3d52.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPozna%C5%84!5e0!3m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokalizacja biura w Poznaniu"></iframe>
                 </div>
             </div>
         </section>
