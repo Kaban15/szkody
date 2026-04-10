@@ -251,3 +251,53 @@ input[type="range"]::-moz-range-thumb {
         clip-path: none !important;
     }
 }
+
+/* === V2 Theme (Votum redesign — index.html only) === */
+
+body.v2-theme {
+    background: #FFFFFF;
+    color: #1a1a2e;
+}
+
+body.v2-theme #main-nav.nav-solid {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(229, 231, 235, 0.5);
+}
+
+/* V2 nav link colors — use !important to override Tailwind utility classes */
+body.v2-theme #main-nav.nav-solid a,
+body.v2-theme #main-nav.nav-solid button,
+body.v2-theme #main-nav.nav-solid #nav-logo {
+    color: #1a1a2e !important;
+}
+
+body.v2-theme #main-nav.nav-solid a:hover {
+    color: #dc2626 !important;
+}
+
+body.v2-theme #scroll-to-top {
+    background-color: #FFFFFF;
+    border-color: #e5e7eb;
+    color: #6b7280;
+}
+
+body.v2-theme #scroll-to-top:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+    color: #FFFFFF;
+}
+
+/* V2 form validation error border — override old orange cta token */
+body.v2-theme .border-cta {
+    border-color: #dc2626 !important;
+}
+
+/* V2 service card hover */
+.v2-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.v2-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
