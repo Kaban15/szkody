@@ -147,13 +147,7 @@
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                     <div class="flex items-center gap-3">
-                        <div class="flex items-center gap-1">
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
-                        </div>
+                        <span class="text-v2-cta text-2xl">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                         <span class="text-v2-text text-2xl font-bold">4.9/5</span>
                     </div>
                     <p class="text-v2-muted text-sm">na podstawie opinii w Google</p>
@@ -161,110 +155,303 @@
             </div>
         </section>
 
-        <!-- FEATURED TESTIMONIAL -->
+        <!-- AUTO-SCROLLING TESTIMONIALS -->
         <section class="bg-white py-16 lg:py-20">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-v2-surface rounded-xl p-8 lg:p-12 mb-12">
-                    <div class="text-v2-cta text-6xl leading-none mb-4 select-none">"</div>
-                    <blockquote class="text-v2-text text-xl lg:text-2xl italic leading-relaxed mb-8 max-w-3xl">
-                        Ubezpieczyciel oferował mi 12 000 zł i myślałam, że to wszystko co dostanę. Dzięki tej kancelarii uzyskałam 95 000 zł. Nie uwierzyłam, że to możliwe — ale możliwe jest.
-                    </blockquote>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold">AK</div>
-                        <div>
-                            <p class="text-v2-text font-semibold">Anna K.</p>
-                            <p class="text-v2-muted text-xs">Wypadek komunikacyjny · Poznań</p>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Heading with Google rating -->
+                <div class="text-center mb-12">
+                    <h2 class="text-v2-text text-2xl lg:text-4xl font-bold mb-4">Opinie naszych Klientow</h2>
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="flex items-center gap-1">
+                            <span class="text-v2-cta text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        </div>
+                        <span class="text-v2-text text-xl font-bold">4.9/5</span>
+                        <span class="text-v2-muted text-sm">na podstawie opinii w Google</span>
+                    </div>
+                </div>
+
+                <!-- 3-column scrolling grid (hidden on mobile, stacked static on mobile) -->
+                <div class="hidden lg:grid lg:grid-cols-3 gap-6">
+                    <!-- Column 1 — scrolls up -->
+                    <div class="v2-scroll-col h-[600px]">
+                        <div class="v2-scroll-up">
+                            <!-- Original cards -->
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Ubezpieczyciel oferował mi 12 000 zl i myslalam, ze to wszystko co dostane. Dzieki tej kancelarii uzyskalam 95 000 zl. Nie uwierzylam, ze to mozliwe — ale mozliwe jest."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">AK</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Anna K.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Wypadek przy pracy zniszczyl mi kregoslup. Pracodawca twierdzil, ze sam jestem winien. Kancelaria wywalczyla dla mnie 67 000 zl — w 3 miesiace."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">MN</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Marek N.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek przy pracy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Sprawa ciagnela sie 2 lata z ubezpieczycielem. Kancelaria zamknela ja w 4 miesiace i uzyskala 3x wiecej niz proponowal ubezpieczyciel."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">PW</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Piotr W.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Duplicated for seamless loop -->
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Ubezpieczyciel oferował mi 12 000 zl i myslalam, ze to wszystko co dostane. Dzieki tej kancelarii uzyskalam 95 000 zl. Nie uwierzylam, ze to mozliwe — ale mozliwe jest."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">AK</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Anna K.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Wypadek przy pracy zniszczyl mi kregoslup. Pracodawca twierdzil, ze sam jestem winien. Kancelaria wywalczyla dla mnie 67 000 zl — w 3 miesiace."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">MN</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Marek N.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek przy pracy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Sprawa ciagnela sie 2 lata z ubezpieczycielem. Kancelaria zamknela ja w 4 miesiace i uzyskala 3x wiecej niz proponowal ubezpieczyciel."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">PW</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Piotr W.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 — scrolls down -->
+                    <div class="v2-scroll-col h-[600px]">
+                        <div class="v2-scroll-down">
+                            <!-- Original cards -->
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Po bledzie medycznym szpital odmawial jakiejkolwiek odpowiedzialnosci. Kancelaria wziela sprawe, zebrala dokumentacje i uzyskala odszkodowanie, o ktorym nie smilam marzyc."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">JP</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Joanna P.</p>
+                                        <p class="text-v2-muted text-xs">Blad medyczny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Stracilismy tate w wypadku. Ubezpieczyciel zaproponowal 40 tys. dla calej rodziny. Kancelaria uzyskala ponad 310 000 zl. Bez nich nie mielibysmy pojecia, ze nam sie tyle nalezy."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">KW</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Katarzyna W.</p>
+                                        <p class="text-v2-muted text-xs">Smierc bliskiej osoby</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Od pierwszego kontaktu czulam sie zaopiekowana. Wszystko bylo wyjasnione krok po kroku. Polecam kazdemu kto potrzebuje pomocy po wypadku."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">EM</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Ewa M.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Duplicated for seamless loop -->
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Po bledzie medycznym szpital odmawial jakiejkolwiek odpowiedzialnosci. Kancelaria wziela sprawe, zebrala dokumentacje i uzyskala odszkodowanie, o ktorym nie smilam marzyc."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">JP</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Joanna P.</p>
+                                        <p class="text-v2-muted text-xs">Blad medyczny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Stracilismy tate w wypadku. Ubezpieczyciel zaproponowal 40 tys. dla calej rodziny. Kancelaria uzyskala ponad 310 000 zl. Bez nich nie mielibysmy pojecia, ze nam sie tyle nalezy."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">KW</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Katarzyna W.</p>
+                                        <p class="text-v2-muted text-xs">Smierc bliskiej osoby</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Od pierwszego kontaktu czulam sie zaopiekowana. Wszystko bylo wyjasnione krok po kroku. Polecam kazdemu kto potrzebuje pomocy po wypadku."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">EM</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Ewa M.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 — scrolls up -->
+                    <div class="v2-scroll-col h-[600px]">
+                        <div class="v2-scroll-up">
+                            <!-- Original cards -->
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Bardzo rzeczowa i profesjonalna obsluga od pierwszego kontaktu. Wszystko bylo jasne, bez ukrytych oplat. Polecam kazdemu, kto nie wie od czego zaczac po wypadku."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">TZ</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Tomasz Z.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Myslalem, ze nie mam szans na odszkodowanie. Kancelaria udowodnila wine drugiego kierowcy i uzyskala 85 000 zl. Dziekuje za wszystko."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">RK</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Robert K.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Mama miala wypadek w pracy na roli. KRUS odmawial wyplaty. Kancelaria wywalczyla pelne swiadczenie. Profesjonalisci."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">DL</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Dorota L.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek w rolnictwie</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Duplicated for seamless loop -->
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Bardzo rzeczowa i profesjonalna obsluga od pierwszego kontaktu. Wszystko bylo jasne, bez ukrytych oplat. Polecam kazdemu, kto nie wie od czego zaczac po wypadku."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">TZ</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Tomasz Z.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Myslalem, ze nie mam szans na odszkodowanie. Kancelaria udowodnila wine drugiego kierowcy i uzyskala 85 000 zl. Dziekuje za wszystko."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">RK</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Robert K.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 mb-4 bg-white rounded-xl border border-v2-line">
+                                <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="text-v2-muted text-sm mb-4">"Mama miala wypadek w pracy na roli. KRUS odmawial wyplaty. Kancelaria wywalczyla pelne swiadczenie. Profesjonalisci."</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">DL</div>
+                                    <div>
+                                        <p class="text-v2-text text-sm font-medium">Dorota L.</p>
+                                        <p class="text-v2-muted text-xs">Wypadek w rolnictwie</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- GRID OF TESTIMONIALS -->
-                <div class="grid sm:grid-cols-2 gap-6">
-
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
-                        <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                        </div>
-                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
-                            "Wypadek przy pracy zniszczył mi kręgosłup. Pracodawca twierdził, że sam jestem winien. Kancelaria wywalczyła dla mnie 67 000 zł — w 3 miesiące. Profesjonalizm na najwyższym poziomie."
-                        </blockquote>
+                <!-- Mobile fallback: static stacked cards -->
+                <div class="lg:hidden space-y-4">
+                    <div class="p-6 bg-white rounded-xl border border-v2-line">
+                        <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-v2-muted text-sm mb-4">"Ubezpieczyciel oferował mi 12 000 zl i myslalam, ze to wszystko co dostane. Dzieki tej kancelarii uzyskalam 95 000 zl."</p>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">MN</div>
+                            <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">AK</div>
                             <div>
-                                <p class="text-v2-text text-sm font-semibold">Marek N.</p>
-                                <p class="text-v2-muted text-xs">Wypadek przy pracy</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
-                        <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                        </div>
-                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
-                            "Po błędzie medycznym szpital odmawiał jakiejkolwiek odpowiedzialności. Kancelaria wzięła sprawę, zebrała dokumentację i uzyskała odszkodowanie, o którym nie śmiałam marzyć. Dziękuję z całego serca."
-                        </blockquote>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">JP</div>
-                            <div>
-                                <p class="text-v2-text text-sm font-semibold">Joanna P.</p>
-                                <p class="text-v2-muted text-xs">Błąd medyczny</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
-                        <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                        </div>
-                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
-                            "Straciliśmy tatę w wypadku. Ubezpieczyciel zaproponował 40 tys. dla całej rodziny. Kancelaria uzyskała ponad 310 000 zł. Bez nich nie mielibyśmy pojęcia, że nam się tyle należy."
-                        </blockquote>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">KW</div>
-                            <div>
-                                <p class="text-v2-text text-sm font-semibold">Katarzyna W.</p>
-                                <p class="text-v2-muted text-xs">Śmierć bliskiej osoby</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 5 -->
-                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
-                        <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                        </div>
-                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
-                            "Bardzo rzeczowa i profesjonalna obsługa od pierwszego kontaktu. Wszystko było jasne, bez ukrytych opłat. Polecam każdemu, kto nie wie od czego zacząć po wypadku."
-                        </blockquote>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">TZ</div>
-                            <div>
-                                <p class="text-v2-text text-sm font-semibold">Tomasz Z.</p>
+                                <p class="text-v2-text text-sm font-medium">Anna K.</p>
                                 <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
                             </div>
                         </div>
                     </div>
-
+                    <div class="p-6 bg-white rounded-xl border border-v2-line">
+                        <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-v2-muted text-sm mb-4">"Wypadek przy pracy zniszczyl mi kregoslup. Kancelaria wywalczyla dla mnie 67 000 zl — w 3 miesiace."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">MN</div>
+                            <div>
+                                <p class="text-v2-text text-sm font-medium">Marek N.</p>
+                                <p class="text-v2-muted text-xs">Wypadek przy pracy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl border border-v2-line">
+                        <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-v2-muted text-sm mb-4">"Po bledzie medycznym szpital odmawial jakiejkolwiek odpowiedzialnosci. Kancelaria uzyskala odszkodowanie, o ktorym nie smilam marzyc."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">JP</div>
+                            <div>
+                                <p class="text-v2-text text-sm font-medium">Joanna P.</p>
+                                <p class="text-v2-muted text-xs">Blad medyczny</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl border border-v2-line">
+                        <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-v2-muted text-sm mb-4">"Stracilismy tate w wypadku. Kancelaria uzyskala ponad 310 000 zl. Bez nich nie mielibysmy pojecia, ze nam sie tyle nalezy."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">KW</div>
+                            <div>
+                                <p class="text-v2-text text-sm font-medium">Katarzyna W.</p>
+                                <p class="text-v2-muted text-xs">Smierc bliskiej osoby</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl border border-v2-line">
+                        <div class="flex text-v2-cta mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-v2-muted text-sm mb-4">"Bardzo rzeczowa i profesjonalna obsluga od pierwszego kontaktu. Polecam kazdemu, kto nie wie od czego zaczac po wypadku."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-v2-surface flex items-center justify-center text-v2-text font-bold text-sm">TZ</div>
+                            <div>
+                                <p class="text-v2-text text-sm font-medium">Tomasz Z.</p>
+                                <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

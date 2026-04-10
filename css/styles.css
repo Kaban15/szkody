@@ -465,3 +465,21 @@ body.v2-theme.v2-subpage #main-nav.nav-solid #nav-logo {
 body.v2-theme.v2-subpage #main-nav.nav-solid a:hover {
     color: #dc2626 !important;
 }
+
+/* Pulse highlight for case study results */
+@keyframes result-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+}
+
+.v2-result-highlight {
+    display: inline-block;
+    animation: result-pulse 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .v2-result-highlight {
+        animation: none;
+    }
+}

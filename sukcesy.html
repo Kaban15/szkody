@@ -146,19 +146,19 @@
         <section class="bg-v2-text py-16">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <div class="count-up">
+                    <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="500">0</span>+</div>
                         <p class="text-white/60 text-sm mt-2">wygranych spraw</p>
                     </div>
-                    <div class="count-up">
+                    <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="15">0</span> mln</div>
                         <p class="text-white/60 text-sm mt-2">uzyskanych odszkodowań</p>
                     </div>
-                    <div class="count-up">
+                    <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="98">0</span>%</div>
                         <p class="text-white/60 text-sm mt-2">skuteczności</p>
                     </div>
-                    <div class="count-up">
+                    <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="10">0</span>+</div>
                         <p class="text-white/60 text-sm mt-2">lat doświadczenia</p>
                     </div>
@@ -182,7 +182,7 @@
                             <p class="text-white/60 text-sm mb-1">Ubezpieczyciel oferował</p>
                             <p class="text-white/60 line-through text-2xl mb-4">15 000 zł</p>
                             <p class="text-white/60 text-sm mb-1">Uzyskaliśmy</p>
-                            <p class="text-v2-cta text-4xl font-bold mb-3">120 000 zł</p>
+                            <p class="text-v2-cta text-4xl font-bold mb-3 v2-result-highlight">120 000 zł</p>
                             <p class="text-v2-cta font-bold text-sm mb-6">8x więcej</p>
                             <div class="comparison-bars space-y-3 mb-4">
                                 <div class="flex items-center gap-3">
@@ -213,7 +213,7 @@
                         <p class="text-v2-muted text-sm mb-1">Ubezpieczyciel oferował</p>
                         <p class="text-v2-muted line-through text-xl mb-3">8 000 zł</p>
                         <p class="text-v2-muted text-sm mb-1">Uzyskaliśmy</p>
-                        <p class="text-v2-cta text-3xl font-bold mb-2">67 000 zł</p>
+                        <p class="text-v2-cta text-3xl font-bold mb-2 v2-result-highlight">67 000 zł</p>
                         <p class="text-v2-cta font-bold text-sm mb-4">8.4x więcej</p>
                         <div class="comparison-bars space-y-2 mb-4">
                             <div class="flex items-center gap-2">
@@ -238,7 +238,7 @@
                         <p class="text-v2-muted text-sm mb-1">Ubezpieczyciel oferował</p>
                         <p class="text-v2-muted line-through text-xl mb-3">40 000 zł</p>
                         <p class="text-v2-muted text-sm mb-1">Uzyskaliśmy</p>
-                        <p class="text-v2-cta text-3xl font-bold mb-2">310 000 zł</p>
+                        <p class="text-v2-cta text-3xl font-bold mb-2 v2-result-highlight">310 000 zł</p>
                         <p class="text-v2-cta font-bold text-sm mb-4">7.8x więcej</p>
                         <div class="comparison-bars space-y-2 mb-4">
                             <div class="flex items-center gap-2">
@@ -399,6 +399,19 @@
     <script>
     lucide.createIcons();
     (function() {
+        // Spring reveal observer for stats
+        var springObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    springObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.v2-spring-reveal').forEach(function(el) {
+            springObserver.observe(el);
+        });
+
         window.formValidation.attachLiveValidation('pf-name', window.formValidation.validateName);
         window.formValidation.attachLiveValidation('pf-phone', window.formValidation.validatePhone);
         var form = document.getElementById('pf-form');
