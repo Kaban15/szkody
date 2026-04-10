@@ -124,129 +124,243 @@
         </a>
     </div>
 
-    <main class="pt-16 lg:pt-20">
-        <!-- Breadcrumb -->
-        <div class="bg-surface border-b border-line/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                <nav class="text-sm text-muted">
-                    <a href="/" class="hover:text-gold transition-colors" data-i18n="jak_dzialamy.breadcrumb_home">Strona główna</a>
-                    <span class="mx-2">›</span>
-                    <span class="text-text" data-i18n="nav.jak_dzialamy">Jak działamy</span>
+    <main>
+        <!-- BREADCRUMB BAR -->
+        <section class="bg-v2-cta mt-16 lg:mt-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                <nav class="text-white/80 text-sm flex items-center gap-2">
+                    <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+                    <span>›</span>
+                    <span class="text-white font-medium">Jak działamy</span>
                 </nav>
             </div>
-        </div>
-
-        <!-- Hero -->
-        <section class="bg-bg py-12 lg:py-16 border-b border-line/50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-3xl lg:text-5xl font-bold text-text mb-6" data-i18n="jak_dzialamy.hero_title">Jak działamy?</h1>
-                <p class="text-muted text-lg max-w-2xl mx-auto" data-i18n="jak_dzialamy.hero_subtitle">Przejrzysty proces w 4 krokach. Od pierwszego kontaktu do wypłaty odszkodowania. Bez ukrytych kosztów — prowizja tylko od sukcesu.</p>
-            </div>
         </section>
 
-        <!-- Timeline -->
-        <section class="py-12 lg:py-16 bg-bg">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="border-l-2 border-gold/20 ml-4 sm:ml-6">
-
-                    <!-- Step 1 -->
-                    <div class="relative pl-16 pb-12">
-                        <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">01</span>
-                        <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-text font-bold" data-i18n="jak_dzialamy.step1_title">Bezpłatna konsultacja</h2>
-                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step1_time">około 15 minut</p>
-                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step1_desc">Zadzwoń, napisz lub wypełnij formularz na stronie — nasz ekspert skontaktuje się z Tobą w ciągu 30 minut w godzinach pracy. Opowiedz nam o swojej sytuacji. Przeanalizujemy ją w czasie rozmowy i powiemy szczerze, czy mamy podstawy do działania.</p>
-                        <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step1_check1">Nie musisz przygotowywać żadnych dokumentów na start</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step1_check2">Ocenimy szanse jeszcze w trakcie pierwszej rozmowy</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step1_check3">Konsultacja jest w 100% bezpłatna i bez zobowiązań</span></li>
-                        </ul>
+        <!-- HERO -->
+        <section class="bg-white py-16 lg:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div>
+                        <h1 class="text-v2-text text-3xl lg:text-5xl font-bold leading-tight mb-6">Od zgłoszenia do wypłaty — 4 proste kroki</h1>
+                        <p class="text-v2-muted text-lg mb-8">Przejrzysty proces w 4 krokach. Od pierwszego kontaktu do wypłaty odszkodowania. Bez ukrytych kosztów — prowizja tylko od sukcesu.</p>
+                        <a href="#page-contact" class="inline-block bg-v2-cta hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
                     </div>
-
-                    <!-- Step 2 -->
-                    <div class="relative pl-16 pb-12">
-                        <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">02</span>
-                        <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-text font-bold" data-i18n="jak_dzialamy.step2_title">Analiza dokumentacji</h2>
-                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step2_time">1–3 dni roboczych</p>
-                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step2_desc">Zbieramy od Ciebie niezbędną dokumentację (dokumentacja medyczna, protokół wypadku, orzeczenia, faktury). Nasz zespół prawny analizuje podstawy prawne roszczenia, szacuje realną wartość szkody i przygotowuje strategię.</p>
-                        <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step2_check1">Informujemy Cię, jakich dokumentów potrzebujesz — pomagamy je zdobyć</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step2_check2">Szacujemy wartość roszczenia — transparentnie, bez obietnic bez pokrycia</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step2_check3">Podpisujemy umowę o reprezentacji — jasne warunki, prowizja tylko od sukcesu</span></li>
-                        </ul>
+                    <div class="mt-10 lg:mt-0">
+                        <div class="bg-gray-200 rounded-xl aspect-[4/3] flex items-center justify-center">
+                            <span class="text-gray-400 text-4xl font-bold">FOTO</span>
+                        </div>
                     </div>
-
-                    <!-- Step 3 -->
-                    <div class="relative pl-16 pb-12">
-                        <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">03</span>
-                        <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-text font-bold" data-i18n="jak_dzialamy.step3_title">Negocjacje z ubezpieczycielem</h2>
-                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step3_time">2–8 tygodni</p>
-                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step3_desc">Prowadzimy twarde, merytoryczne negocjacje z ubezpieczycielem w Twoim imieniu. Korzystamy z orzecznictwa sądowego, opinii biegłych i ugruntowanej praktyki. Znamy metody, których używają ubezpieczyciele do zaniżania kwot — i wiemy, jak im skutecznie przeciwdziałać.</p>
-                        <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step3_check1">Regularnie informujemy Cię o stanie sprawy</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step3_check2">W razie potrzeby zlecamy niezależne opinie biegłych</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step3_check3">Jeśli negocjacje zawiodą — kierujemy sprawę do sądu</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="relative pl-16 pb-12">
-                        <span class="absolute left-0 font-heading text-4xl text-gold font-bold leading-none -translate-x-1/2 bg-bg px-1">04</span>
-                        <div class="absolute left-[29px] top-2 w-3 h-3 rounded-full bg-gold -translate-x-1/2"></div>
-                        <h2 class="font-heading text-xl text-text font-bold" data-i18n="jak_dzialamy.step4_title">Wypłata odszkodowania</h2>
-                        <p class="text-muted/50 text-sm mt-1" data-i18n="jak_dzialamy.step4_time">przelew w 7 dni roboczych</p>
-                        <p class="text-muted mt-2" data-i18n="jak_dzialamy.step4_desc">Po uzyskaniu akceptowalnej kwoty odszkodowania, środki trafiają bezpośrednio na Twoje konto. Dopiero wtedy naliczamy naszą prowizję — wyłącznie od kwoty, którą faktycznie uzyskaliśmy. Jeśli nie wygramy — nie płacisz nic.</p>
-                        <ul class="space-y-2 text-muted text-sm mt-4">
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step4_check1">Prowizja tylko od sukcesu — zero opłat wstępnych</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step4_check2">Transparentne rozliczenie — każda złotówka udokumentowana</span></li>
-                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-gold shrink-0 mt-0.5"></i> <span data-i18n="jak_dzialamy.step4_check3">Pełne wsparcie nawet po zakończeniu sprawy</span></li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Dlaczego my -->
-        <section class="py-12 lg:py-16 bg-surface">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-text mb-4" data-i18n="jak_dzialamy.why_title">Dlaczego warto nam zaufać?</h2>
-                    <p class="text-muted max-w-2xl mx-auto" data-i18n="jak_dzialamy.why_subtitle">Działamy w modelu success fee — zarabiamy tylko wtedy, gdy Ty zarabiasz.</p>
+        <!-- 4-STEP TIMELINE (alternating) -->
+        <section class="bg-v2-surface py-16 lg:py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-12">Nasz proces krok po kroku</h2>
+
+                <!-- Step 1 — left text -->
+                <div class="lg:grid lg:grid-cols-[1fr_80px_1fr] gap-0 items-start mb-12 lg:mb-16">
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
+                                <i data-lucide="phone" class="w-5 h-5 text-v2-cta"></i>
+                            </div>
+                            <p class="text-v2-muted text-sm">około 15 minut</p>
+                        </div>
+                        <h3 class="text-v2-text text-xl font-bold mb-2">Bezpłatna konsultacja</h3>
+                        <p class="text-v2-muted text-sm mb-3">Zadzwoń, napisz lub wypełnij formularz na stronie — nasz ekspert skontaktuje się z Tobą w ciągu 30 minut w godzinach pracy. Opowiedz nam o swojej sytuacji.</p>
+                        <ul class="space-y-1 text-v2-muted text-sm">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Nie musisz przygotowywać żadnych dokumentów</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Ocenimy szanse w trakcie pierwszej rozmowy</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> 100% bezpłatna i bez zobowiązań</li>
+                        </ul>
+                    </div>
+                    <div class="hidden lg:flex flex-col items-center">
+                        <div class="w-16 h-16 bg-v2-cta text-white rounded-full flex items-center justify-center text-2xl font-bold">01</div>
+                        <div class="w-0.5 bg-v2-line flex-1 mt-2"></div>
+                    </div>
+                    <div class="lg:block hidden"></div>
                 </div>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-line/50">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">01</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-text font-bold mb-2" data-i18n="why.r1_title">Bezpłatna konsultacja</h3>
-                        <p class="text-muted" data-i18n="why.r1_desc">Nie pobieramy żadnych opłat wstępnych. Przeanalizujemy Twoją sprawę i ocenimy szanse bez ryzyka finansowego.</p>
+                <!-- Step 2 — right text -->
+                <div class="lg:grid lg:grid-cols-[1fr_80px_1fr] gap-0 items-start mb-12 lg:mb-16">
+                    <div class="lg:block hidden"></div>
+                    <div class="hidden lg:flex flex-col items-center">
+                        <div class="w-16 h-16 bg-v2-cta text-white rounded-full flex items-center justify-center text-2xl font-bold">02</div>
+                        <div class="w-0.5 bg-v2-line flex-1 mt-2"></div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
+                                <i data-lucide="file-text" class="w-5 h-5 text-v2-cta"></i>
+                            </div>
+                            <p class="text-v2-muted text-sm">1–3 dni roboczych</p>
+                        </div>
+                        <h3 class="text-v2-text text-xl font-bold mb-2">Analiza dokumentacji</h3>
+                        <p class="text-v2-muted text-sm mb-3">Zbieramy od Ciebie niezbędną dokumentację. Nasz zespół prawny analizuje podstawy prawne roszczenia, szacuje realną wartość szkody i przygotowuje strategię.</p>
+                        <ul class="space-y-1 text-v2-muted text-sm">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Pomagamy zdobyć potrzebne dokumenty</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Transparentna wycena roszczenia</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Prowizja tylko od sukcesu</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-line/50">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">02</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-text font-bold mb-2" data-i18n="why.r2_title">Płacisz za sukces</h3>
-                        <p class="text-muted" data-i18n="why.r2_desc">Prowizja naliczana wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy — nie płacisz nic.</p>
+                <!-- Step 3 — left text -->
+                <div class="lg:grid lg:grid-cols-[1fr_80px_1fr] gap-0 items-start mb-12 lg:mb-16">
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
+                                <i data-lucide="scale" class="w-5 h-5 text-v2-cta"></i>
+                            </div>
+                            <p class="text-v2-muted text-sm">2–8 tygodni</p>
+                        </div>
+                        <h3 class="text-v2-text text-xl font-bold mb-2">Negocjacje z ubezpieczycielem</h3>
+                        <p class="text-v2-muted text-sm mb-3">Prowadzimy twarde, merytoryczne negocjacje z ubezpieczycielem w Twoim imieniu. Znamy metody zaniżania kwot — i wiemy, jak im skutecznie przeciwdziałać.</p>
+                        <ul class="space-y-1 text-v2-muted text-sm">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Regularnie informujemy o stanie sprawy</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Niezależne opinie biegłych w razie potrzeby</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Jeśli negocjacje zawiodą — sąd</li>
+                        </ul>
                     </div>
+                    <div class="hidden lg:flex flex-col items-center">
+                        <div class="w-16 h-16 bg-v2-cta text-white rounded-full flex items-center justify-center text-2xl font-bold">03</div>
+                        <div class="w-0.5 bg-v2-line flex-1 mt-2"></div>
+                    </div>
+                    <div class="lg:block hidden"></div>
                 </div>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8 border-b border-line/50">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">03</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-text font-bold mb-2" data-i18n="why.r3_title">Doświadczony zespół</h3>
-                        <p class="text-muted" data-i18n="why.r3_desc">Prawnicy, rzeczoznawcy i mediatorzy z wieloletnim stażem. Ponad 500 wygranych spraw i 10+ lat doświadczenia.</p>
+                <!-- Step 4 — right text -->
+                <div class="lg:grid lg:grid-cols-[1fr_80px_1fr] gap-0 items-start">
+                    <div class="lg:block hidden"></div>
+                    <div class="hidden lg:flex flex-col items-center">
+                        <div class="w-16 h-16 bg-v2-cta text-white rounded-full flex items-center justify-center text-2xl font-bold">04</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
+                                <i data-lucide="banknote" class="w-5 h-5 text-v2-cta"></i>
+                            </div>
+                            <p class="text-v2-muted text-sm">przelew w 7 dni roboczych</p>
+                        </div>
+                        <h3 class="text-v2-text text-xl font-bold mb-2">Wypłata odszkodowania</h3>
+                        <p class="text-v2-muted text-sm mb-3">Środki trafiają bezpośrednio na Twoje konto. Dopiero wtedy naliczamy naszą prowizję — wyłącznie od kwoty, którą faktycznie uzyskaliśmy. Jeśli nie wygramy — nie płacisz nic.</p>
+                        <ul class="space-y-1 text-v2-muted text-sm">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Zero opłat wstępnych</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Transparentne rozliczenie</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-v2-cta shrink-0 mt-0.5"></i> Wsparcie nawet po zakończeniu sprawy</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="fade-in flex gap-6 lg:gap-8 items-start py-8">
-                    <span class="font-heading text-5xl lg:text-6xl text-gold/30 font-bold leading-none shrink-0">04</span>
-                    <div>
-                        <h3 class="font-heading text-xl text-text font-bold mb-2" data-i18n="why.r4_title">Cała Polska</h3>
-                        <p class="text-muted" data-i18n="why.r4_desc">Siedziba w Poznaniu, obsługujemy klientów w całym kraju. Wszystko załatwimy zdalnie lub na miejscu.</p>
+        <!-- DLACZEGO NAM ZAUFAĆ -->
+        <section class="bg-white py-16 lg:py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-4">Dlaczego nam zaufać?</h2>
+                <p class="text-v2-muted text-center max-w-2xl mx-auto mb-12">Działamy w modelu success fee — zarabiamy tylko wtedy, gdy Ty zarabiasz.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-v2-cta text-xl font-bold">01</span>
+                        </div>
+                        <h3 class="text-v2-text font-bold mb-2">Bezpłatna konsultacja</h3>
+                        <p class="text-v2-muted text-sm">Nie pobieramy żadnych opłat wstępnych. Przeanalizujemy Twoją sprawę bez ryzyka finansowego.</p>
                     </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-v2-cta text-xl font-bold">02</span>
+                        </div>
+                        <h3 class="text-v2-text font-bold mb-2">Płacisz za sukces</h3>
+                        <p class="text-v2-muted text-sm">Prowizja naliczana wyłącznie od uzyskanego odszkodowania. Jeśli nie wygramy — nie płacisz nic.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-v2-cta text-xl font-bold">03</span>
+                        </div>
+                        <h3 class="text-v2-text font-bold mb-2">Doświadczony zespół</h3>
+                        <p class="text-v2-muted text-sm">Prawnicy, rzeczoznawcy i mediatorzy z wieloletnim stażem. Ponad 500 wygranych spraw.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-v2-cta text-xl font-bold">04</span>
+                        </div>
+                        <h3 class="text-v2-text font-bold mb-2">Cała Polska</h3>
+                        <p class="text-v2-muted text-sm">Siedziba w Poznaniu, obsługujemy klientów w całym kraju. Wszystko załatwimy zdalnie lub na miejscu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTER SECTION -->
+        <section class="bg-v2-text py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="500">0</span>+</div>
+                        <p class="text-white/60 text-sm mt-2">wygranych spraw</p>
+                    </div>
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="15">0</span> mln</div>
+                        <p class="text-white/60 text-sm mt-2">uzyskanych odszkodowań</p>
+                    </div>
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="98">0</span>%</div>
+                        <p class="text-white/60 text-sm mt-2">skuteczności</p>
+                    </div>
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="10">0</span>+</div>
+                        <p class="text-white/60 text-sm mt-2">lat doświadczenia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section id="page-contact" class="bg-v2-surface py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto">
+                    <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-2">Bezpłatna konsultacja</h2>
+                    <p class="text-v2-muted text-center mb-8">Opisz swoją sprawę — oddzwonimy w ciągu 30 minut w godzinach pracy.</p>
+                    <form id="pf-form" class="bg-white border border-v2-line rounded-xl p-6 sm:p-8" novalidate>
+                        <div class="space-y-4">
+                            <div>
+                                <input type="text" id="pf-name" placeholder="Imię *" required minlength="2"
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-name-error">Podaj swoje imię (min. 2 znaki)</p>
+                            </div>
+                            <div>
+                                <input type="tel" id="pf-phone" placeholder="Numer telefonu *" required
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-phone-error">Podaj prawidłowy numer telefonu</p>
+                            </div>
+                            <div>
+                                <input type="email" id="pf-email" placeholder="Email (opcjonalnie)"
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" id="pf-consent" required class="mt-1 w-4 h-4 accent-red-600">
+                                <label for="pf-consent" class="text-xs text-v2-muted">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
+                                    <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full mt-6 bg-v2-cta hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Wyślij wiadomość →
+                        </button>
+                    </form>
+                    <template id="pf-success-template">
+                        <div class="text-center py-8">
+                            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <h3 class="text-v2-text text-xl font-bold mb-2">Dziękujemy!</h3>
+                            <p class="text-v2-muted text-sm">Skontaktujemy się z Tobą wkrótce.</p>
+                        </div>
+                    </template>
                 </div>
             </div>
         </section>
@@ -320,11 +434,33 @@
     </div>
 
     <!-- Scripts -->
+    <script src="js/form-validation.js"></script>
     <script src="js/cookie-consent.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/navigation.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+    lucide.createIcons();
+    (function() {
+        window.formValidation.attachLiveValidation('pf-name', window.formValidation.validateName);
+        window.formValidation.attachLiveValidation('pf-phone', window.formValidation.validatePhone);
+        var form = document.getElementById('pf-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.formValidation.submitForm({
+                    form: form,
+                    fields: [
+                        { id: 'pf-name', validate: window.formValidation.validateName },
+                        { id: 'pf-phone', validate: window.formValidation.validatePhone }
+                    ],
+                    consentId: 'pf-consent',
+                    templateId: 'pf-success-template'
+                });
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

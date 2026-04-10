@@ -113,93 +113,214 @@
     </div>
 
     <main>
-        <!-- Breadcrumb -->
-        <nav class="pt-24 pb-4 text-sm text-muted">
-            <div class="max-w-7xl mx-auto px-4">
-                <a href="/" class="hover:text-gold" data-i18n="opinie.breadcrumb_home">Strona główna</a>
-                <span class="mx-2 text-text/20">›</span>
-                <span class="text-text" data-i18n="opinie.breadcrumb_current">Opinie</span>
-            </div>
-        </nav>
-
-        <!-- Page Hero -->
-        <section class="bg-bg py-12 lg:py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6" data-i18n="opinie.hero_title">
-                    Co mówią nasi klienci
-                </h1>
-                <p class="text-muted text-lg max-w-2xl mx-auto" data-i18n="opinie.hero_subtitle">
-                    Nie słowa — wyniki. Ale słowa też mają znaczenie. Oto co mówią osoby, którym pomogliśmy uzyskać należne odszkodowania.
-                </p>
+        <!-- BREADCRUMB BAR -->
+        <section class="bg-v2-cta mt-16 lg:mt-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                <nav class="text-white/80 text-sm flex items-center gap-2">
+                    <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+                    <span>›</span>
+                    <span class="text-white font-medium">Opinie klientów</span>
+                </nav>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="bg-bg pb-12 lg:pb-16">
+        <!-- HERO -->
+        <section class="bg-white py-16 lg:py-24">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div>
+                        <h1 class="text-v2-text text-3xl lg:text-5xl font-bold leading-tight mb-6">Co mówią nasi klienci</h1>
+                        <p class="text-v2-muted text-lg mb-8">Nie słowa — wyniki. Ale słowa też mają znaczenie. Oto co mówią osoby, którym pomogliśmy uzyskać należne odszkodowania.</p>
+                        <a href="#page-contact" class="inline-block bg-v2-cta hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <div class="bg-gray-200 rounded-xl aspect-[4/3] flex items-center justify-center">
+                            <span class="text-gray-400 text-4xl font-bold">FOTO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Featured Testimonial -->
-                <div class="fade-in mb-10 lg:mb-12 py-8 lg:py-10 border-b border-line/50">
-                    <div class="font-heading text-6xl text-gold leading-none mb-4 select-none">"</div>
-                    <blockquote class="text-xl lg:text-2xl text-text/90 italic font-heading leading-relaxed mb-8 max-w-3xl" data-i18n="opinie.featured_quote">
+        <!-- GOOGLE RATING BADGE -->
+        <section class="bg-v2-surface py-10">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-current"></i>
+                        </div>
+                        <span class="text-v2-text text-2xl font-bold">4.9/5</span>
+                    </div>
+                    <p class="text-v2-muted text-sm">na podstawie opinii w Google</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED TESTIMONIAL -->
+        <section class="bg-white py-16 lg:py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-v2-surface rounded-xl p-8 lg:p-12 mb-12">
+                    <div class="text-v2-cta text-6xl leading-none mb-4 select-none">"</div>
+                    <blockquote class="text-v2-text text-xl lg:text-2xl italic leading-relaxed mb-8 max-w-3xl">
                         Ubezpieczyciel oferował mi 12 000 zł i myślałam, że to wszystko co dostanę. Dzięki tej kancelarii uzyskałam 95 000 zł. Nie uwierzyłam, że to możliwe — ale możliwe jest.
                     </blockquote>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold">AK</div>
+                        <div class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold">AK</div>
                         <div>
-                            <p class="text-text font-semibold" data-i18n="opinie.featured_name">Anna K.</p>
-                            <p class="text-muted text-xs" data-i18n="opinie.featured_detail">Wypadek komunikacyjny · Poznań</p>
+                            <p class="text-v2-text font-semibold">Anna K.</p>
+                            <p class="text-v2-muted text-xs">Wypadek komunikacyjny · Poznań</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Remaining testimonials: 2-column grid -->
-                <div class="grid lg:grid-cols-2 gap-6">
+                <!-- GRID OF TESTIMONIALS -->
+                <div class="grid sm:grid-cols-2 gap-6">
 
                     <!-- Testimonial 2 -->
-                    <div class="fade-in bg-surface-light border border-line/50 rounded-xl shadow-sm p-6">
-                        <!-- Stars -->
+                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
                         <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                         </div>
-                        <blockquote class="text-text/80 italic mb-6 text-sm leading-relaxed" data-i18n="opinie.t2_text">
+                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
                             "Wypadek przy pracy zniszczył mi kręgosłup. Pracodawca twierdził, że sam jestem winien. Kancelaria wywalczyła dla mnie 67 000 zł — w 3 miesiące. Profesjonalizm na najwyższym poziomie."
                         </blockquote>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-sm">MN</div>
+                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">MN</div>
                             <div>
-                                <p class="text-text text-sm font-semibold" data-i18n="opinie.t2_name">Marek N.</p>
-                                <p class="text-muted text-xs" data-i18n="opinie.t2_detail">Wypadek przy pracy</p>
+                                <p class="text-v2-text text-sm font-semibold">Marek N.</p>
+                                <p class="text-v2-muted text-xs">Wypadek przy pracy</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Testimonial 3 -->
-                    <div class="fade-in bg-surface-light border border-line/50 rounded-xl shadow-sm p-6">
-                        <!-- Stars -->
+                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
                         <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                         </div>
-                        <blockquote class="text-text/80 italic mb-6 text-sm leading-relaxed" data-i18n="opinie.t3_text">
+                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
                             "Po błędzie medycznym szpital odmawiał jakiejkolwiek odpowiedzialności. Kancelaria wzięła sprawę, zebrała dokumentację i uzyskała odszkodowanie, o którym nie śmiałam marzyć. Dziękuję z całego serca."
                         </blockquote>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-sm">JP</div>
+                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">JP</div>
                             <div>
-                                <p class="text-text text-sm font-semibold" data-i18n="opinie.t3_name">Joanna P.</p>
-                                <p class="text-muted text-xs" data-i18n="opinie.t3_detail">Błąd medyczny</p>
+                                <p class="text-v2-text text-sm font-semibold">Joanna P.</p>
+                                <p class="text-v2-muted text-xs">Błąd medyczny</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Testimonial 4 -->
+                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
+                        <div class="flex gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        </div>
+                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
+                            "Straciliśmy tatę w wypadku. Ubezpieczyciel zaproponował 40 tys. dla całej rodziny. Kancelaria uzyskała ponad 310 000 zł. Bez nich nie mielibyśmy pojęcia, że nam się tyle należy."
+                        </blockquote>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">KW</div>
+                            <div>
+                                <p class="text-v2-text text-sm font-semibold">Katarzyna W.</p>
+                                <p class="text-v2-muted text-xs">Śmierć bliskiej osoby</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="bg-white border border-v2-line rounded-xl shadow-sm p-6">
+                        <div class="flex gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        </div>
+                        <blockquote class="text-v2-text/80 italic mb-6 text-sm leading-relaxed">
+                            "Bardzo rzeczowa i profesjonalna obsługa od pierwszego kontaktu. Wszystko było jasne, bez ukrytych opłat. Polecam każdemu, kto nie wie od czego zacząć po wypadku."
+                        </blockquote>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">TZ</div>
+                            <div>
+                                <p class="text-v2-text text-sm font-semibold">Tomasz Z.</p>
+                                <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="bg-v2-text py-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-white text-2xl lg:text-3xl font-bold mb-4">Dołącz do grona zadowolonych klientów</h2>
+                <p class="text-white/60 mb-8">Bezpłatna analiza Twojej sprawy. Prowizja wyłącznie od sukcesu.</p>
+                <a href="#page-contact" class="inline-block bg-v2-cta hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section id="page-contact" class="bg-v2-surface py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto">
+                    <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-2">Bezpłatna konsultacja</h2>
+                    <p class="text-v2-muted text-center mb-8">Opisz swoją sprawę — oddzwonimy w ciągu 30 minut w godzinach pracy.</p>
+                    <form id="pf-form" class="bg-white border border-v2-line rounded-xl p-6 sm:p-8" novalidate>
+                        <div class="space-y-4">
+                            <div>
+                                <input type="text" id="pf-name" placeholder="Imię *" required minlength="2"
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-name-error">Podaj swoje imię (min. 2 znaki)</p>
+                            </div>
+                            <div>
+                                <input type="tel" id="pf-phone" placeholder="Numer telefonu *" required
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-phone-error">Podaj prawidłowy numer telefonu</p>
+                            </div>
+                            <div>
+                                <input type="email" id="pf-email" placeholder="Email (opcjonalnie)"
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" id="pf-consent" required class="mt-1 w-4 h-4 accent-red-600">
+                                <label for="pf-consent" class="text-xs text-v2-muted">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
+                                    <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full mt-6 bg-v2-cta hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Wyślij wiadomość →
+                        </button>
+                    </form>
+                    <template id="pf-success-template">
+                        <div class="text-center py-8">
+                            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <h3 class="text-v2-text text-xl font-bold mb-2">Dziękujemy!</h3>
+                            <p class="text-v2-muted text-sm">Skontaktujemy się z Tobą wkrótce.</p>
+                        </div>
+                    </template>
                 </div>
             </div>
         </section>
@@ -273,11 +394,33 @@
     </div>
 
     <!-- Scripts -->
+    <script src="js/form-validation.js"></script>
     <script src="js/cookie-consent.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/navigation.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+    lucide.createIcons();
+    (function() {
+        window.formValidation.attachLiveValidation('pf-name', window.formValidation.validateName);
+        window.formValidation.attachLiveValidation('pf-phone', window.formValidation.validatePhone);
+        var form = document.getElementById('pf-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.formValidation.submitForm({
+                    form: form,
+                    fields: [
+                        { id: 'pf-name', validate: window.formValidation.validateName },
+                        { id: 'pf-phone', validate: window.formValidation.validatePhone }
+                    ],
+                    consentId: 'pf-consent',
+                    templateId: 'pf-success-template'
+                });
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

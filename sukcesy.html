@@ -113,131 +113,210 @@
     </div>
 
     <main>
-        <!-- Breadcrumb -->
-        <nav class="pt-24 pb-4 text-sm text-muted">
-            <div class="max-w-7xl mx-auto px-4">
-                <a href="/" class="hover:text-gold" data-i18n="sukcesy.breadcrumb_home">Strona główna</a>
-                <span class="mx-2 text-text/20">›</span>
-                <span class="text-text" data-i18n="nav.sukcesy">Sukcesy</span>
-            </div>
-        </nav>
-
-        <!-- Page Hero -->
-        <section class="bg-bg py-12 lg:py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6" data-i18n="sukcesy.hero_title">
-                    Wyniki, które mówią same za siebie
-                </h1>
-                <p class="text-muted text-lg max-w-2xl mx-auto" data-i18n="sukcesy.hero_subtitle">
-                    Realne sprawy, realne kwoty. Przekonaj się, ile udało się uzyskać dla naszych klientów w porównaniu z ofertami ubezpieczycieli.
-                </p>
+        <!-- BREADCRUMB BAR -->
+        <section class="bg-v2-cta mt-16 lg:mt-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                <nav class="text-white/80 text-sm flex items-center gap-2">
+                    <a href="/" class="hover:text-white transition-colors">Strona główna</a>
+                    <span>›</span>
+                    <span class="text-white font-medium">Nasze sukcesy</span>
+                </nav>
             </div>
         </section>
 
-        <!-- Filter + Case Studies -->
-        <section class="bg-bg pb-12 lg:pb-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Filter Buttons -->
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-gold text-bg" data-filter="all" data-i18n="sukcesy.filter_all">
-                        Wszystkie
-                    </button>
-                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-surface-light text-muted" data-filter="komunikacyjny" data-i18n="sukcesy.filter_road">
-                        Wypadki komunikacyjne
-                    </button>
-                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-surface-light text-muted" data-filter="praca" data-i18n="sukcesy.filter_work">
-                        Wypadki przy pracy
-                    </button>
-                    <button class="case-filter px-5 py-2 rounded text-sm font-semibold transition-colors bg-surface-light text-muted" data-filter="smierc" data-i18n="sukcesy.filter_death">
-                        Śmierć bliskiej osoby
-                    </button>
+        <!-- HERO -->
+        <section class="bg-white py-16 lg:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <div>
+                        <h1 class="text-v2-text text-3xl lg:text-5xl font-bold leading-tight mb-6">Wygrywamy dla naszych klientów</h1>
+                        <p class="text-v2-muted text-lg mb-8">Realne sprawy, realne kwoty. Przekonaj się, ile udało się uzyskać dla naszych klientów w porównaniu z ofertami ubezpieczycieli.</p>
+                        <a href="#page-contact" class="inline-block bg-v2-cta hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <div class="bg-gray-200 rounded-xl aspect-[4/3] flex items-center justify-center">
+                            <span class="text-gray-400 text-4xl font-bold">FOTO</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Case 1: Full width (featured) -->
-                <div class="case-card fade-in bg-surface-light border border-line/50 rounded-xl shadow-sm p-6 lg:p-8 card-hover mb-6" data-type="komunikacyjny">
-                    <div class="flex items-center gap-2 text-muted text-sm mb-6">
-                        <i data-lucide="car" class="w-4 h-4 text-gold"></i>
-                        <span data-i18n="cases.case1_type">Wypadek komunikacyjny</span>
+        <!-- COUNTER SECTION (prominent at top) -->
+        <section class="bg-v2-text py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="500">0</span>+</div>
+                        <p class="text-white/60 text-sm mt-2">wygranych spraw</p>
+                    </div>
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="15">0</span> mln</div>
+                        <p class="text-white/60 text-sm mt-2">uzyskanych odszkodowań</p>
+                    </div>
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="98">0</span>%</div>
+                        <p class="text-white/60 text-sm mt-2">skuteczności</p>
+                    </div>
+                    <div class="count-up">
+                        <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="10">0</span>+</div>
+                        <p class="text-white/60 text-sm mt-2">lat doświadczenia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED CASE STUDY -->
+        <section class="bg-v2-surface py-16 lg:py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-12">Wybrane sprawy</h2>
+
+                <!-- Featured Case: full width, dark bg -->
+                <div class="bg-v2-text rounded-xl p-6 lg:p-10 mb-8">
+                    <div class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                        <i data-lucide="car" class="w-4 h-4 text-v2-cta"></i>
+                        <span>Wypadek komunikacyjny</span>
                     </div>
                     <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
                         <div>
-                            <p class="text-muted text-sm mb-1" data-i18n="cases.offered">Ubezpieczyciel oferował</p>
-                            <p class="text-muted line-through text-2xl mb-4" data-i18n="cases.case1_offered">15 000 zł</p>
-                            <p class="text-muted text-sm mb-1" data-i18n="cases.obtained">Uzyskaliśmy</p>
-                            <p class="text-gold text-3xl font-heading font-bold mb-3" data-i18n="cases.case1_obtained">120 000 zł</p>
-                            <p class="text-gold font-bold text-sm mb-4" data-i18n="cases.case1_multiplier">8x więcej</p>
-                            <div class="comparison-bars space-y-2 mb-4">
+                            <p class="text-white/60 text-sm mb-1">Ubezpieczyciel oferował</p>
+                            <p class="text-white/60 line-through text-2xl mb-4">15 000 zł</p>
+                            <p class="text-white/60 text-sm mb-1">Uzyskaliśmy</p>
+                            <p class="text-v2-cta text-4xl font-bold mb-3">120 000 zł</p>
+                            <p class="text-v2-cta font-bold text-sm mb-6">8x więcej</p>
+                            <div class="comparison-bars space-y-3 mb-4">
                                 <div class="flex items-center gap-3">
-                                    <span class="text-muted text-xs w-16 shrink-0">15 000 zł</span>
-                                    <div class="comparison-bar bg-line" data-width="12.5%"></div>
+                                    <span class="text-white/50 text-xs w-16 shrink-0">15 000 zł</span>
+                                    <div class="comparison-bar bg-white/20" data-width="12.5%"></div>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <span class="text-gold text-xs font-semibold w-16 shrink-0">120 000 zł</span>
-                                    <div class="comparison-bar bg-gold" data-width="100%"></div>
+                                    <span class="text-v2-cta text-xs font-semibold w-16 shrink-0">120 000 zł</span>
+                                    <div class="comparison-bar bg-v2-cta" data-width="100%"></div>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <p class="text-muted text-sm mb-4" data-i18n="sukcesy.case1_full_desc">Po wypadku na S7 ubezpieczyciel zaproponował zaledwie 15 tys. zł. Nasz zespół prawników i rzeczoznawców przeanalizował sprawę i uzyskał 8-krotnie wyższe odszkodowanie dla poszkodowanego.</p>
-                            <p class="text-white/40 text-xs" data-i18n="cases.case1_duration">Czas trwania sprawy: 4 miesiące</p>
+                            <p class="text-white/70 text-sm mb-4">Po wypadku na S7 ubezpieczyciel zaproponował zaledwie 15 tys. zł. Nasz zespół prawników i rzeczoznawców przeanalizował sprawę i uzyskał 8-krotnie wyższe odszkodowanie dla poszkodowanego.</p>
+                            <p class="text-white/40 text-xs">Czas trwania sprawy: 4 miesiące</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Cases 2+3: 2-column grid -->
+                <!-- 2 smaller case cards -->
                 <div class="grid lg:grid-cols-2 gap-6">
-
                     <!-- Case 2 -->
-                    <div class="case-card fade-in bg-surface-light border border-line/50 rounded-xl shadow-sm p-6 card-hover" data-type="praca">
-                        <div class="flex items-center gap-2 text-muted text-sm mb-6">
-                            <i data-lucide="hard-hat" class="w-4 h-4 text-gold"></i>
-                            <span data-i18n="cases.case2_type">Wypadek przy pracy</span>
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-v2-line">
+                        <div class="flex items-center gap-2 text-v2-muted text-sm mb-4">
+                            <i data-lucide="hard-hat" class="w-4 h-4 text-v2-cta"></i>
+                            <span>Wypadek przy pracy</span>
                         </div>
-                        <p class="text-muted text-sm mb-1" data-i18n="cases.offered">Ubezpieczyciel oferował</p>
-                        <p class="text-muted line-through text-xl mb-4" data-i18n="cases.case2_offered">8 000 zł</p>
-                        <p class="text-muted text-sm mb-1" data-i18n="cases.obtained">Uzyskaliśmy</p>
-                        <p class="text-gold text-3xl font-heading font-bold mb-3" data-i18n="cases.case2_obtained">67 000 zł</p>
-                        <p class="text-gold font-bold text-sm mb-4" data-i18n="cases.case2_multiplier">8.4x więcej</p>
-                        <div class="comparison-bars space-y-1.5 mb-4">
+                        <p class="text-v2-muted text-sm mb-1">Ubezpieczyciel oferował</p>
+                        <p class="text-v2-muted line-through text-xl mb-3">8 000 zł</p>
+                        <p class="text-v2-muted text-sm mb-1">Uzyskaliśmy</p>
+                        <p class="text-v2-cta text-3xl font-bold mb-2">67 000 zł</p>
+                        <p class="text-v2-cta font-bold text-sm mb-4">8.4x więcej</p>
+                        <div class="comparison-bars space-y-2 mb-4">
                             <div class="flex items-center gap-2">
-                                <span class="text-muted text-xs w-14 shrink-0">8 000</span>
-                                <div class="comparison-bar bg-line" data-width="12%"></div>
+                                <span class="text-v2-muted text-xs w-14 shrink-0">8 000</span>
+                                <div class="comparison-bar bg-v2-line" data-width="12%"></div>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="text-gold text-xs font-semibold w-14 shrink-0">67 000</span>
-                                <div class="comparison-bar bg-gold" data-width="100%"></div>
+                                <span class="text-v2-cta text-xs font-semibold w-14 shrink-0">67 000</span>
+                                <div class="comparison-bar bg-v2-cta" data-width="100%"></div>
                             </div>
                         </div>
-                        <p class="text-muted text-sm" data-i18n="sukcesy.case2_full_desc">Uraz kręgosłupa na budowie. Pracodawca i ubezpieczyciel bagatelizowali sprawę, oferując symboliczną kwotę. Uzyskaliśmy odszkodowanie z tytułu trwałego uszczerbku na zdrowiu.</p>
-                        <p class="text-muted/50 text-xs mt-3" data-i18n="sukcesy.case2_duration">Czas trwania sprawy: 3 miesiące</p>
+                        <p class="text-v2-muted text-sm">Uraz kręgosłupa na budowie. Pracodawca i ubezpieczyciel bagatelizowali sprawę, oferując symboliczną kwotę. Uzyskaliśmy odszkodowanie z tytułu trwałego uszczerbku na zdrowiu.</p>
+                        <p class="text-v2-muted/50 text-xs mt-3">Czas trwania sprawy: 3 miesiące</p>
                     </div>
 
                     <!-- Case 3 -->
-                    <div class="case-card fade-in bg-surface-light border border-line/50 rounded-xl shadow-sm p-6 card-hover" data-type="smierc">
-                        <div class="flex items-center gap-2 text-muted text-sm mb-6">
-                            <i data-lucide="heart" class="w-4 h-4 text-gold"></i>
-                            <span data-i18n="cases.case3_type">Śmierć bliskiej osoby</span>
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-v2-line">
+                        <div class="flex items-center gap-2 text-v2-muted text-sm mb-4">
+                            <i data-lucide="heart" class="w-4 h-4 text-v2-cta"></i>
+                            <span>Śmierć bliskiej osoby</span>
                         </div>
-                        <p class="text-muted text-sm mb-1" data-i18n="cases.offered">Ubezpieczyciel oferował</p>
-                        <p class="text-muted line-through text-xl mb-4" data-i18n="cases.case3_offered">40 000 zł</p>
-                        <p class="text-muted text-sm mb-1" data-i18n="cases.obtained">Uzyskaliśmy</p>
-                        <p class="text-gold text-3xl font-heading font-bold mb-3" data-i18n="cases.case3_obtained">310 000 zł</p>
-                        <p class="text-gold font-bold text-sm mb-4" data-i18n="cases.case3_multiplier">7.8x więcej</p>
-                        <div class="comparison-bars space-y-1.5 mb-4">
+                        <p class="text-v2-muted text-sm mb-1">Ubezpieczyciel oferował</p>
+                        <p class="text-v2-muted line-through text-xl mb-3">40 000 zł</p>
+                        <p class="text-v2-muted text-sm mb-1">Uzyskaliśmy</p>
+                        <p class="text-v2-cta text-3xl font-bold mb-2">310 000 zł</p>
+                        <p class="text-v2-cta font-bold text-sm mb-4">7.8x więcej</p>
+                        <div class="comparison-bars space-y-2 mb-4">
                             <div class="flex items-center gap-2">
-                                <span class="text-muted text-xs w-14 shrink-0">40 000</span>
-                                <div class="comparison-bar bg-line" data-width="13%"></div>
+                                <span class="text-v2-muted text-xs w-14 shrink-0">40 000</span>
+                                <div class="comparison-bar bg-v2-line" data-width="13%"></div>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="text-gold text-xs font-semibold w-14 shrink-0">310 000</span>
-                                <div class="comparison-bar bg-gold" data-width="100%"></div>
+                                <span class="text-v2-cta text-xs font-semibold w-14 shrink-0">310 000</span>
+                                <div class="comparison-bar bg-v2-cta" data-width="100%"></div>
                             </div>
                         </div>
-                        <p class="text-muted text-sm" data-i18n="sukcesy.case3_full_desc">Rodzina straciła bliskiego w wypadku komunikacyjnym. Ubezpieczyciel zaproponował 40 tys. Uzyskaliśmy łączne zadośćuczynienie dla 3 członków rodziny.</p>
-                        <p class="text-muted/50 text-xs mt-3" data-i18n="sukcesy.case3_duration">Czas trwania sprawy: 6 miesięcy</p>
+                        <p class="text-v2-muted text-sm">Rodzina straciła bliskiego w wypadku komunikacyjnym. Ubezpieczyciel zaproponował 40 tys. Uzyskaliśmy łączne zadośćuczynienie dla 3 członków rodziny.</p>
+                        <p class="text-v2-muted/50 text-xs mt-3">Czas trwania sprawy: 6 miesięcy</p>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- TESTIMONIAL QUOTE -->
+        <section class="bg-white py-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="text-v2-cta text-6xl leading-none mb-4 select-none">"</div>
+                <blockquote class="text-v2-text text-xl lg:text-2xl italic leading-relaxed mb-6">
+                    Ubezpieczyciel oferował mi 12 000 zł i myślałam, że to wszystko co dostanę. Dzięki tej kancelarii uzyskałam 95 000 zł. Nie uwierzyłam, że to możliwe — ale możliwe jest.
+                </blockquote>
+                <div class="flex items-center justify-center gap-3">
+                    <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">AK</div>
+                    <div class="text-left">
+                        <p class="text-v2-text font-semibold text-sm">Anna K.</p>
+                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM -->
+        <section id="page-contact" class="bg-v2-surface py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto">
+                    <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-2">Bezpłatna konsultacja</h2>
+                    <p class="text-v2-muted text-center mb-8">Opisz swoją sprawę — oddzwonimy w ciągu 30 minut w godzinach pracy.</p>
+                    <form id="pf-form" class="bg-white border border-v2-line rounded-xl p-6 sm:p-8" novalidate>
+                        <div class="space-y-4">
+                            <div>
+                                <input type="text" id="pf-name" placeholder="Imię *" required minlength="2"
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-name-error">Podaj swoje imię (min. 2 znaki)</p>
+                            </div>
+                            <div>
+                                <input type="tel" id="pf-phone" placeholder="Numer telefonu *" required
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-phone-error">Podaj prawidłowy numer telefonu</p>
+                            </div>
+                            <div>
+                                <input type="email" id="pf-email" placeholder="Email (opcjonalnie)"
+                                    class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" id="pf-consent" required class="mt-1 w-4 h-4 accent-red-600">
+                                <label for="pf-consent" class="text-xs text-v2-muted">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
+                                    <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full mt-6 bg-v2-cta hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Wyślij wiadomość →
+                        </button>
+                    </form>
+                    <template id="pf-success-template">
+                        <div class="text-center py-8">
+                            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <h3 class="text-v2-text text-xl font-bold mb-2">Dziękujemy!</h3>
+                            <p class="text-v2-muted text-sm">Skontaktujemy się z Tobą wkrótce.</p>
+                        </div>
+                    </template>
                 </div>
             </div>
         </section>
@@ -311,11 +390,33 @@
     </div>
 
     <!-- Scripts -->
+    <script src="js/form-validation.js"></script>
     <script src="js/cookie-consent.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/navigation.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+    lucide.createIcons();
+    (function() {
+        window.formValidation.attachLiveValidation('pf-name', window.formValidation.validateName);
+        window.formValidation.attachLiveValidation('pf-phone', window.formValidation.validatePhone);
+        var form = document.getElementById('pf-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.formValidation.submitForm({
+                    form: form,
+                    fields: [
+                        { id: 'pf-name', validate: window.formValidation.validateName },
+                        { id: 'pf-phone', validate: window.formValidation.validatePhone }
+                    ],
+                    consentId: 'pf-consent',
+                    templateId: 'pf-success-template'
+                });
+            });
+        }
+    })();
+    </script>
 </body>
 </html>
