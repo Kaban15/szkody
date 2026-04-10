@@ -142,7 +142,7 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, delay = 10
     const btn = form.querySelector('button[type="submit"]');
     if (btn) {
         btn.disabled = true;
-        btn.textContent = 'Wysyłanie...';
+        btn.innerHTML = '<span class="v2-spinner"></span>';
     }
 
     setTimeout(() => {

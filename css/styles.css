@@ -279,6 +279,50 @@ input[type="range"]::-moz-range-thumb {
     transform: scale(1) translateY(0);
 }
 
+/* Hover clip-path accent bar */
+.v2-hover-accent {
+    position: relative;
+    overflow: hidden;
+}
+
+.v2-hover-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #dc2626;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.v2-hover-accent:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+/* Mobile card swiper */
+.v2-swiper-mobile {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+}
+
+.v2-swiper-mobile::-webkit-scrollbar { display: none; }
+.v2-swiper-mobile { scrollbar-width: none; }
+
+.v2-swiper-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 85vw;
+    max-width: 340px;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -482,4 +526,48 @@ body.v2-theme.v2-subpage #main-nav.nav-solid a:hover {
     .v2-result-highlight {
         animation: none;
     }
+}
+
+/* Scroll expansion hero */
+.v2-scroll-expand {
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+/* Nav link hover indicator */
+.v2-nav-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.v2-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #dc2626;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.v2-nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Button loading spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.v2-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #FFFFFF;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    vertical-align: middle;
 }

@@ -150,12 +150,12 @@
                 <a href="/"><span class="transition-all duration-300 font-bold text-white" id="nav-logo" style="font-size: 2rem;">Odszkodowania</span></a>
                 <!-- Desktop links -->
                 <div class="hidden lg:flex items-center gap-4 xl:gap-6">
-                    <a href="uslugi.html" class="text-white/70 hover:text-white transition-colors text-sm">Usługi</a>
-                    <a href="jak-dzialamy.html" class="text-white/70 hover:text-white transition-colors text-sm">Jak działamy</a>
-                    <a href="kalkulator.html" class="text-white/70 hover:text-white transition-colors text-sm">Kalkulator</a>
-                    <a href="sukcesy.html" class="text-white/70 hover:text-white transition-colors text-sm">Sukcesy</a>
-                    <a href="blog/" class="text-white/70 hover:text-white transition-colors text-sm">Blog</a>
-                    <a href="kontakt.html" class="text-white/70 hover:text-white transition-colors text-sm">Kontakt</a>
+                    <a href="uslugi.html" class="v2-nav-link text-white/70 hover:text-white transition-colors text-sm">Usługi</a>
+                    <a href="jak-dzialamy.html" class="v2-nav-link text-white/70 hover:text-white transition-colors text-sm">Jak działamy</a>
+                    <a href="kalkulator.html" class="v2-nav-link text-white/70 hover:text-white transition-colors text-sm">Kalkulator</a>
+                    <a href="sukcesy.html" class="v2-nav-link text-white/70 hover:text-white transition-colors text-sm">Sukcesy</a>
+                    <a href="blog/" class="v2-nav-link text-white/70 hover:text-white transition-colors text-sm">Blog</a>
+                    <a href="kontakt.html" class="v2-nav-link text-white/70 hover:text-white transition-colors text-sm">Kontakt</a>
                 </div>
                 <!-- Lang switcher -->
                 <div class="hidden lg:block lang-switcher-mount"></div>
@@ -198,7 +198,7 @@
     <!-- HERO -->
     <main>
         <section id="hero" class="relative min-h-screen flex items-center justify-center text-center">
-            <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
+            <div class="absolute inset-0 bg-gray-300 flex items-center justify-center v2-scroll-expand">
                 <span class="v2-float text-gray-500 text-6xl font-bold tracking-widest select-none">FOTO</span>
             </div>
             <div class="absolute inset-0 bg-black/50"></div>
@@ -518,6 +518,25 @@
                 });
             }
         });
+
+        // Scroll expansion on hero FOTO
+        var expandEl = document.querySelector('.v2-scroll-expand');
+        if (expandEl) {
+            var expandTicking = false;
+            window.addEventListener('scroll', function() {
+                if (!expandTicking) {
+                    requestAnimationFrame(function() {
+                        var scrollY = window.scrollY;
+                        var maxScroll = window.innerHeight;
+                        var progress = Math.min(scrollY / maxScroll, 1);
+                        var scale = 1 + (progress * 0.15);
+                        expandEl.style.transform = 'scale(' + scale + ')';
+                        expandTicking = false;
+                    });
+                    expandTicking = true;
+                }
+            }, { passive: true });
+        }
     </script>
 </body>
 </html>
