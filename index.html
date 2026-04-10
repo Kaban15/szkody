@@ -147,7 +147,7 @@
     <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
-                <a href="/"><span class="text-white font-bold text-xl lg:text-2xl transition-colors" id="nav-logo">Odszkodowania</span></a>
+                <a href="/"><span class="transition-all duration-300 font-bold text-white" id="nav-logo" style="font-size: 2rem;">Odszkodowania</span></a>
                 <!-- Desktop links -->
                 <div class="hidden lg:flex items-center gap-5 xl:gap-8">
                     <a href="uslugi.html" class="text-white/70 hover:text-white transition-colors text-sm">Usługi</a>
@@ -159,6 +159,7 @@
                 </div>
                 <!-- CTA + Phone -->
                 <div class="hidden lg:flex items-center gap-3">
+                    <div class="lang-switcher-mount"></div>
                     <a href="tel:+48XXXXXXXXX" class="text-white/80 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4"></i> +48 XXX XXX XXX
                     </a>
@@ -189,6 +190,7 @@
             <a href="tel:+48XXXXXXXXX" class="block text-v2-cta text-lg font-medium pt-2">
                 <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>+48 XXX XXX XXX
             </a>
+            <div class="lang-switcher-mount mobile pt-4 flex justify-center"></div>
         </div>
     </div>
 
@@ -208,10 +210,16 @@
         </section>
 
         <!-- ACTION BUTTONS -->
-        <section class="bg-v2-bg py-8">
-            <div class="max-w-md mx-auto px-4 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact-form" class="flex-1 text-center border-2 border-v2-line text-v2-text hover:border-v2-cta hover:text-v2-cta px-6 py-4 rounded-lg font-semibold transition-colors">Dla poszkodowanych</a>
-                <a href="kalkulator.html" class="flex-1 text-center border-2 border-v2-line text-v2-text hover:border-v2-cta hover:text-v2-cta px-6 py-4 rounded-lg font-semibold transition-colors">Kalkulator odszkodowań</a>
+        <section class="bg-v2-bg">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2">
+                <a href="#contact-form" class="group block bg-[#e8e8e8] p-8 md:p-10 hover:bg-[#d8d8d8] transition-colors">
+                    <h3 class="text-v2-text text-2xl font-bold mb-2">Dla poszkodowanych</h3>
+                    <p class="text-v2-muted">Sprawdź, co możemy dla Ciebie zrobić.</p>
+                </a>
+                <a href="kalkulator.html" class="group block bg-v2-text p-8 md:p-10 hover:bg-v2-text/90 transition-colors">
+                    <h3 class="text-white text-2xl font-bold mb-2">Kalkulator odszkodowań</h3>
+                    <p class="text-white/70">Oblicz orientacyjną kwotę odszkodowania.</p>
+                </a>
             </div>
         </section>
 
@@ -261,42 +269,42 @@
 
         <!-- SERVICE CARDS -->
         <section class="bg-v2-bg py-16 lg:py-20">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <a href="odszkodowania-komunikacyjne.html" class="v2-card rounded-xl p-6 lg:p-8 text-white" style="background-color: #1e3a5f;">
-                        <i data-lucide="car" class="w-10 h-10 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Odszkodowania komunikacyjne</h3>
-                        <p class="text-white/80 text-sm">Wypadki samochodowe, motocyklowe, potrącenia pieszych. Walczymy o najwyższe odszkodowanie.</p>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="odszkodowania-komunikacyjne.html" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12" style="background-color: #e8e8e8;">
+                        <i data-lucide="car" class="w-12 h-12 mx-auto mb-6 text-[#1a1a2e]"></i>
+                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]">Odszkodowania komunikacyjne</h3>
+                        <p class="text-center text-[#1a1a2e]/70">Wypadki samochodowe, motocyklowe, potrącenia pieszych. Walczymy o najwyższe odszkodowanie.</p>
                     </a>
-                    <a href="odszkodowania-wypadki-przy-pracy.html" class="v2-card rounded-xl p-6 lg:p-8 text-white" style="background-color: #b8860b;">
-                        <i data-lucide="hard-hat" class="w-10 h-10 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Wypadki przy pracy</h3>
-                        <p class="text-white/80 text-sm">Uraz na budowie, w fabryce lub biurze. Odszkodowanie od pracodawcy i ubezpieczyciela.</p>
+                    <a href="odszkodowania-wypadki-przy-pracy.html" class="v2-card v2-slide-right rounded-xl p-10 lg:p-12 text-white" style="background-color: #b8860b;">
+                        <i data-lucide="hard-hat" class="w-12 h-12 mx-auto mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4 text-center">Wypadki przy pracy</h3>
+                        <p class="text-center text-white/80">Uraz na budowie, w fabryce lub biurze. Odszkodowanie od pracodawcy i ubezpieczyciela.</p>
                     </a>
-                    <a href="#contact-form" class="v2-card rounded-xl p-6 lg:p-8 text-white" style="background-color: #8b2020;">
-                        <i data-lucide="heart-pulse" class="w-10 h-10 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Pomoc po wypadku</h3>
-                        <p class="text-white/80 text-sm">Bezpłatna konsultacja i analiza Twojej sprawy. Skontaktuj się z nami już dziś.</p>
+                    <a href="#contact-form" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12" style="background-color: #e8e8e8;">
+                        <i data-lucide="heart-pulse" class="w-12 h-12 mx-auto mb-6 text-[#1a1a2e]"></i>
+                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]">Pomoc po wypadku</h3>
+                        <p class="text-center text-[#1a1a2e]/70">Bezpłatna konsultacja i analiza Twojej sprawy. Skontaktuj się z nami już dziś.</p>
                     </a>
-                    <a href="odszkodowania-bledy-medyczne.html" class="v2-card rounded-xl p-6 lg:p-8 text-white" style="background-color: #1a7a6d;">
-                        <i data-lucide="stethoscope" class="w-10 h-10 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Błędy medyczne</h3>
-                        <p class="text-white/80 text-sm">Błąd lekarza, zakażenie szpitalne, wadliwa diagnoza. Odszkodowanie za szkody zdrowotne.</p>
+                    <a href="odszkodowania-bledy-medyczne.html" class="v2-card v2-slide-right rounded-xl p-10 lg:p-12 text-white" style="background-color: #1a7a6d;">
+                        <i data-lucide="stethoscope" class="w-12 h-12 mx-auto mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4 text-center">Błędy medyczne</h3>
+                        <p class="text-center text-white/80">Błąd lekarza, zakażenie szpitalne, wadliwa diagnoza. Odszkodowanie za szkody zdrowotne.</p>
                     </a>
-                    <a href="odszkodowania-wypadki-rolnicze.html" class="v2-card rounded-xl p-6 lg:p-8 text-white" style="background-color: #2d5a27;">
-                        <i data-lucide="wheat" class="w-10 h-10 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Wypadki rolnicze (KRUS)</h3>
-                        <p class="text-white/80 text-sm">Wypadki w gospodarstwie rolnym. Odszkodowanie z KRUS i ubezpieczenia OC rolnika.</p>
+                    <a href="odszkodowania-wypadki-rolnicze.html" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12" style="background-color: #e8e8e8;">
+                        <i data-lucide="wheat" class="w-12 h-12 mx-auto mb-6 text-[#1a1a2e]"></i>
+                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]">Wypadki rolnicze (KRUS)</h3>
+                        <p class="text-center text-[#1a1a2e]/70">Wypadki w gospodarstwie rolnym. Odszkodowanie z KRUS i ubezpieczenia OC rolnika.</p>
                     </a>
-                    <a href="odszkodowania-smierc-bliskiej-osoby.html" class="v2-card rounded-xl p-6 lg:p-8 text-white" style="background-color: #4a2d6b;">
-                        <i data-lucide="heart" class="w-10 h-10 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Śmierć bliskiej osoby</h3>
-                        <p class="text-white/80 text-sm">Zadośćuczynienie, renta i odszkodowanie dla rodziny po tragicznej stracie.</p>
+                    <a href="odszkodowania-smierc-bliskiej-osoby.html" class="v2-card v2-slide-right rounded-xl p-10 lg:p-12 text-white" style="background-color: #4a2d6b;">
+                        <i data-lucide="heart" class="w-12 h-12 mx-auto mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4 text-center">Śmierć bliskiej osoby</h3>
+                        <p class="text-center text-white/80">Zadośćuczynienie, renta i odszkodowanie dla rodziny po tragicznej stracie.</p>
                     </a>
-                    <a href="kalkulator.html" class="v2-card rounded-xl p-6 lg:p-8 text-white sm:col-span-2" style="background-color: #c4511a;">
-                        <i data-lucide="calculator" class="w-10 h-10 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Kalkulator odszkodowań</h3>
-                        <p class="text-white/80 text-sm">Sprawdź orientacyjną kwotę odszkodowania za pomocą naszego bezpłatnego kalkulatora online.</p>
+                    <a href="kalkulator.html" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12 text-white md:col-span-2" style="background-color: #c4511a;">
+                        <i data-lucide="calculator" class="w-12 h-12 mx-auto mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4 text-center">Kalkulator odszkodowań</h3>
+                        <p class="text-center text-white/80">Sprawdź orientacyjną kwotę odszkodowania za pomocą naszego bezpłatnego kalkulatora online.</p>
                     </a>
                 </div>
             </div>
@@ -459,11 +467,26 @@
     <script src="js/animations.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/i18n.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
+            }
+
+            // V2 card slide-in observer
+            const slideEls = document.querySelectorAll('.v2-slide-left, .v2-slide-right');
+            if (slideEls.length) {
+                const slideObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            slideObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                slideEls.forEach(el => slideObserver.observe(el));
             }
 
             // V2 contact form — uses window.formValidation API
