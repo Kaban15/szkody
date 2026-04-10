@@ -571,3 +571,49 @@ body.v2-theme.v2-subpage #main-nav.nav-solid a:hover {
     animation: spin 0.6s linear infinite;
     vertical-align: middle;
 }
+
+/* Step tabs */
+.v2-step-tab {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+.v2-step-tab.active {
+    background: #dc2626;
+    color: #FFFFFF;
+    border-color: #dc2626;
+}
+
+/* Step panel transition */
+.v2-step-panel {
+    animation: fadeIn 0.3s ease;
+}
+
+.v2-step-panel.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle parallax offset */
+.v2-parallax-slow {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+/* Word-by-word stagger reveal */
+.v2-word-reveal .v2-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.v2-word-reveal.visible .v2-word {
+    opacity: 1;
+    transform: translateY(0);
+}
