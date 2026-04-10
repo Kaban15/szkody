@@ -149,7 +149,7 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/"><span class="transition-all duration-300 font-bold text-white" id="nav-logo" style="font-size: 2rem;">Odszkodowania</span></a>
                 <!-- Desktop links -->
-                <div class="hidden lg:flex items-center gap-5 xl:gap-8">
+                <div class="hidden lg:flex items-center gap-4 xl:gap-6">
                     <a href="uslugi.html" class="text-white/70 hover:text-white transition-colors text-sm">Usługi</a>
                     <a href="jak-dzialamy.html" class="text-white/70 hover:text-white transition-colors text-sm">Jak działamy</a>
                     <a href="kalkulator.html" class="text-white/70 hover:text-white transition-colors text-sm">Kalkulator</a>
@@ -157,9 +157,10 @@
                     <a href="blog/" class="text-white/70 hover:text-white transition-colors text-sm">Blog</a>
                     <a href="kontakt.html" class="text-white/70 hover:text-white transition-colors text-sm">Kontakt</a>
                 </div>
+                <!-- Lang switcher -->
+                <div class="hidden lg:block lang-switcher-mount"></div>
                 <!-- CTA + Phone -->
                 <div class="hidden lg:flex items-center gap-3">
-                    <div class="lang-switcher-mount"></div>
                     <a href="tel:+48XXXXXXXXX" class="text-white/80 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4"></i> +48 XXX XXX XXX
                     </a>
@@ -202,10 +203,10 @@
             </div>
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
-                <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">Poznaj swoje prawa</h1>
-                <p class="text-white/80 text-lg md:text-xl mb-4">Dla osób poszkodowanych w wypadkach i zdarzeniach losowych</p>
-                <a href="#contact-form" class="inline-block bg-v2-cta hover:bg-v2-cta-hover text-white text-lg px-8 py-4 rounded-lg font-semibold transition-colors mb-4">Bezpłatna konsultacja</a>
-                <p class="text-white/60 text-sm">Sprawdź, ile możemy dla Ciebie uzyskać</p>
+                <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6" data-i18n="hero.v2_title">Poznaj swoje prawa</h1>
+                <p class="text-white/80 text-lg md:text-xl mb-4" data-i18n="hero.v2_subtitle">Dla osób poszkodowanych w wypadkach i zdarzeniach losowych</p>
+                <a href="#contact-form" class="inline-block bg-v2-cta hover:bg-v2-cta-hover text-white text-lg px-8 py-4 rounded-lg font-semibold transition-colors mb-4" data-i18n="hero.v2_cta">Bezpłatna konsultacja</a>
+                <p class="text-white/60 text-sm" data-i18n="hero.v2_subtext">Sprawdź, ile możemy dla Ciebie uzyskać</p>
             </div>
         </section>
 
@@ -213,12 +214,12 @@
         <section class="bg-v2-bg">
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2">
                 <a href="#contact-form" class="group block bg-[#e8e8e8] p-8 md:p-10 hover:bg-[#d8d8d8] transition-colors">
-                    <h3 class="text-v2-text text-2xl font-bold mb-2">Dla poszkodowanych</h3>
-                    <p class="text-v2-muted">Sprawdź, co możemy dla Ciebie zrobić.</p>
+                    <h3 class="text-v2-text text-2xl font-bold mb-2" data-i18n="action.poszkodowani_title">Dla poszkodowanych</h3>
+                    <p class="text-v2-muted" data-i18n="action.poszkodowani_desc">Sprawdź, co możemy dla Ciebie zrobić.</p>
                 </a>
                 <a href="kalkulator.html" class="group block bg-v2-text p-8 md:p-10 hover:bg-v2-text/90 transition-colors">
-                    <h3 class="text-white text-2xl font-bold mb-2">Kalkulator odszkodowań</h3>
-                    <p class="text-white/70">Oblicz orientacyjną kwotę odszkodowania.</p>
+                    <h3 class="text-white text-2xl font-bold mb-2" data-i18n="action.kalkulator_title">Kalkulator odszkodowań</h3>
+                    <p class="text-white/70" data-i18n="action.kalkulator_desc">Oblicz orientacyjną kwotę odszkodowania.</p>
                 </a>
             </div>
         </section>
@@ -226,30 +227,30 @@
         <!-- STATISTICS -->
         <section class="bg-v2-bg py-16 lg:py-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-v2-text text-3xl lg:text-4xl font-bold mb-12">Nasza firma to</h2>
+                <h2 class="text-v2-text text-3xl lg:text-4xl font-bold mb-12" data-i18n="stats.title">Nasza firma to</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
                     <div class="count-up">
                         <div class="text-v2-text text-4xl lg:text-5xl font-bold"><span data-count="500">0</span>+</div>
-                        <p class="text-v2-muted text-sm mt-2">wygranych spraw odszkodowawczych w całej Polsce</p>
+                        <p class="text-v2-muted text-sm mt-2" data-i18n="stats.cases_desc">wygranych spraw odszkodowawczych w całej Polsce</p>
                     </div>
                     <div class="count-up">
                         <div class="text-v2-text text-4xl lg:text-5xl font-bold"><span data-count="98">0</span>%</div>
-                        <p class="text-v2-muted text-sm mt-2">skuteczności w sprawach, które prowadzimy</p>
+                        <p class="text-v2-muted text-sm mt-2" data-i18n="stats.success_desc">skuteczności w sprawach, które prowadzimy</p>
                     </div>
                     <div class="count-up">
                         <div class="text-v2-text text-4xl lg:text-5xl font-bold"><span data-count="15">0</span> mln zł</div>
-                        <p class="text-v2-muted text-sm mt-2">uzyskanych odszkodowań dla naszych klientów</p>
+                        <p class="text-v2-muted text-sm mt-2" data-i18n="stats.amount_desc">uzyskanych odszkodowań dla naszych klientów</p>
                     </div>
                     <div class="count-up">
                         <div class="text-v2-text text-4xl lg:text-5xl font-bold"><span data-count="10">0</span>+</div>
-                        <p class="text-v2-muted text-sm mt-2">lat doświadczenia w branży odszkodowawczej</p>
+                        <p class="text-v2-muted text-sm mt-2" data-i18n="stats.years_desc">lat doświadczenia w branży odszkodowawczej</p>
                     </div>
                     <div class="count-up col-span-2 lg:col-span-1">
                         <div class="text-v2-text text-4xl lg:text-5xl font-bold">3,5</div>
-                        <p class="text-v2-muted text-sm mt-2">miesiąca — średni czas realizacji sprawy</p>
+                        <p class="text-v2-muted text-sm mt-2" data-i18n="stats.time_desc">miesiąca — średni czas realizacji sprawy</p>
                     </div>
                 </div>
-                <p class="text-v2-muted/60 text-xs mt-10">Dane na podstawie spraw prowadzonych w latach 2015–2025</p>
+                <p class="text-v2-muted/60 text-xs mt-10" data-i18n="stats.source">Dane na podstawie spraw prowadzonych w latach 2015–2025</p>
             </div>
         </section>
 
@@ -273,38 +274,38 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <a href="odszkodowania-komunikacyjne.html" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12" style="background-color: #e8e8e8;">
                         <i data-lucide="car" class="w-12 h-12 mx-auto mb-6 text-[#1a1a2e]"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]">Odszkodowania komunikacyjne</h3>
-                        <p class="text-center text-[#1a1a2e]/70">Wypadki samochodowe, motocyklowe, potrącenia pieszych. Walczymy o najwyższe odszkodowanie.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]" data-i18n="cards.komunikacyjne_title">Odszkodowania komunikacyjne</h3>
+                        <p class="text-center text-[#1a1a2e]/70" data-i18n="cards.komunikacyjne_desc">Wypadki samochodowe, motocyklowe, potrącenia pieszych. Walczymy o najwyższe odszkodowanie.</p>
                     </a>
                     <a href="odszkodowania-wypadki-przy-pracy.html" class="v2-card v2-slide-right rounded-xl p-10 lg:p-12 text-white" style="background-color: #b8860b;">
                         <i data-lucide="hard-hat" class="w-12 h-12 mx-auto mb-6"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-center">Wypadki przy pracy</h3>
-                        <p class="text-center text-white/80">Uraz na budowie, w fabryce lub biurze. Odszkodowanie od pracodawcy i ubezpieczyciela.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-center" data-i18n="cards.praca_title">Wypadki przy pracy</h3>
+                        <p class="text-center text-white/80" data-i18n="cards.praca_desc">Uraz na budowie, w fabryce lub biurze. Odszkodowanie od pracodawcy i ubezpieczyciela.</p>
                     </a>
                     <a href="#contact-form" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12" style="background-color: #e8e8e8;">
                         <i data-lucide="heart-pulse" class="w-12 h-12 mx-auto mb-6 text-[#1a1a2e]"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]">Pomoc po wypadku</h3>
-                        <p class="text-center text-[#1a1a2e]/70">Bezpłatna konsultacja i analiza Twojej sprawy. Skontaktuj się z nami już dziś.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]" data-i18n="cards.pomoc_title">Pomoc po wypadku</h3>
+                        <p class="text-center text-[#1a1a2e]/70" data-i18n="cards.pomoc_desc">Bezpłatna konsultacja i analiza Twojej sprawy. Skontaktuj się z nami już dziś.</p>
                     </a>
                     <a href="odszkodowania-bledy-medyczne.html" class="v2-card v2-slide-right rounded-xl p-10 lg:p-12 text-white" style="background-color: #1a7a6d;">
                         <i data-lucide="stethoscope" class="w-12 h-12 mx-auto mb-6"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-center">Błędy medyczne</h3>
-                        <p class="text-center text-white/80">Błąd lekarza, zakażenie szpitalne, wadliwa diagnoza. Odszkodowanie za szkody zdrowotne.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-center" data-i18n="cards.medyczne_title">Błędy medyczne</h3>
+                        <p class="text-center text-white/80" data-i18n="cards.medyczne_desc">Błąd lekarza, zakażenie szpitalne, wadliwa diagnoza. Odszkodowanie za szkody zdrowotne.</p>
                     </a>
                     <a href="odszkodowania-wypadki-rolnicze.html" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12" style="background-color: #e8e8e8;">
                         <i data-lucide="wheat" class="w-12 h-12 mx-auto mb-6 text-[#1a1a2e]"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]">Wypadki rolnicze (KRUS)</h3>
-                        <p class="text-center text-[#1a1a2e]/70">Wypadki w gospodarstwie rolnym. Odszkodowanie z KRUS i ubezpieczenia OC rolnika.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-center text-[#1a1a2e]" data-i18n="cards.rolnicze_title">Wypadki rolnicze (KRUS)</h3>
+                        <p class="text-center text-[#1a1a2e]/70" data-i18n="cards.rolnicze_desc">Wypadki w gospodarstwie rolnym. Odszkodowanie z KRUS i ubezpieczenia OC rolnika.</p>
                     </a>
                     <a href="odszkodowania-smierc-bliskiej-osoby.html" class="v2-card v2-slide-right rounded-xl p-10 lg:p-12 text-white" style="background-color: #4a2d6b;">
                         <i data-lucide="heart" class="w-12 h-12 mx-auto mb-6"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-center">Śmierć bliskiej osoby</h3>
-                        <p class="text-center text-white/80">Zadośćuczynienie, renta i odszkodowanie dla rodziny po tragicznej stracie.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-center" data-i18n="cards.smierc_title">Śmierć bliskiej osoby</h3>
+                        <p class="text-center text-white/80" data-i18n="cards.smierc_desc">Zadośćuczynienie, renta i odszkodowanie dla rodziny po tragicznej stracie.</p>
                     </a>
                     <a href="kalkulator.html" class="v2-card v2-slide-left rounded-xl p-10 lg:p-12 text-white md:col-span-2" style="background-color: #c4511a;">
                         <i data-lucide="calculator" class="w-12 h-12 mx-auto mb-6"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-center">Kalkulator odszkodowań</h3>
-                        <p class="text-center text-white/80">Sprawdź orientacyjną kwotę odszkodowania za pomocą naszego bezpłatnego kalkulatora online.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-center" data-i18n="cards.kalkulator_title">Kalkulator odszkodowań</h3>
+                        <p class="text-center text-white/80" data-i18n="cards.kalkulator_desc">Sprawdź orientacyjną kwotę odszkodowania za pomocą naszego bezpłatnego kalkulatora online.</p>
                     </a>
                 </div>
             </div>
@@ -315,8 +316,8 @@
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-12">
                     <div class="mb-10 lg:mb-0">
-                        <h2 class="text-v2-text text-3xl lg:text-4xl font-bold mb-4">Masz pytanie?</h2>
-                        <p class="text-v2-muted mb-6">Skontaktuj się z nami. Bezpłatnie przeanalizujemy Twoją sprawę i ocenimy szanse na uzyskanie odszkodowania.</p>
+                        <h2 class="text-v2-text text-3xl lg:text-4xl font-bold mb-4" data-i18n="contact.title">Masz pytanie?</h2>
+                        <p class="text-v2-muted mb-6" data-i18n="contact.desc">Skontaktuj się z nami. Bezpłatnie przeanalizujemy Twoją sprawę i ocenimy szanse na uzyskanie odszkodowania.</p>
                         <div class="space-y-4">
                             <div class="flex items-center gap-3">
                                 <i data-lucide="phone" class="w-5 h-5 text-v2-cta"></i>
@@ -328,7 +329,7 @@
                             </div>
                             <div class="flex items-center gap-3">
                                 <i data-lucide="clock" class="w-5 h-5 text-v2-cta"></i>
-                                <span class="text-v2-muted">Pon–Pt: 8:00–18:00, Sob: 9:00–14:00</span>
+                                <span class="text-v2-muted" data-i18n="contact.hours">Pon–Pt: 8:00–18:00, Sob: 9:00–14:00</span>
                             </div>
                         </div>
                     </div>
@@ -336,46 +337,46 @@
                         <form id="v2-contact-form" novalidate class="space-y-4">
                             <div>
                                 <select name="topic" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
-                                    <option value="" disabled selected>Wybierz temat rozmowy</option>
-                                    <option value="komunikacyjne">Odszkodowanie komunikacyjne</option>
-                                    <option value="praca">Wypadek przy pracy</option>
-                                    <option value="medyczne">Błąd medyczny</option>
-                                    <option value="smierc">Śmierć bliskiej osoby</option>
-                                    <option value="rolnicze">Wypadek rolniczy</option>
-                                    <option value="inne">Inne</option>
+                                    <option value="" disabled selected data-i18n="contact.topic_default">Wybierz temat rozmowy</option>
+                                    <option value="komunikacyjne" data-i18n="contact.topic_komunikacyjne">Odszkodowanie komunikacyjne</option>
+                                    <option value="praca" data-i18n="contact.topic_praca">Wypadek przy pracy</option>
+                                    <option value="medyczne" data-i18n="contact.topic_medyczne">Błąd medyczny</option>
+                                    <option value="smierc" data-i18n="contact.topic_smierc">Śmierć bliskiej osoby</option>
+                                    <option value="rolnicze" data-i18n="contact.topic_rolnicze">Wypadek rolniczy</option>
+                                    <option value="inne" data-i18n="contact.topic_inne">Inne</option>
                                 </select>
                             </div>
                             <div>
-                                <input type="text" id="v2-name" name="name" placeholder="Imię i nazwisko *" required minlength="2" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
-                                <p class="text-red-500 text-xs mt-1 hidden" id="v2-name-error">Podaj swoje imię (min. 2 znaki)</p>
+                                <input type="text" id="v2-name" name="name" placeholder="Imię i nazwisko *" required minlength="2" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors" data-i18n-placeholder="contact.name_placeholder">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="v2-name-error" data-i18n="contact.name_error">Podaj swoje imię (min. 2 znaki)</p>
                             </div>
                             <div>
-                                <input type="tel" id="v2-phone" name="phone" placeholder="Numer telefonu *" required class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
-                                <p class="text-red-500 text-xs mt-1 hidden" id="v2-phone-error">Podaj prawidłowy numer telefonu</p>
+                                <input type="tel" id="v2-phone" name="phone" placeholder="Numer telefonu *" required class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors" data-i18n-placeholder="contact.phone_placeholder">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="v2-phone-error" data-i18n="contact.phone_error">Podaj prawidłowy numer telefonu</p>
                             </div>
                             <div>
-                                <input type="email" id="v2-email" name="email" placeholder="E-mail" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors">
-                                <p class="text-red-500 text-xs mt-1 hidden" id="v2-email-error">Podaj prawidłowy adres email</p>
+                                <input type="email" id="v2-email" name="email" placeholder="E-mail" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors" data-i18n-placeholder="contact.email_placeholder">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="v2-email-error" data-i18n="contact.email_error">Podaj prawidłowy adres email</p>
                             </div>
                             <div>
-                                <textarea name="message" rows="4" placeholder="Treść wiadomości" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors resize-none"></textarea>
+                                <textarea name="message" rows="4" placeholder="Treść wiadomości" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors resize-none" data-i18n-placeholder="contact.message_placeholder"></textarea>
                             </div>
                             <div class="flex items-start gap-2">
                                 <input type="checkbox" name="consent" required class="mt-1 w-4 h-4 accent-v2-cta" id="v2-consent">
-                                <label for="v2-consent" class="text-v2-muted text-xs">
+                                <label for="v2-consent" class="text-v2-muted text-xs" data-i18n="contact.consent">
                                     Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
                                     <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *
                                 </label>
                             </div>
-                            <button type="submit" class="w-full bg-v2-text hover:bg-v2-text/80 text-white py-3 rounded-lg font-semibold transition-colors">Wyślij</button>
+                            <button type="submit" class="w-full bg-v2-text hover:bg-v2-text/80 text-white py-3 rounded-lg font-semibold transition-colors" data-i18n="contact.submit">Wyślij</button>
                         </form>
                         <template id="v2-contact-success">
                             <div class="text-center py-8">
                                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
                                 </div>
-                                <h3 class="text-v2-text text-2xl font-bold mb-2">Dziękujemy!</h3>
-                                <p class="text-v2-muted">Nasz specjalista skontaktuje się z Tobą wkrótce.</p>
+                                <h3 class="text-v2-text text-2xl font-bold mb-2" data-i18n="contact.success_title">Dziękujemy!</h3>
+                                <p class="text-v2-muted" data-i18n="contact.success_msg">Nasz specjalista skontaktuje się z Tobą wkrótce.</p>
                             </div>
                         </template>
                     </div>
@@ -387,8 +388,8 @@
         <section class="bg-v2-bg py-16 lg:py-20">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <blockquote>
-                    <p class="text-v2-text text-2xl lg:text-3xl italic font-light leading-relaxed mb-6">"Byłem pewien, że 15 tysięcy to wszystko na co mogę liczyć. Dostałem 8 razy więcej."</p>
-                    <cite class="text-v2-muted text-base not-italic">— Marek, Warszawa</cite>
+                    <p class="text-v2-text text-2xl lg:text-3xl italic font-light leading-relaxed mb-6" data-i18n="quote.text">"Byłem pewien, że 15 tysięcy to wszystko na co mogę liczyć. Dostałem 8 razy więcej."</p>
+                    <cite class="text-v2-muted text-base not-italic" data-i18n="quote.author">— Marek, Warszawa</cite>
                 </blockquote>
             </div>
         </section>
@@ -397,10 +398,10 @@
     <!-- COOKIE BANNER -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-v2-line hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-v2-muted text-sm">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a></p>
+            <p class="text-v2-muted text-sm" data-i18n="cookie.text">Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a></p>
             <div class="flex gap-3 shrink-0">
-                <button id="cookie-reject" class="border border-v2-line text-v2-muted px-4 py-2 rounded text-sm hover:text-v2-text transition-colors">Tylko niezbędne</button>
-                <button id="cookie-accept" class="bg-v2-cta hover:bg-v2-cta-hover text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Akceptuję</button>
+                <button id="cookie-reject" class="border border-v2-line text-v2-muted px-4 py-2 rounded text-sm hover:text-v2-text transition-colors" data-i18n="cookie.reject">Tylko niezbędne</button>
+                <button id="cookie-accept" class="bg-v2-cta hover:bg-v2-cta-hover text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="cookie.accept">Akceptuję</button>
             </div>
         </div>
     </div>
@@ -412,14 +413,14 @@
                 <div class="md:col-span-1">
                     <span class="text-white font-bold text-xl mb-4 block">Odszkodowania</span>
                     <div class="text-white/60 text-sm space-y-1">
-                        <p>ul. Przykładowa 10</p>
-                        <p>00-001 Warszawa</p>
+                        <p data-i18n="footer.company_street">ul. Przykładowa 10</p>
+                        <p data-i18n="footer.company_city">00-001 Warszawa</p>
                         <p class="mt-2">NIP: XXXXXXXXXX</p>
                         <p>KRS: XXXXXXXXXX</p>
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Usługi</h4>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.services">Usługi</h4>
                     <ul class="space-y-2 text-white/60 text-sm">
                         <li><a href="odszkodowania-komunikacyjne.html" class="hover:text-white transition-colors">Odszkodowania komunikacyjne</a></li>
                         <li><a href="odszkodowania-wypadki-przy-pracy.html" class="hover:text-white transition-colors">Wypadki przy pracy</a></li>
@@ -429,7 +430,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Informacje</h4>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.info">Informacje</h4>
                     <ul class="space-y-2 text-white/60 text-sm">
                         <li><a href="jak-dzialamy.html" class="hover:text-white transition-colors">Jak działamy</a></li>
                         <li><a href="sukcesy.html" class="hover:text-white transition-colors">Sukcesy</a></li>
@@ -439,7 +440,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Kontakt</h4>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.contact">Kontakt</h4>
                     <ul class="space-y-2 text-white/60 text-sm">
                         <li><a href="tel:+48XXXXXXXXX" class="hover:text-white transition-colors">+48 XXX XXX XXX</a></li>
                         <li><a href="mailto:kontakt@example.pl" class="hover:text-white transition-colors">kontakt@example.pl</a></li>
@@ -449,7 +450,7 @@
                 </div>
             </div>
             <div class="border-t border-white/10 pt-6 text-center text-white/40 text-sm">
-                <p>&copy; 2026 Odszkodowania. Wszelkie prawa zastrzeżone.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 Odszkodowania. Wszelkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
