@@ -151,50 +151,134 @@
             </div>
         </section>
 
-        <!-- CO MOŻESZ UZYSKAĆ -->
-        <section class="bg-v2-surface py-16">
+        <!-- JAKIE ŚWIADCZENIA MOŻESZ UZYSKAĆ -->
+        <section class="bg-v2-surface py-16 lg:py-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold mb-8" data-i18n="kom.benefits_title">Co możesz uzyskać?</h2>
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
-                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
-                            <i data-lucide="heart" class="w-5 h-5 text-v2-cta"></i>
+                <div class="lg:flex lg:items-end lg:justify-between mb-10 gap-8">
+                    <div>
+                        <p class="text-v2-cta text-xs font-semibold uppercase tracking-widest mb-2">Twoje uprawnienia</p>
+                        <h2 class="text-v2-text text-2xl lg:text-3xl font-bold">Na co możesz liczyć po wypadku?</h2>
+                    </div>
+                    <p class="text-v2-muted text-sm mt-3 lg:mt-0 lg:text-right max-w-xs">Bezpłatnie sprawdzimy, które ze świadczeń Ci przysługują.</p>
+                </div>
+                <!-- Slider viewport -->
+                <div class="overflow-hidden" id="benefitsViewport">
+                    <div class="flex transition-transform duration-500 ease-[cubic-bezier(.4,0,.2,1)]" id="benefitsTrack">
+                        <!-- Slajd 1 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="bg-white rounded-2xl border-l-4 border-v2-cta shadow-sm p-6 sm:p-8 lg:flex lg:gap-8 items-start">
+                                <div class="shrink-0 mb-4 lg:mb-0">
+                                    <div class="w-14 h-14 rounded-xl bg-v2-cta/10 flex items-center justify-center">
+                                        <i data-lucide="shield-check" class="w-7 h-7 text-v2-cta"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-v2-muted text-xs font-mono tracking-wider">01 / 06</span>
+                                    <h3 class="text-v2-text text-xl lg:text-2xl font-bold mt-1 mb-3">Odszkodowanie</h3>
+                                    <p class="text-v2-muted leading-relaxed mb-5">Podstawowe świadczenie obejmujące rzeczywiste straty materialne — uszczerbek na zdrowiu, utracone zarobki, koszty opieki. Ubezpieczyciel zazwyczaj zaniża tę kwotę, licząc na brak sprzeciwu. Znamy skuteczne metody, by wyegzekwować należną sumę.</p>
+                                    <a href="#page-contact" class="inline-flex items-center gap-2 text-v2-cta font-semibold text-sm hover:gap-3 transition-all">Sprawdź swoją sprawę <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-v2-text font-semibold" data-i18n="kom.benefit1">Zadośćuczynienie za ból i cierpienie</p>
+                        <!-- Slajd 2 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="bg-white rounded-2xl border-l-4 border-gold shadow-sm p-6 sm:p-8 lg:flex lg:gap-8 items-start">
+                                <div class="shrink-0 mb-4 lg:mb-0">
+                                    <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center">
+                                        <i data-lucide="heart" class="w-7 h-7 text-gold"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-v2-muted text-xs font-mono tracking-wider">02 / 06</span>
+                                    <h3 class="text-v2-text text-xl lg:text-2xl font-bold mt-1 mb-3">Zadośćuczynienie</h3>
+                                    <p class="text-v2-muted leading-relaxed mb-5">Rekompensata za ból, cierpienie i trwałe pogorszenie jakości życia — zarówno to już doznane, jak i przyszłe skutki wypadku. Kwota ustalana indywidualnie — im dokładniejsza dokumentacja, tym wyższe świadczenie.</p>
+                                    <a href="#page-contact" class="inline-flex items-center gap-2 text-v2-cta font-semibold text-sm hover:gap-3 transition-all">Sprawdź swoją sprawę <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slajd 3 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="bg-white rounded-2xl border-l-4 border-v2-cta shadow-sm p-6 sm:p-8 lg:flex lg:gap-8 items-start">
+                                <div class="shrink-0 mb-4 lg:mb-0">
+                                    <div class="w-14 h-14 rounded-xl bg-v2-cta/10 flex items-center justify-center">
+                                        <i data-lucide="stethoscope" class="w-7 h-7 text-v2-cta"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-v2-muted text-xs font-mono tracking-wider">03 / 06</span>
+                                    <h3 class="text-v2-text text-xl lg:text-2xl font-bold mt-1 mb-3">Zwrot kosztów leczenia</h3>
+                                    <p class="text-v2-muted leading-relaxed mb-5">Uzasadnione wydatki na prywatne leczenie, operacje, wizyty specjalistyczne, leki i niezbędny sprzęt medyczny podlegają pełnemu zwrotowi. Warunkiem jest staranna dokumentacja każdego wydatku — pomagamy to zorganizować od początku.</p>
+                                    <a href="#page-contact" class="inline-flex items-center gap-2 text-v2-cta font-semibold text-sm hover:gap-3 transition-all">Sprawdź swoją sprawę <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slajd 4 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="bg-white rounded-2xl border-l-4 border-gold shadow-sm p-6 sm:p-8 lg:flex lg:gap-8 items-start">
+                                <div class="shrink-0 mb-4 lg:mb-0">
+                                    <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center">
+                                        <i data-lucide="activity" class="w-7 h-7 text-gold"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-v2-muted text-xs font-mono tracking-wider">04 / 06</span>
+                                    <h3 class="text-v2-text text-xl lg:text-2xl font-bold mt-1 mb-3">Koszty rehabilitacji</h3>
+                                    <p class="text-v2-muted leading-relaxed mb-5">Czas oczekiwania na rehabilitację z NFZ bywa liczony w miesiącach. Prywatna rehabilitacja jest dostępna od razu, a jej koszty można w całości odzyskać od ubezpieczyciela sprawcy wypadku. Szybkie działanie przyspiesza powrót do zdrowia.</p>
+                                    <a href="#page-contact" class="inline-flex items-center gap-2 text-v2-cta font-semibold text-sm hover:gap-3 transition-all">Sprawdź swoją sprawę <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slajd 5 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="bg-white rounded-2xl border-l-4 border-v2-cta shadow-sm p-6 sm:p-8 lg:flex lg:gap-8 items-start">
+                                <div class="shrink-0 mb-4 lg:mb-0">
+                                    <div class="w-14 h-14 rounded-xl bg-v2-cta/10 flex items-center justify-center">
+                                        <i data-lucide="wallet" class="w-7 h-7 text-v2-cta"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-v2-muted text-xs font-mono tracking-wider">05 / 06</span>
+                                    <h3 class="text-v2-text text-xl lg:text-2xl font-bold mt-1 mb-3">Renta wyrównawcza</h3>
+                                    <p class="text-v2-muted leading-relaxed mb-5">Jeśli wypadek trwale ograniczył zdolność zarobkową lub zwiększył stałe koszty utrzymania, przysługuje miesięczna renta. To świadczenie niezależne od jednorazowego odszkodowania — oba roszczenia można łączyć.</p>
+                                    <a href="#page-contact" class="inline-flex items-center gap-2 text-v2-cta font-semibold text-sm hover:gap-3 transition-all">Sprawdź swoją sprawę <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slajd 6 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="bg-white rounded-2xl border-l-4 border-gold shadow-sm p-6 sm:p-8 lg:flex lg:gap-8 items-start">
+                                <div class="shrink-0 mb-4 lg:mb-0">
+                                    <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center">
+                                        <i data-lucide="plus-circle" class="w-7 h-7 text-gold"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-v2-muted text-xs font-mono tracking-wider">06 / 06</span>
+                                    <h3 class="text-v2-text text-xl lg:text-2xl font-bold mt-1 mb-3">Inne roszczenia</h3>
+                                    <p class="text-v2-muted leading-relaxed mb-5">Wypadek generuje wiele dodatkowych kosztów — dojazdy do placówek medycznych, opieka pielęgniarska, koszty pogrzebu w przypadku śmierci bliskiej osoby. Każdy udokumentowany wydatek może stanowić podstawę do osobnego roszczenia.</p>
+                                    <a href="#page-contact" class="inline-flex items-center gap-2 text-v2-cta font-semibold text-sm hover:gap-3 transition-all">Sprawdź swoją sprawę <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
-                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
-                            <i data-lucide="stethoscope" class="w-5 h-5 text-v2-cta"></i>
-                        </div>
-                        <div>
-                            <p class="text-v2-text font-semibold" data-i18n="kom.benefit2">Zwrot kosztów leczenia i rehabilitacji</p>
-                        </div>
+                </div>
+                <!-- Nawigacja slidera -->
+                <div class="flex items-center justify-between mt-6">
+                    <div class="flex gap-2 items-center" id="benefitsDots">
+                        <button class="benefits-dot w-6 h-2 rounded-full bg-v2-cta transition-all duration-300" data-idx="0" aria-label="Świadczenie 1"></button>
+                        <button class="benefits-dot w-2 h-2 rounded-full bg-v2-line transition-all duration-300" data-idx="1" aria-label="Świadczenie 2"></button>
+                        <button class="benefits-dot w-2 h-2 rounded-full bg-v2-line transition-all duration-300" data-idx="2" aria-label="Świadczenie 3"></button>
+                        <button class="benefits-dot w-2 h-2 rounded-full bg-v2-line transition-all duration-300" data-idx="3" aria-label="Świadczenie 4"></button>
+                        <button class="benefits-dot w-2 h-2 rounded-full bg-v2-line transition-all duration-300" data-idx="4" aria-label="Świadczenie 5"></button>
+                        <button class="benefits-dot w-2 h-2 rounded-full bg-v2-line transition-all duration-300" data-idx="5" aria-label="Świadczenie 6"></button>
                     </div>
-                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
-                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
-                            <i data-lucide="wallet" class="w-5 h-5 text-v2-cta"></i>
-                        </div>
-                        <div>
-                            <p class="text-v2-text font-semibold" data-i18n="kom.benefit3">Odszkodowanie za utracone dochody</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line">
-                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
-                            <i data-lucide="shield-check" class="w-5 h-5 text-v2-cta"></i>
-                        </div>
-                        <div>
-                            <p class="text-v2-text font-semibold" data-i18n="kom.benefit4">Renta na przyszłość (przy trwałym uszczerbku)</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 bg-white rounded-lg p-5 border border-v2-line sm:col-span-2 sm:max-w-[calc(50%-0.75rem)]">
-                        <div class="w-10 h-10 bg-v2-cta/10 rounded-lg flex items-center justify-center shrink-0">
-                            <i data-lucide="car" class="w-5 h-5 text-v2-cta"></i>
-                        </div>
-                        <div>
-                            <p class="text-v2-text font-semibold" data-i18n="kom.benefit5">Zwrot kosztów naprawy lub wartość pojazdu</p>
-                        </div>
+                    <div class="flex gap-2">
+                        <button id="benefitsPrev" class="w-10 h-10 rounded-full border border-v2-line text-v2-muted hover:border-v2-cta hover:text-v2-cta flex items-center justify-center transition-all" aria-label="Poprzednie">
+                            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                        </button>
+                        <button id="benefitsNext" class="w-10 h-10 rounded-full bg-v2-cta text-white hover:bg-v2-cta-hover flex items-center justify-center transition-all" aria-label="Następne">
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -220,6 +304,61 @@
                             <p class="text-v2-cta text-3xl lg:text-4xl font-bold" data-i18n="kom.case_result_amount">120 000 zł</p>
                             <p class="text-v2-cta text-sm font-semibold" data-i18n="kom.case_result_multiplier">8x więcej</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPINIE KLIENTÓW -->
+        <section class="bg-white py-16">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-2">Opinie naszych klientów</h2>
+                <p class="text-v2-muted text-center mb-8 text-sm">Ponad 500 osób powierzyło nam swoją sprawę. Sprawdź co mówią o naszej pracy.</p>
+                <!-- Google rating row -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-v2-surface rounded-2xl p-4 sm:p-5 mb-8 border border-v2-line">
+                    <div class="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
+                        <svg height="22" viewBox="0 0 68 22" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+                            <text font-family="Arial,sans-serif" font-size="18" font-weight="700" y="18">
+                                <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+                            </text>
+                        </svg>
+                        <span class="font-semibold text-v2-text text-sm">Doskonała</span>
+                        <span class="text-gold text-sm tracking-tight">★★★★★</span>
+                        <span class="font-bold text-v2-text">4.9</span>
+                        <span class="text-v2-muted text-sm">| 500+ opinii</span>
+                    </div>
+                    <a href="#" class="bg-v2-text text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-v2-cta transition-colors shrink-0">
+                        Napisz opinię
+                    </a>
+                </div>
+                <!-- Karty recenzji -->
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <div class="bg-v2-surface rounded-xl p-5 border border-v2-line">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">MK</div>
+                            <div class="min-w-0"><p class="font-semibold text-v2-text text-sm truncate">Marek K.</p><p class="text-v2-muted text-xs">Marzec 2026</p></div>
+                            <svg class="w-4 h-4 shrink-0 ml-auto" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        </div>
+                        <div class="text-gold text-sm mb-2">★★★★★</div>
+                        <p class="text-v2-muted text-sm leading-relaxed">Po wypadku na autostradzie ubezpieczyciel chciał wypłacić grosze. Dzięki tej kancelarii odzyskałem 6-krotnie więcej. Profesjonalizm na każdym etapie.</p>
+                    </div>
+                    <div class="bg-v2-surface rounded-xl p-5 border border-v2-line">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-sm shrink-0">AW</div>
+                            <div class="min-w-0"><p class="font-semibold text-v2-text text-sm truncate">Anna W.</p><p class="text-v2-muted text-xs">Luty 2026</p></div>
+                            <svg class="w-4 h-4 shrink-0 ml-auto" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        </div>
+                        <div class="text-gold text-sm mb-2">★★★★★</div>
+                        <p class="text-v2-muted text-sm leading-relaxed">Potrącenie na przejściu dla pieszych — szpital, rehabilitacja. Firma zadbała o całą dokumentację, a wynik przeszedł moje oczekiwania. Szczerze polecam.</p>
+                    </div>
+                    <div class="bg-v2-surface rounded-xl p-5 border border-v2-line">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm shrink-0">TN</div>
+                            <div class="min-w-0"><p class="font-semibold text-v2-text text-sm truncate">Tomasz N.</p><p class="text-v2-muted text-xs">Styczeń 2026</p></div>
+                            <svg class="w-4 h-4 shrink-0 ml-auto" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        </div>
+                        <div class="text-gold text-sm mb-2">★★★★★</div>
+                        <p class="text-v2-muted text-sm leading-relaxed">Ubezpieczyciel odmówił wypłaty po kolizji. Kancelaria wzięła sprawę, wygrała w 4 miesiące. Nie sądziłem, że to możliwe. Najlepsza decyzja, jaką podjąłem.</p>
                     </div>
                 </div>
             </div>
@@ -395,6 +534,43 @@
     <script src="js/navigation.js"></script>
     <script>
     lucide.createIcons();
+    // Benefits slider
+    (function() {
+        var track = document.getElementById('benefitsTrack');
+        var dots = document.querySelectorAll('.benefits-dot');
+        var viewport = document.getElementById('benefitsViewport');
+        var prevBtn = document.getElementById('benefitsPrev');
+        var nextBtn = document.getElementById('benefitsNext');
+        if (!track) return;
+        var current = 0;
+        var total = 6;
+        var timer;
+        function goTo(idx) {
+            current = (idx + total) % total;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach(function(d, i) {
+                var active = i === current;
+                d.classList.toggle('bg-v2-cta', active);
+                d.classList.toggle('w-6', active);
+                d.classList.toggle('bg-v2-line', !active);
+                d.classList.toggle('w-2', !active);
+            });
+        }
+        function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(function() { goTo(current + 1); }, 5000);
+        }
+        prevBtn.addEventListener('click', function() { goTo(current - 1); startTimer(); });
+        nextBtn.addEventListener('click', function() { goTo(current + 1); startTimer(); });
+        dots.forEach(function(d) {
+            d.addEventListener('click', function() { goTo(parseInt(d.dataset.idx)); startTimer(); });
+        });
+        if (viewport) {
+            viewport.addEventListener('mouseenter', function() { clearInterval(timer); });
+            viewport.addEventListener('mouseleave', startTimer);
+        }
+        startTimer();
+    })();
     (function() {
         'use strict';
         const form = document.getElementById('page-form');
