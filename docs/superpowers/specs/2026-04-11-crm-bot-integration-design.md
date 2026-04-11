@@ -105,7 +105,18 @@ Bot rozpoznaje numer (WhatsApp) lub email → sprawdza w CRM → nawiązuje do p
 - Podstawowe terminy prawne (przedawnienie, OC, NNW, zadośćuczynienie vs odszkodowanie)
 - **Granica:** bot NIGDY nie udziela porad prawnych, nie podaje kwot, nie obiecuje wyników
 
-### 3.7 Dostosowanie tonu per kanał
+### 3.7 Handoff do człowieka
+
+Bot eskaluje rozmowę do live agenta (Ty w panelu Chatwoot) gdy:
+- Klient wprost prosi o rozmowę z człowiekiem ("chcę rozmawiać z prawnikiem", "połącz mnie z kimś")
+- Bot nie potrafi odpowiedzieć po 2 próbach (pętla / niezrozumiałe zapytanie)
+- Wykryty stres / emocje (słowa kluczowe: "nie żyje", "desperacja", "pilne", "proszę o pomoc")
+- Lead kwalifikowany jako A (gorący) — bot zbiera dane, ale flaguje do natychmiastowego kontaktu ludzkiego
+- Klient pyta o szczegóły prawne wykraczające poza FAQ
+
+Mechanizm: Chatwoot conversation label `handoff` + assign do agenta + powiadomienie Telegram/SMS.
+
+### 3.8 Dostosowanie tonu per kanał
 
 | Kanał | Styl | Długość |
 |-------|------|---------|
@@ -161,6 +172,23 @@ Bot rozpoznaje numer (WhatsApp) lub email → sprawdza w CRM → nawiązuje do p
 Nowy lead → Kwalifikowany (A/B/C) → Kontakt umówiony → Dokumenty zebrane → W toku → Zamknięte (Wygrana/Przegrana/Odmowa)
 ```
 
+### 4.5 Deduplikacja leadów
+
+Klient może napisać na chacie, potem wypełnić quiz, potem napisać na WhatsApp — to ten sam lead.
+
+Logika deduplikacji w n8n:
+1. Nowy kontakt → szukaj w NocoDB po telefonie (unikalny identyfikator)
+2. Jeśli znaleziony → dopisz interakcję do istniejącego leada, NIE twórz nowego
+3. Jeśli nie znaleziony → sprawdź email
+4. Jeśli nadal nie → utwórz nowy lead
+5. Merge kanałów: lead.kanał_źródłowy przechowuje pierwszy kanał, interakcje logują wszystkie
+
+### 4.6 Aktualizacja knowledge base
+
+- Knowledge base bota = pliki markdown w `bot/knowledge/` w repo `szkody-crm/`
+- Przy zmianie treści na stronie (FAQ, usługi) → ręczna aktualizacja odpowiedniego pliku
+- n8n workflow: co 24h sprawdza sitemap strony pod kątem nowych/zmienionych stron (opcjonalnie, faza 4)
+
 ## 5. Automatyzacje n8n
 
 | Trigger | Akcja |
@@ -182,7 +210,7 @@ Nowy lead → Kwalifikowany (A/B/C) → Kontakt umówiony → Dokumenty zebrane 
 | `js/form-validation.js` | `submitForm()` — zastąpić `setTimeout` blokiem `fetch` do Chatwoot Contact API |
 | `js/quiz.js` | Submit handler — dane quizu → Chatwoot jako nowa konwersacja z tagiem `quiz` |
 | `js/calculator.js` | Submit handler — wynik kalkulatora + dane → Chatwoot z tagiem `kalkulator` |
-| Wszystkie HTML | Dodać Chatwoot widget script w `<head>` |
+| Wszystkie HTML | Dodać Chatwoot widget script w `<head>` (wyekstrahować do `js/chatwoot.js` — jedna zmiana, ładowane wszędzie) |
 | `vercel.json` | Dodać domenę Chatwoot do CSP `connect-src` i `script-src` |
 
 ### 6.2 Floating buttons
@@ -226,12 +254,39 @@ Nowy lead → Kwalifikowany (A/B/C) → Kontakt umówiony → Dokumenty zebrane 
 
 ## 9. Bezpieczeństwo i RODO
 
+### 9.1 Infrastruktura
 - Dane na VPS w EU (Hostinger — europejskie DC)
-- PostgreSQL z szyfrowanymi backupami
+- PostgreSQL z szyfrowanymi backupami (cron co 6h, retencja 30 dni, testowy restore co miesiąc)
 - Chatwoot + NocoDB za Traefik z SSL
 - Brak danych wrażliwych w repo strony (tokeny API w zmiennych środowiskowych na VPS)
-- Bot informuje o przetwarzaniu danych na początku rozmowy (link do polityki prywatności)
-- Prawo do usunięcia danych — endpoint w n8n do czyszczenia leada z CRM + Chatwoot
+- Docker `mem_limit` per kontener (Chatwoot 2GB, PostgreSQL 1GB, Redis 256MB, NocoDB 256MB)
+- Swap 2GB skonfigurowany na VPS jako bufor bezpieczeństwa
+- Uptime Kuma (self-hosted) — monitoring dostępności wszystkich usług + alerty email/Telegram
+
+### 9.2 RODO — dane szczególnej kategorii (Art. 9 GDPR)
+
+Dane odszkodowawcze (obrażenia, hospitalizacja, błędy medyczne) to **dane dotyczące zdrowia** — szczególna kategoria RODO.
+
+- **Podstawa prawna:** Art. 6(1)(b) — wykonanie umowy/podjęcie działań na żądanie osoby + Art. 9(2)(a) — wyraźna zgoda na przetwarzanie danych zdrowotnych
+- **DPIA (Data Protection Impact Assessment):** wymagane — dokument do przygotowania przed uruchomieniem produkcyjnym
+- **DPA z Hostinger:** zweryfikować i podpisać Data Processing Agreement
+- **Retencja danych:** Lead zimny (C) → usunięcie po 6 miesiącach. Sprawa zamknięta → archiwum 10 lat (termin przedawnienia roszczeń). Rozmowy z botem → 12 miesięcy.
+- **Audit log:** n8n loguje kto/kiedy/co zmodyfikował w CRM (zapis do osobnej tabeli NocoDB)
+- **Bot informuje** o przetwarzaniu danych na początku rozmowy (link do polityki prywatności)
+- **Prawo do usunięcia** — endpoint w n8n do czyszczenia leada z CRM + Chatwoot + historii rozmów
+
+### 9.3 Claude API — transfer danych do USA
+
+Anthropic (dostawca Claude API) przetwarza dane w USA. Wymagane:
+- **Zweryfikować DPA Anthropic** — czy obejmuje dane zdrowotne z EU
+- **Standard Contractual Clauses (SCCs)** — sprawdzić czy Anthropic je oferuje (Schrems II)
+- **Minimalizacja danych:** prompt do Claude API wysyła TYLKO informacje niezbędne do kwalifikacji — bez pełnych danych osobowych (imię, telefon zapisywane bezpośrednio do CRM, NIE przez API)
+- **Fallback:** jeśli DPA Anthropic nie pokrywa Art. 9 danych — alternatywa: Mistral API (EU) lub self-hosted LLM (wymaga upgrade VPS do 32GB+ RAM)
+
+### 9.4 Ochrona przed nadużyciami
+- Rate limiting w Traefik: max 10 req/min per IP na widget czatu
+- Honeypot field w formularzach na stronie (ukryte pole — boty spamowe je wypełniają)
+- n8n workflow: jeśli >5 konwersacji z jednego IP w 10 min → blokada + alert
 
 ## 10. Oddzielne repo
 
