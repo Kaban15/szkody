@@ -79,6 +79,70 @@ function attachLiveValidation(fieldId, validateFn) {
     });
 }
 
+/**
+ * Chatwoot Platform API configuration.
+ * Replace placeholders with real values after Chatwoot setup.
+ */
+var CHATWOOT_BASE_URL = 'https://CHATWOOT_DOMAIN_PLACEHOLDER';
+var CHATWOOT_API_TOKEN = 'CHATWOOT_API_TOKEN_PLACEHOLDER';
+var CHATWOOT_ACCOUNT_ID = '1';
+var CHATWOOT_INBOX_ID = 'CHATWOOT_INBOX_ID_PLACEHOLDER';
+
+/**
+ * Send form data to Chatwoot as a new contact + conversation.
+ * Two-step: POST /contacts → POST /conversations.
+ * Fire-and-forget — success UI shows regardless of API result.
+ */
+function sendToChatwoot(formData, tag) {
+    // Honeypot: if hidden field is filled, it's a spam bot — discard silently
+    var honeypot = document.querySelector('.hp-field');
+    if (honeypot && honeypot.value) return;
+
+    var apiBase = CHATWOOT_BASE_URL + '/api/v1/accounts/' + CHATWOOT_ACCOUNT_ID;
+    var headers = {
+        'Content-Type': 'application/json',
+        'api_access_token': CHATWOOT_API_TOKEN,
+    };
+
+    // Step 1: Create contact
+    fetch(apiBase + '/contacts', {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            inbox_id: CHATWOOT_INBOX_ID,
+            name: formData.name || '',
+            email: formData.email || '',
+            phone_number: formData.phone ? ('+48' + formData.phone.replace(/^\+48/, '')) : '',
+            custom_attributes: {
+                source_tag: tag,
+                source_url: window.location.pathname,
+            },
+        }),
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (contact) {
+        var contactId = contact.payload && contact.payload.contact && contact.payload.contact.id;
+        if (!contactId) return;
+
+        // Step 2: Create conversation with initial message
+        return fetch(apiBase + '/conversations', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({
+                contact_id: contactId,
+                inbox_id: CHATWOOT_INBOX_ID,
+                message: {
+                    content: formData.message || ('Nowe zapytanie z formularza: ' + tag),
+                },
+                custom_attributes: { source_tag: tag },
+            }),
+        });
+    })
+    .catch(function (err) {
+        if (typeof console !== 'undefined') console.warn('Chatwoot API error:', err);
+    });
+}
+
 function validateQuizForm() {
     let isValid = true;
 
@@ -118,9 +182,9 @@ function validateQuizForm() {
  * @param {string} [options.consentId] - Checkbox consent element ID
  * @param {string} [options.templateId] - Success template element ID
  * @param {Function} [options.onSuccess] - Callback after success shown
- * @param {number} [options.delay=1000] - Simulated delay in ms
+ * @param {string} [options.chatwootTag] - Tag for CRM source tracking
  */
-function submitForm({ form, fields, consentId, templateId, onSuccess, delay = 1000 }) {
+function submitForm({ form, fields, consentId, templateId, onSuccess, chatwootTag }) {
     let isValid = true;
 
     fields.forEach(({ id, validate }) => {
@@ -145,16 +209,30 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, delay = 10
         btn.innerHTML = '<span class="v2-spinner"></span>';
     }
 
-    setTimeout(() => {
-        if (templateId) {
-            const template = document.getElementById(templateId);
-            if (template) {
-                form.replaceChildren(template.content.cloneNode(true));
-            }
+    // Collect form data for Chatwoot
+    const formData = {};
+    fields.forEach(function (f) {
+        const el = document.getElementById(f.id);
+        if (el) {
+            const key = f.id.replace(/^(quiz-|calc-|contact-|pf-)/, '');
+            formData[key] = el.value;
         }
-        if (onSuccess) onSuccess();
-    }, delay);
+    });
+
+    // Send to Chatwoot (fire-and-forget)
+    if (chatwootTag) {
+        sendToChatwoot(formData, chatwootTag);
+    }
+
+    // Show success UI immediately (don't wait for API)
+    if (templateId) {
+        const template = document.getElementById(templateId);
+        if (template) {
+            form.replaceChildren(template.content.cloneNode(true));
+        }
+    }
+    if (onSuccess) onSuccess();
 }
 
 // Export for use in other modules
-window.formValidation = { validateName, validatePhone, validateEmail, validateQuizForm, showError, hideError, showSuccess, attachLiveValidation, submitForm };
+window.formValidation = { validateName, validatePhone, validateEmail, validateQuizForm, showError, hideError, showSuccess, attachLiveValidation, submitForm, sendToChatwoot };
