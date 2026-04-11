@@ -5,7 +5,7 @@
  * Bubble + chat window, talks to n8n webhook -> OpenAI GPT-4o-mini
  */
 (function initChatWidget() {
-    var WEBHOOK_URL = 'CHAT_WEBHOOK_URL_PLACEHOLDER';
+    var WEBHOOK_URL = 'https://n8n.kaban.click/webhook/szkody-chat';
     var GREETING = 'Dzień dobry! Jestem asystentem kancelarii odszkodowawczej. W czym mogę pomóc?';
     var TIMEOUT_MS = 20000;
     var SESSION_KEY = 'szkody_chat';
