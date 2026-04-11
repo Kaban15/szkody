@@ -362,7 +362,7 @@ input[type="range"]::-moz-range-thumb {
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(135deg, var(--color-brand), #f97316, var(--color-brand), var(--color-brand-hover));
+    background: linear-gradient(135deg, var(--color-brand), #2d9e5f, var(--color-brand), var(--color-brand-hover));
     background-size: 300% 300%;
     border-radius: inherit;
     z-index: -1;
