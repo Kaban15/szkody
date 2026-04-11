@@ -138,32 +138,42 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Wysyłanie...';
 
-            // Simulate submission (replace with real backend later)
-            setTimeout(() => {
-                // Hide form, show success
-                document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
-                const successEl = document.getElementById('quiz-success');
-                successEl.classList.remove('hidden');
+            // Collect quiz answers + contact data for Chatwoot
+            var quizData = {
+                name: document.getElementById('quiz-name').value,
+                phone: document.getElementById('quiz-phone').value.replace(/[\s-]/g, ''),
+                email: document.getElementById('quiz-email').value,
+                message: 'Wyniki quizu diagnostycznego:\n' +
+                    Object.entries(state.answers).map(function (entry) {
+                        return entry[0] + ': ' + entry[1];
+                    }).join('\n'),
+            };
 
-                // Success message based on hours
-                const msgEl = document.getElementById('quiz-success-msg');
-                msgEl.textContent = isBusinessHours()
-                    ? 'Nasz specjalista oddzwoni w ciągu 30 minut.'
-                    : 'Oddzwonimy w następnym dniu roboczym. Dziękujemy za cierpliwość.';
+            // Send to Chatwoot (fire-and-forget)
+            if (window.formValidation && window.formValidation.sendToChatwoot) {
+                window.formValidation.sendToChatwoot(quizData, 'quiz');
+            }
 
-                // Copy summary
-                const summarySource = document.getElementById('quiz-summary');
-                const summaryTarget = document.getElementById('quiz-success-summary');
-                if (summarySource && summaryTarget) {
-                    summaryTarget.replaceChildren();
-                    Array.from(summarySource.childNodes).forEach(node => {
-                        summaryTarget.appendChild(node.cloneNode(true));
-                    });
-                }
+            // Show success UI immediately
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+            const successEl = document.getElementById('quiz-success');
+            successEl.classList.remove('hidden');
 
-                // Track event
-                if (window.trackEvent) window.trackEvent('quiz_submitted', state.answers);
-            }, 1000);
+            const msgEl = document.getElementById('quiz-success-msg');
+            msgEl.textContent = isBusinessHours()
+                ? 'Nasz specjalista oddzwoni w ciągu 30 minut.'
+                : 'Oddzwonimy w następnym dniu roboczym. Dziękujemy za cierpliwość.';
+
+            const summarySource = document.getElementById('quiz-summary');
+            const summaryTarget = document.getElementById('quiz-success-summary');
+            if (summarySource && summaryTarget) {
+                summaryTarget.replaceChildren();
+                Array.from(summarySource.childNodes).forEach(node => {
+                    summaryTarget.appendChild(node.cloneNode(true));
+                });
+            }
+
+            if (window.trackEvent) window.trackEvent('quiz_submitted', state.answers);
         });
     }
 });
