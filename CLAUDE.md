@@ -38,15 +38,22 @@ npm run test:watch            # run vitest in watch mode
 - **Lenis Smooth Scroll** via CDN (`unpkg.com/lenis@1.1.18`) — only loaded on `index.html`, guarded in `animations.js` with `typeof Lenis !== 'undefined'`
 
 ### Color Palette (defined in `js/tailwind-config.js` — single source of truth)
-- `bg` (#FDFBF7) — warm cream page background
-- `surface` (#F5F0E8) — alternate section backgrounds
+- `bg` (#FFFFFF) — white page background
+- `surface` (#F5F5F5) — alternate section backgrounds (gray)
 - `surface-light` (#FFFFFF) — cards, inputs, elevated elements
-- `gold` (#D4AF37), `gold-light` (#E8C867) — accent, trust elements, secondary buttons
-- `cta` (#E8652D), `cta-hover` (#D4561F) — primary call-to-action buttons (orange)
-- `text` (#1A1008) — dark brown body text
-- `muted` (#8A7D6F) — secondary text (warm gray)
-- `line` (#EDE7DA) — borders and dividers
-- `error` (#EF4444) — form validation errors
+- `gold` (#1a6b3c), `gold-light` (#166534) — **deep green** brand accent (note: token names retained for legacy reasons)
+- `cta` (#1a6b3c), `cta-hover` (#166534) — primary CTA buttons (deep green)
+- `v2-cta` (#1a6b3c), `v2-cta-hover` (#166534) — v2 CTA alias (same green)
+- `text` (#1a1a2e) — dark navy body text
+- `muted` (#6b7280) — secondary text (cool gray)
+- `line` (#e5e7eb) — borders and dividers
+- `error` (#EF4444) — form validation errors (stays red — not a brand color)
+
+**CSS custom properties** (`css/styles.css` `:root`):
+- `--color-brand: #1a6b3c` — used by all hardcoded rules in `styles.css` (slider thumb, nav hover, pulse animations, aurora gradient, step tabs, etc.)
+- `--color-brand-hover: #166534`
+
+When changing the brand color in the future: update **both** `js/tailwind-config.js` tokens **and** `--color-brand` in `css/styles.css`.
 
 ### Page Structure
 - **`index.html`** — one-page main site containing: ticker, hero, trust bar, quiz, icon divider, "jak działamy" process, social proof + case studies (with timeline & quotes), icon divider, testimonials carousel, "dlaczego my", team/experts, insurance logos bar, FAQ accordion, CTA footer, floating WhatsApp/phone buttons. Loads Lenis smooth scroll CDN.
@@ -117,7 +124,7 @@ Custom animations and transitions beyond Tailwind utilities:
 - **`.fade-in-up`** — scroll-triggered opacity + translateY(40px) + scale(0.97) reveal with spring easing (`cubic-bezier(0.16, 1, 0.3, 1)`), used with `data-stagger` for cascading delays
 - **`.comparison-bar`** — animated width bar for case study before/after comparisons (`.comparison-bars` container triggers observer)
 - **`.count-up`** — counter animation (separate observer from fade-in)
-- **`.card-hover`** — gold glow on hover
+- **`.card-hover`** — green glow on hover (uses `--color-brand` rgba)
 - **`.animate-ticker`** — infinite horizontal scroll for top success ticker
 - **`.testimonial-track` / `.testimonial-card`** — scroll-snap for carousel
 - **`.pulse-ring`** — pulsing ring on floating WhatsApp button
@@ -130,7 +137,7 @@ Custom animations and transitions beyond Tailwind utilities:
 Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky bottom bar, cookie consent banner, and Tailwind config in `<head>`. When modifying shared elements, update ALL HTML files.
 
 ### Key Design Patterns
-- **Light warm-cream theme**: cream backgrounds (#FDFBF7) with gold accents and orange CTAs — warm, professional, modern
+- **White/green theme**: white backgrounds (#FFFFFF) with deep green (#1a6b3c) accents and CTAs — professional, trust-focused
 - **Trust bar**: social proof strip between hero and quiz (Google rating, badge, stats)
 - **Ticker**: auto-scrolling marquee at top with recent successes (content duplicated for seamless CSS loop — update both copies when changing text)
 - **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`
@@ -145,7 +152,8 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Cookie consent gates GA4**: analytics scripts only load after user accepts cookies via localStorage check. `cookie-consent.js` guards against missing `#cookie-banner` element.
 - **Delegated event handling**: `navigation.js` uses delegated click on mobile menu; `analytics.js` uses delegated click with early-exit for phone/sticky/case tracking.
 - **DOM caching**: `calculator.js` caches all label/result elements at init — `recalculate()` runs on every slider input event and must avoid DOM queries in the hot path.
-- **Benefits slider** (`odszkodowania-komunikacyjne.html`): 6-slide translateX carousel (vanilla JS IIFE at bottom of page). IDs: `#benefitsTrack`, `#benefitsViewport`, `#benefitsPrev`, `#benefitsNext`, `.benefits-dot`. Auto-plays every 5s, pauses on hover. Each slide has a white card with alternating left-border accent (cta red / gold), icon, `01/06` counter, title, description, CTA link.
+- **Benefits slider** (`odszkodowania-komunikacyjne.html`): 6-slide translateX carousel (vanilla JS IIFE at bottom of page). IDs: `#benefitsTrack`, `#benefitsViewport`, `#benefitsPrev`, `#benefitsNext`, `.benefits-dot`. Auto-plays every 5s, pauses on hover. Each slide has a white card with alternating left-border accent (cta green / gold), icon, `01/06` counter, title, description, CTA link.
+- **Service tile separator** (`uslugi.html`): 6 service tile divs (`.v2-slide-left`/`.v2-slide-right`) have `border-b-2 border-[#1a6b3c]/15 pb-4` — subtle green bottom line, Votum style preserved (no card background).
 - **Google reviews section** (`<!-- OPINIE KLIENTÓW -->`, all 5 service subpages): static placeholder section with Google-branded rating bar (4.9 ★★★★★ / 500+ opinii) and 3 review cards. Inserted between mini case study and FAQ. Each subpage has context-specific review content (car accidents / workplace / medical / death / agricultural).
 
 ## Blog System
