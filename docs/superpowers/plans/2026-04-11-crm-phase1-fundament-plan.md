@@ -107,6 +107,9 @@ CHATWOOT_DEFAULT_LOCALE=pl
 # === Redis ===
 REDIS_URL=redis://redis:6379
 
+# === Backup encryption ===
+BACKUP_PASSPHRASE=CHANGE_ME_RUN_openssl_rand_hex_32
+
 # === Uptime Kuma ===
 # No env vars needed — configured via web UI
 ```
@@ -144,8 +147,6 @@ providers:
 - [ ] **Step 5: Create docker-compose.yml**
 
 ```yaml
-version: "3.8"
-
 services:
   # === Reverse Proxy ===
   traefik:
@@ -214,6 +215,7 @@ services:
       - "traefik.http.routers.chatwoot.tls.certresolver=letsencrypt"
       - "traefik.http.services.chatwoot.loadbalancer.server.port=3000"
       - "traefik.http.middlewares.chatwoot-ratelimit.ratelimit.average=10"
+      - "traefik.http.middlewares.chatwoot-ratelimit.ratelimit.period=1m"
       - "traefik.http.middlewares.chatwoot-ratelimit.ratelimit.burst=20"
       - "traefik.http.routers.chatwoot.middlewares=chatwoot-ratelimit"
     mem_limit: 1536m
@@ -241,7 +243,7 @@ services:
     image: nocodb/nocodb:latest
     restart: unless-stopped
     environment:
-      NC_DB: "pg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${NOCODB_DB}"
+      NC_DB: "pg://postgres:5432?u=${POSTGRES_USER}&p=${POSTGRES_PASSWORD}&d=${NOCODB_DB}"
     depends_on:
       postgres:
         condition: service_healthy
@@ -339,14 +341,17 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 mkdir -p "$BACKUP_DIR"
 
-# Dump all databases
+# Dump all databases — gzip + encrypt with passphrase from env
 docker compose exec -T postgres pg_dumpall -U "$POSTGRES_USER" \
-    | gzip > "$BACKUP_DIR/pg_all_$TIMESTAMP.sql.gz"
+    | gzip \
+    | openssl enc -aes-256-cbc -salt -pbkdf2 -pass env:BACKUP_PASSPHRASE \
+    > "$BACKUP_DIR/pg_all_$TIMESTAMP.sql.gz.enc"
 
 # Remove backups older than retention
-find "$BACKUP_DIR" -name "pg_all_*.sql.gz" -mtime +$RETENTION_DAYS -delete
+find "$BACKUP_DIR" -name "pg_all_*.sql.gz.enc" -mtime +$RETENTION_DAYS -delete
 
-echo "Backup completed: pg_all_$TIMESTAMP.sql.gz"
+echo "Backup completed: pg_all_$TIMESTAMP.sql.gz.enc"
+# Restore: openssl enc -d -aes-256-cbc -pbkdf2 -pass env:BACKUP_PASSPHRASE -in FILE | gunzip | psql
 ```
 
 - [ ] **Step 3: Create setup guide**
@@ -524,6 +529,7 @@ Fields:
 | Data zdarzenia | Date | |
 | Kwalifikacja | Single select | Options: A (gorący), B (ciepły), C (zimny) |
 | Status | Single select | Options: Nowy lead, Kwalifikowany, Kontakt umówiony, Dokumenty zebrane, W toku, Zamknięte-wygrana, Zamknięte-przegrana, Zamknięte-odmowa |
+| Przypisany do | Single line text | Default: owner name |
 | Notatki | Long text | |
 | Źródło strony | Single line text | |
 | Chatwoot ID | Number | For linking back to Chatwoot conversation |
@@ -685,7 +691,13 @@ describe('submitForm with Chatwoot API', () => {
     });
 
     it('sends form data to Chatwoot API on valid submission', async () => {
-        globalThis.fetch.mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({}) });
+        // Mock two-step API: create contact, then create conversation
+        globalThis.fetch
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({ payload: { contact: { id: 42 } } }) })
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({}) });
+
+        // Load form-validation.js (assigns to window.formValidation)
+        await import('../js/form-validation.js');
 
         const form = createMockForm([
             { id: 'test-name', value: 'Jan Kowalski' },
@@ -697,17 +709,13 @@ describe('submitForm with Chatwoot API', () => {
         templateEl.innerHTML = '<p>Success</p>';
         document.body.appendChild(templateEl);
 
-        // Load the module
-        const { submitForm } = await import('../js/form-validation.js');
-
-        // Consent checkbox
         const consent = document.createElement('input');
         consent.type = 'checkbox';
         consent.id = 'test-consent';
         consent.checked = true;
         form.appendChild(consent);
 
-        submitForm({
+        window.formValidation.submitForm({
             form,
             fields: [
                 { id: 'test-name', validate: (v) => v.trim().length >= 2 },
@@ -718,20 +726,23 @@ describe('submitForm with Chatwoot API', () => {
             chatwootTag: 'kontakt',
         });
 
-        // Wait for async fetch
+        // Wait for async fetch — first call creates contact
         await vi.waitFor(() => {
             expect(globalThis.fetch).toHaveBeenCalledTimes(1);
         });
 
         const [url, options] = globalThis.fetch.mock.calls[0];
-        expect(url).toContain('/api/v1/');
+        expect(url).toContain('/api/v1/accounts/');
+        expect(url).toContain('/contacts');
         expect(options.method).toBe('POST');
         const body = JSON.parse(options.body);
         expect(body).toHaveProperty('name', 'Jan Kowalski');
     });
 
-    it('does not call API when validation fails', () => {
+    it('does not call API when validation fails', async () => {
         globalThis.fetch.mockResolvedValueOnce({ ok: true });
+
+        await import('../js/form-validation.js');
 
         const form = createMockForm([
             { id: 'test-name', value: '' },
@@ -742,9 +753,7 @@ describe('submitForm with Chatwoot API', () => {
         errorEl.classList.add('hidden');
         document.body.appendChild(errorEl);
 
-        const { submitForm } = require('../js/form-validation.js');
-
-        submitForm({
+        window.formValidation.submitForm({
             form,
             fields: [
                 { id: 'test-name', validate: (v) => v.trim().length >= 2 },
@@ -758,6 +767,8 @@ describe('submitForm with Chatwoot API', () => {
     it('shows success template even if API call fails (graceful degradation)', async () => {
         globalThis.fetch.mockRejectedValueOnce(new Error('Network error'));
 
+        await import('../js/form-validation.js');
+
         const form = createMockForm([
             { id: 'test-name', value: 'Jan Kowalski' },
         ]);
@@ -767,9 +778,7 @@ describe('submitForm with Chatwoot API', () => {
         templateEl.innerHTML = '<p>Success</p>';
         document.body.appendChild(templateEl);
 
-        const { submitForm } = await import('../js/form-validation.js');
-
-        submitForm({
+        window.formValidation.submitForm({
             form,
             fields: [
                 { id: 'test-name', validate: (v) => v.trim().length >= 2 },
@@ -778,10 +787,8 @@ describe('submitForm with Chatwoot API', () => {
             chatwootTag: 'kontakt',
         });
 
-        // Even on failure, success template should show (lead not lost — Chatwoot will retry)
-        await vi.waitFor(() => {
-            expect(form.querySelector('p')).toBeTruthy();
-        });
+        // Success template shown immediately (fire-and-forget — don't wait for API)
+        expect(form.querySelector('p')).toBeTruthy();
     });
 });
 ```
@@ -800,38 +807,66 @@ Replace lines 123-157 of `js/form-validation.js`:
 
 ```javascript
 /**
- * Chatwoot API configuration.
- * Replace placeholders with real values after Chatwoot setup.
+ * Chatwoot Platform API configuration.
+ * Replace placeholders with real values after Chatwoot setup (Task 4).
+ * Uses two-step flow: create contact → create conversation.
  */
-var CHATWOOT_API_URL = 'https://CHATWOOT_DOMAIN_PLACEHOLDER/api/v1';
+var CHATWOOT_BASE_URL = 'https://CHATWOOT_DOMAIN_PLACEHOLDER';
 var CHATWOOT_API_TOKEN = 'CHATWOOT_API_TOKEN_PLACEHOLDER';
+var CHATWOOT_ACCOUNT_ID = 'CHATWOOT_ACCOUNT_ID_PLACEHOLDER'; // usually 1 for self-hosted
 var CHATWOOT_INBOX_ID = 'CHATWOOT_INBOX_ID_PLACEHOLDER';
 
 /**
  * Send form data to Chatwoot as a new contact + conversation.
+ * Two-step: POST /contacts → POST /conversations.
  * Fire-and-forget — success UI shows regardless of API result.
  */
 function sendToChatwoot(formData, tag) {
-    var payload = {
-        inbox_id: CHATWOOT_INBOX_ID,
-        name: formData.name || '',
-        email: formData.email || '',
-        phone_number: formData.phone || '',
-        custom_attributes: {
-            source_tag: tag,
-            source_url: window.location.pathname,
-        },
-        initial_message: formData.message || ('Nowe zapytanie z formularza: ' + tag),
+    // Honeypot: if hidden field is filled, it's a spam bot — discard silently
+    var honeypot = document.querySelector('.hp-field');
+    if (honeypot && honeypot.value) return;
+
+    var apiBase = CHATWOOT_BASE_URL + '/api/v1/accounts/' + CHATWOOT_ACCOUNT_ID;
+    var headers = {
+        'Content-Type': 'application/json',
+        'api_access_token': CHATWOOT_API_TOKEN,
     };
 
-    fetch(CHATWOOT_API_URL + '/api_channel/conversations', {
+    // Step 1: Create or find contact
+    fetch(apiBase + '/contacts', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'api_access_token': CHATWOOT_API_TOKEN,
-        },
-        body: JSON.stringify(payload),
-    }).catch(function (err) {
+        headers: headers,
+        body: JSON.stringify({
+            inbox_id: CHATWOOT_INBOX_ID,
+            name: formData.name || '',
+            email: formData.email || '',
+            phone_number: formData.phone ? ('+48' + formData.phone.replace(/^\+48/, '')) : '',
+            custom_attributes: {
+                source_tag: tag,
+                source_url: window.location.pathname,
+            },
+        }),
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (contact) {
+        var contactId = contact.payload && contact.payload.contact && contact.payload.contact.id;
+        if (!contactId) return;
+
+        // Step 2: Create conversation with initial message
+        return fetch(apiBase + '/conversations', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({
+                contact_id: contactId,
+                inbox_id: CHATWOOT_INBOX_ID,
+                message: {
+                    content: formData.message || ('Nowe zapytanie z formularza: ' + tag),
+                },
+                custom_attributes: { source_tag: tag },
+            }),
+        });
+    })
+    .catch(function (err) {
         // Silently fail — don't block user experience
         if (typeof console !== 'undefined') console.warn('Chatwoot API error:', err);
     });
@@ -873,11 +908,11 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, chatwootTa
     }
 
     // Collect form data for Chatwoot
-    var formData = {};
+    const formData = {};
     fields.forEach(function (f) {
-        var el = document.getElementById(f.id);
+        const el = document.getElementById(f.id);
         if (el) {
-            var key = f.id.replace(/^(quiz-|calc-|contact-|pf-)/, '');
+            const key = f.id.replace(/^(quiz-|calc-|contact-|pf-)/, '');
             formData[key] = el.value;
         }
     });
@@ -889,13 +924,19 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, chatwootTa
 
     // Show success UI immediately (don't wait for API)
     if (templateId) {
-        var template = document.getElementById(templateId);
+        const template = document.getElementById(templateId);
         if (template) {
             form.replaceChildren(template.content.cloneNode(true));
         }
     }
     if (onSuccess) onSuccess();
 }
+```
+
+**Important:** Also update the `window.formValidation` export at line 160 to include `sendToChatwoot`:
+
+```javascript
+window.formValidation = { validateName, validatePhone, validateEmail, validateQuizForm, showError, hideError, showSuccess, attachLiveValidation, submitForm, sendToChatwoot };
 ```
 
 - [ ] **Step 4: Run tests**
@@ -937,8 +978,8 @@ In `js/quiz.js`, replace the `setTimeout` block (lines 142-166) with:
             };
 
             // Send to Chatwoot (fire-and-forget)
-            if (typeof sendToChatwoot === 'function') {
-                sendToChatwoot(quizData, 'quiz');
+            if (window.formValidation && window.formValidation.sendToChatwoot) {
+                window.formValidation.sendToChatwoot(quizData, 'quiz');
             }
 
             // Show success UI immediately
@@ -963,7 +1004,7 @@ In `js/quiz.js`, replace the `setTimeout` block (lines 142-166) with:
             if (window.trackEvent) window.trackEvent('quiz_submitted', state.answers);
 ```
 
-Note: `sendToChatwoot` is available globally from `form-validation.js` (loaded first). The `typeof` guard ensures graceful fallback if script order changes.
+Note: `sendToChatwoot` is exported on `window.formValidation` from `form-validation.js` (loaded first). The guard ensures graceful fallback if script order changes.
 
 - [ ] **Step 2: Run existing tests**
 
@@ -1040,8 +1081,11 @@ connect-src 'self' https://www.google-analytics.com https://www.googletagmanager
 
 With:
 ```
-connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://CHATWOOT_DOMAIN_PLACEHOLDER; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://www.googletagmanager.com https://www.google-analytics.com https://CHATWOOT_DOMAIN_PLACEHOLDER; frame-src 'none';
+connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://CHATWOOT_DOMAIN_PLACEHOLDER wss://CHATWOOT_DOMAIN_PLACEHOLDER; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://www.googletagmanager.com https://www.google-analytics.com https://CHATWOOT_DOMAIN_PLACEHOLDER; frame-src 'none'; form-action 'self' https://CHATWOOT_DOMAIN_PLACEHOLDER;
 ```
+
+> **Note:** Added `wss://` for Chatwoot websocket (live chat), and Chatwoot domain to `form-action`.
+
 
 > **Important:** Replace `CHATWOOT_DOMAIN_PLACEHOLDER` with real domain (e.g., `https://chat.szkody.pl`).
 
@@ -1068,26 +1112,17 @@ git commit -m "feat: add Chatwoot domain to CSP connect-src and script-src"
 - Modify: `js/form-validation.js` (add honeypot check)
 - Modify: `kontakt.html`, `index.html`, all service subpages with forms (add hidden field)
 
-- [ ] **Step 1: Add honeypot check to sendToChatwoot**
+- [ ] **Step 1: Honeypot check already in sendToChatwoot**
 
-In `js/form-validation.js`, add at the top of `sendToChatwoot`:
-
-```javascript
-function sendToChatwoot(formData, tag) {
-    // Honeypot: if hidden field is filled, it's a bot — silently discard
-    var honeypot = document.getElementById('hp-field');
-    if (honeypot && honeypot.value) return;
-
-    // ... rest of function unchanged
-```
+The `sendToChatwoot` function (updated in Task 8) already includes the honeypot check using `document.querySelector('.hp-field')`. No additional JS changes needed.
 
 - [ ] **Step 2: Add hidden field to forms in HTML**
 
-Add to each form (quiz, calculator, contact) — inside the `<form>` tag, hidden via CSS:
+Add to each form (quiz, calculator, contact) — inside the `<form>` tag, hidden via CSS. Use **class** (not id) because pages may have multiple forms:
 
 ```html
 <div style="position:absolute;left:-9999px" aria-hidden="true">
-    <input type="text" id="hp-field" name="hp_field" tabindex="-1" autocomplete="off">
+    <input type="text" class="hp-field" name="hp_field" tabindex="-1" autocomplete="off">
 </div>
 ```
 
