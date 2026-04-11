@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Wysyłanie...';
 
-            // Collect quiz answers + contact data for Chatwoot
+            // Collect quiz answers + contact data
             var quizData = {
                 name: document.getElementById('quiz-name').value,
                 phone: document.getElementById('quiz-phone').value.replace(/[\s-]/g, ''),
@@ -149,9 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     }).join('\n'),
             };
 
-            // Send to Chatwoot (fire-and-forget)
-            if (window.formValidation && window.formValidation.sendToChatwoot) {
-                window.formValidation.sendToChatwoot(quizData, 'quiz');
+            // Send to n8n webhook (fire-and-forget)
+            if (window.formValidation && window.formValidation.sendToWebhook) {
+                window.formValidation.sendToWebhook(quizData, 'quiz');
             }
 
             // Show success UI immediately

@@ -80,66 +80,36 @@ function attachLiveValidation(fieldId, validateFn) {
 }
 
 /**
- * Chatwoot Platform API configuration.
- * Replace placeholders with real values after Chatwoot setup.
+ * n8n Webhook configuration.
+ * All form data goes to n8n, which routes to Airtable CRM + notifications.
+ * Replace placeholder with your n8n webhook URL after setup.
  */
-var CHATWOOT_BASE_URL = 'https://CHATWOOT_DOMAIN_PLACEHOLDER';
-var CHATWOOT_API_TOKEN = 'CHATWOOT_API_TOKEN_PLACEHOLDER';
-var CHATWOOT_ACCOUNT_ID = '1';
-var CHATWOOT_INBOX_ID = 'CHATWOOT_INBOX_ID_PLACEHOLDER';
+var WEBHOOK_URL = 'N8N_WEBHOOK_URL_PLACEHOLDER';
 
 /**
- * Send form data to Chatwoot as a new contact + conversation.
- * Two-step: POST /contacts → POST /conversations.
+ * Send form data to n8n webhook.
+ * Single POST — n8n handles routing (Airtable, notifications, etc.).
  * Fire-and-forget — success UI shows regardless of API result.
  */
-function sendToChatwoot(formData, tag) {
+function sendToWebhook(formData, tag) {
     // Honeypot: if hidden field is filled, it's a spam bot — discard silently
     var honeypot = document.querySelector('.hp-field');
     if (honeypot && honeypot.value) return;
 
-    var apiBase = CHATWOOT_BASE_URL + '/api/v1/accounts/' + CHATWOOT_ACCOUNT_ID;
-    var headers = {
-        'Content-Type': 'application/json',
-        'api_access_token': CHATWOOT_API_TOKEN,
-    };
-
-    // Step 1: Create contact
-    fetch(apiBase + '/contacts', {
+    fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: headers,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            inbox_id: CHATWOOT_INBOX_ID,
             name: formData.name || '',
             email: formData.email || '',
-            phone_number: formData.phone ? ('+48' + formData.phone.replace(/^\+48/, '')) : '',
-            custom_attributes: {
-                source_tag: tag,
-                source_url: window.location.pathname,
-            },
+            phone: formData.phone || '',
+            message: formData.message || '',
+            tag: tag,
+            source_url: window.location.pathname,
+            timestamp: new Date().toISOString(),
         }),
-    })
-    .then(function (res) { return res.json(); })
-    .then(function (contact) {
-        var contactId = contact.payload && contact.payload.contact && contact.payload.contact.id;
-        if (!contactId) return;
-
-        // Step 2: Create conversation with initial message
-        return fetch(apiBase + '/conversations', {
-            method: 'POST',
-            headers: headers,
-            body: JSON.stringify({
-                contact_id: contactId,
-                inbox_id: CHATWOOT_INBOX_ID,
-                message: {
-                    content: formData.message || ('Nowe zapytanie z formularza: ' + tag),
-                },
-                custom_attributes: { source_tag: tag },
-            }),
-        });
-    })
-    .catch(function (err) {
-        if (typeof console !== 'undefined') console.warn('Chatwoot API error:', err);
+    }).catch(function (err) {
+        if (typeof console !== 'undefined') console.warn('Webhook error:', err);
     });
 }
 
@@ -182,9 +152,9 @@ function validateQuizForm() {
  * @param {string} [options.consentId] - Checkbox consent element ID
  * @param {string} [options.templateId] - Success template element ID
  * @param {Function} [options.onSuccess] - Callback after success shown
- * @param {string} [options.chatwootTag] - Tag for CRM source tracking
+ * @param {string} [options.tag] - Tag for CRM source tracking (e.g. 'quiz', 'kalkulator', 'kontakt')
  */
-function submitForm({ form, fields, consentId, templateId, onSuccess, chatwootTag }) {
+function submitForm({ form, fields, consentId, templateId, onSuccess, tag, chatwootTag }) {
     let isValid = true;
 
     fields.forEach(({ id, validate }) => {
@@ -219,9 +189,10 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, chatwootTa
         }
     });
 
-    // Send to Chatwoot (fire-and-forget)
-    if (chatwootTag) {
-        sendToChatwoot(formData, chatwootTag);
+    // Send to n8n webhook (fire-and-forget)
+    var webhookTag = tag || chatwootTag; // chatwootTag kept for backwards compat
+    if (webhookTag) {
+        sendToWebhook(formData, webhookTag);
     }
 
     // Show success UI immediately (don't wait for API)
@@ -235,4 +206,4 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, chatwootTa
 }
 
 // Export for use in other modules
-window.formValidation = { validateName, validatePhone, validateEmail, validateQuizForm, showError, hideError, showSuccess, attachLiveValidation, submitForm, sendToChatwoot };
+window.formValidation = { validateName, validatePhone, validateEmail, validateQuizForm, showError, hideError, showSuccess, attachLiveValidation, submitForm, sendToWebhook };
