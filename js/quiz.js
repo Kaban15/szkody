@@ -139,10 +139,22 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Wysyłanie...';
 
             // Collect quiz answers + contact data
+            // Map step1 answer to event type for CRM
+            var eventTypeMap = {
+                'wypadek-samochodowy': 'Komunikacyjne',
+                'wypadek-motocyklowy': 'Komunikacyjne',
+                'potracenie': 'Komunikacyjne',
+                'wypadek-praca': 'Przy pracy',
+                'blad-medyczny': 'Błąd medyczny',
+                'smierc-bliskiej': 'Śmierć bliskiej osoby',
+                'wypadek-rolnictwo': 'Rolnicze',
+                'inne': 'Inne',
+            };
             var quizData = {
                 name: document.getElementById('quiz-name').value,
                 phone: document.getElementById('quiz-phone').value.replace(/[\s-]/g, ''),
                 email: document.getElementById('quiz-email').value,
+                event_type: eventTypeMap[state.answers.step1] || state.answers.step1 || '',
                 message: 'Wyniki quizu diagnostycznego:\n' +
                     Object.entries(state.answers).map(function (entry) {
                         return entry[0] + ': ' + entry[1];

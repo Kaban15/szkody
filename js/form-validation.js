@@ -104,6 +104,7 @@ function sendToWebhook(formData, tag) {
             email: formData.email || '',
             phone: formData.phone || '',
             message: formData.message || '',
+            event_type: formData.event_type || '',
             tag: tag,
             source_url: window.location.pathname,
             timestamp: new Date().toISOString(),
