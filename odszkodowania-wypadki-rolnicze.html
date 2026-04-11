@@ -512,7 +512,8 @@
             if (!phoneOk) fv.showError('pf-phone', 'pf-phone-error');
             if (!emailOk) fv.showError('pf-email', 'pf-email-error');
             if (!nameOk || !phoneOk || !emailOk || !consent) return;
-            fv.submitForm(form, 'pf-success');
+            fv.sendToWebhook({name: document.getElementById('pf-name').value, phone: document.getElementById('pf-phone').value, email: (emailEl && emailEl.value) || ''}, 'kontakt-wypadki-rolnicze');
+            var tpl = document.getElementById('pf-success'); if (tpl) form.replaceChildren(tpl.content.cloneNode(true));
         });
     })();
     </script>

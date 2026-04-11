@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 consentId: 'contact-consent',
                 templateId: 'contact-success-template',
+                tag: 'kontakt',
                 onSuccess: () => window.trackEvent('form_submitted', { form: 'contact' }),
             });
         });
