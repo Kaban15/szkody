@@ -75,6 +75,28 @@ npm run test:watch            # run vitest in watch mode
 **Implementacja hero (`index.html`):** `background-image` inline style na `.v2-scroll-expand`.
 **Implementacja pozostałe:** `<img class="w-full h-full object-cover">` w kontenerze `rounded-xl aspect-[4/3] overflow-hidden`.
 
+### Internacjonalizacja (i18n)
+
+Obsługiwane języki: **PL** (domyślny), **EN**, **UA**.
+
+- **`js/i18n.js`** — ładuje `/lang/{lang}.json` przez XHR, podmienia `innerHTML` elementów z `data-i18n="key"`, `placeholder` z `data-i18n-placeholder="key"`, `aria-label` z `data-i18n-aria="key"`. Wybór języka zapisywany w `localStorage('lang')`.
+- **`lang/en.json`** / **`lang/ua.json`** — pliki tłumaczeń. PL jest domyślny (hardcode w HTML).
+- **`lang-switcher-mount`** — div w nav (desktop + mobile) — `i18n.js` wstrzykuje tam flagi PL/EN/UA.
+
+#### Przestrzenie nazw kluczy tłumaczeń
+
+| Prefix | Strona |
+|--------|--------|
+| `nav.*`, `sticky.*`, `footer.*`, `cookie.*` | Współdzielone — wszystkie strony |
+| `hero.*`, `trust.*`, `quiz.*`, `cards.*`, `steps.*`, `contact.*`, `faq.*`, `cta.*` | `index.html` |
+| `kom.*` | `odszkodowania-komunikacyjne.html` |
+| `praca.*` | `odszkodowania-wypadki-przy-pracy.html` |
+| `med.*` | `odszkodowania-bledy-medyczne.html` |
+| `smierc.*` | `odszkodowania-smierc-bliskiej-osoby.html` |
+| `rol.*` | `odszkodowania-wypadki-rolnicze.html` |
+
+**Zasada:** każdy element z polskim tekstem musi mieć `data-i18n`. Przy dodawaniu nowej treści dodaj od razu klucz do `lang/en.json` i `lang/ua.json`.
+
 ### JavaScript Files (all in `js/`)
 Scripts must load in dependency order. `form-validation.js` must load before any file that calls `window.formValidation`. `cookie-consent.js` must load before `analytics.js`.
 
