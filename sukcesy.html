@@ -281,6 +281,9 @@
                     <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-2" data-i18n="sukcesy.cta_title">Bezpłatna konsultacja</h2>
                     <p class="text-v2-muted text-center mb-8" data-i18n="sukcesy.cta_subtitle">Opisz swoją sprawę — oddzwonimy w ciągu 30 minut w godzinach pracy.</p>
                     <form id="pf-form" class="bg-white border border-v2-line rounded-xl p-6 sm:p-8" novalidate>
+                        <div style="position:absolute;left:-9999px" aria-hidden="true">
+                            <input type="text" class="hp-field" name="hp_field" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="space-y-4">
                             <div>
                                 <input type="text" id="pf-name" data-i18n-placeholder="kontakt.name_placeholder" placeholder="Imię *" required minlength="2"

@@ -195,6 +195,9 @@
                     <!-- Right: Form -->
                     <div>
                         <form id="contact-form" class="space-y-4" novalidate>
+                            <div style="position:absolute;left:-9999px" aria-hidden="true">
+                                <input type="text" class="hp-field" name="hp_field" tabindex="-1" autocomplete="off">
+                            </div>
                             <h2 class="text-v2-text text-xl font-bold mb-4" data-i18n="kontakt.form_title">Napisz do nas</h2>
                             <div>
                                 <input type="text" id="contact-name" placeholder="Imię *" required minlength="2" data-i18n-placeholder="kontakt.name_placeholder"

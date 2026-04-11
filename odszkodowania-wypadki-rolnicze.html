@@ -381,6 +381,9 @@
                     </div>
                     <div>
                         <form id="page-form" novalidate class="space-y-4">
+                            <div style="position:absolute;left:-9999px" aria-hidden="true">
+                                <input type="text" class="hp-field" name="hp_field" tabindex="-1" autocomplete="off">
+                            </div>
                             <input type="text" id="pf-name" placeholder="Imię i nazwisko *" required minlength="2" class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors" data-i18n-placeholder="rol.form_name_placeholder">
                             <p class="text-red-500 text-xs mt-1 hidden" id="pf-name-error" data-i18n="rol.form_name_error">Podaj swoje imię</p>
                             <input type="tel" id="pf-phone" placeholder="Numer telefonu *" required class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:ring-2 focus:ring-v2-cta/20 focus:outline-none transition-colors" data-i18n-placeholder="rol.form_phone_placeholder">
