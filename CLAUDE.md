@@ -57,6 +57,24 @@ npm run test:watch            # run vitest in watch mode
 - **Blog**: `blog/index.html` (listing with category filter), `blog/_szablon-artykul.html` (article template, not published), `blog/_szablon-case-study.html` (case study template, not published)
 - **Utility pages**: `kalkulator.html`, `kontakt.html`, `jak-dzialamy.html`, `404.html`, `polityka-prywatnosci.html`, `robots.txt`, `sitemap.xml`
 
+### Images (`images/`)
+9 PNG zdjęć (generowane Gemini) zastępujących placeholdery FOTO na wszystkich stronach. Wdrożone 2026-04-11.
+
+| Plik | Treść | Użyte na |
+|------|-------|----------|
+| `Gemini_Generated_Image_9moolc9moolc9moo.png` | Dwoje przy dokumentach w biurze | `index.html` hero bg, `jak-dzialamy.html`, `odszkodowania-wypadki-rolnicze.html` (sekcja 2) |
+| `Gemini_Generated_Image_5g2h8z5g2h8z5g2h.png` | Prawnik + klientka przy biurku | `index.html` "Jak działamy", `uslugi.html` |
+| `Gemini_Generated_Image_mcyjr7mcyjr7mcyj.png` | Wypadek samochodowy | `odszkodowania-komunikacyjne.html` |
+| `Gemini_Generated_Image_q44jvkq44jvkq44j.png` | Robotnik budowlany | `odszkodowania-wypadki-przy-pracy.html` |
+| `Gemini_Generated_Image_rvhv0frvhv0frvhv.png` | Przegląd dokumentacji | `odszkodowania-bledy-medyczne.html` |
+| `Gemini_Generated_Image_v6j33av6j33av6j3.png` | Ciepłe wsparcie przy stole | `odszkodowania-smierc-bliskiej-osoby.html` hero, `sukcesy.html` |
+| `Gemini_Generated_Image_nnl0c7nnl0c7nnl0.png` | Kobieta z telefonem | `odszkodowania-smierc-bliskiej-osoby.html` sekcja 2, `opinie.html` |
+| `Gemini_Generated_Image_ivbp9wivbp9wivbp.png` | Biuro, dokumenty na biurku | `odszkodowania-smierc-bliskiej-osoby.html` sekcja 3, `kalkulator.html` |
+| `Gemini_Generated_Image_ib7zhnib7zhnib7z.png` | Rolnik w polu zbóż | `odszkodowania-wypadki-rolnicze.html` hero |
+
+**Implementacja hero (`index.html`):** `background-image` inline style na `.v2-scroll-expand`.
+**Implementacja pozostałe:** `<img class="w-full h-full object-cover">` w kontenerze `rounded-xl aspect-[4/3] overflow-hidden`.
+
 ### JavaScript Files (all in `js/`)
 Scripts must load in dependency order. `form-validation.js` must load before any file that calls `window.formValidation`. `cookie-consent.js` must load before `analytics.js`.
 

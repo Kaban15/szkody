@@ -179,11 +179,29 @@ Usunięte: floating WhatsApp/phone buttons, mobile sticky bottom bar.
 
 7 kart: na mobile 1 kolumna, na tablet 2 kolumny (ostatnia karta pełna szerokość / `col-span-2`), na desktop 3+3+1 lub 4+3. Preferowane: **2 kolumny na wszystkich breakpointach** (jak Votum mobile), 7 kart w pionie — najprostsze i najbliższe referencji.
 
-## Zdjęcia / Placeholder
+## Zdjęcia
 
-Wszędzie gdzie docelowo będzie zdjęcie — element `<div>` z widocznym tekstem "FOTO" na szarym tle (`bg-gray-300 text-gray-500 flex items-center justify-center text-2xl font-bold`). Dotyczy:
-- Hero background (pełnoekranowy div z "FOTO" + ciemny overlay + tekst na wierzchu)
-- Logo ubezpieczycieli (tekst placeholder zamiast grafik)
+Zdjęcia wdrożone 2026-04-11. Folder: `images/` (root projektu), 9 plików PNG generowanych przez Gemini.
+
+### Mapowanie zdjęć → sekcje
+
+| Plik | Sekcja | Strona |
+|------|--------|--------|
+| `Gemini_Generated_Image_9moolc9moolc9moo.png` | Hero tło (full-screen bg) | `index.html`, `jak-dzialamy.html`, `odszkodowania-wypadki-rolnicze.html` (sekcja 2) |
+| `Gemini_Generated_Image_5g2h8z5g2h8z5g2h.png` | "Jak działamy" panel | `index.html`, `uslugi.html` |
+| `Gemini_Generated_Image_mcyjr7mcyjr7mcyj.png` | Hero sekcji | `odszkodowania-komunikacyjne.html` |
+| `Gemini_Generated_Image_q44jvkq44jvkq44j.png` | Hero sekcji | `odszkodowania-wypadki-przy-pracy.html` |
+| `Gemini_Generated_Image_rvhv0frvhv0frvhv.png` | Hero sekcji | `odszkodowania-bledy-medyczne.html` |
+| `Gemini_Generated_Image_v6j33av6j33av6j3.png` | Hero sekcji + sukcesy | `odszkodowania-smierc-bliskiej-osoby.html`, `sukcesy.html` |
+| `Gemini_Generated_Image_nnl0c7nnl0c7nnl0.png` | "Kto może ubiegać się" + opinie | `odszkodowania-smierc-bliskiej-osoby.html`, `opinie.html` |
+| `Gemini_Generated_Image_ivbp9wivbp9wivbp.png` | "Jak postępujemy" + kalkulator | `odszkodowania-smierc-bliskiej-osoby.html`, `kalkulator.html` |
+| `Gemini_Generated_Image_ib7zhnib7zhnib7z.png` | Hero sekcji rolniczej | `odszkodowania-wypadki-rolnicze.html` |
+
+### Implementacja
+
+- Hero (`index.html`): `background-image` inline style na `.v2-scroll-expand`, `background-size: cover`
+- Wszystkie pozostałe: `<img class="w-full h-full object-cover">` w kontenerze `rounded-xl aspect-[4/3] overflow-hidden`
+- Logo ubezpieczycieli: nadal tekst placeholder (PZU, Warta, etc.) — wymagają docelowych plików SVG/PNG
 
 ## Kompatybilność
 
