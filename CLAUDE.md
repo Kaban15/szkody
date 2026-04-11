@@ -53,7 +53,7 @@ npm run test:watch            # run vitest in watch mode
 - **`uslugi.html`** — services overview page
 - **`sukcesy.html`** — case studies / success stories
 - **`opinie.html`** — client testimonials
-- **5 service subpages** (`odszkodowania-*.html`) — each follows same template: nav, breadcrumb, hero, content, mini case study, FAQ, CTA, footer
+- **5 service subpages** (`odszkodowania-*.html`) — each follows same template: nav, breadcrumb, hero, content, mini case study, **Google reviews** (`<!-- OPINIE KLIENTÓW -->`), FAQ, CTA, contact form, footer. `odszkodowania-komunikacyjne.html` additionally has a **benefits slider** (`<!-- JAKIE ŚWIADCZENIA MOŻESZ UZYSKAĆ -->`) replacing the old static benefits grid, inserted between hero and mini case study.
 - **Blog**: `blog/index.html` (listing with category filter), `blog/_szablon-artykul.html` (article template, not published), `blog/_szablon-case-study.html` (case study template, not published)
 - **Utility pages**: `kalkulator.html`, `kontakt.html`, `jak-dzialamy.html`, `404.html`, `polityka-prywatnosci.html`, `robots.txt`, `sitemap.xml`
 
@@ -145,6 +145,8 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Cookie consent gates GA4**: analytics scripts only load after user accepts cookies via localStorage check. `cookie-consent.js` guards against missing `#cookie-banner` element.
 - **Delegated event handling**: `navigation.js` uses delegated click on mobile menu; `analytics.js` uses delegated click with early-exit for phone/sticky/case tracking.
 - **DOM caching**: `calculator.js` caches all label/result elements at init — `recalculate()` runs on every slider input event and must avoid DOM queries in the hot path.
+- **Benefits slider** (`odszkodowania-komunikacyjne.html`): 6-slide translateX carousel (vanilla JS IIFE at bottom of page). IDs: `#benefitsTrack`, `#benefitsViewport`, `#benefitsPrev`, `#benefitsNext`, `.benefits-dot`. Auto-plays every 5s, pauses on hover. Each slide has a white card with alternating left-border accent (cta red / gold), icon, `01/06` counter, title, description, CTA link.
+- **Google reviews section** (`<!-- OPINIE KLIENTÓW -->`, all 5 service subpages): static placeholder section with Google-branded rating bar (4.9 ★★★★★ / 500+ opinii) and 3 review cards. Inserted between mini case study and FAQ. Each subpage has context-specific review content (car accidents / workplace / medical / death / agricultural).
 
 ## Blog System
 
