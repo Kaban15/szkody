@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 consentId: 'calc-consent',
                 templateId: 'calc-success-template',
+                chatwootTag: 'kalkulator',
                 onSuccess: () => { if (window.trackEvent) window.trackEvent('calculator_cta_clicked'); },
             });
         });
