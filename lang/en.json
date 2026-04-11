@@ -1023,5 +1023,30 @@
   "rol.form_consent": "I consent to the processing of my personal data. <a href=\"polityka-prywatnosci.html\" class=\"text-v2-cta underline\">Privacy policy</a> *",
   "rol.form_submit": "Send",
   "rol.form_success_title": "Thank you!",
-  "rol.form_success_desc": "We'll be in touch shortly."
+  "rol.form_success_desc": "We'll be in touch shortly.",
+
+  "sukcesy.breadcrumb_current": "Our Successes",
+  "sukcesy.cases_title": "Selected Cases",
+  "sukcesy.featured_name": "Anna K.",
+
+  "uslugi.breadcrumb_current": "Services",
+  "uslugi.badge": "Experience & Effectiveness",
+  "uslugi.section_title": "We Stand on the Side of Accident Victims",
+  "uslugi.section_subtitle": "We help with every type of compensation case. Choose your category or contact us.",
+
+  "kalkulator.card1_title": "Quick estimate",
+  "kalkulator.card1_desc": "Answer a few questions and get an estimate in under a minute.",
+  "kalkulator.card2_title": "Detailed analysis",
+  "kalkulator.card2_desc": "Need a precise valuation? Our experts will analyse your case for free.",
+  "kalkulator.card2_link": "Contact us →",
+  "kalkulator.section_title": "Compensation Calculator",
+  "kalkulator.section_subtitle": "Select the type of incident, mark injuries and set the details — the calculator will give an approximate amount.",
+  "kalkulator.cta_subtitle": "Free consultation with an expert. We'll assess your case and tell you how much you can recover.",
+
+  "jak_dzialamy.breadcrumb_current": "How We Work",
+  "jak_dzialamy.process_title": "Our Process Step by Step",
+  "jak_dzialamy.contact_title": "Free consultation",
+  "jak_dzialamy.contact_subtitle": "Describe your case — we'll call you back within 30 minutes during business hours.",
+
+  "blog.coming_soon_msg": "Articles coming soon. Check back later!"
 }

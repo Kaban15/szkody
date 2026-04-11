@@ -119,7 +119,7 @@
                 <nav class="text-white/80 text-sm flex items-center gap-2">
                     <a href="/" class="hover:text-white transition-colors" data-i18n="sukcesy.breadcrumb_home">Strona główna</a>
                     <span>›</span>
-                    <span class="text-white font-medium">Nasze sukcesy</span>
+                    <span class="text-white font-medium" data-i18n="sukcesy.breadcrumb_current">Nasze sukcesy</span>
                 </nav>
             </div>
         </section>
@@ -131,7 +131,7 @@
                     <div>
                         <h1 class="text-v2-text text-3xl lg:text-5xl font-bold leading-tight mb-6" data-i18n="sukcesy.hero_title">Wygrywamy dla naszych klientów</h1>
                         <p class="text-v2-muted text-lg mb-8" data-i18n="sukcesy.hero_subtitle">Realne sprawy, realne kwoty. Przekonaj się, ile udało się uzyskać dla naszych klientów w porównaniu z ofertami ubezpieczycieli.</p>
-                        <a href="#page-contact" class="inline-block bg-v2-cta hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">Bezpłatna konsultacja</a>
+                        <a href="#page-contact" class="inline-block bg-v2-cta hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors" data-i18n="nav.cta">Bezpłatna konsultacja</a>
                     </div>
                     <div class="mt-10 lg:mt-0">
                         <div class="rounded-xl aspect-[4/3] overflow-hidden">
@@ -148,19 +148,19 @@
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="500">0</span>+</div>
-                        <p class="text-white/60 text-sm mt-2">wygranych spraw</p>
+                        <p class="text-white/60 text-sm mt-2" data-i18n="social.cases_label">wygranych spraw</p>
                     </div>
                     <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="15">0</span> mln</div>
-                        <p class="text-white/60 text-sm mt-2">uzyskanych odszkodowań</p>
+                        <p class="text-white/60 text-sm mt-2" data-i18n="social.amount_label">uzyskanych odszkodowań</p>
                     </div>
                     <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="98">0</span>%</div>
-                        <p class="text-white/60 text-sm mt-2">skuteczności</p>
+                        <p class="text-white/60 text-sm mt-2" data-i18n="social.success_label">skuteczności</p>
                     </div>
                     <div class="count-up v2-spring-reveal">
                         <div class="text-white text-4xl lg:text-5xl font-bold"><span data-count="10">0</span>+</div>
-                        <p class="text-white/60 text-sm mt-2">lat doświadczenia</p>
+                        <p class="text-white/60 text-sm mt-2" data-i18n="social.years_label">lat doświadczenia</p>
                     </div>
                 </div>
             </div>
@@ -169,21 +169,21 @@
         <!-- FEATURED CASE STUDY -->
         <section class="bg-v2-surface py-16 lg:py-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-12">Wybrane sprawy</h2>
+                <h2 class="text-v2-text text-2xl lg:text-3xl font-bold text-center mb-12" data-i18n="sukcesy.cases_title">Wybrane sprawy</h2>
 
                 <!-- Featured Case: full width, dark bg -->
                 <div class="bg-v2-text rounded-xl p-6 lg:p-10 mb-8">
                     <div class="flex items-center gap-2 text-white/60 text-sm mb-6">
                         <i data-lucide="car" class="w-4 h-4 text-v2-cta"></i>
-                        <span>Wypadek komunikacyjny</span>
+                        <span data-i18n="cases.case1_type">Wypadek komunikacyjny</span>
                     </div>
                     <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
                         <div>
-                            <p class="text-white/60 text-sm mb-1">Ubezpieczyciel oferował</p>
+                            <p class="text-white/60 text-sm mb-1" data-i18n="cases.offered">Ubezpieczyciel oferował</p>
                             <p class="text-white/60 line-through text-2xl mb-4">15 000 zł</p>
-                            <p class="text-white/60 text-sm mb-1">Uzyskaliśmy</p>
+                            <p class="text-white/60 text-sm mb-1" data-i18n="cases.obtained">Uzyskaliśmy</p>
                             <p class="text-v2-cta text-4xl font-bold mb-3 v2-result-highlight">120 000 zł</p>
-                            <p class="text-v2-cta font-bold text-sm mb-6">8x więcej</p>
+                            <p class="text-v2-cta font-bold text-sm mb-6" data-i18n="cases.case1_multiplier">8x więcej</p>
                             <div class="comparison-bars space-y-3 mb-4">
                                 <div class="flex items-center gap-3">
                                     <span class="text-white/50 text-xs w-16 shrink-0">15 000 zł</span>
@@ -197,7 +197,7 @@
                         </div>
                         <div>
                             <p class="text-white/70 text-sm mb-4" data-i18n="sukcesy.case1_full_desc">Po wypadku na S7 ubezpieczyciel zaproponował zaledwie 15 tys. zł. Nasz zespół prawników i rzeczoznawców przeanalizował sprawę i uzyskał 8-krotnie wyższe odszkodowanie dla poszkodowanego.</p>
-                            <p class="text-white/40 text-xs">Czas trwania sprawy: 4 miesiące</p>
+                            <p class="text-white/40 text-xs" data-i18n="cases.case1_duration">Czas trwania sprawy: 4 miesiące</p>
                         </div>
                     </div>
                 </div>
@@ -208,13 +208,13 @@
                     <div class="bg-white rounded-xl shadow-sm p-6 border border-v2-line">
                         <div class="flex items-center gap-2 text-v2-muted text-sm mb-4">
                             <i data-lucide="hard-hat" class="w-4 h-4 text-v2-cta"></i>
-                            <span>Wypadek przy pracy</span>
+                            <span data-i18n="cases.case2_type">Wypadek przy pracy</span>
                         </div>
-                        <p class="text-v2-muted text-sm mb-1">Ubezpieczyciel oferował</p>
+                        <p class="text-v2-muted text-sm mb-1" data-i18n="cases.offered">Ubezpieczyciel oferował</p>
                         <p class="text-v2-muted line-through text-xl mb-3">8 000 zł</p>
-                        <p class="text-v2-muted text-sm mb-1">Uzyskaliśmy</p>
+                        <p class="text-v2-muted text-sm mb-1" data-i18n="cases.obtained">Uzyskaliśmy</p>
                         <p class="text-v2-cta text-3xl font-bold mb-2 v2-result-highlight">67 000 zł</p>
-                        <p class="text-v2-cta font-bold text-sm mb-4">8.4x więcej</p>
+                        <p class="text-v2-cta font-bold text-sm mb-4" data-i18n="cases.case2_multiplier">8.4x więcej</p>
                         <div class="comparison-bars space-y-2 mb-4">
                             <div class="flex items-center gap-2">
                                 <span class="text-v2-muted text-xs w-14 shrink-0">8 000</span>
@@ -233,13 +233,13 @@
                     <div class="bg-white rounded-xl shadow-sm p-6 border border-v2-line">
                         <div class="flex items-center gap-2 text-v2-muted text-sm mb-4">
                             <i data-lucide="heart" class="w-4 h-4 text-v2-cta"></i>
-                            <span>Śmierć bliskiej osoby</span>
+                            <span data-i18n="cases.case3_type">Śmierć bliskiej osoby</span>
                         </div>
-                        <p class="text-v2-muted text-sm mb-1">Ubezpieczyciel oferował</p>
+                        <p class="text-v2-muted text-sm mb-1" data-i18n="cases.offered">Ubezpieczyciel oferował</p>
                         <p class="text-v2-muted line-through text-xl mb-3">40 000 zł</p>
-                        <p class="text-v2-muted text-sm mb-1">Uzyskaliśmy</p>
+                        <p class="text-v2-muted text-sm mb-1" data-i18n="cases.obtained">Uzyskaliśmy</p>
                         <p class="text-v2-cta text-3xl font-bold mb-2 v2-result-highlight">310 000 zł</p>
-                        <p class="text-v2-cta font-bold text-sm mb-4">7.8x więcej</p>
+                        <p class="text-v2-cta font-bold text-sm mb-4" data-i18n="cases.case3_multiplier">7.8x więcej</p>
                         <div class="comparison-bars space-y-2 mb-4">
                             <div class="flex items-center gap-2">
                                 <span class="text-v2-muted text-xs w-14 shrink-0">40 000</span>
@@ -267,8 +267,8 @@
                 <div class="flex items-center justify-center gap-3">
                     <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-v2-cta font-bold text-sm">AK</div>
                     <div class="text-left">
-                        <p class="text-v2-text font-semibold text-sm">Anna K.</p>
-                        <p class="text-v2-muted text-xs">Wypadek komunikacyjny</p>
+                        <p class="text-v2-text font-semibold text-sm" data-i18n="sukcesy.featured_name">Anna K.</p>
+                        <p class="text-v2-muted text-xs" data-i18n="cases.case1_type">Wypadek komunikacyjny</p>
                     </div>
                 </div>
             </div>
@@ -283,28 +283,28 @@
                     <form id="pf-form" class="bg-white border border-v2-line rounded-xl p-6 sm:p-8" novalidate>
                         <div class="space-y-4">
                             <div>
-                                <input type="text" id="pf-name" placeholder="Imię *" required minlength="2"
+                                <input type="text" id="pf-name" data-i18n-placeholder="kontakt.name_placeholder" placeholder="Imię *" required minlength="2"
                                     class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
-                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-name-error">Podaj swoje imię (min. 2 znaki)</p>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-name-error" data-i18n="kontakt.name_error">Podaj swoje imię (min. 2 znaki)</p>
                             </div>
                             <div>
-                                <input type="tel" id="pf-phone" placeholder="Numer telefonu *" required
+                                <input type="tel" id="pf-phone" data-i18n-placeholder="kontakt.phone_placeholder" placeholder="Numer telefonu *" required
                                     class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
-                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-phone-error">Podaj prawidłowy numer telefonu</p>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="pf-phone-error" data-i18n="kontakt.phone_error">Podaj prawidłowy numer telefonu</p>
                             </div>
                             <div>
-                                <input type="email" id="pf-email" placeholder="Email (opcjonalnie)"
+                                <input type="email" id="pf-email" data-i18n-placeholder="kontakt.email_placeholder" placeholder="Email (opcjonalnie)"
                                     class="w-full px-4 py-3 rounded-lg bg-white border border-v2-line text-v2-text placeholder-v2-muted focus:border-v2-cta focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors">
                             </div>
                             <div class="flex items-start gap-2">
                                 <input type="checkbox" id="pf-consent" required class="mt-1 w-4 h-4 accent-red-600">
-                                <label for="pf-consent" class="text-xs text-v2-muted">
+                                <label for="pf-consent" class="text-xs text-v2-muted" data-i18n="kontakt.consent">
                                     Wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu i analizy sprawy.
                                     <a href="polityka-prywatnosci.html" class="text-v2-cta underline">Polityka prywatności</a> *
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="w-full mt-6 bg-v2-cta hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                        <button type="submit" class="w-full mt-6 bg-v2-cta hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition-colors" data-i18n="kontakt.submit">
                             Wyślij wiadomość →
                         </button>
                     </form>

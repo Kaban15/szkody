@@ -1030,5 +1030,30 @@
   "rol.form_consent": "Я погоджуюся на обробку персональних даних. <a href=\"polityka-prywatnosci.html\" class=\"text-v2-cta underline\">Політика конфіденційності</a> *",
   "rol.form_submit": "Надіслати",
   "rol.form_success_title": "Дякуємо!",
-  "rol.form_success_desc": "Ми зв'яжемося з вами найближчим часом."
+  "rol.form_success_desc": "Ми зв'яжемося з вами найближчим часом.",
+
+  "sukcesy.breadcrumb_current": "Наші успіхи",
+  "sukcesy.cases_title": "Вибрані справи",
+  "sukcesy.featured_name": "Анна К.",
+
+  "uslugi.breadcrumb_current": "Послуги",
+  "uslugi.badge": "Досвід і ефективність",
+  "uslugi.section_title": "Ми на боці постраждалих",
+  "uslugi.section_subtitle": "Ми допомагаємо у кожному виді справ. Оберіть свою категорію або зв'яжіться з нами.",
+
+  "kalkulator.card1_title": "Швидка оцінка",
+  "kalkulator.card1_desc": "Дайте відповідь на кілька запитань і отримайте оцінку менш ніж за хвилину.",
+  "kalkulator.card2_title": "Детальний аналіз",
+  "kalkulator.card2_desc": "Потрібна точна оцінка? Наші експерти проаналізують вашу справу безкоштовно.",
+  "kalkulator.card2_link": "Зв'яжіться з нами →",
+  "kalkulator.section_title": "Калькулятор компенсацій",
+  "kalkulator.section_subtitle": "Оберіть тип події, вкажіть травми та встановіть деталі — калькулятор надасть орієнтовну суму.",
+  "kalkulator.cta_subtitle": "Безкоштовна консультація з експертом. Оцінимо вашу справу та скажемо, скільки можна отримати.",
+
+  "jak_dzialamy.breadcrumb_current": "Як ми працюємо",
+  "jak_dzialamy.process_title": "Наш процес крок за кроком",
+  "jak_dzialamy.contact_title": "Безкоштовна консультація",
+  "jak_dzialamy.contact_subtitle": "Опишіть вашу справу — ми передзвонимо протягом 30 хвилин у робочий час.",
+
+  "blog.coming_soon_msg": "Статті готуються. Заходьте пізніше!"
 }
