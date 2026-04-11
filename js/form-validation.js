@@ -84,7 +84,7 @@ function attachLiveValidation(fieldId, validateFn) {
  * All form data goes to n8n, which routes to Airtable CRM + notifications.
  * Replace placeholder with your n8n webhook URL after setup.
  */
-var WEBHOOK_URL = 'N8N_WEBHOOK_URL_PLACEHOLDER';
+var WEBHOOK_URL = 'https://n8n.kaban.click/webhook/szkody-form';
 
 /**
  * Send form data to n8n webhook.
