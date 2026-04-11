@@ -109,7 +109,8 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 
 | File | Exports/Globals | Purpose |
 |------|----------------|---------|
-| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, `submitForm()` handler, `attachLiveValidation()` for blur/input events |
+| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, `submitForm()` handler with n8n webhook integration (`sendToWebhook()`), `attachLiveValidation()` for blur/input events |
+| `chat-widget.js` | — | AI chat widget: bubble (bottom-right), chat window, sessionStorage history, sends messages to n8n webhook → OpenAI GPT-4o-mini. Replaces old `chatwoot.js`. |
 | `quiz.js` | — | 5-step diagnostic quiz (selection, navigation, submission, business hours) |
 | `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result) |
 | `animations.js` | — | Lenis smooth scroll init (guarded), parallax on scroll, IntersectionObserver: count-up numbers, scroll reveal, clip-path reveals, case study filter, comparison bars, staggered reveal |
@@ -117,7 +118,7 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 | `cookie-consent.js` | — | Cookie banner, localStorage consent, dynamic GA4 script injection |
 | `analytics.js` | `window.trackEvent` | GA4 event wrapper, phone click tracking, FAQ accordion, contact form |
 
-### CSS (`css/styles.css`)
+### CSS (`css/styles.css` + `css/chat-widget.css`)
 Custom animations and transitions beyond Tailwind utilities:
 - **`.word-reveal`** — hero word-by-word fade-in
 - **`.fade-in`** — scroll-triggered opacity reveal (IntersectionObserver)
@@ -127,7 +128,7 @@ Custom animations and transitions beyond Tailwind utilities:
 - **`.card-hover`** — green glow on hover (uses `--color-brand` rgba)
 - **`.animate-ticker`** — infinite horizontal scroll for top success ticker
 - **`.testimonial-track` / `.testimonial-card`** — scroll-snap for carousel
-- **`.pulse-ring`** — pulsing ring on floating WhatsApp button
+- **`.pulse-ring`** — pulsing ring (reused by chat widget bubble)
 - **`#scroll-to-top`** — fade-in/out scroll-to-top button (created dynamically by `navigation.js`, appears after 400px scroll)
 - **`.reveal-clip`** — clip-path inset reveal from left (`inset(0 100% 0 0)` → `inset(0 0 0 0)`), used on hero checkmarks
 - **`[data-parallax]`** — scroll-driven translateY parallax via Lenis `onScroll`, factor set per element (hero 0.3, process icons 0.1, team avatars 0.15, CTA 0.2). Mobile: factor halved. Disabled on `prefers-reduced-motion`.
@@ -142,9 +143,9 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Ticker**: auto-scrolling marquee at top with recent successes (content duplicated for seamless CSS loop — update both copies when changing text)
 - **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`
 - **FAQ accordion**: `aria-controls` + `role="region"` for accessibility, toggle logic in `analytics.js`
-- **Floating contact buttons**: WhatsApp + phone, desktop only (mobile uses sticky bottom bar)
+- **AI Chat Widget**: green bubble (bottom-right, 56×56px), opens 380×520px chat window. Bot = "asystent kancelarii" powered by GPT-4o-mini via n8n webhook. Conducts empathetic interview before asking for contact info. Extracts name+phone from conversation → saves to Airtable CRM. See `css/chat-widget.css` + `js/chat-widget.js`.
 - **Live form validation**: `attachLiveValidation()` adds blur (validate + show error/success border) and input (clear error on correction) events. Green border (`border-green-500`) on valid fields. Applied to quiz, contact, and calculator forms.
-- **Quiz/Calculator forms**: simulated submission via shared `window.formValidation.submitForm()` with `<template>` elements for success messages — backend integration placeholder. Replace the `setTimeout` blocks with real fetch calls.
+- **Form submission → CRM**: all forms use `window.formValidation.submitForm()` with `tag` parameter. `sendToWebhook()` POSTs data to n8n webhook (`https://n8n.kaban.click/webhook/szkody-form`) → n8n saves to Airtable CRM ("Szkody CRM" base, "Leady" table). Success UI shows immediately (fire-and-forget).
 - **Comparison bars**: animated width bars in case study cards showing insurer offer vs final result. Container `.comparison-bars` triggers IntersectionObserver, bars grow from 0 to `data-width`.
 - **Staggered scroll reveal**: containers with `data-stagger="150"` attribute animate `.fade-in-up` children with cascading delay. Applied to "dlaczego my", team experts, FAQ items.
 - **Business hours logic** in `quiz.js`: constants in `BUSINESS_HOURS` (Mon-Fri 8-18, Sat 9-14) — affects "oddzwonimy w 30 minut" vs "następny dzień roboczy" messaging.
@@ -195,17 +196,63 @@ Note: `analytics.js` calls `window.formValidation` only inside `if (contactForm)
 - Blog publication plan: `docs/blog-publication-plan.md`
 - Animations spec: `docs/superpowers/specs/2026-04-09-aramco-animations-design.md`
 - Animations plan: `docs/superpowers/plans/2026-04-09-aramco-animations-plan.md`
+- CRM integration spec: `docs/superpowers/specs/2026-04-11-crm-bot-integration-design.md`
+- CRM Phase 1 plan: `docs/superpowers/plans/2026-04-11-crm-phase1-fundament-plan.md`
+- Chat widget spec: `docs/superpowers/specs/2026-04-11-chat-widget-ai-bot-design.md`
+- Chat widget plan: `docs/superpowers/plans/2026-04-11-chat-widget-ai-bot-plan.md`
 
 ## Script Load Order (critical)
 
 Correct order on pages that use all scripts:
 ```
-form-validation.js → cookie-consent.js → animations.js → analytics.js → navigation.js → quiz.js → calculator.js
+form-validation.js → cookie-consent.js → animations.js → analytics.js → navigation.js → quiz.js → calculator.js → chat-widget.js
 ```
-- `form-validation.js` MUST be first — exports `window.formValidation` used by quiz, calculator, and analytics
+- `form-validation.js` MUST be first — exports `window.formValidation` (incl. `sendToWebhook`) used by quiz, calculator, analytics, and inline form handlers
 - `cookie-consent.js` MUST be before `analytics.js` — gates GA4 loading
 - `analytics.js` contains FAQ accordion toggle and contact form handler (not just tracking)
 - `navigation.js` contains testimonial carousel logic (needs DOM ready)
+- `chat-widget.js` is self-contained IIFE — no dependencies, can load last
+
+## CRM Integration (Airtable + n8n)
+
+### Architecture
+```
+Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
+```
+
+### n8n Webhooks (hosted at n8n.kaban.click)
+- **`/webhook/szkody-form`** — form submissions (quiz, kalkulator, kontakt). Workflow: "Szkody - Formularz - Airtable CRM"
+- **`/webhook/szkody-chat`** — AI chat messages. Workflow: "Szkody - Chat AI"
+
+### Airtable CRM
+- **Base:** "Szkody CRM" (appUoXROWqjxiwjrT)
+- **Table:** "Leady" (tbl2PKbbli14WgqYo) — uses field IDs in n8n (not names, to avoid Polish encoding issues)
+- **Fields:** Imię, Telefon, Email, Kanał źródłowy, Typ zdarzenia, Kwalifikacja, Status, Źródło strony, URL źródłowy, Notatki, Przypisany do, Data utworzenia
+
+### Form Tags (identify source in CRM)
+| Source | Tag |
+|--------|-----|
+| index.html contact | `kontakt` |
+| kontakt.html | `kontakt` |
+| Quiz | `quiz` |
+| Kalkulator | `kalkulator` |
+| Service subpages | `kontakt-[usługa]` |
+| Chat widget | `chat-ai` |
+
+### Anti-spam
+- **Honeypot field** (`.hp-field`) in all forms — hidden input, bots fill it, `sendToWebhook()` discards if filled
+- **Rate limiting** in n8n chat workflow — max 30 messages per session, via `$getWorkflowStaticData`
+
+### Chat Widget AI
+- **Model:** OpenAI GPT-4o-mini (temperature 0.7, max_tokens 300)
+- **Persona:** "Asystent kancelarii" — empatyczny, profesjonalny, po polsku. NIE mówi że jest AI.
+- **Flow:** Empathy → Interview (typ, data, obrażenia, zgłoszenie, prawnik) → Summary → Ask for name+phone
+- **Lead extraction:** regex on phone (9 digits), name patterns ("Panie X", "jestem X", short reply after bot asks)
+- **Dedup:** Airtable search by session_id in Notatki field before saving
+- **Config:** System prompt + knowledge base in n8n Code node "Przygotuj prompt"
+
+### Related repo
+`szkody-crm/` (local at `C:\Users\piotr\CascadeProjects\szkody-crm\`) — Docker Compose stack for future VPS deployment (Chatwoot, PostgreSQL, Redis, Traefik). Not deployed yet — waiting for domain purchase.
 
 ## Security
 
