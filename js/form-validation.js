@@ -184,7 +184,7 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, tag, chatw
     fields.forEach(function (f) {
         const el = document.getElementById(f.id);
         if (el) {
-            const key = f.id.replace(/^(quiz-|calc-|contact-|pf-)/, '');
+            const key = f.id.replace(/^(quiz-|calc-|contact-|pf-|v2-)/, '');
             formData[key] = el.value;
         }
     });
