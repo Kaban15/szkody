@@ -107,8 +107,9 @@ n8n webhook /szkody-chat
 | Pierwsze otwarcie | Bot automatycznie: "Dzień dobry! Jestem asystentem kancelarii odszkodowawczej. W czym mogę pomóc?" |
 | Klient pisze + Enter | Wiadomość od razu, typing indicator, odpowiedź 1-3s |
 | Zamknięcie okienka | Rozmowa zachowana (sessionStorage) |
-| Odświeżenie strony | Historia ginie — nowa rozmowa |
-| Nawigacja na inną stronę | Historia ginie — nowa rozmowa |
+| Odświeżenie strony | Historia zachowana (sessionStorage persists w tej samej karcie) |
+| Nawigacja na inną stronę | Historia zachowana (sessionStorage — ta sama karta = ta sama sesja) |
+| Zamknięcie karty/przeglądarki | Historia ginie — nowa rozmowa |
 | Bot zebrał imię+telefon | Subtlne "Dane przekazane specjaliście ✓" |
 | Błąd sieci / timeout 15s | "Przepraszam, mam chwilowy problem. Proszę zadzwonić: +48 XXX XXX XXX" |
 | Poza godzinami | Bot działa 24/7, informuje o godzinach callback |
@@ -157,18 +158,19 @@ n8n webhook /szkody-chat
 ### Ekstrakcja danych (Code node)
 
 ```javascript
-// Telefon: 9 cyfr w dowolnym formacie
-const phoneMatch = fullText.match(/(\d{3}[\s-]?\d{3}[\s-]?\d{3})/);
+// Telefon: 9 cyfr zaczynających się od polskiego prefixu (5xx, 6xx, 7xx, 8xx)
+const phoneMatch = fullText.match(/(?:^|\s)([5-8]\d{2}[\s-]?\d{3}[\s-]?\d{3})(?:\s|$)/);
 
-// Imię: szukaj wzorców "mam na imię X", "jestem X", "X, 600..."
-// + ostatnia wiadomość po pytaniu bota o imię
+// Imię: GPT sam potwierdza ("Dziękuję, Panie Janie") — regex na "Panie/Pani X"
+// + wzorce: "mam na imię X", "jestem X", "nazywam się X"
+// + fallback: jeśli bot zapytał o imię → następna krótka odpowiedź usera (1-2 słowa)
 
-// Typ sprawy: słowa kluczowe
-// "wypadek samochod*" → Komunikacyjne
-// "praca/zakład/BHP" → Przy pracy
-// "lekarz/szpital/operacja/diagnoza" → Błąd medyczny
-// "śmierć/zmarł/zginął" → Śmierć bliskiej
-// "rolni*/KRUS/pole" → Rolnicze
+// Typ sprawy: słowa kluczowe w user messages
+// "wypadek samochod*|drog*|kolizj*|auto" → Komunikacyjne
+// "prac*|zakład*|BHP|firma" → Przy pracy
+// "lekarz*|szpital*|operacj*|diagnoz*|medycz*" → Błąd medyczny
+// "śmierć|zmarł*|zginął*|stracił*" → Śmierć bliskiej
+// "rolni*|KRUS|pole|gospod*" → Rolnicze
 ```
 
 ### Deduplikacja
@@ -207,11 +209,40 @@ Utworzony via API — "Szkody - Chat AI" — osobny od formularzy.
 
 ## 8. Bezpieczeństwo
 
-- **Rate limiting:** max 30 wiadomości per sesja, max 5 nowych sesji per IP per godzina
-- **Prompt injection:** system prompt zawiera instrukcję ignorowania poleceń zmiany roli
-- **Dane osobowe:** telefon i imię ekstraowane w n8n Code node, NIE wysyłane do OpenAI (ekstrakcja post-hoc z odpowiedzi bota, nie z raw user input)
-- **Timeout:** widget czeka max 15s, potem fallback z numerem telefonu
-- **Honeypot:** widget nie ma formularza HTML — bot spamowy musiałby symulować JS fetch
+### Rate limiting (server-side w n8n Code node)
+- Max 30 wiadomości per `session_id`
+- Max 5 nowych sesji per IP per godzina
+- Enforcement: Code node na początku workflow sprawdza limity w prostym in-memory obiekcie (n8n static data). Przy przekroczeniu → zwraca error response, nie wywołuje OpenAI.
+
+### Prompt injection
+- System prompt: instrukcja ignorowania poleceń zmiany roli
+- Input sanitization: Code node stripuje markdown code fences, HTML tagi, i podejrzane wzorce ("ignore previous", "system:", "you are now") z user input przed wysłaniem do OpenAI
+- Output validation: sprawdzenie czy odpowiedź bota nie zawiera system promptu (regex na fragmenty)
+- Historia wysyłana do OpenAI: max ostatnie 10 wiadomości (nie 20 — mniejsza powierzchnia ataku)
+
+### Dane osobowe (RODO)
+- **Ważne:** user messages zawierające imię/telefon SĄ wysyłane do OpenAI jako część historii rozmowy — to konieczne żeby bot mógł kontekstowo rozmawiać
+- Widget wyświetla krótki disclaimer przy pierwszym otwarciu: "Rozmowa jest analizowana w celu lepszej obsługi. [Polityka prywatności]"
+- OpenAI DPA: zweryfikować czy OpenAI Data Processing Agreement pokrywa dane EU (OpenAI oferuje DPA — należy podpisać na platform.openai.com)
+- Ekstrakcja danych kontaktowych do CRM: po stronie n8n Code node (post-response)
+- PII stripping: Code node przed wysłaniem do OpenAI zamienia wykryte numery telefonów na [TELEFON] w starszych wiadomościach historii (ostatnia wiadomość nienaruszona żeby bot mógł potwierdzić)
+
+### CORS
+- n8n webhook nodes domyślnie zwracają `Access-Control-Allow-Origin: *`
+- Jeśli n8n jest skonfigurowany restrykcyjnie: dodać header w webhook node response
+
+### Timeout
+- Widget czeka max 20s (OpenAI może potrzebować 3-8s + n8n overhead)
+- Fallback: "Przepraszam, mam chwilowy problem. Proszę zadzwonić: +48 XXX XXX XXX"
+
+### Accessibility
+- Widget: `role="dialog"`, `aria-label="Czat z asystentem"`
+- Nowe wiadomości: `aria-live="polite"`
+- Escape zamyka okienko
+- Focus trap w otwartym okienku
+
+### Session ID
+- Generowany przez `crypto.randomUUID()` z fallback `Date.now() + Math.random()` dla starszych przeglądarek
 
 ## 9. Przyszłe rozszerzenia (nie w tym scope)
 
