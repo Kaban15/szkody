@@ -6,10 +6,17 @@
  */
 (function initChatWidget() {
     var WEBHOOK_URL = 'https://n8n.kaban.click/webhook/szkody-chat';
-    var GREETING = 'Dzień dobry! Jestem asystentem kancelarii odszkodowawczej. W czym mogę pomóc?';
+    var GREETINGS = {
+        pl: 'Dzień dobry! Jestem asystentem kancelarii odszkodowawczej. W czym mogę pomóc?',
+        en: 'Hello! I am an assistant at a compensation law firm. How can I help you?',
+        ua: 'Доброго дня! Я асистент юридичної фірми з відшкодувань. Чим можу допомогти?'
+    };
     var TIMEOUT_MS = 20000;
     var SESSION_KEY = 'szkody_chat';
     var MAX_HISTORY = 30;
+
+    function getLang() { return localStorage.getItem('lang') || 'pl'; }
+    var GREETING = GREETINGS[getLang()] || GREETINGS.pl;
 
     var sessionId = sessionStorage.getItem(SESSION_KEY + '_sid');
     if (!sessionId) {
@@ -169,6 +176,7 @@
                     history: history.slice(-MAX_HISTORY),
                     session_id: sessionId,
                     page_url: window.location.pathname,
+                    lang: getLang(),
                 }),
             };
             if (controller) fetchOptions.signal = controller.signal;
