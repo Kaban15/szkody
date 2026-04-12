@@ -1,10 +1,5 @@
 {
   "name": "Szkody - Powiadomienie Email o Leadzie",
-  "active": false,
-  "versionId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "meta": {},
-  "pinData": {},
-  "settings": {},
   "nodes": [
     {
       "id": "node-airtable-trigger",
@@ -21,7 +16,8 @@
           ]
         },
         "baseId": "appUoXROWqjxiwjrT",
-        "tableId": "tbl2PKbbli14WgqYo"
+        "tableId": "tbl2PKbbli14WgqYo",
+        "triggerField": "fldQ2B6JLQmit8CQl"
       }
     },
     {
@@ -31,11 +27,11 @@
       "typeVersion": 2,
       "position": [250, 500],
       "parameters": {
-        "jsCode": "// Obsługa wielu rekordów naraz (batch) — Airtable Trigger może zwrócić >1 rekord\nconst items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const record = item.json.fields;\n  const recordId = item.json.id;\n\n  // FALLBACK: jeśli trigger zwraca field IDs zamiast nazw, odkomentuj poniższe\n  // const FIELD_MAP = {\n  //   'fldXXX1': 'Imię',\n  //   'fldXXX2': 'Telefon',\n  //   'fldXXX3': 'Email',\n  //   'fldXXX4': 'Typ zdarzenia',\n  //   'fldXXX5': 'Kwalifikacja',\n  //   'fldXXX6': 'Kanał źródłowy',\n  //   'fldXXX7': 'Notatki',\n  //   'fldXXX8': 'Data utworzenia',\n  // };\n  // Zamień fldXXX na faktyczne ID z outputu Airtable Trigger, potem:\n  // const get = (key) => record[FIELD_MAP[key]] || record[key] || 'Brak';\n\n  const name = record['Imię'] || 'Brak imienia';\n  const phone = record['Telefon'] || 'Brak';\n  const email = record['Email'] || 'Brak';\n  const caseType = record['Typ zdarzenia'] || 'Nieokreślony';\n  const qualification = record['Kwalifikacja'] || 'Brak';\n  const source = record['Kanał źródłowy'] || 'Brak';\n  const notes = record['Notatki'] || 'Brak';\n  const createdDate = record['Data utworzenia'] || new Date().toISOString().split('T')[0];\n\n  // Guard: jeśli trigger zwraca field IDs zamiast nazw, wszystko będzie \"Brak\"\n  const allEmpty = [name, phone, email, caseType].every(v => v === 'Brak' || v === 'Brak imienia');\n  if (allEmpty) {\n    console.log('WARNING: Wszystkie pola puste — trigger może zwracać field IDs zamiast nazw. Record ID:', recordId);\n  }\n\n  const subject = `Nowy lead: ${name} — ${caseType}`;\n\n  const body = `Nowy lead w CRM Szkody\n\nImię: ${name}\nTelefon: ${phone}\nEmail: ${email}\nTyp sprawy: ${caseType}\nKwalifikacja: ${qualification}\nŹródło: ${source}\nData utworzenia: ${createdDate}\n\nNotatki:\n${notes}\n\n---\nLink do rekordu: https://airtable.com/appUoXROWqjxiwjrT/tbl2PKbbli14WgqYo/${recordId}`;\n\n  // Na start: stały adres. Przyszłość: routing per typ sprawy (Switch node).\n  const recipientEmail = 'TWÓJ_EMAIL@gmail.com';\n\n  results.push({ json: { subject, body, recipientEmail } });\n}\n\nreturn results;"
+        "jsCode": "const items = $input.all();\nconst results = [];\n\nconst F = {\n  name: 'fldBhCi2Mmn2DrjHj',\n  phone: 'flddIaNdaLRS3Cqj1',\n  email: 'fldrk8muHfcF3Pbgq',\n  source: 'fldhTGJfmH3bSIRNi',\n  caseType: 'fldFvHcaJFi5avKIJ',\n  qualification: 'fldB2X3rDt70i3IaM',\n  status: 'fldvigglUZz1WCh9w',\n  sourcePage: 'fld32SWWh3EpUz3su',\n  sourceUrl: 'fldZvIeS670c9k2FC',\n  notes: 'fldRhukW6qHMGPtl7',\n  assignedTo: 'fldrOeav9AFscL0eo',\n  createdAt: 'fldQ2B6JLQmit8CQl',\n};\n\nfor (const item of items) {\n  const fields = item.json.fields || item.json;\n  const get = (id, fallback) => fields[id] || fields[fallback] || '';\n\n  const name = get(F.name, 'Imię') || 'Brak imienia';\n  const phone = get(F.phone, 'Telefon') || 'Brak';\n  const email = get(F.email, 'Email');\n  const caseType = get(F.caseType, 'Typ zdarzenia') || 'Nieokreślony';\n  const qualification = get(F.qualification, 'Kwalifikacja');\n  const source = get(F.source, 'Kanał źródłowy');\n  const sourcePage = get(F.sourcePage, 'Źródło strony');\n  const notes = get(F.notes, 'Notatki');\n  const createdAt = get(F.createdAt, 'Data utworzenia') || new Date().toISOString().split('T')[0];\n\n  // Formatuj datę\n  let dateStr = createdAt;\n  try { dateStr = new Date(createdAt).toLocaleString('pl-PL', { dateStyle: 'long', timeStyle: 'short' }); } catch(e) {}\n\n  // Wyczyść notatki z session ID i sformatuj jako podsumowanie\n  let summary = notes;\n  if (summary) {\n    summary = summary.replace(/\\[session:[^\\]]+\\]/g, '').trim();\n    summary = summary.replace(/\\n/g, '<br>');\n  }\n\n  const subject = `\\uD83D\\uDD14 Nowy lead: ${name} | ${caseType}`;\n\n  // Buduj HTML\n  let rows = '';\n  const addRow = (label, val) => { if (val && val !== 'Brak') rows += `<tr><td style=\\\"padding:6px 12px 6px 0;color:#6b7280;white-space:nowrap;vertical-align:top;\\\">${label}</td><td style=\\\"padding:6px 0;color:#1a1a2e;font-weight:500;\\\">${val}</td></tr>`; };\n\n  addRow('\\uD83D\\uDC64 Imię', name);\n  addRow('\\uD83D\\uDCDE Telefon', phone);\n  addRow('\\u2709\\uFE0F Email', email);\n  addRow('\\uD83D\\uDCC1 Typ sprawy', caseType);\n  addRow('\\uD83D\\uDD25 Kwalifikacja', qualification);\n  addRow('\\uD83D\\uDCCD Źródło', [source, sourcePage].filter(Boolean).join(' — '));\n  addRow('\\uD83D\\uDCC5 Data', dateStr);\n\n  const body = `<div style=\\\"font-family:'Segoe UI',Arial,sans-serif;max-width:560px;margin:0 auto;\\\">`\n    + `<div style=\\\"background:#1a6b3c;color:white;padding:16px 20px;border-radius:8px 8px 0 0;\\\"><h2 style=\\\"margin:0;font-size:18px;\\\">\\uD83D\\uDD14 Nowy lead ze strony</h2></div>`\n    + `<div style=\\\"border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;padding:20px;\\\">`\n    + `<table style=\\\"width:100%;border-collapse:collapse;font-size:14px;\\\">${rows}</table>`\n    + (summary ? `<div style=\\\"margin-top:16px;padding:12px 16px;background:#f5f5f5;border-radius:6px;border-left:4px solid #1a6b3c;\\\"><div style=\\\"font-weight:600;color:#1a1a2e;margin-bottom:6px;\\\">\\uD83D\\uDCDD Podsumowanie rozmowy:</div><div style=\\\"color:#374151;font-size:13px;line-height:1.5;\\\">${summary}</div></div>` : '')\n    + `</div></div>`;\n\n  const recipientEmail = 'piotrtokeny@gmail.com';\n  results.push({ json: { subject, body, recipientEmail } });\n}\n\nreturn results;"
       }
     },
     {
-      "id": "node-gmail-send",
+      "id": "node-email-send",
       "name": "Wyślij Email",
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2,
@@ -43,7 +39,9 @@
       "parameters": {
         "sendTo": "={{ $json.recipientEmail }}",
         "subject": "={{ $json.subject }}",
-        "message": "={{ $json.body }}"
+        "emailType": "html",
+        "message": "={{ $json.body }}",
+        "options": {}
       },
       "retryOnFail": true,
       "maxTries": 3
@@ -72,5 +70,6 @@
         ]
       ]
     }
-  }
+  },
+  "settings": {}
 }

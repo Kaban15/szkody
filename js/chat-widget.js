@@ -9,7 +9,7 @@
     var GREETING = 'Dzień dobry! Jestem asystentem kancelarii odszkodowawczej. W czym mogę pomóc?';
     var TIMEOUT_MS = 20000;
     var SESSION_KEY = 'szkody_chat';
-    var MAX_HISTORY = 10;
+    var MAX_HISTORY = 30;
 
     var sessionId = sessionStorage.getItem(SESSION_KEY + '_sid');
     if (!sessionId) {
