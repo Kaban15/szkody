@@ -1,0 +1,248 @@
+{
+  "name": "Szkody - Lead Action (Email Button)",
+  "nodes": [
+    {
+      "id": "node-webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "szkody-lead-action",
+        "responseMode": "responseNode"
+      }
+    },
+    {
+      "id": "node-code-prepare",
+      "name": "Przygotuj dane",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [500, 300],
+      "parameters": {
+        "jsCode": "const query = $input.first().json.query || {};\nconst id = query.id || '';\nconst action = query.action || '';\n\nif (!id || !action) {\n  return [{ json: { error: true, html: '<h2>Brak wymaganych parametr\u00f3w</h2>' } }];\n}\n\nconst STATUS_FIELD = 'fldvigglUZz1WCh9w';\nconst FOLLOWUP_FIELD = 'DATA_FOLLOWUP_FIELD_ID';\n\nconst updates = {};\nlet message = '';\n\nswitch (action) {\n  case 'contacted':\n    updates[STATUS_FIELD] = 'Kontakt';\n    message = '\\u2705 Status zmieniony na: Kontakt';\n    break;\n  case 'no_answer':\n    updates[STATUS_FIELD] = 'Brak kontaktu';\n    message = '\\u274c Status zmieniony na: Brak kontaktu';\n    break;\n  case 'followup':\n    const tomorrow = new Date();\n    tomorrow.setDate(tomorrow.getDate() + 1);\n    updates[FOLLOWUP_FIELD] = tomorrow.toISOString().split('T')[0];\n    message = '\\uD83D\\uDCC5 Follow-up ustawiony na jutro';\n    break;\n  default:\n    return [{ json: { error: true, html: '<h2>Nieznana akcja</h2>' } }];\n}\n\nreturn [{ json: { id, updates, message, error: false } }];"
+      }
+    },
+    {
+      "id": "node-if-error",
+      "name": "B\u0142\u0105d?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [750, 300],
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.error }}",
+              "value2": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "node-airtable-get",
+      "name": "Pobierz aktualny",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2,
+      "position": [1000, 400],
+      "parameters": {
+        "operation": "get",
+        "baseId": "appUoXROWqjxiwjrT",
+        "tableId": "tbl2PKbbli14WgqYo",
+        "id": "={{ $json.id }}"
+      }
+    },
+    {
+      "id": "node-code-idempotency",
+      "name": "Sprawd\u017a idempotentno\u015b\u0107",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 400],
+      "parameters": {
+        "jsCode": "const current = $input.first().json;\nconst requested = $('Przygotuj dane').first().json;\nconst STATUS_FIELD = 'fldvigglUZz1WCh9w';\n\nconst currentStatus = (current.fields || current)[STATUS_FIELD] || '';\nconst requestedStatus = requested.updates[STATUS_FIELD] || '';\n\nif (requestedStatus && currentStatus === requestedStatus) {\n  return [{ json: { ...requested, skip: true, message: '\\u2705 Status ju\u017c ustawiony: ' + currentStatus } }];\n}\n\nreturn [{ json: { ...requested, skip: false } }];"
+      }
+    },
+    {
+      "id": "node-if-skip",
+      "name": "Ju\u017c ustawiony?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1500, 400],
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.skip }}",
+              "value2": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "node-airtable-update",
+      "name": "Airtable Update",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2,
+      "position": [1750, 500],
+      "parameters": {
+        "operation": "update",
+        "baseId": "appUoXROWqjxiwjrT",
+        "tableId": "tbl2PKbbli14WgqYo",
+        "id": "={{ $json.id }}",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": "={{ $json.updates }}"
+        }
+      }
+    },
+    {
+      "id": "node-code-success-page",
+      "name": "Strona potwierdzenia",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2000, 400],
+      "parameters": {
+        "jsCode": "const data = $('Sprawd\u017a idempotentno\u015b\u0107').first().json;\nconst message = data.message;\nconst html = '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>Szkody CRM</title></head><body style=\"font-family:Segoe UI,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#f5f5f5;\"><div style=\"background:white;padding:40px;border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1);max-width:400px;\"><div style=\"font-size:48px;margin-bottom:16px;\">' + message.charAt(0) + '</div><h2 style=\"color:#1a1a2e;margin:0 0 8px;\">' + message + '</h2><p style=\"color:#6b7280;margin:0;\">Mo\u017cesz zamkn\u0105\u0107 t\u0119 kart\u0119.</p></div></body></html>';\nreturn [{ json: { html } }];"
+      }
+    },
+    {
+      "id": "node-code-error-page",
+      "name": "Strona b\u0142\u0119du",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1000, 200],
+      "parameters": {
+        "jsCode": "const errorHtml = $('Przygotuj dane').first().json.html || '<h2>Wyst\u0105pi\u0142 b\u0142\u0105d</h2>';\nconst html = '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>Szkody CRM</title></head><body style=\"font-family:Segoe UI,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#f5f5f5;\"><div style=\"background:white;padding:40px;border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1);max-width:400px;\"><div style=\"font-size:48px;margin-bottom:16px;\">\u274c</div>' + errorHtml + '<p style=\"color:#6b7280;margin:0;\">Spr\u00f3buj ponownie lub skontaktuj si\u0119 z administratorem.</p></div></body></html>';\nreturn [{ json: { html } }];"
+      }
+    },
+    {
+      "id": "node-respond",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2250, 300],
+      "parameters": {
+        "respondWith": "html",
+        "responseBody": "={{ $json.html }}"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Przygotuj dane",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Przygotuj dane": {
+      "main": [
+        [
+          {
+            "node": "B\u0142\u0105d?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "B\u0142\u0105d?": {
+      "main": [
+        [
+          {
+            "node": "Strona b\u0142\u0119du",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Pobierz aktualny",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Strona b\u0142\u0119du": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pobierz aktualny": {
+      "main": [
+        [
+          {
+            "node": "Sprawd\u017a idempotentno\u015b\u0107",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sprawd\u017a idempotentno\u015b\u0107": {
+      "main": [
+        [
+          {
+            "node": "Ju\u017c ustawiony?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ju\u017c ustawiony?": {
+      "main": [
+        [
+          {
+            "node": "Strona potwierdzenia",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Airtable Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable Update": {
+      "main": [
+        [
+          {
+            "node": "Strona potwierdzenia",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Strona potwierdzenia": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {}
+}
