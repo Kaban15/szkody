@@ -578,6 +578,8 @@
 
                 form.addEventListener('submit', (e) => {
                     e.preventDefault();
+                    const topicEl = form.querySelector('select[name="topic"]');
+                    const msgEl = form.querySelector('textarea[name="message"]');
                     fv.submitForm({
                         form: form,
                         fields: [
@@ -588,6 +590,10 @@
                         consentId: 'v2-consent',
                         templateId: 'v2-contact-success',
                         tag: 'kontakt',
+                        extraData: {
+                            event_type: topicEl ? topicEl.value : '',
+                            message: msgEl ? msgEl.value : '',
+                        },
                         onSuccess: () => {
                             if (typeof lucide !== 'undefined') lucide.createIcons();
                         }

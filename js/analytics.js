@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const emailEl = document.getElementById('contact-email');
+            const msgEl = document.getElementById('contact-message');
             window.formValidation.submitForm({
                 form: contactForm,
                 fields: [
@@ -61,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 consentId: 'contact-consent',
                 templateId: 'contact-success-template',
                 tag: 'kontakt',
+                extraData: {
+                    email: emailEl ? emailEl.value : '',
+                    message: msgEl ? msgEl.value : '',
+                },
                 onSuccess: () => window.trackEvent('form_submitted', { form: 'contact' }),
             });
         });

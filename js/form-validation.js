@@ -156,7 +156,7 @@ function validateQuizForm() {
  * @param {Function} [options.onSuccess] - Callback after success shown
  * @param {string} [options.tag] - Tag for CRM source tracking (e.g. 'quiz', 'kalkulator', 'kontakt')
  */
-function submitForm({ form, fields, consentId, templateId, onSuccess, tag, chatwootTag }) {
+function submitForm({ form, fields, consentId, templateId, onSuccess, tag, chatwootTag, extraData }) {
     let isValid = true;
 
     fields.forEach(({ id, validate }) => {
@@ -190,6 +190,11 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, tag, chatw
             formData[key] = el.value;
         }
     });
+
+    // Merge extra data (calculator results, message, etc.)
+    if (extraData) {
+        Object.keys(extraData).forEach(function (k) { formData[k] = extraData[k]; });
+    }
 
     // Send to n8n webhook (fire-and-forget)
     var webhookTag = tag || chatwootTag; // chatwootTag kept for backwards compat

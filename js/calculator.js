@@ -129,6 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ctaForm) {
         ctaForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            // Build summary of calculator selections
+            const calcSummary = [];
+            if (state.eventType) calcSummary.push('Typ: ' + state.eventType);
+            if (state.injuries.size > 0) calcSummary.push('Obrażenia: ' + Array.from(state.injuries.keys()).join(', '));
+            if (treatmentSlider) calcSummary.push('Leczenie: ' + treatmentSlider.value + ' dni');
+            if (workSlider) calcSummary.push('Niezdolność do pracy: ' + workSlider.value + ' dni');
+            if (resultMinEl && resultMaxEl && resultEl && !resultEl.classList.contains('hidden')) {
+                calcSummary.push('Szacowana kwota: ' + resultMinEl.textContent + ' - ' + resultMaxEl.textContent + ' zł');
+            }
+
             window.formValidation.submitForm({
                 form: ctaForm,
                 fields: [
@@ -138,6 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 consentId: 'calc-consent',
                 templateId: 'calc-success-template',
                 chatwootTag: 'kalkulator',
+                extraData: {
+                    event_type: state.eventType || '',
+                    message: calcSummary.join('\n'),
+                },
                 onSuccess: () => { if (window.trackEvent) window.trackEvent('calculator_cta_clicked'); },
             });
         });
