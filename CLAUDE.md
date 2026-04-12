@@ -233,19 +233,19 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 ```
 
 ### n8n Webhooks (hosted at n8n.kaban.click)
-- **`/webhook/szkody-form`** — form submissions (quiz, kalkulator, kontakt). Workflow: "Szkody - Formularz - Airtable CRM"
-- **`/webhook/szkody-chat`** — AI chat messages. Workflow: "Szkody - Chat AI"
+- **`/webhook/szkody-form`** — form submissions (quiz, kalkulator, kontakt). Workflow: "Szkody - Formularz - Airtable CRM" (ID: `CDHlPEgV4eCxXJ4v`). Includes Scoring Code node.
+- **`/webhook/szkody-chat`** — AI chat messages. Workflow: "Szkody - Chat AI" (ID: `Km52Gx1aoEJvcXba`). Includes Scoring Code node.
 - **`/webhook/szkody-lead-action`** — GET webhook for email action buttons (contacted/no_answer/followup). Workflow: "Szkody - Lead Action"
 
 ### n8n Workflows
 - **"Szkody - Powiadomienie Email o Leadzie"** (ID: `cV3BK9CU6S9wucuF`) — Airtable Trigger (polling "Leady" every 1 min) → Code (format HTML email with lead data + action buttons) → Gmail (to `piotrtokeny@gmail.com`). JSON backup: `n8n/lead-email-notification-workflow.json`. Email includes: branded header, data table, conversation summary, action buttons (Zadzwoniłem/Nie odbiera/Follow-up).
-- **"Szkody - Lead Action"** — Webhook GET → validate params → idempotency check (read current record, skip if status already set) → Airtable Update → HTML confirmation page. Handles: `contacted` → Status "Kontakt", `no_answer` → Status "Brak kontaktu", `followup` → Data follow-up = jutro. JSON backup: `n8n/lead-action-workflow.json`.
-- **"Szkody - Follow-up Reminder"** — Cron daily 8:00 (Europe/Warsaw) → 3 Airtable searches (Nowy >24h, Kontakt >7d, Follow-up dziś) → zbiorczy email z listą zaległych leadów + action buttons. Nie wysyła maila jeśli 0 wyników. JSON backup: `n8n/follow-up-reminder-workflow.json`.
+- **"Szkody - Lead Action"** (ID: `5KrTzeOBFlTyAWBo`) — Webhook GET → validate params → idempotency check (httpRequest GET record, skip if status already set) → httpRequest PATCH update → HTML confirmation page (Respond to Webhook as text with Content-Type: text/html). `contacted` → Status "Kontakt" + clears Data follow-up. `no_answer` → Status "Brak kontaktu" + clears Data follow-up. `followup` → Data follow-up = jutro. Uses httpRequest nodes with Airtable PAT (not native Airtable node). JSON backup: `n8n/lead-action-workflow.json`.
+- **"Szkody - Follow-up Reminder"** (ID: `s13xEwD2mBwimQ7y`) — Cron daily 8:00 (Europe/Warsaw) → 3 Airtable searches (Nowy >24h, Kontakt >7d, Follow-up dziś) → zbiorczy email z listą zaległych leadów + action buttons. Nie wysyła maila jeśli 0 wyników. JSON backup: `n8n/follow-up-reminder-workflow.json`.
 
 ### Airtable CRM
 - **Base:** "Szkody CRM" (appUoXROWqjxiwjrT)
 - **Table:** "Leady" (tbl2PKbbli14WgqYo) — uses field IDs in n8n (not names, to avoid Polish encoding issues)
-- **Fields:** Imię, Telefon, Email, Kanał źródłowy, Typ zdarzenia, Kwalifikacja, Status, Priorytet, Data follow-up, Źródło strony, URL źródłowy, Notatki, Przypisany do, Data utworzenia
+- **Fields:** Imię, Telefon, Email, Kanał źródłowy, Typ zdarzenia, Kwalifikacja, Status, Priorytet (`fldLIbFpVcGT4zwFl`), Data follow-up (`fld63Dh1k7Q0EYX5X`), Źródło strony, URL źródłowy, Notatki, Przypisany do, Data utworzenia
 
 ### Lead Pipeline (Status values)
 | Status | Znaczenie | Kolor |
@@ -259,14 +259,16 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 | Brak kontaktu | Nie odbiera | Czerwony |
 
 ### Lead Scoring (automatyczny priorytet)
-2-sygnałowy model: typ sprawy + kanał. Scoring w n8n Code node (`n8n/scoring-code-node.js`).
+2-sygnałowy model: typ sprawy + kanał. Scoring Code node wdrożony w workflow "Formularz" i "Chat AI". Referencyjny snippet: `n8n/scoring-code-node.js`. Scoring operuje na `$json.fields` z Airtable field ID-ami (nie na raw event_type/tag).
 
 | Sygnał | +3 | +2 | +1 |
 |--------|----|----|-----|
-| Typ sprawy | komunikacyjne, smierc | praca, medyczne | rolnicze, inne |
+| Typ sprawy | Komunikacyjne, Śmierć bliskiej | Przy pracy, Błąd medyczny | Rolnicze, inne |
 | Kanał | chat-ai | kontakt, kontakt-* | quiz, kalkulator |
 
 Priorytety: **Gorący** (5-6 pkt), **Ciepły** (3-4 pkt), **Zimny** (1-2 pkt).
+
+Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpRequest — pozwala tworzyć nowe wartości Single Select automatycznie.
 
 ### Airtable Views
 | Widok | Typ | Opis |
