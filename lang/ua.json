@@ -1055,5 +1055,9 @@
   "jak_dzialamy.contact_title": "Безкоштовна консультація",
   "jak_dzialamy.contact_subtitle": "Опишіть вашу справу — ми передзвонимо протягом 30 хвилин у робочий час.",
 
-  "blog.coming_soon_msg": "Статті готуються. Заходьте пізніше!"
+  "blog.coming_soon_msg": "Статті готуються. Заходьте пізніше!",
+
+  "kalkulator.success_title": "Дякуємо!",
+  "kalkulator.success_subtitle": "Ми зателефонуємо вам найближчим часом з точною оцінкою.",
+  "contact.success_subtitle": "Наш спеціаліст зв'яжеться з вами найближчим часом."
 }

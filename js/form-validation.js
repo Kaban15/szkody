@@ -207,6 +207,8 @@ function submitForm({ form, fields, consentId, templateId, onSuccess, tag, chatw
         const template = document.getElementById(templateId);
         if (template) {
             form.replaceChildren(template.content.cloneNode(true));
+            // Re-apply i18n translations to cloned template elements
+            if (typeof window.i18nApply === 'function') window.i18nApply();
         }
     }
     if (onSuccess) onSuccess();

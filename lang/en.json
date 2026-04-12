@@ -1048,5 +1048,9 @@
   "jak_dzialamy.contact_title": "Free consultation",
   "jak_dzialamy.contact_subtitle": "Describe your case — we'll call you back within 30 minutes during business hours.",
 
-  "blog.coming_soon_msg": "Articles coming soon. Check back later!"
+  "blog.coming_soon_msg": "Articles coming soon. Check back later!",
+
+  "kalkulator.success_title": "Thank you!",
+  "kalkulator.success_subtitle": "We'll call you back shortly with a detailed estimate.",
+  "contact.success_subtitle": "Our specialist will contact you soon."
 }

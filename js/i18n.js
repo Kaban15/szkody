@@ -92,6 +92,11 @@
         }
     }
 
+    // Expose re-apply for dynamically inserted content (e.g. form success templates)
+    window.i18nApply = function() {
+        applyTranslations(cache[currentLang] || null);
+    };
+
     function switchLang(lang) {
         if (SUPPORTED.indexOf(lang) === -1) return;
         currentLang = lang;
