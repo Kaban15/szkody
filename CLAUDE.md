@@ -86,9 +86,10 @@ When changing the brand color in the future: update **both** `js/tailwind-config
 
 Obsługiwane języki: **PL** (domyślny), **EN**, **UA**.
 
-- **`js/i18n.js`** — ładuje `/lang/{lang}.json` przez XHR, podmienia `innerHTML` elementów z `data-i18n="key"`, `placeholder` z `data-i18n-placeholder="key"`, `aria-label` z `data-i18n-aria="key"`. Wybór języka zapisywany w `localStorage('lang')`.
+- **`js/i18n.js`** — ładuje `/lang/{lang}.json` przez XHR, podmienia `innerHTML` elementów z `data-i18n="key"`, `placeholder` z `data-i18n-placeholder="key"`, `aria-label` z `data-i18n-aria="key"`. Wybór języka zapisywany w `localStorage('lang')`. Eksportuje `window.i18nApply()` do ponownego tłumaczenia dynamicznie wstawionych elementów (np. template clone po submit formularza).
 - **`lang/en.json`** / **`lang/ua.json`** — pliki tłumaczeń. PL jest domyślny (hardcode w HTML).
 - **`lang-switcher-mount`** — div w nav (desktop + mobile) — `i18n.js` wstrzykuje tam flagi PL/EN/UA.
+- **Dynamiczne tłumaczenia:** `submitForm()` wywołuje `window.i18nApply()` po klonowaniu success template — elementy z `data-i18n` w template są tłumaczone automatycznie.
 
 #### Przestrzenie nazw kluczy tłumaczeń
 
@@ -109,10 +110,10 @@ Scripts must load in dependency order. `form-validation.js` must load before any
 
 | File | Exports/Globals | Purpose |
 |------|----------------|---------|
-| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, `submitForm()` handler with n8n webhook integration (`sendToWebhook()`), `attachLiveValidation()` for blur/input events |
-| `chat-widget.js` | — | AI chat widget: bubble (bottom-right), chat window, sessionStorage history, sends messages to n8n webhook → OpenAI GPT-4o-mini. Replaces old `chatwoot.js`. |
+| `form-validation.js` | `window.formValidation` | Phone/email/name validators, inline error show/hide, `submitForm()` handler with n8n webhook integration (`sendToWebhook()`), `attachLiveValidation()` for blur/input events. `submitForm` accepts `extraData` param for additional webhook fields (calculator results, message, topic). `sendToWebhook()` includes `lang` from `localStorage('lang')`. |
+| `chat-widget.js` | — | AI chat widget: bubble (bottom-right), chat window, sessionStorage history, sends messages to n8n webhook → OpenAI GPT-4o-mini. Multilingual: detects language from `localStorage('lang')`, sends `lang` to n8n, greeting adapts to PL/EN/UA. `MAX_HISTORY=30` ensures full conversation reaches n8n for summary extraction. |
 | `quiz.js` | — | 5-step diagnostic quiz (selection, navigation, submission, business hours) |
-| `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result) |
+| `calculator.js` | — | Compensation calculator (injury data in Map, cached DOM, live result). On CTA submit, sends `extraData` with event_type + injury/treatment/result summary to webhook. |
 | `animations.js` | — | Lenis smooth scroll init (guarded), parallax on scroll, IntersectionObserver: count-up numbers, scroll reveal, clip-path reveals, case study filter, comparison bars, staggered reveal |
 | `navigation.js` | — | Mobile hamburger menu, sticky bottom bar hide, testimonial carousel scroll, scroll-to-top button |
 | `cookie-consent.js` | — | Cookie banner, localStorage consent, dynamic GA4 script injection |
@@ -145,7 +146,7 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **FAQ accordion**: `aria-controls` + `role="region"` for accessibility, toggle logic in `analytics.js`
 - **AI Chat Widget**: green bubble (bottom-right, 56×56px), opens 380×520px chat window. Bot = "asystent kancelarii" powered by GPT-4o-mini via n8n webhook. Conducts empathetic interview before asking for contact info. Extracts name+phone from conversation → saves to Airtable CRM. See `css/chat-widget.css` + `js/chat-widget.js`.
 - **Live form validation**: `attachLiveValidation()` adds blur (validate + show error/success border) and input (clear error on correction) events. Green border (`border-green-500`) on valid fields. Applied to quiz, contact, and calculator forms.
-- **Form submission → CRM**: all forms use `window.formValidation.submitForm()` with `tag` parameter. `sendToWebhook()` POSTs data to n8n webhook (`https://n8n.kaban.click/webhook/szkody-form`) → n8n saves to Airtable CRM ("Szkody CRM" base, "Leady" table). Success UI shows immediately (fire-and-forget).
+- **Form submission → CRM**: all forms use `window.formValidation.submitForm()` with `tag` and optional `extraData` parameter. `sendToWebhook()` POSTs data (incl. `lang`) to n8n webhook (`https://n8n.kaban.click/webhook/szkody-form`) → n8n saves to Airtable CRM ("Szkody CRM" base, "Leady" table). Success UI shows immediately (fire-and-forget). After template clone, `window.i18nApply()` is called to translate success message.
 - **Comparison bars**: animated width bars in case study cards showing insurer offer vs final result. Container `.comparison-bars` triggers IntersectionObserver, bars grow from 0 to `data-width`.
 - **Staggered scroll reveal**: containers with `data-stagger="150"` attribute animate `.fade-in-up` children with cascading delay. Applied to "dlaczego my", team experts, FAQ items.
 - **Business hours logic** in `quiz.js`: constants in `BUSINESS_HOURS` (Mon-Fri 8-18, Sat 9-14) — affects "oddzwonimy w 30 minut" vs "następny dzień roboczy" messaging.
@@ -200,6 +201,11 @@ Note: `analytics.js` calls `window.formValidation` only inside `if (contactForm)
 - CRM Phase 1 plan: `docs/superpowers/plans/2026-04-11-crm-phase1-fundament-plan.md`
 - Chat widget spec: `docs/superpowers/specs/2026-04-11-chat-widget-ai-bot-design.md`
 - Chat widget plan: `docs/superpowers/plans/2026-04-11-chat-widget-ai-bot-plan.md`
+- Lead email notifications spec: `docs/superpowers/specs/2026-04-12-lead-email-notifications-design.md`
+- Lead email notifications plan: `docs/superpowers/plans/2026-04-12-lead-email-notifications-plan.md`
+
+### n8n Workflow Files
+- `n8n/lead-email-notification-workflow.json` — backup of "Szkody - Powiadomienie Email o Leadzie" workflow
 
 ## Script Load Order (critical)
 
@@ -225,7 +231,7 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 - **`/webhook/szkody-chat`** — AI chat messages. Workflow: "Szkody - Chat AI"
 
 ### n8n Workflows
-- **"Szkody - Powiadomienie Email o Leadzie"** — Airtable Trigger (polling "Leady" every 1 min) → Code (format) → Gmail. JSON: `n8n/lead-email-notification-workflow.json`. Import in n8n → configure Gmail credentials + recipient email → activate.
+- **"Szkody - Powiadomienie Email o Leadzie"** (ID: `cV3BK9CU6S9wucuF`) — Airtable Trigger (polling "Leady" every 1 min) → Code (format HTML email with lead data) → Gmail (to `piotrtokeny@gmail.com`). Deployed via API. JSON backup: `n8n/lead-email-notification-workflow.json`. Email includes: branded header, data table, conversation summary section.
 
 ### Airtable CRM
 - **Base:** "Szkody CRM" (appUoXROWqjxiwjrT)
@@ -248,11 +254,25 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 
 ### Chat Widget AI
 - **Model:** OpenAI GPT-4o-mini (temperature 0.7, max_tokens 300)
-- **Persona:** "Asystent kancelarii" — empatyczny, profesjonalny, po polsku. NIE mówi że jest AI.
-- **Flow:** Empathy → Interview (typ, data, obrażenia, zgłoszenie, prawnik) → Summary → Ask for name+phone
-- **Lead extraction:** regex on phone (9 digits), name patterns ("Panie X", "jestem X", short reply after bot asks)
-- **Dedup:** Airtable search by session_id in Notatki field before saving
+- **Persona:** "Asystent kancelarii" — empatyczny, profesjonalny. NIE mówi że jest AI.
+- **Multilingual:** Bot responds in language detected from `localStorage('lang')` (PL/EN/UA). System prompt includes `JĘZYK:` instruction per language.
+- **Flow:** Empathy → Interview (typ, data, obrażenia, hospitalizacja, zgłoszenie, prawnik) → Preferred contact time → Summary → Ask for name+phone
+- **Lead extraction:** regex on phone (9 digits), name from: "Panie X" in bot reply, "jestem X"/"my name is X" patterns, or first word in any message containing a phone number.
+- **Conversation summary** (saved to Notatki in Airtable):
+  - Parses bot-question + user-answer pairs with label rules
+  - **Smart label override:** if answer content contradicts question label (e.g., bot asks "when?" but user writes "broken arm"), answer-content pattern takes priority
+  - Labels: Typ zdarzenia, Data zdarzenia, Obrażenia, Hospitalizacja, Zgłoszenie, Prawnik, Preferowany kontakt
+  - Summary always in Polish (translations applied for EN/UA answers)
+  - Adds "Język klienta: angielski/ukraiński" if non-PL
+  - Filters out personal data (phone, name) from summary
+- **Dedup:** Airtable search by session_id before saving
 - **Config:** System prompt + knowledge base in n8n Code node "Przygotuj prompt"
+
+### Form Data Enrichment
+- **Contact forms** (index.html, kontakt.html) send `email`, `message`, `event_type` (topic select), `lang` to webhook via `extraData` parameter
+- **Calculator** sends `event_type` + injury/treatment/result summary as `message` via `extraData`
+- **n8n "Przygotuj dane"** builds structured Notatki: `Wiadomość: ...`, `Temat: ...`, `Źródło: ...`, `Język formularza: ...` (if non-PL)
+- **Type mapping:** HTML select values (`praca`, `medyczne`, `smierc`, `komunikacyjne`, `rolnicze`) → Airtable Single Select values (`Przy pracy`, `Błąd medyczny`, etc.)
 
 ### Related repo
 `szkody-crm/` (local at `C:\Users\piotr\CascadeProjects\szkody-crm\`) — Docker Compose stack for future VPS deployment (Chatwoot, PostgreSQL, Redis, Traefik). Not deployed yet — waiting for domain purchase.
