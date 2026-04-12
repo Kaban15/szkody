@@ -203,9 +203,15 @@ Note: `analytics.js` calls `window.formValidation` only inside `if (contactForm)
 - Chat widget plan: `docs/superpowers/plans/2026-04-11-chat-widget-ai-bot-plan.md`
 - Lead email notifications spec: `docs/superpowers/specs/2026-04-12-lead-email-notifications-design.md`
 - Lead email notifications plan: `docs/superpowers/plans/2026-04-12-lead-email-notifications-plan.md`
+- Airtable CRM organization spec: `docs/superpowers/specs/2026-04-12-airtable-crm-organization-design.md`
+- Airtable CRM organization plan: `docs/superpowers/plans/2026-04-12-airtable-crm-organization-plan.md`
+- Airtable setup instructions: `docs/airtable-setup-instructions.md`
 
 ### n8n Workflow Files
-- `n8n/lead-email-notification-workflow.json` — backup of "Szkody - Powiadomienie Email o Leadzie" workflow
+- `n8n/lead-email-notification-workflow.json` — backup of "Szkody - Powiadomienie Email o Leadzie" workflow (with action buttons)
+- `n8n/lead-action-workflow.json` — backup of "Szkody - Lead Action" workflow (email button → status update)
+- `n8n/follow-up-reminder-workflow.json` — backup of "Szkody - Follow-up Reminder" workflow (daily digest)
+- `n8n/scoring-code-node.js` — reusable Code node snippet for lead scoring (paste into Formularz + Chat AI workflows)
 
 ## Script Load Order (critical)
 
@@ -229,14 +235,46 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 ### n8n Webhooks (hosted at n8n.kaban.click)
 - **`/webhook/szkody-form`** — form submissions (quiz, kalkulator, kontakt). Workflow: "Szkody - Formularz - Airtable CRM"
 - **`/webhook/szkody-chat`** — AI chat messages. Workflow: "Szkody - Chat AI"
+- **`/webhook/szkody-lead-action`** — GET webhook for email action buttons (contacted/no_answer/followup). Workflow: "Szkody - Lead Action"
 
 ### n8n Workflows
-- **"Szkody - Powiadomienie Email o Leadzie"** (ID: `cV3BK9CU6S9wucuF`) — Airtable Trigger (polling "Leady" every 1 min) → Code (format HTML email with lead data) → Gmail (to `piotrtokeny@gmail.com`). Deployed via API. JSON backup: `n8n/lead-email-notification-workflow.json`. Email includes: branded header, data table, conversation summary section.
+- **"Szkody - Powiadomienie Email o Leadzie"** (ID: `cV3BK9CU6S9wucuF`) — Airtable Trigger (polling "Leady" every 1 min) → Code (format HTML email with lead data + action buttons) → Gmail (to `piotrtokeny@gmail.com`). JSON backup: `n8n/lead-email-notification-workflow.json`. Email includes: branded header, data table, conversation summary, action buttons (Zadzwoniłem/Nie odbiera/Follow-up).
+- **"Szkody - Lead Action"** — Webhook GET → validate params → idempotency check (read current record, skip if status already set) → Airtable Update → HTML confirmation page. Handles: `contacted` → Status "Kontakt", `no_answer` → Status "Brak kontaktu", `followup` → Data follow-up = jutro. JSON backup: `n8n/lead-action-workflow.json`.
+- **"Szkody - Follow-up Reminder"** — Cron daily 8:00 (Europe/Warsaw) → 3 Airtable searches (Nowy >24h, Kontakt >7d, Follow-up dziś) → zbiorczy email z listą zaległych leadów + action buttons. Nie wysyła maila jeśli 0 wyników. JSON backup: `n8n/follow-up-reminder-workflow.json`.
 
 ### Airtable CRM
 - **Base:** "Szkody CRM" (appUoXROWqjxiwjrT)
 - **Table:** "Leady" (tbl2PKbbli14WgqYo) — uses field IDs in n8n (not names, to avoid Polish encoding issues)
-- **Fields:** Imię, Telefon, Email, Kanał źródłowy, Typ zdarzenia, Kwalifikacja, Status, Źródło strony, URL źródłowy, Notatki, Przypisany do, Data utworzenia
+- **Fields:** Imię, Telefon, Email, Kanał źródłowy, Typ zdarzenia, Kwalifikacja, Status, Priorytet, Data follow-up, Źródło strony, URL źródłowy, Notatki, Przypisany do, Data utworzenia
+
+### Lead Pipeline (Status values)
+| Status | Znaczenie | Kolor |
+|--------|-----------|-------|
+| Nowy | Właśnie wpłynął | Niebieski |
+| Kontakt | Dodzwoniłeś się | Żółty |
+| Konsultacja | Spotkanie odbyło się | Pomarańczowy |
+| Umowa | Podpisana umowa | Zielony |
+| Wygrany | Sprawa zakończona | Ciemnozielony |
+| Odrzucony | Nie kwalifikuje się | Szary |
+| Brak kontaktu | Nie odbiera | Czerwony |
+
+### Lead Scoring (automatyczny priorytet)
+2-sygnałowy model: typ sprawy + kanał. Scoring w n8n Code node (`n8n/scoring-code-node.js`).
+
+| Sygnał | +3 | +2 | +1 |
+|--------|----|----|-----|
+| Typ sprawy | komunikacyjne, smierc | praca, medyczne | rolnicze, inne |
+| Kanał | chat-ai | kontakt, kontakt-* | quiz, kalkulator |
+
+Priorytety: **Gorący** (5-6 pkt), **Ciepły** (3-4 pkt), **Zimny** (1-2 pkt).
+
+### Airtable Views
+| Widok | Typ | Opis |
+|-------|-----|------|
+| 🔥 Pipeline | Kanban | Grupowany po Status, ukryte Odrzucony/Brak kontaktu |
+| 📋 Wszystkie leady | Grid | Pełna tabela, sort po dacie desc |
+| ⚡ Nowe dziś | Grid | Status=Nowy AND dziś, sort po priorytecie |
+| 💀 Zapomniane | Grid | Nowy >24h OR Kontakt >7d, najstarsze góra |
 
 ### Form Tags (identify source in CRM)
 | Source | Tag |

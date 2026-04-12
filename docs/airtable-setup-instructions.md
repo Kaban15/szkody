@@ -180,3 +180,42 @@ Grid wyświetlający leady nieaktywne, które wymagają follow-up.
 - [Airtable Help — Date fields](https://support.airtable.com/hc/en-us/articles/202904089-Date-fields)
 - [Airtable Help — Kanban views](https://support.airtable.com/hc/en-us/articles/202900839-Introduction-to-Kanban-views)
 - [Airtable Help — Filtering and sorting](https://support.airtable.com/hc/en-us/articles/203255215-Filtering-and-sorting-records)
+
+---
+
+## Deployment Checklist
+
+### Airtable (manual, ~5 min)
+- [ ] Dodaj wartości do pola Status (7 wartości z kolorami)
+- [ ] Utwórz pole Priorytet (Single Select, 3 wartości)
+- [ ] Utwórz pole Data follow-up (Date)
+- [ ] Zanotuj Field ID nowego pola Priorytet (potrzebne w n8n)
+- [ ] Zanotuj Field ID nowego pola Data follow-up (potrzebne w n8n)
+- [ ] Utwórz widok 🔥 Pipeline (Kanban)
+- [ ] Utwórz widok 📋 Wszystkie leady (Grid)
+- [ ] Utwórz widok ⚡ Nowe dziś (Grid z filtrem)
+- [ ] Utwórz widok 💀 Zapomniane (Grid z filtrem)
+
+### n8n — modyfikacja istniejących workflow
+- [ ] "Szkody - Formularz": dodaj Code node ze scoringiem (skopiuj z `n8n/scoring-code-node.js`) PRZED Airtable Create Record. W Airtable node dodaj mapowanie pól: Status ← `{{ $json.status }}`, Priorytet ← `{{ $json.priority }}`
+- [ ] "Szkody - Chat AI": dodaj analogiczny Code node ze scoringiem
+- [ ] "Szkody - Powiadomienie Email": zaimportuj zaktualizowany `n8n/lead-email-notification-workflow.json` LUB ręcznie zaktualizuj Code node "Formatuj Email"
+
+### n8n — nowe workflow
+- [ ] Import `n8n/lead-action-workflow.json`
+- [ ] Zamień `DATA_FOLLOWUP_FIELD_ID` na rzeczywiste Field ID pola "Data follow-up" (1 miejsce w pliku)
+- [ ] Podłącz credentials: Airtable, Gmail
+- [ ] Aktywuj workflow
+- [ ] Import `n8n/follow-up-reminder-workflow.json`
+- [ ] Zamień `DATA_FOLLOWUP_FIELD_ID` na rzeczywiste Field ID (1 miejsce — filterByFormula w "Follow-up dziś")
+- [ ] Zamień `PRIORITY_FIELD_ID` na rzeczywiste Field ID (1 miejsce — formatLead w "Buduj email")
+- [ ] Podłącz credentials: Airtable, Gmail
+- [ ] Ustaw timezone na Europe/Warsaw w Cron Trigger
+- [ ] Aktywuj workflow
+
+### Test end-to-end
+- [ ] Wyślij formularz na stronie → sprawdź: rekord w Airtable ma Status=Nowy, Priorytet=Ciepły/Gorący/Zimny
+- [ ] Sprawdź email: ma przyciski Zadzwoniłem/Nie odbiera/Follow-up
+- [ ] Kliknij "✅ Zadzwoniłem" → otwiera stronę potwierdzenia, status w Airtable zmienia się na "Kontakt"
+- [ ] Kliknij "📅 Follow-up jutro" → pole Data follow-up ustawione na jutro
+- [ ] Poczekaj na 8:00 następnego dnia (lub ręcznie odpal workflow) → sprawdź email z podsumowaniem
