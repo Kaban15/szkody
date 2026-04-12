@@ -1,0 +1,76 @@
+{
+  "name": "Szkody - Powiadomienie Email o Leadzie",
+  "active": false,
+  "versionId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "meta": {},
+  "pinData": {},
+  "settings": {},
+  "nodes": [
+    {
+      "id": "node-airtable-trigger",
+      "name": "Nowy Lead w Airtable",
+      "type": "n8n-nodes-base.airtableTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "baseId": "appUoXROWqjxiwjrT",
+        "tableId": "tbl2PKbbli14WgqYo"
+      }
+    },
+    {
+      "id": "node-code-format",
+      "name": "Formatuj Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [250, 500],
+      "parameters": {
+        "jsCode": "// Obsługa wielu rekordów naraz (batch) — Airtable Trigger może zwrócić >1 rekord\nconst items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const record = item.json.fields;\n  const recordId = item.json.id;\n\n  // FALLBACK: jeśli trigger zwraca field IDs zamiast nazw, odkomentuj poniższe\n  // const FIELD_MAP = {\n  //   'fldXXX1': 'Imię',\n  //   'fldXXX2': 'Telefon',\n  //   'fldXXX3': 'Email',\n  //   'fldXXX4': 'Typ zdarzenia',\n  //   'fldXXX5': 'Kwalifikacja',\n  //   'fldXXX6': 'Kanał źródłowy',\n  //   'fldXXX7': 'Notatki',\n  //   'fldXXX8': 'Data utworzenia',\n  // };\n  // Zamień fldXXX na faktyczne ID z outputu Airtable Trigger, potem:\n  // const get = (key) => record[FIELD_MAP[key]] || record[key] || 'Brak';\n\n  const name = record['Imię'] || 'Brak imienia';\n  const phone = record['Telefon'] || 'Brak';\n  const email = record['Email'] || 'Brak';\n  const caseType = record['Typ zdarzenia'] || 'Nieokreślony';\n  const qualification = record['Kwalifikacja'] || 'Brak';\n  const source = record['Kanał źródłowy'] || 'Brak';\n  const notes = record['Notatki'] || 'Brak';\n  const createdDate = record['Data utworzenia'] || new Date().toISOString().split('T')[0];\n\n  // Guard: jeśli trigger zwraca field IDs zamiast nazw, wszystko będzie \"Brak\"\n  const allEmpty = [name, phone, email, caseType].every(v => v === 'Brak' || v === 'Brak imienia');\n  if (allEmpty) {\n    console.log('WARNING: Wszystkie pola puste — trigger może zwracać field IDs zamiast nazw. Record ID:', recordId);\n  }\n\n  const subject = `Nowy lead: ${name} — ${caseType}`;\n\n  const body = `Nowy lead w CRM Szkody\n\nImię: ${name}\nTelefon: ${phone}\nEmail: ${email}\nTyp sprawy: ${caseType}\nKwalifikacja: ${qualification}\nŹródło: ${source}\nData utworzenia: ${createdDate}\n\nNotatki:\n${notes}\n\n---\nLink do rekordu: https://airtable.com/appUoXROWqjxiwjrT/tbl2PKbbli14WgqYo/${recordId}`;\n\n  // Na start: stały adres. Przyszłość: routing per typ sprawy (Switch node).\n  const recipientEmail = 'TWÓJ_EMAIL@gmail.com';\n\n  results.push({ json: { subject, body, recipientEmail } });\n}\n\nreturn results;"
+      }
+    },
+    {
+      "id": "node-gmail-send",
+      "name": "Wyślij Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [250, 700],
+      "parameters": {
+        "sendTo": "={{ $json.recipientEmail }}",
+        "subject": "={{ $json.subject }}",
+        "message": "={{ $json.body }}"
+      },
+      "retryOnFail": true,
+      "maxTries": 3
+    }
+  ],
+  "connections": {
+    "Nowy Lead w Airtable": {
+      "main": [
+        [
+          {
+            "node": "Formatuj Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatuj Email": {
+      "main": [
+        [
+          {
+            "node": "Wyślij Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
