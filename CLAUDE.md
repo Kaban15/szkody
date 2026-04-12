@@ -224,6 +224,9 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 - **`/webhook/szkody-form`** — form submissions (quiz, kalkulator, kontakt). Workflow: "Szkody - Formularz - Airtable CRM"
 - **`/webhook/szkody-chat`** — AI chat messages. Workflow: "Szkody - Chat AI"
 
+### n8n Workflows
+- **"Szkody - Powiadomienie Email o Leadzie"** — Airtable Trigger (polling "Leady" every 1 min) → Code (format) → Gmail. JSON: `n8n/lead-email-notification-workflow.json`. Import in n8n → configure Gmail credentials + recipient email → activate.
+
 ### Airtable CRM
 - **Base:** "Szkody CRM" (appUoXROWqjxiwjrT)
 - **Table:** "Leady" (tbl2PKbbli14WgqYo) — uses field IDs in n8n (not names, to avoid Polish encoding issues)
