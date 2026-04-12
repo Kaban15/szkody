@@ -108,6 +108,7 @@ function sendToWebhook(formData, tag) {
             tag: tag,
             source_url: window.location.pathname,
             timestamp: new Date().toISOString(),
+            lang: localStorage.getItem('lang') || 'pl',
         }),
     }).catch(function (err) {
         if (typeof console !== 'undefined') console.warn('Webhook error:', err);
