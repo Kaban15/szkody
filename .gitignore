@@ -27,3 +27,4 @@ Thumbs.db
 
 # Scripts
 scripts/remove-logo-bg.py
+.gstack/

@@ -14,6 +14,13 @@ html {
 body {
     background: #FFFFFF;
     color: #1a1a2e;
+    overflow-x: hidden;
+}
+
+@media (max-width: 1023px) {
+    footer {
+        padding-bottom: 4.5rem;
+    }
 }
 
 /* Hero word-by-word reveal */
@@ -384,6 +391,7 @@ input[type="range"]::-moz-range-thumb {
 /* Radial gradient background accents */
 .v2-gradient-accent {
     position: relative;
+    overflow: hidden;
 }
 
 .v2-gradient-accent::before {

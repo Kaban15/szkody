@@ -186,7 +186,7 @@
 }
 
 .chat-header-subtitle {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -299,7 +299,7 @@
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 10px 12px;
-    font-size: 13px;
+    font-size: 14px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: left;
     cursor: pointer;
@@ -325,7 +325,7 @@
     align-self: center;
     background: none;
     color: #6b7280;
-    font-size: 12px;
+    font-size: 13px;
     padding: 4px 0;
 }
 
