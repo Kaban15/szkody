@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -53,9 +53,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <!-- Logo -->
-                <a href="/">
-                    <span class="text-white font-heading text-xl lg:text-2xl font-bold" data-i18n="nav.logo">Odszkodowania</span>
-                </a>
+                <a href="/" class="nav-logo-link"><img src="/images/lexperiens-logo.png" alt="Lexperiens – Kancelaria Radców Prawnych" class="nav-logo-img" style="height:40px;width:auto;max-height:40px"></a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-8">
@@ -70,9 +68,9 @@
                 <!-- CTA + Phone -->
                 <div class="hidden lg:flex items-center gap-4">
                     <div class="lang-switcher-mount"></div>
-                    <a href="tel:+48XXXXXXXXX" class="text-white/80 hover:text-white transition-colors text-sm font-medium flex items-center gap-2" data-i18n="nav.phone">
+                    <a href="tel:+48618937504" class="text-white/80 hover:text-white transition-colors text-sm font-medium flex items-center gap-2" data-i18n="nav.phone">
                         <i data-lucide="phone" class="w-4 h-4"></i>
-                        +48 XXX XXX XXX
+                        61 893 75 04
                     </a>
                     <a href="#quiz" class="bg-v2-cta hover:bg-v2-cta-hover text-white px-5 py-2 rounded text-sm font-semibold transition-colors" data-i18n="nav.cta">
                         Bezpłatna konsultacja
@@ -104,8 +102,8 @@
                     Bezpłatna konsultacja
                 </a>
             </div>
-            <a href="tel:+48XXXXXXXXX" class="block text-v2-cta text-lg font-medium pt-2" data-i18n="nav.phone_mobile">
-                <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>+48 XXX XXX XXX
+            <a href="tel:+48618937504" class="block text-v2-cta text-lg font-medium pt-2" data-i18n="nav.phone_mobile">
+                <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>61 893 75 04
             </a>
             <div class="lang-switcher-mount mobile pt-4 flex justify-center"></div>
         </div>
@@ -113,7 +111,7 @@
 
     <!-- Mobile Sticky Bottom Bar -->
     <div id="sticky-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-v2-line p-3 flex gap-3 lg:hidden transition-transform duration-300">
-        <a href="tel:+48XXXXXXXXX" class="flex-1 bg-v2-cta text-white text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
+        <a href="tel:+48618937504" class="flex-1 bg-v2-cta text-white text-center py-3 rounded font-semibold text-sm flex items-center justify-center gap-2" data-i18n="sticky.call">
             <i data-lucide="phone" class="w-4 h-4"></i> Zadzwoń
         </a>
         <a href="index.html#quiz" class="flex-1 border border-v2-cta text-v2-cta text-center py-3 rounded font-semibold text-sm" data-i18n="sticky.quote">
@@ -176,7 +174,7 @@
 
                 <div>
                     <h2 class="text-xl font-bold text-v2-text mb-3" data-i18n="privacy.s8_title">8. Kontakt w sprawie danych osobowych</h2>
-                    <p class="text-v2-muted" data-i18n="privacy.s8_text">W sprawach dotyczących danych osobowych prosimy o kontakt: <a href="mailto:kontakt@example.pl" class="text-v2-cta hover:text-[#166534] transition-colors underline">kontakt@example.pl</a></p>
+                    <p class="text-v2-muted" data-i18n="privacy.s8_text">W sprawach dotyczących danych osobowych prosimy o kontakt: <a href="mailto:kancelaria@lexperiens.pl" class="text-v2-cta hover:text-[#166534] transition-colors underline">kancelaria@lexperiens.pl</a></p>
                 </div>
 
                 <p class="text-v2-muted/40 text-sm pt-8 border-t border-v2-line" data-i18n="privacy.disclaimer"><em>Dokument do uzupełnienia i weryfikacji przez prawnika.</em></p>
@@ -190,7 +188,7 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <!-- Col 1: Logo -->
                 <div class="col-span-2 lg:col-span-1">
-                    <span class="text-white font-heading text-lg font-bold" data-i18n="nav.logo">Odszkodowania</span>
+                    <a href="/" class="footer-logo-link mb-3"><img src="/images/lexperiens-logo.png" alt="Lexperiens" class="footer-logo-img"></a>
                     <p class="text-white/60 text-sm mt-3" data-i18n="footer.desc">Profesjonalna pomoc w uzyskaniu odszkodowań po wypadkach.</p>
                 </div>
 
@@ -222,8 +220,8 @@
                 <div>
                     <h4 class="text-white text-sm font-semibold mb-3" data-i18n="footer.contact_title">Kontakt</h4>
                     <div class="space-y-2">
-                        <a href="tel:+48XXXXXXXXX" class="block text-white/60 text-sm hover:text-white transition-colors">+48 XXX XXX XXX</a>
-                        <a href="mailto:kontakt@example.pl" class="block text-white/60 text-sm hover:text-white transition-colors">kontakt@example.pl</a>
+                        <a href="tel:+48618937504" class="block text-white/60 text-sm hover:text-white transition-colors">61 893 75 04</a>
+                        <a href="mailto:kancelaria@lexperiens.pl" class="block text-white/60 text-sm hover:text-white transition-colors">kancelaria@lexperiens.pl</a>
                         <p class="text-white/60 text-sm" data-i18n="footer.address">Poznań, Polska</p>
                         <div class="flex gap-3 mt-2">
                             <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-v2-cta transition-colors" aria-label="Facebook">
@@ -241,7 +239,7 @@
             </div>
 
             <div class="border-t border-white/10 pt-8 text-center">
-                <p class="text-white/40 text-xs" data-i18n="footer.copyright">&copy; 2026 Odszkodowania. Wszystkie prawa zastrzeżone.</p>
+                <p class="text-white/40 text-xs" data-i18n="footer.copyright">&copy; 2026 Lexperiens. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
