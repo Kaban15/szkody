@@ -7,9 +7,9 @@
 (function initChatWidget() {
     var WEBHOOK_URL = 'https://n8n.kaban.click/webhook/szkody-chat';
     var GREETINGS = {
-        pl: 'Dzień dobry! Jestem asystentem kancelarii odszkodowawczej. W czym mogę pomóc?',
-        en: 'Hello! I am an assistant at a compensation law firm. How can I help you?',
-        ua: 'Доброго дня! Я асистент юридичної фірми з відшкодувань. Чим можу допомогти?'
+        pl: 'Dzień dobry! Jestem Nel, asystentka prawna kancelarii Lexperiens. W czym mogę Ci pomóc?',
+        en: 'Hello! I\'m Nel, a legal assistant at Lexperiens. How can I help you?',
+        ua: 'Доброго дня! Я Нел, юридична асистентка Lexperiens. Чим можу допомогти?'
     };
     var TIMEOUT_MS = 20000;
     var SESSION_KEY = 'szkody_chat';
@@ -47,17 +47,24 @@
 
         var greetingEl = document.createElement('div');
         greetingEl.className = 'chat-greeting';
-        greetingEl.textContent = 'Porozmawiaj z nami';
+        greetingEl.textContent = 'Cześć! Jestem Nel, w czym pomóc?';
+        greetingEl.setAttribute('data-i18n', 'chat.greeting_tooltip');
 
         var win = document.createElement('div');
         win.className = 'chat-window';
         win.setAttribute('role', 'dialog');
-        win.setAttribute('aria-label', 'Czat z asystentem');
+        win.setAttribute('aria-label', 'Czat z Nel');
         win.innerHTML =
             '<div class="chat-header">' +
                 '<div class="chat-header-info">' +
-                    '<span class="chat-header-dot"></span>' +
-                    '<span class="chat-header-title">Asystent kancelarii</span>' +
+                    '<div class="chat-header-avatar-wrap">' +
+                        '<img src="/images/nel-avatar.png" alt="Nel" class="chat-header-avatar">' +
+                        '<span class="chat-header-status"></span>' +
+                    '</div>' +
+                    '<div class="chat-header-text">' +
+                        '<span class="chat-header-title">Nel z Lexperiens</span>' +
+                        '<span class="chat-header-subtitle" data-i18n="chat.header_subtitle">Asystentka Prawna</span>' +
+                    '</div>' +
                 '</div>' +
                 '<button class="chat-header-close" aria-label="Zamknij czat">' +
                     '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
@@ -65,9 +72,14 @@
             '</div>' +
             '<div class="chat-disclaimer">Rozmowa jest analizowana w celu lepszej obsługi. <a href="/polityka-prywatnosci.html">Polityka prywatności</a></div>' +
             '<div class="chat-messages" aria-live="polite"></div>' +
-            '<div class="chat-typing"><span></span><span></span><span></span></div>' +
+            '<div class="chat-msg chat-msg-bot chat-msg-typing">' +
+                '<img src="/images/nel-avatar.png" alt="Nel" class="chat-msg-avatar">' +
+                '<div class="chat-msg-content">' +
+                    '<div class="chat-typing"><span></span><span></span><span></span></div>' +
+                '</div>' +
+            '</div>' +
             '<div class="chat-input-area">' +
-                '<input type="text" class="chat-input" placeholder="Napisz wiadomość..." maxlength="500">' +
+                '<input type="text" class="chat-input" placeholder="Napisz do Nel..." data-i18n-placeholder="chat.input_placeholder" maxlength="500">' +
                 '<button class="chat-send" aria-label="Wyślij">' +
                     '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>' +
                 '</button>' +
@@ -78,7 +90,7 @@
         document.body.appendChild(win);
 
         var messagesEl = win.querySelector('.chat-messages');
-        var typingEl = win.querySelector('.chat-typing');
+        var typingEl = win.querySelector('.chat-msg-typing');
         var inputEl = win.querySelector('.chat-input');
         var sendBtn = win.querySelector('.chat-send');
         var closeBtn = win.querySelector('.chat-header-close');
@@ -95,18 +107,19 @@
             if (isOpen) {
                 win.classList.add('open');
                 greetingEl.classList.remove('visible');
-                bubble.style.display = 'none';
+                bubble.classList.add('chat-bubble-hidden');
                 inputEl.focus();
                 if (history.length === 0) {
                     addMessage('bot', GREETING);
                     history.push({ role: 'assistant', content: GREETING });
                     saveHistory();
+                    showQuickReplies();
                 } else {
                     renderHistory();
                 }
             } else {
                 win.classList.remove('open');
-                bubble.style.display = 'flex';
+                bubble.classList.remove('chat-bubble-hidden');
             }
         }
 
@@ -117,16 +130,49 @@
             if (e.key === 'Escape' && isOpen) toggleChat();
         });
 
-        function addMessage(type, text) {
+        function removeQuickReplies() {
+            var qr = messagesEl.querySelector('.chat-quick-replies');
+            if (qr) qr.remove();
+        }
+
+        function showQuickReplies() {}
+
+        function addMessage(type, text, animate) {
             var div = document.createElement('div');
             if (type === 'system') {
                 div.className = 'chat-msg chat-msg-system';
+                div.textContent = text;
+            } else if (type === 'bot') {
+                div.className = 'chat-msg chat-msg-bot';
+                var avatar = document.createElement('img');
+                avatar.src = '/images/nel-avatar.png';
+                avatar.alt = 'Nel';
+                avatar.className = 'chat-msg-avatar';
+                var content = document.createElement('div');
+                content.className = 'chat-msg-content';
+                var name = document.createElement('span');
+                name.className = 'chat-msg-name';
+                name.textContent = 'Nel';
+                var bubbleEl = document.createElement('div');
+                bubbleEl.className = 'chat-msg-bubble';
+                bubbleEl.textContent = text;
+                content.appendChild(name);
+                content.appendChild(bubbleEl);
+                div.appendChild(avatar);
+                div.appendChild(content);
             } else {
-                div.className = 'chat-msg ' + (type === 'bot' ? 'chat-msg-bot' : 'chat-msg-user');
+                div.className = 'chat-msg chat-msg-user';
+                var bubbleEl = document.createElement('div');
+                bubbleEl.className = 'chat-msg-bubble';
+                bubbleEl.textContent = text;
+                div.appendChild(bubbleEl);
             }
-            div.textContent = text;
+            if (animate !== false) {
+                div.classList.add('chat-msg-animate');
+            }
             messagesEl.appendChild(div);
             messagesEl.scrollTop = messagesEl.scrollHeight;
+            removeQuickReplies();
         }
 
         function showRating() {
@@ -188,10 +234,10 @@
         function renderHistory() {
             messagesEl.innerHTML = '';
             history.forEach(function (msg) {
-                addMessage(msg.role === 'assistant' ? 'bot' : 'user', msg.content);
+                addMessage(msg.role === 'assistant' ? 'bot' : 'user', msg.content, false);
             });
             if (leadSaved) {
-                addMessage('system', 'Dane przekazane specjali\u015bcie \u2713');
+                addMessage('system', 'Dane przekazane specjali\u015bcie \u2713', false);
             }
         }
 
