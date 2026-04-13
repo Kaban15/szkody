@@ -16,6 +16,14 @@
     var MAX_HISTORY = 30;
     var RATING_WEBHOOK = 'https://n8n.kaban.click/webhook/szkody-chat-rating';
     var RATING_KEY = SESSION_KEY + '_rated';
+    var QUICK_REPLIES = [
+        { emoji: '\uD83D\uDE97', text: 'Wypadek komunikacyjny', i18n: 'chat.qr_komunikacyjny' },
+        { emoji: '\uD83C\uDFD7\uFE0F', text: 'Wypadek w pracy', i18n: 'chat.qr_praca' },
+        { emoji: '\uD83C\uDFE5', text: 'B\u0142\u0105d medyczny', i18n: 'chat.qr_medyczny' },
+        { emoji: '\uD83D\uDD4A\uFE0F', text: '\u015Amier\u0107 bliskiej osoby', i18n: 'chat.qr_smierc' },
+        { emoji: '\uD83C\uDF3E', text: 'Wypadek rolniczy', i18n: 'chat.qr_rolniczy' },
+        { emoji: '\uD83D\uDCAC', text: 'Inna sprawa', i18n: 'chat.qr_inne' }
+    ];
 
     function getLang() { return localStorage.getItem('lang') || 'pl'; }
     var GREETING = GREETINGS[getLang()] || GREETINGS.pl;
@@ -135,7 +143,26 @@
             if (qr) qr.remove();
         }
 
-        function showQuickReplies() {}
+        function showQuickReplies() {
+            var container = document.createElement('div');
+            container.className = 'chat-quick-replies';
+            QUICK_REPLIES.forEach(function (item) {
+                var btn = document.createElement('button');
+                btn.className = 'chat-quick-reply';
+                btn.setAttribute('data-i18n', item.i18n);
+                btn.textContent = item.emoji + ' ' + item.text;
+                btn.addEventListener('click', function () {
+                    var label = btn.textContent;
+                    removeQuickReplies();
+                    inputEl.value = label;
+                    sendMessage();
+                });
+                container.appendChild(btn);
+            });
+            messagesEl.appendChild(container);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+            if (typeof window.i18nApply === 'function') window.i18nApply();
+        }
 
         function addMessage(type, text, animate) {
             var div = document.createElement('div');
