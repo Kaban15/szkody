@@ -18,12 +18,12 @@
   "nav.sukcesy": "Успіхи",
   "nav.blog": "Блог",
   "nav.kontakt": "Контакт",
-  "nav.phone": "<i data-lucide=\"phone\" class=\"w-4 h-4\"></i> +48 XXX XXX XXX",
+  "nav.phone": "<i data-lucide=\"phone\" class=\"w-4 h-4\"></i> 61 893 75 04",
   "nav.cta": "Безкоштовна консультація",
   "nav.menu_aria": "Меню",
   "nav.close_menu_aria": "Закрити меню",
   "nav.cta_mobile": "Безкоштовна консультація",
-  "nav.phone_mobile": "<i data-lucide=\"phone\" class=\"w-5 h-5 inline mr-2\"></i>+48 XXX XXX XXX",
+  "nav.phone_mobile": "<i data-lucide=\"phone\" class=\"w-5 h-5 inline mr-2\"></i>61 893 75 04",
 
   "sticky.call": "<i data-lucide=\"phone\" class=\"w-4 h-4\"></i> Зателефонувати",
   "sticky.quote": "Безкоштовна оцінка",
@@ -270,7 +270,7 @@
 
   "cta.title": "Потрапили в аварію? Поговоримо.",
   "cta.button": "Безкоштовна консультація",
-  "cta.phone_prefix": "або зателефонуйте: <a href=\"tel:+48XXXXXXXXX\" class=\"text-gold hover:text-gold-light transition-colors font-medium\">+48 XXX XXX XXX</a>",
+  "cta.phone_prefix": "або зателефонуйте: <a href=\"tel:+48618937504\" class=\"text-gold hover:text-gold-light transition-colors font-medium\">61 893 75 04</a>",
   "cta.whatsapp_aria": "Написати у WhatsApp",
   "cta.phone_aria": "Зателефонувати",
 
@@ -405,7 +405,7 @@
   "privacy.s7_title": "7. Файли cookie",
   "privacy.s7_text": "Сайт використовує файли cookie для аналітичних цілей (Google Analytics 4). Аналітичні скрипти завантажуються лише після надання згоди через банер cookie. Ви можете відкликати згоду в будь-який момент, видаливши файли cookie в налаштуваннях браузера.",
   "privacy.s8_title": "8. Контакт щодо персональних даних",
-  "privacy.s8_text": "З питань персональних даних просимо звертатися: <a href=\"mailto:kontakt@example.pl\" class=\"text-gold hover:text-gold-light transition-colors underline\">kontakt@example.pl</a>",
+  "privacy.s8_text": "З питань персональних даних просимо звертатися: <a href=\"mailto:kancelaria@lexperiens.pl\" class=\"text-gold hover:text-gold-light transition-colors underline\">kancelaria@lexperiens.pl</a>",
   "privacy.disclaimer": "<em>Документ для доповнення та перевірки юристом.</em>",
 
   "blog.breadcrumb_home": "Головна",

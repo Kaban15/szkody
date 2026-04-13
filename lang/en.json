@@ -18,12 +18,12 @@
   "nav.sukcesy": "Results",
   "nav.blog": "Blog",
   "nav.kontakt": "Contact",
-  "nav.phone": "<i data-lucide=\"phone\" class=\"w-4 h-4\"></i> +48 XXX XXX XXX",
+  "nav.phone": "<i data-lucide=\"phone\" class=\"w-4 h-4\"></i> 61 893 75 04",
   "nav.cta": "Free Consultation",
   "nav.menu_aria": "Menu",
   "nav.close_menu_aria": "Close menu",
   "nav.cta_mobile": "Free Consultation",
-  "nav.phone_mobile": "<i data-lucide=\"phone\" class=\"w-5 h-5 inline mr-2\"></i>+48 XXX XXX XXX",
+  "nav.phone_mobile": "<i data-lucide=\"phone\" class=\"w-5 h-5 inline mr-2\"></i>61 893 75 04",
 
   "sticky.call": "<i data-lucide=\"phone\" class=\"w-4 h-4\"></i> Call Us",
   "sticky.quote": "Free Estimate",
@@ -266,7 +266,7 @@
 
   "cta.title": "Been in an accident? Let's talk.",
   "cta.button": "Free Consultation",
-  "cta.phone_prefix": "or call: <a href=\"tel:+48XXXXXXXXX\" class=\"text-gold hover:text-gold-light transition-colors font-medium\">+48 XXX XXX XXX</a>",
+  "cta.phone_prefix": "or call: <a href=\"tel:+48618937504\" class=\"text-gold hover:text-gold-light transition-colors font-medium\">61 893 75 04</a>",
   "cta.whatsapp_aria": "Message us on WhatsApp",
   "cta.phone_aria": "Call us",
 
@@ -398,7 +398,7 @@
   "privacy.s7_title": "7. Cookies",
   "privacy.s7_text": "The website uses cookies for analytical purposes (Google Analytics 4). Analytical scripts are loaded only after consent is given via the cookie banner. You can withdraw consent at any time by deleting cookies in your browser settings.",
   "privacy.s8_title": "8. Contact regarding personal data",
-  "privacy.s8_text": "For matters concerning personal data, please contact: <a href=\"mailto:kontakt@example.pl\" class=\"text-gold hover:text-gold-light transition-colors underline\">kontakt@example.pl</a>",
+  "privacy.s8_text": "For matters concerning personal data, please contact: <a href=\"mailto:kancelaria@lexperiens.pl\" class=\"text-gold hover:text-gold-light transition-colors underline\">kancelaria@lexperiens.pl</a>",
   "privacy.disclaimer": "<em>Document to be completed and verified by a lawyer.</em>",
 
   "blog.breadcrumb_home": "Home",
