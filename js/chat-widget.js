@@ -14,6 +14,8 @@
     var TIMEOUT_MS = 20000;
     var SESSION_KEY = 'szkody_chat';
     var MAX_HISTORY = 30;
+    var RATING_WEBHOOK = 'https://n8n.kaban.click/webhook/szkody-chat-rating';
+    var RATING_KEY = SESSION_KEY + '_rated';
 
     function getLang() { return localStorage.getItem('lang') || 'pl'; }
     var GREETING = GREETINGS[getLang()] || GREETINGS.pl;
@@ -127,6 +129,62 @@
             messagesEl.scrollTop = messagesEl.scrollHeight;
         }
 
+        function showRating() {
+            if (sessionStorage.getItem(RATING_KEY)) return;
+            var lang = getLang();
+            var questions = {
+                pl: 'Czy rozmowa była pomocna?',
+                en: 'Was this conversation helpful?',
+                ua: '\u0427\u0438 \u0431\u0443\u043b\u0430 \u0446\u044f \u0440\u043e\u0437\u043c\u043e\u0432\u0430 \u043a\u043e\u0440\u0438\u0441\u043d\u043e\u044e?'
+            };
+            var thanks = {
+                pl: 'Dziękujemy za opinię',
+                en: 'Thank you for your feedback',
+                ua: '\u0414\u044f\u043a\u0443\u0454\u043c\u043e \u0437\u0430 \u0432\u0456\u0434\u0433\u0443\u043a'
+            };
+            var ratingDiv = document.createElement('div');
+            ratingDiv.className = 'chat-rating';
+            var questionSpan = document.createElement('span');
+            questionSpan.className = 'chat-rating-question';
+            questionSpan.setAttribute('data-i18n', 'chat.rate_question');
+            questionSpan.textContent = questions[lang] || questions.pl;
+            ratingDiv.appendChild(questionSpan);
+            var btnUp = document.createElement('button');
+            btnUp.className = 'chat-rating-btn';
+            btnUp.setAttribute('data-rating', '1');
+            btnUp.setAttribute('aria-label', 'Thumbs up');
+            btnUp.textContent = '\uD83D\uDC4D';
+            ratingDiv.appendChild(btnUp);
+            var btnDown = document.createElement('button');
+            btnDown.className = 'chat-rating-btn';
+            btnDown.setAttribute('data-rating', '-1');
+            btnDown.setAttribute('aria-label', 'Thumbs down');
+            btnDown.textContent = '\uD83D\uDC4E';
+            ratingDiv.appendChild(btnDown);
+            messagesEl.appendChild(ratingDiv);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+            ratingDiv.querySelectorAll('.chat-rating-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var rating = parseInt(btn.getAttribute('data-rating'));
+                    btn.classList.add('selected');
+                    ratingDiv.innerHTML = '';
+                    var thanksSpan = document.createElement('span');
+                    thanksSpan.className = 'chat-rating-thanks';
+                    thanksSpan.setAttribute('data-i18n', 'chat.rate_thanks');
+                    thanksSpan.textContent = thanks[lang] || thanks.pl;
+                    ratingDiv.appendChild(thanksSpan);
+                    sessionStorage.setItem(RATING_KEY, '1');
+                    if (typeof window.i18nApply === 'function') window.i18nApply();
+                    fetch(RATING_WEBHOOK, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ session_id: sessionId, rating: rating })
+                    }).catch(function () { /* fire and forget */ });
+                });
+            });
+            if (typeof window.i18nApply === 'function') window.i18nApply();
+        }
+
         function renderHistory() {
             messagesEl.innerHTML = '';
             history.forEach(function (msg) {
@@ -196,12 +254,13 @@
                     if (data.lead_saved && !leadSaved) {
                         leadSaved = true;
                         addMessage('system', 'Dane przekazane specjali\u015bcie \u2713');
+                        setTimeout(function () { showRating(); }, 1000);
                     }
                 })
                 .catch(function () {
                     clearTimeout(timeoutId);
                     hideTyping();
-                    addMessage('bot', 'Przepraszam, mam chwilowy problem. Proszę spróbować za moment lub zadzwonić: +48 XXX XXX XXX');
+                    addMessage('bot', 'Przepraszam, mam chwilowy problem. Proszę spróbować za moment lub zadzwonić: 61 893 75 04');
                 })
                 .finally(function () {
                     isSending = false;

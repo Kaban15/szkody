@@ -1052,5 +1052,7 @@
 
   "kalkulator.success_title": "Thank you!",
   "kalkulator.success_subtitle": "We'll call you back shortly with a detailed estimate.",
-  "contact.success_subtitle": "Our specialist will contact you soon."
+  "contact.success_subtitle": "Our specialist will contact you soon.",
+  "chat.rate_question": "Was this conversation helpful?",
+  "chat.rate_thanks": "Thank you for your feedback"
 }

@@ -1059,5 +1059,7 @@
 
   "kalkulator.success_title": "Дякуємо!",
   "kalkulator.success_subtitle": "Ми зателефонуємо вам найближчим часом з точною оцінкою.",
-  "contact.success_subtitle": "Наш спеціаліст зв'яжеться з вами найближчим часом."
+  "contact.success_subtitle": "Наш спеціаліст зв'яжеться з вами найближчим часом.",
+  "chat.rate_question": "Чи була ця розмова корисною?",
+  "chat.rate_thanks": "Дякуємо за відгук"
 }

@@ -256,6 +256,9 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 - **`/webhook/szkody-lead-action`** — GET webhook for email action buttons (contacted/no_answer/followup). Workflow: "Szkody - Lead Action"
 
 ### n8n Workflows
+- **"Szkody - Chat Rating"** (ID: `m4GqIYR65Ha2tVjp`) — Webhook POST `/szkody-chat-rating` → Code (validate session_id + rating, search Airtable by Session ID, PATCH Rating field) → respond OK. Fire-and-forget from chat widget.
+- **"Szkody - Analiza Rozmów"** (ID: `J2so8cPZRhznPcqn`) — Manual Trigger → fetch unanalyzed leads (Transkrypt not empty, Data analizy empty) + active prompt → GPT-4o analysis (rating correlation, conversion patterns, missing knowledge, prompt proposals) → save Draft to Prompt Historia → mark leads analyzed → Gmail branded report with Approve/Reject buttons. Run on-demand from n8n UI.
+- **"Szkody - Prompt Update"** (ID: `oNzaWFNvBpqHFKOg`) — Webhook GET `/szkody-prompt-update?action=approve|reject&record=recXXX` → approve: deactivate current Aktywny, activate Draft; reject: mark Draft as Wycofany → HTML confirmation page. Called from email buttons in analysis report.
 - **"Szkody - Powiadomienie Email o Leadzie"** (ID: `cV3BK9CU6S9wucuF`) — Airtable Trigger (polling "Leady" every 1 min) → Code (format HTML email with lead data + action buttons) → Gmail (to `piotrtokeny@gmail.com`). JSON backup: `n8n/lead-email-notification-workflow.json`. Email includes: branded header, data table, conversation summary, action buttons (Zadzwoniłem/Nie odbiera/Follow-up).
 - **"Szkody - Lead Action"** (ID: `5KrTzeOBFlTyAWBo`) — Webhook GET → validate params → idempotency check (httpRequest GET record, skip if status already set) → httpRequest PATCH update → HTML confirmation page (Respond to Webhook as text with Content-Type: text/html). `contacted` → Status "Kontakt" + clears Data follow-up. `no_answer` → Status "Brak kontaktu" + clears Data follow-up. `followup` → Data follow-up = jutro. Uses httpRequest nodes with Airtable PAT (not native Airtable node). JSON backup: `n8n/lead-action-workflow.json`.
 - **"Szkody - Follow-up Reminder"** (ID: `s13xEwD2mBwimQ7y`) — Cron daily 8:00 (Europe/Warsaw) → 3 Airtable searches (Nowy >24h, Kontakt >7d, Follow-up dziś) → zbiorczy email z listą zaległych leadów + action buttons. Nie wysyła maila jeśli 0 wyników. JSON backup: `n8n/follow-up-reminder-workflow.json`.
@@ -263,7 +266,8 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 ### Airtable CRM
 - **Base:** "Szkody CRM" (appUoXROWqjxiwjrT)
 - **Table:** "Leady" (tbl2PKbbli14WgqYo) — uses field IDs in n8n (not names, to avoid Polish encoding issues)
-- **Fields:** Imię, Telefon, Email, Kanał źródłowy, Typ zdarzenia, Kwalifikacja, Status, Priorytet (`fldLIbFpVcGT4zwFl`), Data follow-up (`fld63Dh1k7Q0EYX5X`), Źródło strony, URL źródłowy, Notatki, Przypisany do, Data utworzenia
+- **Fields:** Imię, Telefon, Email, Kanał źródłowy, Typ zdarzenia, Kwalifikacja, Status, Priorytet (`fldLIbFpVcGT4zwFl`), Data follow-up (`fld63Dh1k7Q0EYX5X`), Źródło strony, URL źródłowy, Notatki, Przypisany do, Data utworzenia, Transkrypt (`fldL7tElB6hA81HQ3`), Rating (`fldLHgwQXomzBgRNP`), Session ID (`fldjMcR8a9sJFCqwx`), Data analizy (`fldfSb8Y2YH99CwXn`)
+- **Table:** "Prompt Historia" (`tblet0tFXTXykdtcX`) — wersjonowanie system promptu chatbota. Fields: Data, Prompt (`fldvkw5BiGwOfMo0N`), Zmiany, Powód, Status (`fld24zrnCI2zCIy8y`: Draft/Aktywny/Wycofany), Rozmowy analizowane, Średni rating. Chat AI workflow fetchuje aktywny prompt na starcie każdej sesji. Rollback: zmień Status dowolnej wersji na Aktywny w Airtable.
 
 ### Lead Pipeline (Status values)
 | Status | Znaczenie | Kolor |
