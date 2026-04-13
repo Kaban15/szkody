@@ -4,7 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static lead-generation website for a Polish compensation claims firm (branża odszkodowawcza). Polish language throughout. No build step, no framework — plain HTML/CSS/JS served as static files.
+Static lead-generation website for **Lexperiens Kancelaria Radców Prawnych sp. p.** (Poznań) — firma odszkodowawcza. Polish language throughout. No build step, no framework — plain HTML/CSS/JS served as static files.
+
+**Dane firmy:**
+- Telefony: 61 893 75 04 / 797 623 957 / 789 483 216
+- Email: kancelaria@lexperiens.pl
+- Adres: ul. Mikołaja Reja 1/8, 60-826 Poznań
 
 ## Deployment
 
@@ -41,17 +46,17 @@ npm run test:watch            # run vitest in watch mode
 - `bg` (#FFFFFF) — white page background
 - `surface` (#F5F5F5) — alternate section backgrounds (gray)
 - `surface-light` (#FFFFFF) — cards, inputs, elevated elements
-- `gold` (#1a6b3c), `gold-light` (#166534) — **deep green** brand accent (note: token names retained for legacy reasons)
-- `cta` (#1a6b3c), `cta-hover` (#166534) — primary CTA buttons (deep green)
-- `v2-cta` (#1a6b3c), `v2-cta-hover` (#166534) — v2 CTA alias (same green)
+- `gold` (#29ABE2), `gold-light` (#1a94c9) — **Lexperiens cyan-blue** brand accent (token names retained for legacy reasons)
+- `cta` (#29ABE2), `cta-hover` (#1a94c9) — primary CTA buttons (Lexperiens blue)
+- `v2-cta` (#29ABE2), `v2-cta-hover` (#1a94c9) — v2 CTA alias (same blue)
 - `text` (#1a1a2e) — dark navy body text
 - `muted` (#6b7280) — secondary text (cool gray)
 - `line` (#e5e7eb) — borders and dividers
 - `error` (#EF4444) — form validation errors (stays red — not a brand color)
 
 **CSS custom properties** (`css/styles.css` `:root`):
-- `--color-brand: #1a6b3c` — used by all hardcoded rules in `styles.css` (slider thumb, nav hover, pulse animations, aurora gradient, step tabs, etc.)
-- `--color-brand-hover: #166534`
+- `--color-brand: #29ABE2` — Lexperiens cyan-blue, used by all hardcoded rules in `styles.css`
+- `--color-brand-hover: #1a94c9`
 
 When changing the brand color in the future: update **both** `js/tailwind-config.js` tokens **and** `--color-brand` in `css/styles.css`.
 
@@ -64,7 +69,20 @@ When changing the brand color in the future: update **both** `js/tailwind-config
 - **Blog**: `blog/index.html` (listing with category filter), `blog/_szablon-artykul.html` (article template, not published), `blog/_szablon-case-study.html` (case study template, not published)
 - **Utility pages**: `kalkulator.html`, `kontakt.html`, `jak-dzialamy.html`, `404.html`, `polityka-prywatnosci.html`, `robots.txt`, `sitemap.xml`
 
-### Images (`images/`)
+### Logo (`images/`)
+- `lexperiens-logo.png` — logo Lexperiens z **transparentnym tłem** (RGBA). CSS filter `invert(1) hue-rotate(180deg)` przełącza między wersją jasną (ciemne tła) a oryginalną.
+- `lexperiens-logo-original.png` — backup oryginału (białe tło, nie używany w HTML).
+
+**CSS reguły logo** (`css/styles.css`):
+- `.nav-logo-link` — `filter: invert(1) hue-rotate(180deg)` (transparent nav / ciemne tło)
+- `#main-nav.nav-solid .nav-logo-link` — `filter: none` (białe tło, index.html po scrollu)
+- `body.v2-theme.v2-subpage #main-nav.nav-solid .nav-logo-link` — `filter: invert(1) hue-rotate(180deg)` (subpages mają ciemny navy nav mimo `nav-solid`)
+- `.footer-logo-link` — `filter: invert(1) hue-rotate(180deg)` (footer zawsze ciemny)
+- `.nav-logo-img` — `height: 40px`; `.footer-logo-img` — `height: 34px`
+
+**Użycie w HTML:** `<a href="/" class="nav-logo-link"><img src="/images/lexperiens-logo.png" class="nav-logo-img">` w navie; `<a href="/" class="footer-logo-link"><img src="/images/lexperiens-logo.png" class="footer-logo-img">` w footerze.
+
+### Zdjęcia (`images/`)
 9 PNG zdjęć (generowane Gemini) zastępujących placeholdery FOTO na wszystkich stronach. Wdrożone 2026-04-11.
 
 | Plik | Treść | Użyte na |
@@ -139,7 +157,7 @@ Custom animations and transitions beyond Tailwind utilities:
 Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky bottom bar, cookie consent banner, and Tailwind config in `<head>`. When modifying shared elements, update ALL HTML files.
 
 ### Key Design Patterns
-- **White/green theme**: white backgrounds (#FFFFFF) with deep green (#1a6b3c) accents and CTAs — professional, trust-focused
+- **White/blue theme**: white backgrounds (#FFFFFF) with Lexperiens cyan-blue (#29ABE2) accents and CTAs — professional, trust-focused
 - **Trust bar**: social proof strip between hero and quiz (Google rating, badge, stats)
 - **Ticker**: auto-scrolling marquee at top with recent successes (content duplicated for seamless CSS loop — update both copies when changing text)
 - **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`
@@ -154,8 +172,8 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Cookie consent gates GA4**: analytics scripts only load after user accepts cookies via localStorage check. `cookie-consent.js` guards against missing `#cookie-banner` element.
 - **Delegated event handling**: `navigation.js` uses delegated click on mobile menu; `analytics.js` uses delegated click with early-exit for phone/sticky/case tracking.
 - **DOM caching**: `calculator.js` caches all label/result elements at init — `recalculate()` runs on every slider input event and must avoid DOM queries in the hot path.
-- **Benefits slider** (`odszkodowania-komunikacyjne.html`): 6-slide translateX carousel (vanilla JS IIFE at bottom of page). IDs: `#benefitsTrack`, `#benefitsViewport`, `#benefitsPrev`, `#benefitsNext`, `.benefits-dot`. Auto-plays every 5s, pauses on hover. Each slide has a white card with alternating left-border accent (cta green / gold), icon, `01/06` counter, title, description, CTA link.
-- **Service tile separator** (`uslugi.html`): 6 service tile divs (`.v2-slide-left`/`.v2-slide-right`) have `border-b-2 border-[#1a6b3c]/15 pb-4` — subtle green bottom line, Votum style preserved (no card background).
+- **Benefits slider** (`odszkodowania-komunikacyjne.html`): 6-slide translateX carousel (vanilla JS IIFE at bottom of page). IDs: `#benefitsTrack`, `#benefitsViewport`, `#benefitsPrev`, `#benefitsNext`, `.benefits-dot`. Auto-plays every 5s, pauses on hover. Each slide has a white card with alternating left-border accent (cta blue / gold), icon, `01/06` counter, title, description, CTA link.
+- **Service tile separator** (`uslugi.html`): 6 service tile divs (`.v2-slide-left`/`.v2-slide-right`) have `border-b-2 border-[#29ABE2]/15 pb-4` — subtle blue bottom line.
 - **Google reviews section** (`<!-- OPINIE KLIENTÓW -->`, all 5 service subpages): static placeholder section with Google-branded rating bar (4.9 ★★★★★ / 500+ opinii) and 3 review cards. Inserted between mini case study and FAQ. Each subpage has context-specific review content (car accidents / workplace / medical / death / agricultural).
 
 ## Blog System
@@ -335,12 +353,10 @@ Unit tests with **vitest** + **jsdom** (`npm test`):
 When modifying calculator multipliers or validation logic, update corresponding tests.
 
 ## Placeholders to Replace
-- Phone: `+48XXXXXXXXX` and `+48 XXX XXX XXX`
-- WhatsApp link: `48XXXXXXXXX` in `wa.me` URL
-- Email: `kontakt@example.pl`
 - GA4 ID: `G-XXXXXXXXXX` in `cookie-consent.js`
 - Google Maps embed URL in contact sections
-- Company name/branding (currently "Odszkodowania")
+- NIP/KRS in footer (currently `XXXXXXXXXX`)
+- Team member names/bios, testimonials, case study data (placeholder content)
 - Team member names/bios (currently placeholder experts)
 - Testimonial data (currently placeholder reviews)
 - Case study data (currently placeholder examples)
