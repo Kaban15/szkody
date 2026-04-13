@@ -96,6 +96,7 @@ When changing the brand color in the future: update **both** `js/tailwind-config
 | `Gemini_Generated_Image_nnl0c7nnl0c7nnl0.png` | Kobieta z telefonem | `odszkodowania-smierc-bliskiej-osoby.html` sekcja 2, `opinie.html` |
 | `Gemini_Generated_Image_ivbp9wivbp9wivbp.png` | Biuro, dokumenty na biurku | `odszkodowania-smierc-bliskiej-osoby.html` sekcja 3, `kalkulator.html` |
 | `Gemini_Generated_Image_ib7zhnib7zhnib7z.png` | Rolnik w polu zbóż | `odszkodowania-wypadki-rolnicze.html` hero |
+| `nel-avatar.png` | Awatar "Nel" — kobieta w marynarce | Chat widget (nagłówek + dymki bota) |
 
 **Implementacja hero (`index.html`):** `background-image` inline style na `.v2-scroll-expand`.
 **Implementacja pozostałe:** `<img class="w-full h-full object-cover">` w kontenerze `rounded-xl aspect-[4/3] overflow-hidden`.
@@ -320,7 +321,7 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
 
 ### Chat Widget AI
 - **Model:** OpenAI GPT-4o-mini (temperature 0.7, max_tokens 300)
-- **Persona:** "Asystent kancelarii" — empatyczny, profesjonalny. NIE mówi że jest AI.
+- **Persona:** "Nel z Lexperiens" (Asystentka Prawna) — empatyczna, profesjonalna. NIE mówi że jest AI. Avatar: `/images/nel-avatar.png`. Quick reply buttons (6 topics) after greeting.
 - **Multilingual:** Bot responds in language detected from `localStorage('lang')` (PL/EN/UA). System prompt includes `JĘZYK:` instruction per language.
 - **Flow:** Empathy → Interview (typ, data, obrażenia, hospitalizacja, zgłoszenie, prawnik) → Preferred contact time → Summary → Ask for name+phone
 - **Lead extraction:** regex on phone (9 digits), name from: "Panie X" in bot reply, "jestem X"/"my name is X" patterns, or first word in any message containing a phone number.
