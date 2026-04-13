@@ -266,6 +266,10 @@
             if (leadSaved) {
                 addMessage('system', 'Dane przekazane specjali\u015bcie \u2713', false);
             }
+            // Show quick replies if only greeting is in history (user hasn't replied yet)
+            if (history.length === 1 && history[0].role === 'assistant') {
+                showQuickReplies();
+            }
         }
 
         function showTyping() { typingEl.classList.add('visible'); messagesEl.appendChild(typingEl); messagesEl.scrollTop = messagesEl.scrollHeight; }
