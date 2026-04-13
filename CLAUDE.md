@@ -371,6 +371,7 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
 ## Security
 
 - **Security headers** configured in `vercel.json`: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+- **CSP `frame-src`**: `https://www.google.com https://maps.google.com https://*.google.com` — allows Google Maps embed on `kontakt.html`
 - **CDN versions pinned**: Lucide at `0.460.0`, Lenis at `1.1.18` (never use `@latest` in production)
 - **No innerHTML with user input**: form success messages use `<template>` elements cloned via DOM API. i18n uses innerHTML intentionally for first-party static JSON translations (documented in code).
 - **All JS files use `'use strict'`**
@@ -387,7 +388,7 @@ When modifying calculator multipliers or validation logic, update corresponding 
 
 ## Placeholders to Replace
 - GA4 ID: `G-XXXXXXXXXX` in `cookie-consent.js`
-- Google Maps embed URL in contact sections
+- ~~Google Maps embed URL in contact sections~~ ✓ done (ul. Mikołaja Reja 1/8, place_id: `0x470444cafb2916d1:0x5466ad79825264b0`)
 - NIP/KRS in footer (currently `XXXXXXXXXX`)
 - Team member names/bios, testimonials, case study data (placeholder content)
 - Team member names/bios (currently placeholder experts)
