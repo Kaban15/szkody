@@ -1054,5 +1054,14 @@
   "kalkulator.success_subtitle": "We'll call you back shortly with a detailed estimate.",
   "contact.success_subtitle": "Our specialist will contact you soon.",
   "chat.rate_question": "Was this conversation helpful?",
-  "chat.rate_thanks": "Thank you for your feedback"
+  "chat.rate_thanks": "Thank you for your feedback",
+  "chat.header_subtitle": "Legal Assistant",
+  "chat.greeting_tooltip": "Hi! I'm Nel, how can I help?",
+  "chat.input_placeholder": "Message Nel...",
+  "chat.qr_komunikacyjny": "🚗 Car accident",
+  "chat.qr_praca": "🏗️ Workplace accident",
+  "chat.qr_medyczny": "🏥 Medical error",
+  "chat.qr_smierc": "🕊️ Death of a loved one",
+  "chat.qr_rolniczy": "🌾 Agricultural accident",
+  "chat.qr_inne": "💬 Other matter"
 }

@@ -1061,5 +1061,14 @@
   "kalkulator.success_subtitle": "Ми зателефонуємо вам найближчим часом з точною оцінкою.",
   "contact.success_subtitle": "Наш спеціаліст зв'яжеться з вами найближчим часом.",
   "chat.rate_question": "Чи була ця розмова корисною?",
-  "chat.rate_thanks": "Дякуємо за відгук"
+  "chat.rate_thanks": "Дякуємо за відгук",
+  "chat.header_subtitle": "Юридична асистентка",
+  "chat.greeting_tooltip": "Привіт! Я Нел, чим допомогти?",
+  "chat.input_placeholder": "Напишіть Нел...",
+  "chat.qr_komunikacyjny": "🚗 Автомобільна аварія",
+  "chat.qr_praca": "🏗️ Нещасний випадок на роботі",
+  "chat.qr_medyczny": "🏥 Медична помилка",
+  "chat.qr_smierc": "🕊️ Смерть близької людини",
+  "chat.qr_rolniczy": "🌾 Нещасний випадок у сільському господарстві",
+  "chat.qr_inne": "💬 Інша справа"
 }
