@@ -1,7 +1,7 @@
 # Chat AI Evolution — Design Spec
 
 **Data:** 2026-04-13
-**Status:** Draft
+**Status:** Implemented (2026-04-13)
 **Cel:** Rozbudowa chat widgetu o adaptację do typu klienta, zbieranie ratingu, archiwizację transkryptów i on-demand analizę rozmów z automatyczną ewolucją promptu systemowego.
 
 ## 1. Problem

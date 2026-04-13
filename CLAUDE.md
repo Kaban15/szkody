@@ -219,6 +219,8 @@ Note: `analytics.js` calls `window.formValidation` only inside `if (contactForm)
 - CRM Phase 1 plan: `docs/superpowers/plans/2026-04-11-crm-phase1-fundament-plan.md`
 - Chat widget spec: `docs/superpowers/specs/2026-04-11-chat-widget-ai-bot-design.md`
 - Chat widget plan: `docs/superpowers/plans/2026-04-11-chat-widget-ai-bot-plan.md`
+- Chat AI evolution spec: `docs/superpowers/specs/2026-04-13-chat-evolution-design.md`
+- Chat AI evolution plan: `docs/superpowers/plans/2026-04-13-chat-evolution-plan.md`
 - Lead email notifications spec: `docs/superpowers/specs/2026-04-12-lead-email-notifications-design.md`
 - Lead email notifications plan: `docs/superpowers/plans/2026-04-12-lead-email-notifications-plan.md`
 - Airtable CRM organization spec: `docs/superpowers/specs/2026-04-12-airtable-crm-organization-design.md`
@@ -254,6 +256,8 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 - **`/webhook/szkody-form`** — form submissions (quiz, kalkulator, kontakt). Workflow: "Szkody - Formularz - Airtable CRM" (ID: `CDHlPEgV4eCxXJ4v`). Includes Scoring Code node.
 - **`/webhook/szkody-chat`** — AI chat messages. Workflow: "Szkody - Chat AI" (ID: `Km52Gx1aoEJvcXba`). Includes Scoring Code node.
 - **`/webhook/szkody-lead-action`** — GET webhook for email action buttons (contacted/no_answer/followup). Workflow: "Szkody - Lead Action"
+- **`/webhook/szkody-chat-rating`** — POST webhook for chat rating (thumbs up/down). Workflow: "Szkody - Chat Rating" (ID: `m4GqIYR65Ha2tVjp`). Payload: `{session_id, rating: 1|-1}`
+- **`/webhook/szkody-prompt-update`** — GET webhook for prompt approve/reject from email. Params: `?action=approve|reject&record=recXXX`. Workflow: "Szkody - Prompt Update" (ID: `oNzaWFNvBpqHFKOg`)
 
 ### n8n Workflows
 - **"Szkody - Chat Rating"** (ID: `m4GqIYR65Ha2tVjp`) — Webhook POST `/szkody-chat-rating` → Code (validate session_id + rating, search Airtable by Session ID, PATCH Rating field) → respond OK. Fire-and-forget from chat widget.
@@ -328,7 +332,17 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
   - Adds "Język klienta: angielski/ukraiński" if non-PL
   - Filters out personal data (phone, name) from summary
 - **Dedup:** Airtable search by session_id before saving
-- **Config:** System prompt + knowledge base in n8n Code node "Przygotuj prompt"
+- **Config:** System prompt loaded dynamically from Airtable "Prompt Historia" (Status = Aktywny) at start of each session. Fallback to hardcoded prompt if fetch fails.
+- **Transcript saving:** Full conversation history saved to `Transkrypt` field (JSON) + `Session ID` field upon lead creation.
+- **Rating widget:** After lead_saved, chat shows thumbs up/down. Rating POSTed to `/webhook/szkody-chat-rating` → saved to Airtable `Rating` field. One rating per session (sessionStorage flag).
+
+### Chat AI Evolution (Prompt Evolution system)
+- **Dynamic prompt:** "Przygotuj prompt" Code node fetches active prompt from Airtable "Prompt Historia" table (filter: `Status = Aktywny`, with `returnFieldsByFieldId=true`). 3s timeout, hardcoded fallback.
+- **Adaptation rules:** Prompt v1 includes "ADAPTACJA DO ROZMÓWCY" section — bot recognizes client type (Emocjonalny/Rzeczowy/Sceptyczny/Obcojęzyczny/Szczegółowy) from first 2-3 messages and adapts tone/strategy.
+- **Analysis workflow:** "Szkody - Analiza Rozmów" — manual trigger in n8n UI. Fetches unanalyzed leads (Transkrypt not empty, Data analizy empty), sends to GPT-4o for pattern analysis, creates Draft in Prompt Historia, emails report with Approve/Reject buttons.
+- **Prompt update:** "Szkody - Prompt Update" — approve activates Draft (deactivates previous Aktywny), reject marks Draft as Wycofany. Immediate effect — next chat session uses new prompt.
+- **Rollback:** Change any Wycofany record back to Aktywny in Airtable. Instant.
+- **IMPORTANT — `returnFieldsByFieldId=true`:** All n8n Airtable API calls that access field values by field ID MUST include this query parameter. Without it, Airtable returns field names as keys (e.g. `Prompt`) instead of field IDs (e.g. `fldvkw5BiGwOfMo0N`), causing silent data access failures.
 
 ### Form Data Enrichment
 - **Contact forms** (index.html, kontakt.html) send `email`, `message`, `event_type` (topic select), `lang` to webhook via `extraData` parameter
