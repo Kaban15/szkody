@@ -312,6 +312,7 @@
                     session_id: sessionId,
                     page_url: window.location.pathname,
                     lang: getLang(),
+                    lead_saved: leadSaved,
                 }),
             };
             if (controller) fetchOptions.signal = controller.signal;
