@@ -153,6 +153,17 @@ Custom animations and transitions beyond Tailwind utilities:
 - **`.reveal-clip`** — clip-path inset reveal from left (`inset(0 100% 0 0)` → `inset(0 0 0 0)`), used on hero checkmarks
 - **`[data-parallax]`** — scroll-driven translateY parallax via Lenis `onScroll`, factor set per element (hero 0.3, process icons 0.1, team avatars 0.15, CTA 0.2). Mobile: factor halved. Disabled on `prefers-reduced-motion`.
 - **`.faq-answer`** — max-height accordion transition
+- **`.v2-gradient-accent`** — `position: relative; overflow: hidden` — contains decorative `::before` pseudo-element (500px radial gradient at `right: -10%`). `overflow: hidden` prevents horizontal scrollbar.
+- **`body { overflow-x: hidden }`** — safety net preventing horizontal scroll from any stray element
+- **`footer` mobile padding** — `@media (max-width: 1023px) { footer { padding-bottom: 4.5rem } }` — prevents sticky CTA bar from covering footer content on mobile
+
+### Mobile Responsiveness
+- **Viewport meta**: all pages have `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+- **Touch targets**: social icons in footer use `w-11 h-11` (44px) — minimum mobile touch target
+- **Step tabs**: `px-4 py-2 sm:px-5 sm:py-2.5` — smaller padding on mobile to prevent overflow on 360px screens
+- **Chat widget mobile**: full-width at ≤480px (`css/chat-widget.css`), bubble moves up to avoid sticky bar overlap
+- **Footer**: `grid-cols-1 md:grid-cols-4` — stacks to single column on mobile
+- **Sticky CTA bar**: `fixed bottom-0 ... lg:hidden` — visible only on mobile, covers bottom ~48px
 
 ### Shared Elements Across Subpages
 Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky bottom bar, cookie consent banner, and Tailwind config in `<head>`. When modifying shared elements, update ALL HTML files.
