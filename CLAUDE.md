@@ -344,7 +344,8 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
   - Summary always in Polish (translations applied for EN/UA answers)
   - Adds "Język klienta: angielski/ukraiński" if non-PL
   - Filters out personal data (phone, name) from summary
-- **Dedup:** Airtable search by session_id before saving
+- **Dedup:** Airtable search by session_id before saving. Widget sends `lead_saved: true` flag in payload after lead is saved — n8n should skip extraction/save block when this flag is set.
+- **Quick replies persistence:** `renderHistory()` re-shows quick reply buttons if history contains only the greeting (1 assistant message, no user messages yet). Buttons disappear after first user interaction.
 - **Config:** System prompt loaded dynamically from Airtable "Prompt Historia" (Status = Aktywny) at start of each session. Fallback to hardcoded prompt if fetch fails.
 - **Transcript saving:** Full conversation history saved to `Transkrypt` field (JSON) + `Session ID` field upon lead creation.
 - **Rating widget:** After lead_saved, chat shows thumbs up/down. Rating POSTed to `/webhook/szkody-chat-rating` → saved to Airtable `Rating` field. One rating per session (sessionStorage flag).
