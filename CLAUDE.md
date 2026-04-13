@@ -233,6 +233,7 @@ Note: `analytics.js` calls `window.formValidation` only inside `if (contactForm)
 - Chat widget plan: `docs/superpowers/plans/2026-04-11-chat-widget-ai-bot-plan.md`
 - Chat AI evolution spec: `docs/superpowers/specs/2026-04-13-chat-evolution-design.md`
 - Chat AI evolution plan: `docs/superpowers/plans/2026-04-13-chat-evolution-plan.md`
+- Chat prompt v2 spec: `docs/superpowers/specs/2026-04-13-chat-prompt-v2-design.md`
 - Lead email notifications spec: `docs/superpowers/specs/2026-04-12-lead-email-notifications-design.md`
 - Lead email notifications plan: `docs/superpowers/plans/2026-04-12-lead-email-notifications-plan.md`
 - Airtable CRM organization spec: `docs/superpowers/specs/2026-04-12-airtable-crm-organization-design.md`
@@ -334,7 +335,7 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
 - **Model:** OpenAI GPT-4o-mini (temperature 0.7, max_tokens 300)
 - **Persona:** "Nel z Lexperiens" (Asystentka Prawna) — empatyczna, profesjonalna. NIE mówi że jest AI. Avatar: `/images/nel-avatar.png`. Quick reply buttons (6 topics) after greeting.
 - **Multilingual:** Bot responds in language detected from `localStorage('lang')` (PL/EN/UA). System prompt includes `JĘZYK:` instruction per language.
-- **Flow:** Empathy → Interview (typ, data, obrażenia, hospitalizacja, zgłoszenie, prawnik) → Preferred contact time → Summary → Ask for name+phone
+- **Flow (v2 — state-based):** POWITANIE → WYWIAD (zbieranie info, jedno pytanie na raz, pomijaj już odpowiedziane) → DORADZTWO (edukacja o składnikach odszkodowania, dopłaty) → KONTAKT (max 2 próby o dane, przy odmowie podaje namiary kancelarii). Branching: klient pyta o merytorykę → DORADZTWO; klient odmawia danych → namiary; "sam się skontaktuję" → telefon+email bez pytania o porę.
 - **Lead extraction:** regex on phone (9 digits), name from: "Panie X" in bot reply, "jestem X"/"my name is X" patterns, or first word in any message containing a phone number.
 - **Conversation summary** (saved to Notatki in Airtable):
   - Parses bot-question + user-answer pairs with label rules
@@ -350,7 +351,8 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
 
 ### Chat AI Evolution (Prompt Evolution system)
 - **Dynamic prompt:** "Przygotuj prompt" Code node fetches active prompt from Airtable "Prompt Historia" table (filter: `Status = Aktywny`, with `returnFieldsByFieldId=true`). 3s timeout, hardcoded fallback.
-- **Adaptation rules:** Prompt v1 includes "ADAPTACJA DO ROZMÓWCY" section — bot recognizes client type (Emocjonalny/Rzeczowy/Sceptyczny/Obcojęzyczny/Szczegółowy) from first 2-3 messages and adapts tone/strategy.
+- **Prompt v2 (active since 2026-04-13):** State-based flow (POWITANIE→WYWIAD→DORADZTWO→KONTAKT) replacing linear tunnel. Key additions: DORADZTWO state (edukacja o składnikach odszkodowania), max 2 contact data attempts, firm contact info in prompt, hard "never re-ask" rule. Airtable record: `reckEZDFyl61zJhF7`. Previous v1: `recfDxxuPWXG22mqO` (Wycofany).
+- **Adaptation rules:** Prompt includes "ADAPTACJA DO ROZMÓWCY" section — bot recognizes client type (Emocjonalny/Rzeczowy/Sceptyczny/Obcojęzyczny/Szczegółowy) from first 2-3 messages and adapts tone/strategy.
 - **Analysis workflow:** "Szkody - Analiza Rozmów" — manual trigger in n8n UI. Fetches unanalyzed leads (Transkrypt not empty, Data analizy empty), sends to GPT-4o for pattern analysis, creates Draft in Prompt Historia, emails report with Approve/Reject buttons.
 - **Prompt update:** "Szkody - Prompt Update" — approve activates Draft (deactivates previous Aktywny), reject marks Draft as Wycofany. Immediate effect — next chat session uses new prompt.
 - **Rollback:** Change any Wycofany record back to Aktywny in Airtable. Instant.
