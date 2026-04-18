@@ -555,6 +555,31 @@ body.v2-theme.v2-subpage #main-nav.nav-solid .nav-logo-link {
     display: block;
 }
 
+/* Text-based placeholder logo — overrides image filter rules above */
+.nav-logo-link.nav-logo-text,
+#main-nav.nav-solid .nav-logo-link.nav-logo-text,
+body.v2-theme.v2-subpage #main-nav.nav-solid .nav-logo-link.nav-logo-text {
+    filter: none;
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+body.v2-theme:not(.v2-subpage) #main-nav.nav-solid .nav-logo-link.nav-logo-text {
+    color: #1a1a2e;
+}
+.footer-logo-link.footer-logo-text {
+    filter: none;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
 /* Pulse highlight for case study results */
 @keyframes result-pulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(41, 171, 226, 0.3); }

@@ -4,12 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static lead-generation website for **Lexperiens Kancelaria Radców Prawnych sp. p.** (Poznań) — firma odszkodowawcza. Polish language throughout. No build step, no framework — plain HTML/CSS/JS served as static files.
+Static lead-generation website for **[NAZWA FIRMY]** — firma pośrednicząca w sprawach odszkodowawczych (łączy klientów z kancelariami partnerskimi). Polish language throughout. No build step, no framework — plain HTML/CSS/JS served as static files.
 
-**Dane firmy:**
-- Telefony: 61 893 75 04 / 797 623 957 / 789 483 216
-- Email: kancelaria@lexperiens.pl
-- Adres: ul. Mikołaja Reja 1/8, 60-826 Poznań
+**Pozycjonowanie:** pośrednik, NIE kancelaria. Nie świadczymy pomocy prawnej — analizujemy sprawę klienta i dobieramy wyspecjalizowaną kancelarię partnerską do prowadzenia postępowania. Unikać określeń typu „kancelaria", „radca prawny" w odniesieniu do własnego zespołu.
+
+**Dane firmy (placeholder — do uzupełnienia przed launchem):**
+- Telefon: `+48 000 000 000`
+- Email: `kontakt@example.pl`
+- Adres: `[ul. Przykładowa 1, 00-000 Miasto]`
+- NIP / KRS: `0000000000`
+- Nazwa firmy w HTML/JS/JSON: token `[NAZWA FIRMY]` (EN: `[COMPANY NAME]`, UA: `[НАЗВА КОМПАНІЇ]`)
 
 ## Deployment
 
@@ -46,8 +50,8 @@ npm run test:watch            # run vitest in watch mode
 - `bg` (#FFFFFF) — white page background
 - `surface` (#F5F5F5) — alternate section backgrounds (gray)
 - `surface-light` (#FFFFFF) — cards, inputs, elevated elements
-- `gold` (#29ABE2), `gold-light` (#1a94c9) — **Lexperiens cyan-blue** brand accent (token names retained for legacy reasons)
-- `cta` (#29ABE2), `cta-hover` (#1a94c9) — primary CTA buttons (Lexperiens blue)
+- `gold` (#29ABE2), `gold-light` (#1a94c9) — cyan-blue brand accent (token names retained for legacy reasons)
+- `cta` (#29ABE2), `cta-hover` (#1a94c9) — primary CTA buttons (brand blue)
 - `v2-cta` (#29ABE2), `v2-cta-hover` (#1a94c9) — v2 CTA alias (same blue)
 - `text` (#1a1a2e) — dark navy body text
 - `muted` (#6b7280) — secondary text (cool gray)
@@ -55,7 +59,7 @@ npm run test:watch            # run vitest in watch mode
 - `error` (#EF4444) — form validation errors (stays red — not a brand color)
 
 **CSS custom properties** (`css/styles.css` `:root`):
-- `--color-brand: #29ABE2` — Lexperiens cyan-blue, used by all hardcoded rules in `styles.css`
+- `--color-brand: #29ABE2` — brand cyan-blue, used by all hardcoded rules in `styles.css`
 - `--color-brand-hover: #1a94c9`
 
 When changing the brand color in the future: update **both** `js/tailwind-config.js` tokens **and** `--color-brand` in `css/styles.css`.
@@ -70,8 +74,9 @@ When changing the brand color in the future: update **both** `js/tailwind-config
 - **Utility pages**: `kalkulator.html`, `kontakt.html`, `jak-dzialamy.html`, `404.html`, `polityka-prywatnosci.html`, `robots.txt`, `sitemap.xml`
 
 ### Logo (`images/`)
-- `lexperiens-logo.png` — logo Lexperiens z **transparentnym tłem** (RGBA). CSS filter `invert(1) hue-rotate(180deg)` przełącza między wersją jasną (ciemne tła) a oryginalną.
-- `lexperiens-logo-original.png` — backup oryginału (białe tło, nie używany w HTML).
+**AKTUALNY STAN:** Logo graficzne **nie jest używane w HTML** — nav i footer renderują tekstowy placeholder `[NAZWA FIRMY]` (klasy `.nav-logo-text` / `.footer-logo-text` w `styles.css`). Pliki `lexperiens-logo*.png` pozostają na dysku jako historyczny backup, ale nie są odwoływane z markup.
+
+Gdy przyjdzie prawdziwy brand: albo podmienić logo plik i przywrócić `<img>` w nav/footer, albo zostawić tekst i zmienić token `[NAZWA FIRMY]` na prawdziwą nazwę.
 
 **CSS reguły logo** (`css/styles.css`):
 - `.nav-logo-link` — `filter: invert(1) hue-rotate(180deg)` (transparent nav / ciemne tło)
@@ -80,7 +85,7 @@ When changing the brand color in the future: update **both** `js/tailwind-config
 - `.footer-logo-link` — `filter: invert(1) hue-rotate(180deg)` (footer zawsze ciemny)
 - `.nav-logo-img` — `height: 40px`; `.footer-logo-img` — `height: 34px`
 
-**Użycie w HTML:** `<a href="/" class="nav-logo-link"><img src="/images/lexperiens-logo.png" class="nav-logo-img">` w navie; `<a href="/" class="footer-logo-link"><img src="/images/lexperiens-logo.png" class="footer-logo-img">` w footerze.
+**Użycie w HTML (aktualne, placeholder):** `<a href="/" class="nav-logo-link nav-logo-text">[NAZWA FIRMY]</a>` w navie; `<a href="/" class="footer-logo-link footer-logo-text mb-3">[NAZWA FIRMY]</a>` w footerze.
 
 ### Zdjęcia (`images/`)
 9 PNG zdjęć (generowane Gemini) zastępujących placeholdery FOTO na wszystkich stronach. Wdrożone 2026-04-11.
@@ -115,12 +120,15 @@ Obsługiwane języki: **PL** (domyślny), **EN**, **UA**.
 | Prefix | Strona |
 |--------|--------|
 | `nav.*`, `sticky.*`, `footer.*`, `cookie.*` | Współdzielone — wszystkie strony |
+| `reviews.*` | Współdzielone — sekcja "Opinie klientów" na wszystkich 5 subpages |
 | `hero.*`, `trust.*`, `quiz.*`, `cards.*`, `steps.*`, `contact.*`, `faq.*`, `cta.*` | `index.html` |
-| `kom.*` | `odszkodowania-komunikacyjne.html` |
-| `praca.*` | `odszkodowania-wypadki-przy-pracy.html` |
-| `med.*` | `odszkodowania-bledy-medyczne.html` |
-| `smierc.*` | `odszkodowania-smierc-bliskiej-osoby.html` |
-| `rol.*` | `odszkodowania-wypadki-rolnicze.html` |
+| `kom.*` | `odszkodowania-komunikacyjne.html` (w tym `kom.slide*` dla benefits slidera, `kom.review*` dla recenzji) |
+| `praca.*` | `odszkodowania-wypadki-przy-pracy.html` (w tym `praca.review*` dla recenzji) |
+| `med.*` | `odszkodowania-bledy-medyczne.html` (w tym `med.review*` dla recenzji) |
+| `smierc.*` | `odszkodowania-smierc-bliskiej-osoby.html` (w tym `smierc.review*` dla recenzji) |
+| `rol.*` | `odszkodowania-wypadki-rolnicze.html` (w tym `rol.review*` dla recenzji) |
+| `kontakt.*` | `kontakt.html` (w tym `kontakt.maps_title`) |
+| `sukcesy.*` | `sukcesy.html` (w tym `sukcesy.featured_quote`) |
 
 **Zasada:** każdy element z polskim tekstem musi mieć `data-i18n`. Przy dodawaniu nowej treści dodaj od razu klucz do `lang/en.json` i `lang/ua.json`.
 
@@ -169,7 +177,7 @@ Custom animations and transitions beyond Tailwind utilities:
 Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky bottom bar, cookie consent banner, and Tailwind config in `<head>`. When modifying shared elements, update ALL HTML files.
 
 ### Key Design Patterns
-- **White/blue theme**: white backgrounds (#FFFFFF) with Lexperiens cyan-blue (#29ABE2) accents and CTAs — professional, trust-focused
+- **White/blue theme**: white backgrounds (#FFFFFF) with cyan-blue (#29ABE2) accents and CTAs — professional, trust-focused
 - **Trust bar**: social proof strip between hero and quiz (Google rating, badge, stats)
 - **Ticker**: auto-scrolling marquee at top with recent successes (content duplicated for seamless CSS loop — update both copies when changing text)
 - **Testimonial carousel**: horizontal scroll with snap, navigation via prev/next buttons in `navigation.js`
@@ -184,9 +192,9 @@ Every subpage duplicates: nav (with `#mobile-menu`), footer (4-column), sticky b
 - **Cookie consent gates GA4**: analytics scripts only load after user accepts cookies via localStorage check. `cookie-consent.js` guards against missing `#cookie-banner` element.
 - **Delegated event handling**: `navigation.js` uses delegated click on mobile menu; `analytics.js` uses delegated click with early-exit for phone/sticky/case tracking.
 - **DOM caching**: `calculator.js` caches all label/result elements at init — `recalculate()` runs on every slider input event and must avoid DOM queries in the hot path.
-- **Benefits slider** (`odszkodowania-komunikacyjne.html`): 6-slide translateX carousel (vanilla JS IIFE at bottom of page). IDs: `#benefitsTrack`, `#benefitsViewport`, `#benefitsPrev`, `#benefitsNext`, `.benefits-dot`. Auto-plays every 5s, pauses on hover. Each slide has a white card with alternating left-border accent (cta blue / gold), icon, `01/06` counter, title, description, CTA link.
+- **Benefits slider** (`odszkodowania-komunikacyjne.html`): 6-slide translateX carousel (vanilla JS IIFE at bottom of page). IDs: `#benefitsTrack`, `#benefitsViewport`, `#benefitsPrev`, `#benefitsNext`, `.benefits-dot`. Auto-plays every 5s, pauses on hover. Each slide has a white card with alternating left-border accent (cta blue / gold), icon, `01/06` counter, title, description, CTA link. Fully i18n-ready: `kom.benefits_label`, `kom.benefits_heading`, `kom.benefits_subtitle` for section header; `kom.slide{1-6}_title`, `kom.slide{1-6}_desc` for slides; `kom.slide_cta` (shared) for CTA links.
 - **Service tile separator** (`uslugi.html`): 6 service tile divs (`.v2-slide-left`/`.v2-slide-right`) have `border-b-2 border-[#29ABE2]/15 pb-4` — subtle blue bottom line.
-- **Google reviews section** (`<!-- OPINIE KLIENTÓW -->`, all 5 service subpages): static placeholder section with Google-branded rating bar (4.9 ★★★★★ / 500+ opinii) and 3 review cards. Inserted between mini case study and FAQ. Each subpage has context-specific review content (car accidents / workplace / medical / death / agricultural).
+- **Google reviews section** (`<!-- OPINIE KLIENTÓW -->`, all 5 service subpages): static placeholder section with Google-branded rating bar (4.9 ★★★★★ / 500+ opinii) and 3 review cards. Inserted between mini case study and FAQ. Each subpage has context-specific review content (car accidents / workplace / medical / death / agricultural). Fully i18n-ready: shared keys (`reviews.*`) for heading/subtitle/rating bar, page-specific keys (`{prefix}.review{1-3}_date`, `{prefix}.review{1-3}_text`) for review content.
 
 ## Blog System
 
@@ -278,7 +286,7 @@ Website forms/quiz/chat → POST → n8n webhooks → Airtable "Szkody CRM" base
 - **"Szkody - Prompt Update"** (ID: `oNzaWFNvBpqHFKOg`) — Webhook GET `/szkody-prompt-update?action=approve|reject&record=recXXX` → approve: deactivate current Aktywny, activate Draft; reject: mark Draft as Wycofany → HTML confirmation page. Called from email buttons in analysis report.
 - **"Szkody - Powiadomienie Email o Leadzie"** (ID: `cV3BK9CU6S9wucuF`) — Airtable Trigger (polling "Leady" every 1 min) → Code (format HTML email with lead data + action buttons) → Gmail (to `piotrtokeny@gmail.com`). JSON backup: `n8n/lead-email-notification-workflow.json`. Email includes: branded header, data table, conversation summary, action buttons (Zadzwoniłem/Nie odbiera/Follow-up).
 - **"Szkody - Lead Action"** (ID: `5KrTzeOBFlTyAWBo`) — Webhook GET → validate params → idempotency check (httpRequest GET record, skip if status already set) → httpRequest PATCH update → HTML confirmation page (Respond to Webhook as text with Content-Type: text/html). `contacted` → Status "Kontakt" + clears Data follow-up. `no_answer` → Status "Brak kontaktu" + clears Data follow-up. `followup` → Data follow-up = jutro. Uses httpRequest nodes with Airtable PAT (not native Airtable node). JSON backup: `n8n/lead-action-workflow.json`.
-- **"Szkody - Follow-up Reminder"** (ID: `s13xEwD2mBwimQ7y`) — Cron daily 8:00 (Europe/Warsaw) → 3 Airtable searches (Nowy >24h, Kontakt >7d, Follow-up dziś) → zbiorczy email z listą zaległych leadów + action buttons. Nie wysyła maila jeśli 0 wyników. JSON backup: `n8n/follow-up-reminder-workflow.json`.
+- **"Szkody - Follow-up Reminder"** (ID: `s13xEwD2mBwimQ7y`) — Cron daily 8:00 (Europe/Warsaw) → 3 Airtable searches (Nowy >24h, Kontakt >7d, Follow-up dziś) → Code "Buduj email" → Gmail. Nie wysyła maila jeśli 0 wyników. JSON backup: `n8n/follow-up-reminder-workflow.json`. **UWAGA:** Code node "Buduj email" czyta pola po **nazwach** (nie field ID) — natywny Airtable node zwraca nazwy. Pola: Imię, Telefon, Email, Typ zdarzenia, Priorytet, Notatki, Kanał źródłowy, Status, Data utworzenia, Źródło strony. Email zawiera: dane kontaktowe, typ zdarzenia, priorytet + kanał (badges), notatki (do 200 znaków), datę + "X dni temu", action buttons (Zadzwoniłem/Nie odbiera lub Przełóż na jutro).
 
 ### Airtable CRM
 - **Base:** "Szkody CRM" (appUoXROWqjxiwjrT)
@@ -333,7 +341,7 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
 
 ### Chat Widget AI
 - **Model:** OpenAI GPT-4o-mini (temperature 0.7, max_tokens 300)
-- **Persona:** "Nel z Lexperiens" (Asystentka Prawna) — empatyczna, profesjonalna. NIE mówi że jest AI. Avatar: `/images/nel-avatar.png`. Quick reply buttons (6 topics) after greeting.
+- **Persona:** "Nel z [NAZWA FIRMY]" (Asystentka ds. odszkodowań) — empatyczna, profesjonalna. NIE mówi że jest AI. Reprezentuje pośrednika, NIE kancelarię. Avatar: `/images/nel-avatar.png`. Quick reply buttons (6 topics) after greeting.
 - **Multilingual:** Bot responds in language detected from `localStorage('lang')` (PL/EN/UA). System prompt includes `JĘZYK:` instruction per language.
 - **Flow (v2 — state-based):** POWITANIE → WYWIAD (zbieranie info, jedno pytanie na raz, pomijaj już odpowiedziane) → DORADZTWO (edukacja o składnikach odszkodowania, dopłaty) → KONTAKT (max 2 próby o dane, przy odmowie podaje namiary kancelarii). Branching: klient pyta o merytorykę → DORADZTWO; klient odmawia danych → namiary; "sam się skontaktuję" → telefon+email bez pytania o porę.
 - **Lead extraction:** regex on phone (9 digits), name from: "Panie X" in bot reply, "jestem X"/"my name is X" patterns, or first word in any message containing a phone number.
@@ -377,6 +385,51 @@ Workflow "Formularz" i "Chat AI" używają `typecast: true` w Airtable httpReque
 - **All JS files use `'use strict'`**
 - **`node_modules/` in `.gitignore`** — never commit dependencies
 
+## Changelog — Debranding 2026-04-18
+
+Strona została całkowicie pozbawiona brandu Lexperiens. Model biznesowy przestawiony z kancelarii radców prawnych na **pośrednika** łączącego klientów z kancelariami partnerskimi.
+
+### Co zmienione
+- **35 plików HTML** (9 głównych + 20 blog + blog/index + 404 + polityka-prywatnosci + 5 subpages `odszkodowania-*`) — nazwa, telefon, email, adres, logo, copyright zamienione na placeholdery
+- **Google Maps** (`kontakt.html`) — iframe wymieniony na szary `<div>` z tekstem `[Tu będzie mapa Twojej lokalizacji]`
+- **Schema.org** — `LegalService` → `Service` z `serviceType: "Pośrednictwo w sprawach odszkodowawczych"`; provider = `Organization` (nie `LegalService`) na 5 subpages; `LocalBusiness` + address usunięte z `index.html`
+- **FAQ w `index.html`** — „Czy muszę osobiście się stawiać w kancelarii?" → „w biurze"; odpowiedź uwzględnia kancelarię partnerską
+- **Targeted copy rewrites** (gdzie „my" = kancelaria):
+  - `sukcesy.html` line ~198: „Nasz zespół prawników i rzeczoznawców" → „Dobraliśmy kancelarię partnerską, której zespół..."
+  - `jak-dzialamy.html` line ~200: „Nasz zespół prawny analizuje" → „Dobieramy kancelarię partnerską... to jej zespół prawny analizuje"
+  - `jak-dzialamy.html` line ~290: usunięto „Siedziba w Poznaniu"
+  - `odszkodowania-smierc-bliskiej-osoby.html` line ~163: alt „Kontakt z kancelarią" → „Kontakt z pośrednikiem"
+  - `kontakt.html` meta description: usunięto „Poznań, cała Polska" → „Cała Polska"
+- **Footer we wszystkich HTMLach**:
+  - nav logo `<img>` → `<a class="nav-logo-link nav-logo-text">[NAZWA FIRMY]</a>`
+  - footer logo `<img>` → `<a class="footer-logo-link footer-logo-text mb-3">[NAZWA FIRMY]</a>`
+  - `footer.address` text „Poznań, Polska" → „[Miasto], Polska" (35 plików)
+- **`css/styles.css`** — nowe klasy: `.nav-logo-text`, `.footer-logo-text` obsługują różne stany nav (transparent, nav-solid, subpage nav-solid) z poprawnym kolorem tekstu (white/#1a1a2e)
+- **`js/chat-widget.js`**:
+  - Greetings PL/EN/UA — nowa treść „asystentka ds. odszkodowań w [NAZWA FIRMY]", tłumaczy rolę pośrednika
+  - Header bot: „Nel z Lexperiens" → „Nel z [NAZWA FIRMY]"
+  - `chat.header_subtitle`: „Asystentka Prawna" → „Asystentka ds. odszkodowań"
+  - Fallback error message: podmieniony telefon
+- **`lang/en.json`** — 12 kluczy zaktualizowanych (nav.phone/phone_mobile, cta.phone_prefix, footer.address, footer.copyright ×2, footer.company_street, footer.company_city, kontakt.office_value, privacy.administrator, privacy.s8_text, chat.header_subtitle, why.r4_desc) + 2 nowe klucze (`footer.company_descriptor`, `kontakt.maps_placeholder`)
+- **`lang/ua.json`** — analogicznie 12 kluczy + 2 nowe
+- **`polityka-prywatnosci.html`** — ADO: usunięto hardcode „Poznań", teraz `[NAZWA FIRMY], [ul. Przykładowa 1, 00-000 Miasto], NIP: [do uzupełnienia]`
+
+### Czego NIE ruszano
+- `docs/superpowers/*` (historyczne specs/plans — archiwum decyzji projektowych)
+- `n8n/*.json` (produkcyjne backupy workflow — zmiana rozwaliłaby działający email notification do `piotrtokeny@gmail.com`)
+- `blog/_szablon-*.html` (niepublikowane szablony, już używają `{placeholders}`)
+- `images/lexperiens-logo*.png` (na dysku jako backup, nie są referencjowane w HTML)
+- Airtable „Prompt Historia" (aktywny prompt `reckEZDFyl61zJhF7` wciąż w starej wersji — nowy Draft v3 w `docs/airtable-prompt-v3-posrednik-draft.md`)
+- Testimonials klientów (cytaty w pierwszej osobie — klient może mówić „dzięki tej kancelarii...", to referuje kancelarię partnerską)
+
+### Walidacja po zmianie
+- 26/26 testów vitest passing
+- `lang/en.json` + `lang/ua.json` — valid JSON
+- Grep `Lexperiens|618937504|Reja|60-826` w produkcyjnych plikach — 0 trafień
+
+### Placeholders do uzupełnienia przed launchem
+Pełna lista w sekcji `## Placeholders to Replace` niżej.
+
 ## Testing
 
 Unit tests with **vitest** + **jsdom** (`npm test`):
@@ -388,7 +441,11 @@ When modifying calculator multipliers or validation logic, update corresponding 
 
 ## Placeholders to Replace
 - GA4 ID: `G-XXXXXXXXXX` in `cookie-consent.js`
-- ~~Google Maps embed URL in contact sections~~ ✓ done (ul. Mikołaja Reja 1/8, place_id: `0x470444cafb2916d1:0x5466ad79825264b0`)
+- Google Maps embed URL in `kontakt.html` — currently gray placeholder `[Tu będzie mapa Twojej lokalizacji]`; restore iframe once real address is known
+- Brand name everywhere: replace `[NAZWA FIRMY]` / `[COMPANY NAME]` / `[НАЗВА КОМПАНІЇ]` tokens with real company name
+- Contact data: `+48 000 000 000` → real phone, `kontakt@example.pl` → real email, `[ul. Przykładowa 1, 00-000 Miasto]` → real address
+- Logo: decide whether to put back `<img>` or keep text; update `.nav-logo-text`/`.footer-logo-text` CSS in `styles.css`
+- Airtable "Prompt Historia" — current active prompt references old brand/model; create new v3 Draft matching pośrednik positioning (see docs/)
 - NIP/KRS in footer (currently `XXXXXXXXXX`)
 - Team member names/bios, testimonials, case study data (placeholder content)
 - Team member names/bios (currently placeholder experts)

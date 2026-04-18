@@ -7,9 +7,9 @@
 (function initChatWidget() {
     var WEBHOOK_URL = 'https://n8n.kaban.click/webhook/szkody-chat';
     var GREETINGS = {
-        pl: 'Dzień dobry! Jestem Nel, asystentka prawna kancelarii Lexperiens. W czym mogę Ci pomóc?',
-        en: 'Hello! I\'m Nel, a legal assistant at Lexperiens. How can I help you?',
-        ua: 'Доброго дня! Я Нел, юридична асистентка Lexperiens. Чим можу допомогти?'
+        pl: 'Dzień dobry! Jestem Nel, asystentka ds. odszkodowań w [NAZWA FIRMY]. Pomogę Ci przeanalizować sprawę i dobrać kancelarię partnerską. W czym mogę Ci pomóc?',
+        en: 'Hello! I\'m Nel, a compensation claim assistant at [NAZWA FIRMY]. I\'ll help you analyse your case and match you with a partner law firm. How can I help you?',
+        ua: 'Доброго дня! Я Нел, асистентка з питань відшкодувань у [NAZWA FIRMY]. Допоможу проаналізувати справу та підібрати юридичну фірму-партнера. Чим можу допомогти?'
     };
     var TIMEOUT_MS = 20000;
     var SESSION_KEY = 'szkody_chat';
@@ -70,8 +70,8 @@
                         '<span class="chat-header-status"></span>' +
                     '</div>' +
                     '<div class="chat-header-text">' +
-                        '<span class="chat-header-title">Nel z Lexperiens</span>' +
-                        '<span class="chat-header-subtitle" data-i18n="chat.header_subtitle">Asystentka Prawna</span>' +
+                        '<span class="chat-header-title">Nel z [NAZWA FIRMY]</span>' +
+                        '<span class="chat-header-subtitle" data-i18n="chat.header_subtitle">Asystentka ds. odszkodowań</span>' +
                     '</div>' +
                 '</div>' +
                 '<button class="chat-header-close" aria-label="Zamknij czat">' +
@@ -338,7 +338,7 @@
                 .catch(function () {
                     clearTimeout(timeoutId);
                     hideTyping();
-                    addMessage('bot', 'Przepraszam, mam chwilowy problem. Proszę spróbować za moment lub zadzwonić: 61 893 75 04');
+                    addMessage('bot', 'Przepraszam, mam chwilowy problem. Proszę spróbować za moment lub zadzwonić: +48 000 000 000');
                 })
                 .finally(function () {
                     isSending = false;
